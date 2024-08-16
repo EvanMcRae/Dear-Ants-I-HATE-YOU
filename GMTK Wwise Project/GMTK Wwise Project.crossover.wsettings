@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="UserProjectSettings" SchemaVersion="119">
 	<UserProjectSettingsInfo>
-		<UserProjectSettings Name="" ID="{10919EF0-00BF-4D7C-869A-545EEF26ACD6}">
+		<UserProjectSettings Name="" ID="{48588841-7BD0-441E-AEE3-DE8F1C84E5B3}">
 			<PropertyList>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="EventView\FilterMode2" Type="int32" Value="2"/>
