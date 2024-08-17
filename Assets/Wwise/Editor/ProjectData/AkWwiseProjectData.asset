@@ -331,8 +331,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 88242dbeeba24a44a1157017adc900c4
     GuidInternal: 
-    m_lastTime: -8584777549094574875
-    List: []
+    m_lastTime: -8584777525816709779
+    List:
+    - name: test
+      guid: 45f56cd6b270be4abe933e8aa579ca15
+      id: 3157003241
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 88242dbeeba24a44a1157017adc900c4
+      - ElementName: test
+        ObjectType: 7
+        guid: 45f56cd6b270be4abe933e8aa579ca15
+      Path: SoundBanks\Default Work Unit\test
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -345,8 +359,42 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 9e4891bc502aab45a273595ad7792cd5
     GuidInternal: 
-    m_lastTime: -8584777549095708854
-    List: []
+    m_lastTime: -8584777525816971523
+    List:
+    - name: Play_Music
+      guid: ebcf81456cd1f24aa796cb1fd8c86745
+      id: 2932040671
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Play_Music
+        ObjectType: 3
+        guid: ebcf81456cd1f24aa796cb1fd8c86745
+      Path: Events\Default Work Unit\Play_Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Music
+      guid: 1107327d7a01a34c932e5269562b018b
+      id: 2837384057
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Stop_Music
+        ObjectType: 3
+        guid: 1107327d7a01a34c932e5269562b018b
+      Path: Events\Default Work Unit\Stop_Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -557,7 +605,7 @@ MonoBehaviour:
     m_lastTime: -8584777549094519431
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 0400000006000000070000000b0000000c0000001300000016000000170000001c0000001f000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
