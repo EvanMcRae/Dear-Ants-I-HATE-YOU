@@ -30,8 +30,6 @@ public class SettingsManager : MonoBehaviour
             QualitySettings.vSyncCount = 1;
         else
             QualitySettings.vSyncCount = 0;
-
-        //TODO: Relay sfx/music settings to wwise
     }
 
     public static void UpdateFullscreen()
