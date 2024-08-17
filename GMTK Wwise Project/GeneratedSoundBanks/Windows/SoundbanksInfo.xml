@@ -162,14 +162,24 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3157003241" Type="User" Language="SFX" Hash="{9C8AD5B6-2A5F-37FB-AE92-9A2CDE7D867C}">
+		<SoundBank Id="3157003241" Type="User" Language="SFX" Hash="{A4F82043-94EF-6AB3-1056-FE6EF46567CC}">
 			<ShortName>test</ShortName>
 			<Path>test.bnk</Path>
+			<Media>
+				<File Id="98502782" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Chill Dnb A.wav</ShortName>
+					<CachePath>SFX/Chill Dnb A_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="304778770" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Chill Dnb B.wav</ShortName>
+					<CachePath>SFX/Chill Dnb B_FBC78EF0.wem</CachePath>
+				</File>
+			</Media>
 			<Events>
 				<Event Id="2932040671" Name="Play_Music"/>
 				<Event Id="2837384057" Name="Stop_Music"/>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{349CE8D1-7CDD-9694-63D2-D91716E66572}</FileHash>
+	<FileHash>{D070BA10-2E8A-28BE-9CB5-699C275C12E3}</FileHash>
 </SoundBanksInfo>
