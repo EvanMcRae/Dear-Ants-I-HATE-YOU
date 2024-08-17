@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,15 +18,54 @@ public class stageManager : MonoBehaviour
     public List<GameObject> path4;
     public List<GameObject> path5;
 
-    // Start is called before the first frame update
-    void Start()
+    public List<GameObject> everyTile;
+    public List<GameObject> everyTileOrdered;
+
+    void Awake()
     {
-        
+        everyTile.AddRange(GameObject.FindObjectsOfType<GameObject>());
+        List<GameObject> temp = new List<GameObject>();
+        foreach (GameObject gm in everyTile) 
+        {
+            if (gm.GetComponent<tileScript>() != null) 
+            {
+                temp.Add(gm);
+            }
+        }
+        everyTile = temp;
+        everyTileOrdered = everyTile;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void updateTileList(int x, int y, GameObject toBeInserted) 
     {
-        
+        int index = (y * 11) + x - 12;
+        everyTileOrdered[index] = toBeInserted;
+    }
+
+    public int getLevel() 
+    {
+        return 1;
+    }
+
+    public int getLength(int level) 
+    {
+        /*UPDATED LATER WITH MORE LEVELS*/
+        return 11;
+    }
+
+    private int getTileCount(int level) 
+    {
+        /*UPDATED LATER WITH MORE LEVELS*/
+        return 77;
+    }
+
+    public GameObject getTileFromCords(int x, int y) 
+    {
+        return everyTileOrdered[(y*11) + x - 12];
+    }
+
+    public List<GameObject> getTilesOrdered() 
+    {
+        return everyTileOrdered;
     }
 }
