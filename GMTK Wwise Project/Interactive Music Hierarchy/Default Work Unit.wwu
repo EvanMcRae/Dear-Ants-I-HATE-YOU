@@ -43,6 +43,9 @@
 								<Reference Name="PlaylistRoot">
 									<Custom>
 										<MusicPlaylistItem Name="" ID="{C1F34AA6-A076-46B1-970F-F446B4187D61}" ShortID="751672267">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
 											<ChildrenList>
 												<MusicPlaylistItem Name="" ID="{BD13DEFD-9874-4161-83EF-AAAF158F7A2A}" ShortID="251521204">
 													<PropertyList>
@@ -112,11 +115,6 @@
 								<MusicSegment Name="Level_A" ID="{069D8BBB-EFE1-4AA3-B977-BC4165955145}" ShortID="25491159">
 									<PropertyList>
 										<Property Name="EndPosition" Type="Real64" Value="11436.4460857509"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>4</Value>
-											</ValueList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -203,16 +201,6 @@
 								<MusicSegment Name="Level_B" ID="{AB6F1EB4-AD73-40AA-B8E8-E37FC5BB987F}" ShortID="226371188">
 									<PropertyList>
 										<Property Name="EndPosition" Type="Real64" Value="11294.1176470588"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>4</Value>
-											</ValueList>
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{0F868442-C109-4CA0-BA7E-507C4A2BD6F2}"/>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -299,6 +287,21 @@
 							</ChildrenList>
 						</MusicPlaylistContainer>
 					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Entries">
+							<Reference>
+								<Local>
+									<MultiSwitchEntry Name="" ID="{185871D1-7AB9-4BE1-A629-6AD248799F5B}">
+										<ReferenceList>
+											<Reference Name="AudioNode">
+												<ObjectRef Name="Level" ID="{D83B5377-C090-4862-9085-F9ECC21AB106}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}"/>
+											</Reference>
+										</ReferenceList>
+									</MultiSwitchEntry>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
 				</MusicSwitchContainer>
 			</ChildrenList>
 		</WorkUnit>

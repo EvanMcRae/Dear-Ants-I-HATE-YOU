@@ -7,6 +7,7 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="Level_B" ID="{AB6F1EB4-AD73-40AA-B8E8-E37FC5BB987F}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Music" ID="{849BF544-A925-43E4-9B80-26FFB57F005F}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Default Work Unit" ID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Default Work Unit" ID="{B3012E2B-D08A-4702-9849-6C43A254A895}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Level" ID="{D83B5377-C090-4862-9085-F9ECC21AB106}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Level_A" ID="{069D8BBB-EFE1-4AA3-B977-BC4165955145}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
