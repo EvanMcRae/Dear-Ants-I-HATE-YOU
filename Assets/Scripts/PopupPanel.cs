@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class PopupPanel : MonoBehaviour
 {
     [SerializeField] private GameObject PrimaryButton;
-    [SerializeField] private bool SelectPrevious, Closable = true;
+    [SerializeField] private bool Closable = true;
     // [SerializeField] private Volume PostProcessing;
     [SerializeField] private AK.Wwise.Event MenuBack;
     public float animProgress;
@@ -28,18 +28,20 @@ public class PopupPanel : MonoBehaviour
     {
         open = true;
 
-        if (EventSystem.current.currentSelectedGameObject == PreviousButton && visible)
+        if (visible)
         {
-            EventSystem.current.SetSelectedGameObject(PrimaryButton);
+            if (EventSystem.current.currentSelectedGameObject != null)
+            {
+                currentSelection = EventSystem.current.currentSelectedGameObject;
+            }
+            else
+            {
+                EventSystem.current.SetSelectedGameObject(currentSelection);
+            }
         }
-
-        if (EventSystem.current.currentSelectedGameObject != null)
+        else if (EventSystem.current.currentSelectedGameObject == PrimaryButton)
         {
-            currentSelection = EventSystem.current.currentSelectedGameObject;
-        }
-        else
-        {
-            EventSystem.current.SetSelectedGameObject(currentSelection);
+            EventSystem.current.SetSelectedGameObject(PreviousButton);
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && Closable)
@@ -62,8 +64,7 @@ public class PopupPanel : MonoBehaviour
         open = true;
         mouseNeverMoved = 2;
         visible = true;
-        if (SelectPrevious)
-            PreviousButton = EventSystem.current.currentSelectedGameObject;
+        PreviousButton = EventSystem.current.currentSelectedGameObject;
         EventSystem.current.SetSelectedGameObject(PrimaryButton);
     }
 
@@ -72,8 +73,8 @@ public class PopupPanel : MonoBehaviour
         MenuBack?.Post(gameObject);
         anim.SetTrigger("Close");
         visible = false;
-        if (SelectPrevious)
-            EventSystem.current.SetSelectedGameObject(PreviousButton);
+        EventSystem.current.SetSelectedGameObject(PreviousButton);
+        Debug.Log(EventSystem.current.currentSelectedGameObject);
     }
 
     public void Disable()

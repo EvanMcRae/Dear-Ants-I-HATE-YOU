@@ -51,8 +51,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void NewRun()
     {
-        SettingsManager.SaveSettings();
         if (playing) return;
+        SettingsManager.SaveSettings();
         playing = true;
         MenuSelect?.Post(gameObject);
         screenWipe.WipeIn();
@@ -61,8 +61,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void ResumeRun()
     {
-        SettingsManager.SaveSettings();
         if (playing) return;
+        SettingsManager.SaveSettings();
         playing = true;
         MenuSelect?.Post(gameObject);
         screenWipe.WipeIn();
