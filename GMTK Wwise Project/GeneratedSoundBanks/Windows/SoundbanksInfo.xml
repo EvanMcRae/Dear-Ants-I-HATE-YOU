@@ -162,7 +162,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3157003241" Type="User" Language="SFX" Hash="{A4F82043-94EF-6AB3-1056-FE6EF46567CC}">
+		<SoundBank Id="3157003241" Type="User" Language="SFX" Hash="{3D6392BA-3FAC-55BA-E47A-F720E795C4ED}">
 			<ShortName>test</ShortName>
 			<Path>test.bnk</Path>
 			<Media>
@@ -176,10 +176,14 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2932040671" Name="Play_Music"/>
-				<Event Id="2837384057" Name="Stop_Music"/>
+				<Event Id="2932040671" Name="Play_Music" DurationType="OneShot" DurationMin="11.294117" DurationMax="11.294117">
+					<MediaRefs>
+						<MediaRef Id="98502782"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2837384057" Name="Stop_Music" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D070BA10-2E8A-28BE-9CB5-699C275C12E3}</FileHash>
+	<FileHash>{74DD66B5-2AC8-F5FB-B7D5-DE5F800CB5DA}</FileHash>
 </SoundBanksInfo>

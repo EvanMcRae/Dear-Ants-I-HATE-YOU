@@ -112,6 +112,11 @@
 								<MusicSegment Name="Level_A" ID="{069D8BBB-EFE1-4AA3-B977-BC4165955145}" ShortID="25491159">
 									<PropertyList>
 										<Property Name="EndPosition" Type="Real64" Value="11436.4460857509"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -198,6 +203,16 @@
 								<MusicSegment Name="Level_B" ID="{AB6F1EB4-AD73-40AA-B8E8-E37FC5BB987F}" ShortID="226371188">
 									<PropertyList>
 										<Property Name="EndPosition" Type="Real64" Value="11294.1176470588"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{0F868442-C109-4CA0-BA7E-507C4A2BD6F2}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">

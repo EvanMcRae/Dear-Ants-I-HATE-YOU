@@ -24,9 +24,9 @@
 		<UseSoundBankNames>true</UseSoundBankNames>
 		<AllowExceedingMaxSize>false</AllowExceedingMaxSize>
 		<MaxAttenuationInfo>false</MaxAttenuationInfo>
-		<EstimatedDurationInfo>false</EstimatedDurationInfo>
+		<EstimatedDurationInfo>true</EstimatedDurationInfo>
 		<PrintObjectGuid>false</PrintObjectGuid>
 		<PrintObjectPath>false</PrintObjectPath>
 	</Settings>
-	<FileHash>{0D557DAE-86AE-0346-167D-168D2BF5C4F0}</FileHash>
+	<FileHash>{414DB2D7-5568-1371-C403-388B300C6F1B}</FileHash>
 </PlatformInfo>
