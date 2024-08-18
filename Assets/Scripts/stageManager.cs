@@ -59,11 +59,13 @@ public class stageManager : MonoBehaviour
         return 77;
     }
 
+    //gets a single tile
     public GameObject getTileFromCords(int x, int y) 
     {
         return everyTileOrdered[(y*11) + x - 12];
     }
 
+    //gets all tiles
     public List<GameObject> getTilesOrdered() 
     {
         return everyTileOrdered;
