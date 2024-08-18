@@ -7273,6 +7273,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6837189607772495030, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
   m_PrefabInstance: {fileID: 896258091}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &997044482367808596
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8269873589271321982, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269873589271321982, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269873589271321982, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269873589271321982, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269873589271321982, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269873589271321982, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269873589271321982, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269873589271321982, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269873589271321982, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269873589271321982, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987289490621682191, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+      propertyPath: m_Name
+      value: Melee Tower (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
 --- !u!1001 &8692434004690520170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7363,3 +7420,4 @@ SceneRoots:
   - {fileID: 8692434004690520170}
   - {fileID: 1662188976}
   - {fileID: 1062631574}
+  - {fileID: 997044482367808596}
