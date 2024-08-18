@@ -19,4 +19,10 @@ public class tileScript : MonoBehaviour
         camera = GameObject.Find("Main Camera");
         camera.GetComponent<stageManager>().updateTileList(xcord, ycord, gm);
     }
+
+    void OnMouseDown()
+    {
+        //do something with the game object after clicking on it
+        print("name: " + gm.name + " xcord: " + xcord + " ycord: " + ycord);
+    }
 }
