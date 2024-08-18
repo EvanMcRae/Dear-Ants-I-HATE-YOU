@@ -16,7 +16,6 @@ public class Tower : MonoBehaviour
     //timeToAttack/attackSpeed = how long (in seconds) it takes for tower to fire
     int attackSpeed = 4;
     int timeToAttack = 2;
-    [SerializeField]
     float timeSinceLastAttack;
     float[] timeSinceActivated;
     //attackpower for individual hits

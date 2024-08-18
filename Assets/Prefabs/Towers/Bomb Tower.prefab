@@ -204,7 +204,7 @@ MonoBehaviour:
   maxHealth: 0
   currHealth: 0
   timeSinceLastAttack: 0
-  power: 4
+  power: 8
   hitboxes:
   - {fileID: 8902038470645526442}
   - {fileID: 6299262609523696374}
