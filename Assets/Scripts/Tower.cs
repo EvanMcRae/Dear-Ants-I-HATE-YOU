@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    string towerType;
+    //public int xcord;
+    //public int ycord;
+
     [SerializeField]
     int maxHealth;
     [SerializeField]
@@ -15,16 +19,28 @@ public class Tower : MonoBehaviour
     [SerializeField]
     float timeSinceLastAttack;
     float[] timeSinceActivated;
+    //attackpower for individual hits
+    [SerializeField]
+    int power;
 
     //TODO replace with actual hitboxes
     [SerializeField]
-    GameObject cube;
+    GameObject[] hitboxes;
+
+    [SerializeField]
+    stageManager stageManager;
 
     // Start is called before the first frame update
     void Start()
     {
         timeSinceLastAttack = 0;
         timeSinceActivated = new float[3];
+        foreach(GameObject box in hitboxes){
+            box.GetComponent<towerHitbox>().power = power;
+        }
+        //set x and y coordinate
+        //get stagemanager
+        //set list of coordiantes to check
     }
 
     /// <summary>
@@ -54,7 +70,9 @@ public class Tower : MonoBehaviour
 
     void attack(){
         //activate colliders
-        cube.SetActive(!cube.activeSelf);
+        foreach(GameObject box in hitboxes){
+            box.SetActive(!box.activeSelf);
+        }
     }
 
     //check attackable tiles for an enemy to attack
