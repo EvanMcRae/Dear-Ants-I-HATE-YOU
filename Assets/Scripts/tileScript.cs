@@ -9,6 +9,7 @@ public class tileScript : MonoBehaviour
     public int xcord;
     public int ycord;
     private GameObject camera;
+    public bool activated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,5 +19,10 @@ public class tileScript : MonoBehaviour
         //cords set manually for level 1 will be done programatically later
         camera = GameObject.Find("Main Camera");
         camera.GetComponent<stageManager>().updateTileList(xcord, ycord, gm);
+    }
+
+    public void activate() 
+    {
+        activated = true;
     }
 }
