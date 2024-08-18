@@ -11,6 +11,9 @@ public class InterferenceEffect : BaseEffect
     [SerializeField]
     private float speed = 0.5f;
 
+    [SerializeField]
+    private float fuzzStrength = 4.0f;
+
     // Find the Interference shader source.
     public override void OnCreate()
     {
@@ -21,6 +24,7 @@ public class InterferenceEffect : BaseEffect
 
         baseMaterial.SetTexture("_InterferenceTex", interferenceTex);
         baseMaterial.SetFloat("_Speed", speed);
+        baseMaterial.SetFloat("_FuzzStrength", fuzzStrength);
     }
 
     public override void Render(RenderTexture src, RenderTexture dst)
