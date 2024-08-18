@@ -28,8 +28,19 @@ public class Tower : MonoBehaviour
     [SerializeField]
     towerSightBox sightBox;
 
-    [SerializeField]
-    stageManager stageManager;
+    int numAttachments;
+    int maxAttachments = 3;
+
+    //[SerializeField]
+    //stageManager stageManager;
+
+    /*enum upgradeTypes
+    {
+        speedUp = 1
+    }*/
+
+    //factor that speed boost upgrade increases tower's speed
+    int speedBoost = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -77,10 +88,31 @@ public class Tower : MonoBehaviour
     }
 
     //check attackable tiles for an enemy to attack
-    bool checkTiles(){
+    /*bool checkTiles(){
         bool foundEnemy = false;
         return foundEnemy;
+    }*/
+
+    //
+    bool attachUpgrade(int upgradeType){
+        bool attached = false;
+        if(numAttachments < maxAttachments)
+            //add new attack=hment
+            numAttachments += 1;
+            attached = true;
+
+            if(upgradeType == 1){
+                attackSpeed *= speedBoost;
+            }
+            //if other stat boosting type
+                //boost stat
+            //else if(upgradeType = activated ability)
+                //???need to do anything?
+        
+
+        return attached;
     }
+
 
     void activateUpgrades(){
         //for each upgrade
