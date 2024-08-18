@@ -1555,6 +1555,10 @@ PrefabInstance:
       propertyPath: ycord
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1134090938982721872, guid: 87c73a8d79c68604a803f240659f2bfa, type: 3}
+      propertyPath: prefabToSpawn
+      value: 
+      objectReference: {fileID: 1108798085}
     - target: {fileID: 2092719202328377012, guid: 87c73a8d79c68604a803f240659f2bfa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3578,6 +3582,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6837189607772495030, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
   m_PrefabInstance: {fileID: 1546627022}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1108798085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 602876791807427494, guid: 37213331714068140842f8c67f15c3c4, type: 3}
+  m_PrefabInstance: {fileID: 8692434004690520170}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1112700494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5388,6 +5397,7 @@ GameObject:
   - component: {fileID: 1662188976}
   - component: {fileID: 1662188975}
   - component: {fileID: 1662188974}
+  - component: {fileID: 1662188977}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -5445,6 +5455,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1662188977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662188973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3226be44582ce4983dd27fb65f0b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeTower: {fileID: 1108798085}
 --- !u!1001 &1662194399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7305,6 +7328,26 @@ PrefabInstance:
     - target: {fileID: 1009899990823674498, guid: 37213331714068140842f8c67f15c3c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673050782179274346, guid: 37213331714068140842f8c67f15c3c4, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401306887174558052, guid: 37213331714068140842f8c67f15c3c4, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529973849206174517, guid: 37213331714068140842f8c67f15c3c4, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183887141608797992, guid: 37213331714068140842f8c67f15c3c4, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082402174975715831, guid: 37213331714068140842f8c67f15c3c4, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
