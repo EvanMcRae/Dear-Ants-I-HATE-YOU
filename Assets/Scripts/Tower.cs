@@ -26,10 +26,21 @@ public class Tower : MonoBehaviour
     [SerializeField]
     GameObject[] hitboxes;
     [SerializeField]
-    towerSightBox sightBox;
+    towerSightBox[] sightBoxes;
 
-    [SerializeField]
-    stageManager stageManager;
+    int numAttachments = 0;
+    int maxAttachments = 3;
+
+    //[SerializeField]
+    //stageManager stageManager;
+
+    /*enum upgradeTypes
+    {
+        speedUp = 1
+    }*/
+
+    //factor that speed boost upgrade increases tower's speed
+    int speedBoost = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -50,9 +61,15 @@ public class Tower : MonoBehaviour
     void FixedUpdate()
     {
         timeSinceLastAttack += attackSpeed * Time.deltaTime;
-        if(timeSinceLastAttack >= timeToAttack && sightBox.antsSeen > 0){
+        
+        //calculate total number of ants seen in everysightbox combined
+        int antsInRange = 0;
+        foreach(towerSightBox box in sightBoxes){
+            antsInRange += box.antsSeen;
+        }
+
+        if(timeSinceLastAttack >= timeToAttack && antsInRange > 0){
             attack();
-            timeSinceLastAttack = 0;
         }
     }
 
@@ -70,17 +87,43 @@ public class Tower : MonoBehaviour
     }
 
     void attack(){
-        //activate colliders
+        //activate colliders for hitboxes
         foreach(GameObject box in hitboxes){
             box.SetActive(!box.activeSelf);
+            //might want to change this to set delay/allow cooler visual effects
+            //or keep the same so attack also retracts faster at high speeds
         }
+        timeSinceLastAttack = 0;
     }
 
     //check attackable tiles for an enemy to attack
-    bool checkTiles(){
+    /*bool checkTiles(){
         bool foundEnemy = false;
         return foundEnemy;
+    }*/
+
+    //
+    bool attachUpgrade(int upgradeType){
+        bool attached = false;
+        if(numAttachments < maxAttachments)
+            //add new attack=hment
+            numAttachments += 1;
+            attached = true;
+
+            if(upgradeType == 1){
+                attackSpeed *= speedBoost;
+            }
+            //if other stat boosting type
+                //boost stat
+            //else if(upgradeType = activated ability)
+                //???need to do anything?
+
+            //create child object to render upgrade
+        
+
+        return attached;
     }
+
 
     void activateUpgrades(){
         //for each upgrade
