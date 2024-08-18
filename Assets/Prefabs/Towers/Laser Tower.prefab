@@ -1022,15 +1022,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 0
   currHealth: 0
-  timeSinceLastAttack: 0
   power: 4
   hitboxes:
   - {fileID: 964671943161131943}
   - {fileID: 3636988789665673798}
   - {fileID: 1196578888345324099}
   - {fileID: 5689268363176284805}
-  sightBox: {fileID: 767887541157172420}
-  stageManager: {fileID: 0}
+  sightBoxes:
+  - {fileID: 767887541157172420}
+  - {fileID: 3654548709405979568}
 --- !u!33 &5346667780650370833
 MeshFilter:
   m_ObjectHideFlags: 0

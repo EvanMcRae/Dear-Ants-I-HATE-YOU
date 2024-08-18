@@ -26,9 +26,9 @@ public class Tower : MonoBehaviour
     [SerializeField]
     GameObject[] hitboxes;
     [SerializeField]
-    towerSightBox sightBox;
+    towerSightBox[] sightBoxes;
 
-    int numAttachments;
+    int numAttachments = 0;
     int maxAttachments = 3;
 
     //[SerializeField]
@@ -61,9 +61,15 @@ public class Tower : MonoBehaviour
     void FixedUpdate()
     {
         timeSinceLastAttack += attackSpeed * Time.deltaTime;
-        if(timeSinceLastAttack >= timeToAttack && sightBox.antsSeen > 0){
+        
+        //calculate total number of ants seen in everysightbox combined
+        int antsInRange = 0;
+        foreach(towerSightBox box in sightBoxes){
+            antsInRange += box.antsSeen;
+        }
+
+        if(timeSinceLastAttack >= timeToAttack && antsInRange > 0){
             attack();
-            timeSinceLastAttack = 0;
         }
     }
 
@@ -81,10 +87,13 @@ public class Tower : MonoBehaviour
     }
 
     void attack(){
-        //activate colliders
+        //activate colliders for hitboxes
         foreach(GameObject box in hitboxes){
             box.SetActive(!box.activeSelf);
+            //might want to change this to set delay/allow cooler visual effects
+            //or keep the same so attack also retracts faster at high speeds
         }
+        timeSinceLastAttack = 0;
     }
 
     //check attackable tiles for an enemy to attack
@@ -108,6 +117,8 @@ public class Tower : MonoBehaviour
                 //boost stat
             //else if(upgradeType = activated ability)
                 //???need to do anything?
+
+            //create child object to render upgrade
         
 
         return attached;
