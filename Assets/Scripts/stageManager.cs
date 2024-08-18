@@ -21,8 +21,14 @@ public class stageManager : MonoBehaviour
     public List<GameObject> everyTile;
     public List<GameObject> everyTileOrdered;
 
+    public static stageManager main;
+
     void Awake()
     {
+        main = this;
+
+        Debug.Log("Stage manager: " + gameObject);
+
         everyTile.AddRange(GameObject.FindObjectsOfType<GameObject>());
         List<GameObject> temp = new List<GameObject>();
         foreach (GameObject gm in everyTile) 
@@ -67,5 +73,35 @@ public class stageManager : MonoBehaviour
     public List<GameObject> getTilesOrdered() 
     {
         return everyTileOrdered;
+    }
+
+    public tileScript GetNextTileInPath(tileScript startTile)
+    {
+        List<List<GameObject>> paths = new List<List<GameObject>>();
+        paths.AddRange(new List<GameObject>[]
+        {
+            path1,
+            path2,
+            path3,
+            path4,
+            path5
+        });
+
+        foreach(List<GameObject> path in paths)
+        {
+            for(int i = 0; i < path.Count; i++)
+            {
+                if(path[i] == startTile.gameObject)
+                {
+                    if (i + 1 < path.Count)
+                        return path[i + 1].GetComponent<tileScript>();
+                    else
+                        return null;
+                }
+            }
+        }
+
+        return null;
+
     }
 }

@@ -19,4 +19,18 @@ public class tileScript : MonoBehaviour
         camera = GameObject.Find("Main Camera");
         camera.GetComponent<stageManager>().updateTileList(xcord, ycord, gm);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        EnemyAI enteringEnemy = collision.gameObject.GetComponent<EnemyAI>();
+        if (enteringEnemy != null)
+            enteringEnemy.PrimeTile(this);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        EnemyAI enteringEnemy = collision.gameObject.GetComponent<EnemyAI>();
+        if (enteringEnemy != null)
+            enteringEnemy.AcceptChange();
+    }
 }
