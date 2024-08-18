@@ -44,4 +44,18 @@ public class tileScript : MonoBehaviour
             Debug.LogWarning("No prefab assigned to spawn on tile: " + gm.name);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        EnemyAI enteringEnemy = collision.gameObject.GetComponent<EnemyAI>();
+        if (enteringEnemy != null)
+            enteringEnemy.PrimeTile(this);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        EnemyAI enteringEnemy = collision.gameObject.GetComponent<EnemyAI>();
+        if (enteringEnemy != null)
+            enteringEnemy.AcceptChange();
+    }
 }
