@@ -1617,13 +1617,17 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2931945224631859722, guid: 145890db8ea77af42994f7661ea4dc5d, type: 3}
+      propertyPath: ScreenBlocker
+      value: 
+      objectReference: {fileID: 1141960706}
     - target: {fileID: 3094882671754754662, guid: 145890db8ea77af42994f7661ea4dc5d, type: 3}
       propertyPath: m_Name
       value: ScreenWipe
       objectReference: {fileID: 0}
     - target: {fileID: 3094882671754754662, guid: 145890db8ea77af42994f7661ea4dc5d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7856666492231321493, guid: 145890db8ea77af42994f7661ea4dc5d, type: 3}
       propertyPath: m_RaycastTarget
@@ -2288,10 +2292,11 @@ RectTransform:
   - {fileID: 2045448862}
   - {fileID: 2114295595}
   - {fileID: 971445570}
-  - {fileID: 479060267}
+  - {fileID: 1141960705}
   - {fileID: 1545505266}
   - {fileID: 716717567}
   - {fileID: 862810598}
+  - {fileID: 479060267}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2663,6 +2668,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7769761966344297684, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
+      propertyPath: ScreenDarkener
+      value: 
+      objectReference: {fileID: 1141960706}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8315253563582719142, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
@@ -3301,6 +3310,22 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 80.8
       objectReference: {fileID: 0}
+    - target: {fileID: 6846178382614644201, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846178382614644201, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846178382614644201, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769761966344297684, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
+      propertyPath: ScreenDarkener
+      value: 
+      objectReference: {fileID: 1141960706}
     - target: {fileID: 7769761966344297684, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
       propertyPath: SelectPrevious
       value: 1
@@ -3694,6 +3719,81 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1141960704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1141960705}
+  - component: {fileID: 1141960707}
+  - component: {fileID: 1141960706}
+  m_Layer: 5
+  m_Name: ScreenDarkener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1141960705
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141960704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 676485855}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1141960706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141960704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1141960707
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141960704}
+  m_CullTransparentMesh: 1
 --- !u!1 &1148996590
 GameObject:
   m_ObjectHideFlags: 0
@@ -4811,6 +4911,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.1328125
       objectReference: {fileID: 0}
+    - target: {fileID: 6846178382614644201, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846178382614644201, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846178382614644201, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769761966344297684, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
+      propertyPath: ScreenDarkener
+      value: 
+      objectReference: {fileID: 1141960706}
     - target: {fileID: 7769761966344297684, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
       propertyPath: SelectPrevious
       value: 1

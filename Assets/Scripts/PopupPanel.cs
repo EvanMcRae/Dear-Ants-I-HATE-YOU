@@ -10,7 +10,6 @@ public class PopupPanel : MonoBehaviour
 {
     [SerializeField] private GameObject PrimaryButton;
     [SerializeField] private bool Closable = true;
-    // [SerializeField] private Volume PostProcessing;
     [SerializeField] private AK.Wwise.Event MenuBack;
     public float animProgress;
     private GameObject PreviousButton;
@@ -18,6 +17,7 @@ public class PopupPanel : MonoBehaviour
     public static int mouseNeverMoved = 0;
     private Animator anim;
     private GameObject currentSelection;
+    [SerializeField] private Image ScreenDarkener;
 
     private void Awake()
     {
@@ -54,24 +54,37 @@ public class PopupPanel : MonoBehaviour
             mouseNeverMoved = 0;
         }
 
-        // PostProcessing.weight = animProgress;
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.0 && anim.GetFloat("Speed") < 0 && open)
+        {
+            Disable();
+        }
+
+        Color c = ScreenDarkener.color;
+        c.a = animProgress * 0.5f;
+        ScreenDarkener.color = c;
     }
 
     // Start is called before the first frame update
     private void OnEnable()
     {
-        anim.SetTrigger("Open");
+        anim.SetFloat("Speed", 1);
         open = true;
         mouseNeverMoved = 2;
         visible = true;
         PreviousButton = EventSystem.current.currentSelectedGameObject;
         EventSystem.current.SetSelectedGameObject(PrimaryButton);
+        ScreenDarkener.raycastTarget = true;
     }
 
     public void Close()
     {
         MenuBack?.Post(gameObject);
-        anim.SetTrigger("Close");
+        // anim.SetTrigger("Close");
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.96)
+            anim.SetFloat("Speed", -2);
+        else
+            anim.SetFloat("Speed", -10);
+        ScreenDarkener.raycastTarget = false;
         visible = false;
         EventSystem.current.SetSelectedGameObject(PreviousButton);
         Debug.Log(EventSystem.current.currentSelectedGameObject);
@@ -79,7 +92,19 @@ public class PopupPanel : MonoBehaviour
 
     public void Disable()
     {
-        gameObject.SetActive(false);
-        open = false;
+        if (anim.GetFloat("Speed") < 0)
+        {
+            gameObject.SetActive(false);
+            anim.SetFloat("Speed", 0);
+            open = false;
+        }
+    }
+
+    public void NormalSpeed()
+    {
+        if (anim.GetFloat("Speed") < 0)
+        {
+            anim.SetFloat("Speed", -2);
+        }
     }
 }

@@ -2,15 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //controls "wipe" effect that occurs between scene changes
 public class ScreenWipe : MonoBehaviour
 {
     public Action PostWipe;
     public static bool over = false;
+    [SerializeField] private Image ScreenBlocker;
     public void WipeIn()
     {
         over = false;
+        ScreenBlocker.raycastTarget = true;
         GetComponent<Animator>().SetTrigger("WipeIn");
     }
 
@@ -26,6 +29,12 @@ public class ScreenWipe : MonoBehaviour
 
     public void ScreenRevealed()
     {
+        Invoke("PostCooldown", 0.1f);
+    }
+
+    public void PostCooldown()
+    {
         over = true;
+        ScreenBlocker.raycastTarget = false;
     }
 }
