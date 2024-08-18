@@ -6,10 +6,10 @@ using UnityEngine;
 [System.Serializable]
 public class Settings
 {
-    public float soundVolume = 50f;
     public float musicVolume = 50f;
+    public float soundVolume = 50f;
+    public int quality = 3;
     public bool fullScreen = true;
-    public float xRes = 0.5f, yRes = 0.5f;
     public bool vSync = false;
-    public int quality = 1;
+    public float xRes = 1f, yRes = 1f;
 }

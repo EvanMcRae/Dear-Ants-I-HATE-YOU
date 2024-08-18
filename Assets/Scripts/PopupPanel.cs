@@ -80,7 +80,7 @@ public class PopupPanel : MonoBehaviour
     {
         MenuBack?.Post(gameObject);
         // anim.SetTrigger("Close");
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.96)
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.93)
             anim.SetFloat("Speed", -2);
         else
             anim.SetFloat("Speed", -10);

@@ -1,39 +1,98 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
     public static Settings currentSettings = null;
     public const string fileName = "Settings.txt";
+    [SerializeField] private Slider musicSlider, soundSlider, qualitySlider;
+    [SerializeField] private TextMeshProUGUI musicValue, soundValue, qualityValue;
+    [SerializeField] private Toggle fullScreenToggle, vSyncToggle;
+    [SerializeField] private AK.Wwise.Event MenuAdjust;
 
     void Awake()
     {
-        if (File.Exists(Application.persistentDataPath + "/" + fileName) && currentSettings == null)
-            LoadSettings();
-        else if (currentSettings == null)
-        {
-            currentSettings = new Settings();
-            SaveSettings();
-        }
+        LoadSettings();
     }
 
-    public static void LoadSettings()
+    public void LoadSettings()
     {
-        currentSettings = JsonUtility.FromJson<Settings>(File.ReadAllText(Application.persistentDataPath + "/" + fileName));
+        if (File.Exists(Application.persistentDataPath + "/" + fileName))
+            currentSettings = JsonUtility.FromJson<Settings>(File.ReadAllText(Application.persistentDataPath + "/" + fileName));
         currentSettings ??= new Settings();
-        UpdateFullscreen();
+        UpdateFullScreen(false);
+        UpdateVSync(false);
+        UpdateQuality(false);
+        UpdateMusicVolume(false);
+        UpdateSoundVolume(false);
+    }
+
+    public static void SaveSettings()
+    {
+        string path = Application.persistentDataPath + "/" + fileName;
+        string settingsJSON = JsonUtility.ToJson(currentSettings, true);
+
+        File.WriteAllText(path, settingsJSON);
+        Debug.Log("Saved settings to: " + path);
+    }
+
+    public void UpdateMusicVolume(bool user)
+    {
+        if (user)
+        {
+            currentSettings.musicVolume = musicSlider.value;
+            MenuAdjust?.Post(gameObject);
+        }
+        else
+        {
+            musicSlider.value = currentSettings.musicVolume;
+        }
+
+        AkSoundEngine.SetRTPCValue("musicVolume", currentSettings.musicVolume);
+        musicValue.text = (int)musicSlider.value + "%";
+    }
+
+    public void UpdateSoundVolume(bool user)
+    {
+        if (user)
+        {
+            currentSettings.soundVolume = soundSlider.value;
+            MenuAdjust?.Post(gameObject);
+        }
+        else
+            soundSlider.value = currentSettings.soundVolume;
+        AkSoundEngine.SetRTPCValue("soundVolume", currentSettings.soundVolume);
+        soundValue.text = (int)soundSlider.value + "%";
+    }
+
+    public void UpdateQuality(bool user)
+    {
+        if (user)
+        {
+            currentSettings.quality = (int)qualitySlider.value;
+            MenuAdjust?.Post(gameObject);
+        }
+        else
+            qualitySlider.value = currentSettings.quality; 
 
         QualitySettings.SetQualityLevel(currentSettings.quality);
-        if (currentSettings.vSync)
-            QualitySettings.vSyncCount = 1;
-        else
-            QualitySettings.vSyncCount = 0;
+        qualityValue.text = QualitySettings.names[QualitySettings.GetQualityLevel()];
     }
 
-    public static void UpdateFullscreen()
+    public void UpdateFullScreen(bool user)
     {
+        if (user)
+        {
+            currentSettings.fullScreen = fullScreenToggle.isOn;
+            MenuAdjust?.Post(gameObject);
+        }
+        else
+            fullScreenToggle.isOn = currentSettings.fullScreen;
+
         if (currentSettings.fullScreen)
         {
             currentSettings.xRes = (float)Screen.width / Display.main.systemWidth;
@@ -49,12 +108,19 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    public static void SaveSettings()
+    public void UpdateVSync(bool user)
     {
-        string path = Application.persistentDataPath + "/" + fileName;
-        string settingsJSON = JsonUtility.ToJson(currentSettings, true);
+        if (user)
+        {
+            currentSettings.vSync = vSyncToggle.isOn;
+            MenuAdjust?.Post(gameObject);
+        }
+        else
+            vSyncToggle.isOn = currentSettings.vSync;
 
-        File.WriteAllText(path, settingsJSON);
-        Debug.Log("Saved settings to: " + path);
+        if (currentSettings.vSync)
+            QualitySettings.vSyncCount = 1;
+        else
+            QualitySettings.vSyncCount = 0;
     }
 }
