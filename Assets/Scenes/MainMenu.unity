@@ -1416,7 +1416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 560026996816832373, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 985612616138203033, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2427,7 +2427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Extra: Daniel Ilett (UltraEffects)'
+  m_text: 'Extra: Daniel Ilett (UltraEffects), Max O''Didily (Circle Fade)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2454,7 +2454,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 74.3
+  m_fontSize: 59.95
   m_fontSizeBase: 80.8
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2490,7 +2490,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 419.1152, w: 0}
+  m_margin: {x: 0, y: 0, z: -153.16641, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
