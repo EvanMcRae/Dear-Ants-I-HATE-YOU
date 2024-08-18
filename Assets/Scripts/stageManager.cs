@@ -27,6 +27,7 @@ public class stageManager : MonoBehaviour
 
     public List<Vector3> SpawnLocations = new List<Vector3>();
 
+    public Transform enemyHolder;
 
 
     void Awake()

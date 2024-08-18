@@ -106,7 +106,7 @@ public class WaveManager : MonoBehaviour
                 Debug.LogError("spawnLocationID " + enemy.spawnLocationID + " is greater than spawn locations: " + (stageManager.main.SpawnLocations.Count - 1));
                 return;
             }
-            spawnedEnemies.Add(Instantiate(enemy.enemyToSpawn, stageManager.main.SpawnLocations[enemy.spawnLocationID], Quaternion.identity));
+            spawnedEnemies.Add(Instantiate(enemy.enemyToSpawn, stageManager.main.SpawnLocations[enemy.spawnLocationID], Quaternion.identity, stageManager.main.enemyHolder));
             Debug.Log("Spawned creature at: " + enemy.timeToSpawn);
         }
 
