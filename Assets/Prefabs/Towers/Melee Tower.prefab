@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 9104151182547608231}
   - component: {fileID: 7743604029791144260}
   - component: {fileID: 3391404647758192700}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 2268917399529453140}
   - component: {fileID: 9142590130525541598}
   - component: {fileID: 4138934063335286454}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hitbox (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 4766589560852859904}
   - component: {fileID: 9181088852073052608}
   - component: {fileID: 3410790740877574589}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hitbox (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,7 +773,7 @@ GameObject:
   - component: {fileID: 3728059036570267400}
   - component: {fileID: 4320552085709675426}
   - component: {fileID: 4870085359332600864}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SightBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -920,7 +920,7 @@ GameObject:
   - component: {fileID: 2099003934168313209}
   - component: {fileID: 4870664151267428624}
   - component: {fileID: 5220979241039547559}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hitbox (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
