@@ -107,4 +107,12 @@ public class PopupPanel : MonoBehaviour
             anim.SetFloat("Speed", -2);
         }
     }
+
+    public void ResetSpeed()
+    {
+        if (anim.GetFloat("Speed") > 0)
+        {
+            anim.SetFloat("Speed", 0);
+        }
+    }
 }

@@ -196,8 +196,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.45
+  - time: 0.41666666
     functionName: NormalSpeed
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5
+    functionName: ResetSpeed
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
