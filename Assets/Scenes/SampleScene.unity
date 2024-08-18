@@ -7323,13 +7323,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8987289490621682191, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
       propertyPath: m_Name
-      value: Melee Tower (1)
+      value: Laser Tower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+--- !u!1001 &8285963489370680007
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2093576623424597036, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093576623424597036, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093576623424597036, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093576623424597036, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093576623424597036, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093576623424597036, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093576623424597036, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093576623424597036, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093576623424597036, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093576623424597036, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134956312915654129, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
+      propertyPath: m_Name
+      value: Bomb Tower
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
 --- !u!1001 &8692434004690520170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7421,3 +7478,4 @@ SceneRoots:
   - {fileID: 1662188976}
   - {fileID: 1062631574}
   - {fileID: 997044482367808596}
+  - {fileID: 8285963489370680007}
