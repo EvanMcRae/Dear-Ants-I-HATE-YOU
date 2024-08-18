@@ -23,6 +23,12 @@ public class stageManager : MonoBehaviour
 
     public static stageManager main;
 
+    public WaveManager waveManager;
+
+    public List<Vector3> SpawnLocations = new List<Vector3>();
+
+
+
     void Awake()
     {
         main = this;
@@ -40,6 +46,31 @@ public class stageManager : MonoBehaviour
         }
         everyTile = temp;
         everyTileOrdered = everyTile;
+
+    }
+
+    private void Start()
+    {
+        UpdateEnemySpawnLocations();
+    }
+
+    public void UpdateEnemySpawnLocations()
+    {
+        List<List<GameObject>> paths = new List<List<GameObject>>();
+        paths.AddRange(new List<GameObject>[]
+        {
+            path1,
+            path2,
+            path3,
+            path4,
+            path5
+        });
+
+        foreach (List<GameObject> path in paths)
+        {
+            if (path.Count > 0)
+                SpawnLocations.Add(path[0].transform.position + Vector3.up * 2);
+        }
     }
 
     public void updateTileList(int x, int y, GameObject toBeInserted) 

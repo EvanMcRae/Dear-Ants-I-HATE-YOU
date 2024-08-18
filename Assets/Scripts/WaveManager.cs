@@ -11,6 +11,8 @@ public class WaveManager : MonoBehaviour
 
     public bool inWave = false;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,7 +101,12 @@ public class WaveManager : MonoBehaviour
         public void SpawnEnemy(EnemySpawnDetails enemy)
         {
             //spawnedEnemies.Add() //Add spawned enemy gameObj once spawned
-
+            if(enemy.spawnLocationID >= stageManager.main.SpawnLocations.Count)
+            {
+                Debug.LogError("spawnLocationID " + enemy.spawnLocationID + " is greater than spawn locations: " + (stageManager.main.SpawnLocations.Count - 1));
+                return;
+            }
+            spawnedEnemies.Add(Instantiate(enemy.enemyToSpawn, stageManager.main.SpawnLocations[enemy.spawnLocationID], Quaternion.identity));
             Debug.Log("Spawned creature at: " + enemy.timeToSpawn);
         }
 
@@ -114,6 +121,8 @@ public class WaveManager : MonoBehaviour
         //Need enemy to spawn w/ prefab and modifiers
         //Should there be multiple wave managers, one for each spawn point, or should the wave manager handle all, with each spawn details specifying where
         public float timeToSpawn;
+        public GameObject enemyToSpawn;
+        public int spawnLocationID;
 
         public int CompareTo(object obj)
         {
