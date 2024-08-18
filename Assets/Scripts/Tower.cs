@@ -26,6 +26,8 @@ public class Tower : MonoBehaviour
     //TODO replace with actual hitboxes
     [SerializeField]
     GameObject[] hitboxes;
+    [SerializeField]
+    towerSightBox sightBox;
 
     [SerializeField]
     stageManager stageManager;
@@ -49,7 +51,7 @@ public class Tower : MonoBehaviour
     void FixedUpdate()
     {
         timeSinceLastAttack += attackSpeed * Time.deltaTime;
-        if(timeSinceLastAttack >= timeToAttack){
+        if(timeSinceLastAttack >= timeToAttack && sightBox.antsSeen > 0){
             attack();
             timeSinceLastAttack = 0;
         }

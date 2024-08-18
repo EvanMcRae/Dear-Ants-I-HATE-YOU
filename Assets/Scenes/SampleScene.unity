@@ -7258,10 +7258,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 415892379563976583, guid: 37213331714068140842f8c67f15c3c4, type: 3}
-      propertyPath: power
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 602876791807427494, guid: 37213331714068140842f8c67f15c3c4, type: 3}
       propertyPath: m_Name
       value: Melee Tower

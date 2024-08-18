@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 415892379563976583}
   - component: {fileID: 9058039311564079301}
   - component: {fileID: 1080376955725026458}
-  - component: {fileID: 2601338337228597249}
   - component: {fileID: 2059912790061630702}
   m_Layer: 0
   m_Name: Melee Tower
@@ -138,6 +137,7 @@ MonoBehaviour:
   - {fileID: 5529973849206174517}
   - {fileID: 5401306887174558052}
   - {fileID: 9082402174975715831}
+  sightBox: {fileID: 4870085359332600864}
   stageManager: {fileID: 0}
 --- !u!33 &9058039311564079301
 MeshFilter:
@@ -189,28 +189,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2601338337228597249
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 602876791807427494}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &2059912790061630702
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -258,7 +236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1185841901030284098
 Transform:
   m_ObjectHideFlags: 0
@@ -507,7 +485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1059606035281418247
 Transform:
   m_ObjectHideFlags: 0
@@ -654,7 +632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5716184856032663556
 Transform:
   m_ObjectHideFlags: 0
@@ -793,15 +771,15 @@ GameObject:
   - component: {fileID: 1272114122769843173}
   - component: {fileID: 8186149660924682441}
   - component: {fileID: 3728059036570267400}
-  - component: {fileID: 4115041305960181825}
   - component: {fileID: 4320552085709675426}
+  - component: {fileID: 4870085359332600864}
   m_Layer: 0
   m_Name: SightBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7395693038713050891
 Transform:
   m_ObjectHideFlags: 0
@@ -888,19 +866,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4115041305960181825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8183887141608797992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d4f1520faf43c4bb9806021b6e661d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 1
 --- !u!54 &4320552085709675426
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -928,6 +893,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4870085359332600864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183887141608797992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d685a6efa32e54ca731ac218f00c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  antsSeen: 0
 --- !u!1 &9082402174975715831
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,7 +926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7511625365961206432
 Transform:
   m_ObjectHideFlags: 0
