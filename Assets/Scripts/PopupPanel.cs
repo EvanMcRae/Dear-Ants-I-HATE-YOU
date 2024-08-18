@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class PopupPanel : MonoBehaviour
 {
     [SerializeField] private GameObject PrimaryButton;
-    [SerializeField] private bool Closable = true;
+    public bool Closable = true, ClosableOverride = false;
     [SerializeField] private AK.Wwise.Event MenuBack;
     public float animProgress;
     private GameObject PreviousButton;
@@ -18,6 +18,7 @@ public class PopupPanel : MonoBehaviour
     private Animator anim;
     private GameObject currentSelection;
     [SerializeField] private Image ScreenDarkener;
+    [SerializeField] private bool darkensScreen = true;
 
     private void Awake()
     {
@@ -46,7 +47,10 @@ public class PopupPanel : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) && Closable)
         {
-            Close();
+            if (ClosableOverride)
+                ClosableOverride = false;
+            else
+                Close();
         }
 
         if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
@@ -59,9 +63,12 @@ public class PopupPanel : MonoBehaviour
             Disable();
         }
 
-        Color c = ScreenDarkener.color;
-        c.a = animProgress * 0.5f;
-        ScreenDarkener.color = c;
+        if (darkensScreen)
+        {
+            Color c = ScreenDarkener.color;
+            c.a = animProgress * 0.5f;
+            ScreenDarkener.color = c;
+        }
     }
 
     // Start is called before the first frame update
@@ -73,7 +80,8 @@ public class PopupPanel : MonoBehaviour
         visible = true;
         PreviousButton = EventSystem.current.currentSelectedGameObject;
         EventSystem.current.SetSelectedGameObject(PrimaryButton);
-        ScreenDarkener.raycastTarget = true;
+        if (darkensScreen)
+            ScreenDarkener.raycastTarget = true;
     }
 
     public void Close()
@@ -84,10 +92,10 @@ public class PopupPanel : MonoBehaviour
             anim.SetFloat("Speed", -2);
         else
             anim.SetFloat("Speed", -10);
-        ScreenDarkener.raycastTarget = false;
+        if (darkensScreen)
+            ScreenDarkener.raycastTarget = false;
         visible = false;
         EventSystem.current.SetSelectedGameObject(PreviousButton);
-        Debug.Log(EventSystem.current.currentSelectedGameObject);
     }
 
     public void Disable()

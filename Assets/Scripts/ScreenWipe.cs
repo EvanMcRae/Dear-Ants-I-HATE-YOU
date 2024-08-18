@@ -10,6 +10,12 @@ public class ScreenWipe : MonoBehaviour
     public Action PostWipe;
     public static bool over = false;
     [SerializeField] private Image ScreenBlocker;
+
+    public void Awake()
+    {
+        WipeOut();
+    }
+
     public void WipeIn()
     {
         over = false;

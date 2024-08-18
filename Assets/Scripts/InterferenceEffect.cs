@@ -13,6 +13,7 @@ public class InterferenceEffect : BaseEffect
 
     [SerializeField]
     private float fuzzStrength = 4.0f;
+    public static float time = 0f;
 
     // Find the Interference shader source.
     public override void OnCreate()
@@ -29,6 +30,8 @@ public class InterferenceEffect : BaseEffect
 
     public override void Render(RenderTexture src, RenderTexture dst)
     {
+        baseMaterial.SetFloat("_UnscaledTime", time);
+        time += Time.unscaledDeltaTime;
         Graphics.Blit(src, dst, baseMaterial);
     }
 }

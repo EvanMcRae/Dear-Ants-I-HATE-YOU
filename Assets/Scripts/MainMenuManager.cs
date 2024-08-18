@@ -23,8 +23,6 @@ public class MainMenuManager : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(PlayButton.gameObject);
         firstopen = true;
-        screenWipe.gameObject.SetActive(true);
-        screenWipe.WipeOut();
     }
 
     // Update is called once per frame
