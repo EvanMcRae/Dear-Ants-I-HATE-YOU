@@ -6,11 +6,13 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 using TMPro;
+using System.IO;
 
 //holds functions of the main menu and sub menus
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject PlayButton, InstructionsPanel, SettingsPanel, CreditsPanel;
+    [SerializeField] private Button PlayButton, LoadButton, InstructionsButton;
+    [SerializeField] private PopupPanel InstructionsPanel, SettingsPanel, CreditsPanel;
     [SerializeField] private ScreenWipe screenWipe;
     [SerializeField] private AK.Wwise.Event MenuBack, MenuSelect, MenuNav;
     private GameObject currentSelection;
@@ -31,16 +33,30 @@ public class MainMenuManager : MonoBehaviour
         if (!PopupPanel.open)
         {
             if (EventSystem.current.currentSelectedGameObject != null)
-            {
                 currentSelection = EventSystem.current.currentSelectedGameObject;
-            }
             else
-            {
                 EventSystem.current.SetSelectedGameObject(currentSelection);
-            }
         }
 
-        // TODO save file detection and conditional load button nav behavior (ref daylight)
+        // Save file detection
+        Navigation playNav = PlayButton.navigation;
+        Navigation instNav = InstructionsButton.navigation;
+        if (File.Exists(Application.persistentDataPath + "/SaveData.json") /* TODO check if file also serializes correctly */)
+        {
+            LoadButton.interactable = true;
+            playNav.selectOnDown = LoadButton;
+            PlayButton.navigation = playNav;
+            instNav.selectOnUp = LoadButton;
+            InstructionsButton.navigation = instNav;
+        }
+        else
+        {
+            LoadButton.interactable = false;
+            playNav.selectOnDown = InstructionsButton;
+            PlayButton.navigation = playNav;
+            instNav.selectOnUp = PlayButton;
+            InstructionsButton.navigation = instNav;
+        }
     }
 
     public void NewRun()
@@ -84,7 +100,7 @@ public class MainMenuManager : MonoBehaviour
     {
         if (!PopupPanel.open && !playing && !quitting)
         {
-            InstructionsPanel.SetActive(true);
+            InstructionsPanel.gameObject.SetActive(true);
             MenuSelect?.Post(gameObject);
         }
     }
@@ -93,7 +109,7 @@ public class MainMenuManager : MonoBehaviour
     {
         if (!PopupPanel.open && !playing && !quitting)
         {
-            SettingsPanel.SetActive(true);
+            SettingsPanel.gameObject.SetActive(true);
             MenuSelect?.Post(gameObject);
         }
     }
@@ -101,7 +117,7 @@ public class MainMenuManager : MonoBehaviour
     {
         if (!PopupPanel.open && !playing && !quitting)
         {
-            CreditsPanel.SetActive(true);
+            CreditsPanel.gameObject.SetActive(true);
             MenuSelect?.Post(gameObject);
         }
     }
