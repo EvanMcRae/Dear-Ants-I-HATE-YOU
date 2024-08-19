@@ -8,7 +8,10 @@
 				<Property Name="Event Action List\{4ADF87C2-7718-49A6-9990-85149C904639}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{661DFE2A-DF31-488A-877F-47B68A432554}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{67F95AAB-94C1-4EC7-82AA-B70075FDD849}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{72E48116-2095-4E0C-94F1-D60320FB6F4A}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{7D320711-017A-4CA3-932E-5269562B018B}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{BC5AB323-13EC-4F5C-87B3-4B686333AC28}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{DDEA4D9B-1C39-452E-B838-D926612DCA7C}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="EventView\FilterMode2" Type="int32" Value="2"/>
 				<Property Name="Game Profiler\Voice Monitor\LastBus" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
@@ -113,6 +116,7 @@
 				<Property Name="OverrideCacheFolder\Path" Type="string" Value=".cache"/>
 				<Property Name="OverrideOriginalFolder\Active" Type="bool" Value="False"/>
 				<Property Name="OverrideOriginalFolder\Path" Type="string" Value="Originals"/>
+				<Property Name="PluginUserAcknowledge\SoundSeedAir" Type="bool" Value="True"/>
 				<Property Name="ProjectExplorer\AudioSelectionChannel1\ProjectExplorer2LastScrollState" Type="int32" Value="0"/>
 				<Property Name="ProjectExplorer\AudioSelectionChannel1\x64_ProjectExplorer2LastExpandedState" Type="string" Value="iC8JJ1oiVBFnJcijTz1EguraiCN1l8ZGou3FIio5d1a17eXSKe3VRZQquTY9+IiQ2KQUFaYdKkGhfnXKDCFJ831gUpzCcspOon8vgc+dFzv4u6dewGRQSoghoH6L4h1os50y2dfkqkW9QG6yjGxNOWbT/kkwtahCmTuSSHOqtwcrLgGzitACR5hJbEOiVKiVRPWbhCWp5EObgCb/tX8AXw=="/>
 				<Property Name="ProjectExplorer\AudioSelectionChannel2\ProjectExplorer2LastScrollState" Type="int32" Value="0"/>
@@ -168,7 +172,7 @@
 				<Property Name="SoundBankPathUserOverride" Type="bool" Value="True"/>
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
-						<Value>..\Assets\StreamingAssets\Audio\GeneratedSoundbanks\</Value>
+						<Value>..\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="Soundcaster\PreviousSession" Type="string" Value="{9448C792-C7EF-4AF8-9F77-96C0ACCC393E}"/>

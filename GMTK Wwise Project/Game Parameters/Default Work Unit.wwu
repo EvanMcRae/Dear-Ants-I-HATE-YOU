@@ -15,6 +15,11 @@
 								<Property Name="InitialValue" Type="Real64" Value="70"/>
 							</PropertyList>
 						</GameParameter>
+						<GameParameter Name="masterVolume" ID="{7F11374A-2F8B-4346-A811-143FD399FA7A}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="100"/>
+							</PropertyList>
+						</GameParameter>
 					</ChildrenList>
 				</Folder>
 				<GameParameter Name="LevelProgress" ID="{315B0E65-AFDE-4D4E-9F9F-F0D274CD61E3}">
