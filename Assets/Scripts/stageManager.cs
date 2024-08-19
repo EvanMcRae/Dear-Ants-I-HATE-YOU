@@ -26,6 +26,10 @@ public class stageManager : MonoBehaviour
     public WaveManager waveManager;
     public List<Vector3> SpawnLocations = new List<Vector3>();
 
+    public List<List<GameObject>> EnemyPathings = new List<List<GameObject>>();
+
+    public List<PathsData> AIPathings = new List<PathsData>();
+
     void Awake()
     {
         main = this;
@@ -81,6 +85,8 @@ public class stageManager : MonoBehaviour
             GameObject.Find("base").GetComponent<tileScript>().activate();
             GameObject.Find("base").GetComponent<MeshRenderer>().material.color = Color.gray;
         }
+
+        UpdateEnemySpawnLocations();
     }
 
     public void advanceToStage(int goTo)
@@ -100,19 +106,20 @@ public class stageManager : MonoBehaviour
 
     public void UpdateEnemySpawnLocations()
     {
+        //List<List<GameObject>> paths = new List<List<GameObject>>();
+        //foreach (List<GameObject> ls in path) 
+        //{
+        //    paths.Add(ls);
+        //}
         /*CHANGED*/
-        List<List<GameObject>> paths = new List<List<GameObject>>();
-        foreach (List<GameObject> ls in path) 
-        {
-            paths.Add(ls);
-        }
 
-        foreach (List<GameObject> path in paths)
+        foreach (List<GameObject> path in path)
         {
-            if (path.Count > 0)
+            if (path.Count > 0 && path[0].gameObject.activeSelf)
                 SpawnLocations.Add(path[0].transform.position + Vector3.up * 2);
         }
     }
+
 
     private void create2DPathList() 
     {
@@ -217,4 +224,70 @@ public class stageManager : MonoBehaviour
         return null;
 
     }
+
+    public Path GetPathByName(string name)
+    {
+        int separatorIndex = name.IndexOf('/');
+        string pathCollectionName = name.Substring(0, separatorIndex);
+        PathsData pathGroup = null;
+
+        foreach(PathsData group in AIPathings)
+        {
+            if(group.folderName == pathCollectionName)
+            {
+                pathGroup = group;
+                break;
+            }
+        }
+
+        if(pathGroup == null)
+        {
+            Debug.LogError("No path group with name: " + pathCollectionName);
+            return null;
+        }
+
+        foreach(Path path in pathGroup.paths)
+        {
+            if (path.pathName == name.Substring(separatorIndex + 1))
+            {
+                return path;
+            }
+        }
+
+        Debug.LogError("No path with name " + name.Substring(separatorIndex + 1) + " Full path: " + name);
+        return null;
+
+    }
 }
+
+//public class StagePathSave
+//{
+//    int[][] grid;
+
+//    public Vector2[] GetCoordsInOrder()
+//    {
+//        List<Vector2> outList = new List<Vector2>();
+//        List<int> outListOrder = new List<int>();
+
+//        for(int i = 0; i < grid.Length; i++)
+//        {
+//            for(int j = 0; j < grid[i].Length; j++)
+//            {
+//                if(grid[i][j] > 0)
+//                {
+//                    outList.Add(new Vector2(i, j));
+//                    outListOrder.Add(grid[i][j]);
+//                }
+//            }
+//        }
+
+//        Vector2[] returnArray = new Vector2[outList.Count];
+
+//        for(int i = 0; i < outList.Count; i++)
+//        {
+//            returnArray[outListOrder[i]] = outList[i];
+//        }
+
+//        return returnArray;
+//    }
+//}
