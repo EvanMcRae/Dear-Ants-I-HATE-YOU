@@ -41,7 +41,7 @@ public class stageManager : MonoBehaviour
             levelAssets.Add(level.gameObject);
         }
 
-        loadLevel(1, 2);
+        loadLevel(1, 3);
     }
 
     public void loadLevel(int goToLevel, int goToStage) 
@@ -92,6 +92,7 @@ public class stageManager : MonoBehaviour
     {
         create2DPathList();
         enablePath(1);
+        WaveManager.CurrentWave = goTo-1;
         for (int i = 0; i < goTo - 1; i++)
         {
             advanceStage();
