@@ -75,6 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5980970688014772856}
   - component: {fileID: 5569263668609925043}
+  - component: {fileID: 1388470861362588915}
   m_Layer: 5
   m_Name: VSyncToggle
   m_TagString: Untagged
@@ -162,6 +163,25 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   m_IsOn: 1
+--- !u!114 &1388470861362588915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267748728817196371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1cda254f195d641b0e79b3a229a85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 21300000, guid: 4370a49079c762f4cb9336614777c335, type: 3}
+  MainMenu: 0
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  image: {fileID: 2720112211649409131}
 --- !u!1 &280835449696367776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,6 +1386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6551303504060921489}
   - component: {fileID: 7373593848636951693}
+  - component: {fileID: 203296749719765572}
   m_Layer: 5
   m_Name: SoundSlider
   m_TagString: Untagged
@@ -1457,6 +1478,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &203296749719765572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4181731806323091112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1cda254f195d641b0e79b3a229a85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 21300000, guid: 78f2a6ebf7b588d4993d3a8687a8e5e8, type: 3}
+  MainMenu: 0
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  image: {fileID: 476667513513862434}
 --- !u!1 &4261612570726730831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,6 +1582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6626095973884901273}
   - component: {fileID: 7112514461812532999}
+  - component: {fileID: 1333901619512827443}
   m_Layer: 5
   m_Name: FullscreenToggle
   m_TagString: Untagged
@@ -1629,6 +1670,25 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   m_IsOn: 1
+--- !u!114 &1333901619512827443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4533987958940846368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1cda254f195d641b0e79b3a229a85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 21300000, guid: 4370a49079c762f4cb9336614777c335, type: 3}
+  MainMenu: 0
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  image: {fileID: 5851437447286742672}
 --- !u!1 &4717743762095655174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,6 +2070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6674250795493334833}
   - component: {fileID: 8761401772939352242}
+  - component: {fileID: 2460513181497454509}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -2101,6 +2162,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &2460513181497454509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5771040950262197707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1cda254f195d641b0e79b3a229a85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 21300000, guid: 78f2a6ebf7b588d4993d3a8687a8e5e8, type: 3}
+  MainMenu: 0
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  image: {fileID: 7242633584340289506}
 --- !u!1 &5921568535996967352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,6 +2634,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  image: {fileID: 0}
 --- !u!61 &6586212108705445127
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2947,6 +3028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4839564305340144047}
   - component: {fileID: 1662097752041828745}
+  - component: {fileID: 4573939108916067378}
   m_Layer: 5
   m_Name: QualitySlider
   m_TagString: Untagged
@@ -3038,6 +3120,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &4573939108916067378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8104816832881606818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1cda254f195d641b0e79b3a229a85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 21300000, guid: 78f2a6ebf7b588d4993d3a8687a8e5e8, type: 3}
+  MainMenu: 0
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  image: {fileID: 5167322707212073269}
 --- !u!1 &8159917672818995939
 GameObject:
   m_ObjectHideFlags: 0
@@ -3160,6 +3261,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   animProgress: 0
+  visible: 0
   ScreenDarkener: {fileID: 0}
   darkensScreen: 1
 --- !u!114 &1968242983308835205
