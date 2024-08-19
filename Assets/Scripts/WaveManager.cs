@@ -92,16 +92,16 @@ public class WaveManager : MonoBehaviour
 
         public void WaveUpdate()
         {
-            if(enemiesToSpawn.Count <= 0)
-            {
-                currentlySpawning = false;
-                return;
-            }
+            
 
-            if (enemiesToSpawn[0].timeToSpawn + startTime < Time.time)
+            while(enemiesToSpawn.Count > 0 && enemiesToSpawn[0].timeToSpawn + startTime < Time.time)
             {
                 SpawnEnemy(enemiesToSpawn[0]);
                 enemiesToSpawn.RemoveAt(0);
+            }
+            if (enemiesToSpawn.Count <= 0)
+            {
+                currentlySpawning = false;
             }
         }
 

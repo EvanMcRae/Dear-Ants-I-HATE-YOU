@@ -8129,6 +8129,9 @@ MonoBehaviour:
     - timeToSpawn: 1
       enemyToSpawn: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
       spawnLocationID: Spawner1/Boss
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      spawnLocationID: Spawner1/Direct
     currentlySpawning: 0
     startTime: 0
   - enemiesToSpawn:
