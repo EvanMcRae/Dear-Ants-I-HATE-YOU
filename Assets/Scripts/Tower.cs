@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    string towerType;
+    //string towerType;
     //public int xcord;
     //public int ycord;
 
@@ -12,6 +12,10 @@ public class Tower : MonoBehaviour
     int maxHealth;
     [SerializeField]
     int currHealth;
+    //denotes if health has been depleted
+    bool dead = false;
+    //denotes if currenly attacking, used to retract hitboxes if dieing with them out
+    bool attacking = false;
 
     //timeToAttack/attackSpeed = how long (in seconds) it takes for tower to fire
     int attackSpeed = 4;
@@ -22,7 +26,6 @@ public class Tower : MonoBehaviour
     [SerializeField]
     int power;
 
-    //TODO replace with actual hitboxes
     [SerializeField]
     GameObject[] hitboxes;
     [SerializeField]
@@ -41,6 +44,10 @@ public class Tower : MonoBehaviour
 
     //factor that speed boost upgrade increases tower's speed
     int speedBoost = 2;
+    //factor that battery attachment increases tower's health
+    int healthBoost = 2;
+    //ammount attack power is boosted by with attack upgrade
+    int powerBoost = 6;
 
     // Start is called before the first frame update
     void Start()
@@ -68,17 +75,23 @@ public class Tower : MonoBehaviour
             antsInRange += box.antsSeen;
         }
 
-        if(timeSinceLastAttack >= timeToAttack && antsInRange > 0){
+        if(timeSinceLastAttack >= timeToAttack && antsInRange > 0 && !dead){
             attack();
+        }
+        else if(antsInRange <= 0 && attacking){
+            stopAttacking();
         }
     }
 
-
+    //take damage from enemies
     public int takeDamage(int damage){
         currHealth -= damage;
-        if(currHealth < 0){
+        if(currHealth <= 0){
             currHealth = 0;
-            //then die function I guess
+
+            dead = true;
+            //then anything else that needs to happen if dead
+            stopAttacking();
         }
         else if(currHealth > maxHealth){
             currHealth = maxHealth;
@@ -86,23 +99,31 @@ public class Tower : MonoBehaviour
         return currHealth;
     }
 
+    public void healToFull(){
+        currHealth = maxHealth;
+        dead = false;
+    }
+
     void attack(){
         //activate colliders for hitboxes
-        foreach(GameObject box in hitboxes){
-            box.SetActive(!box.activeSelf);
+        attacking = !attacking;
+        foreach(GameObject box in hitboxes){ 
+            box.SetActive(attacking);
             //might want to change this to set delay/allow cooler visual effects
             //or keep the same so attack also retracts faster at high speeds
         }
         timeSinceLastAttack = 0;
     }
 
-    //check attackable tiles for an enemy to attack
-    /*bool checkTiles(){
-        bool foundEnemy = false;
-        return foundEnemy;
-    }*/
+    //used to stop attacking when dead or enemies out of range
+    void stopAttacking(){
+        attacking = false;
+        foreach(GameObject box in hitboxes){ 
+            box.SetActive(attacking);
+        }
+    }
 
-    //
+    //attach upgrade to tower and give it corresponding boost
     bool attachUpgrade(int upgradeType){
         bool attached = false;
         if(numAttachments < maxAttachments)
@@ -112,6 +133,12 @@ public class Tower : MonoBehaviour
 
             if(upgradeType == 1){
                 attackSpeed *= speedBoost;
+            }
+            else if(upgradeType == 2){
+                maxHealth *= healthBoost;
+            }
+            else if(upgradeType == 3){
+                power += powerBoost;
             }
             //if other stat boosting type
                 //boost stat
@@ -124,7 +151,7 @@ public class Tower : MonoBehaviour
         return attached;
     }
 
-
+    //might not use if not doing "active" upgrades like auto heal
     void activateUpgrades(){
         //for each upgrade
             //if upgrade is active type
