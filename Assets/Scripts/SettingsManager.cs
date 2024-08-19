@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private Slider masterSlider, musicSlider, soundSlider, qualitySlider;
     [SerializeField] private TextMeshProUGUI masterValue, musicValue, soundValue, qualityValue;
     [SerializeField] private Toggle fullScreenToggle, vSyncToggle;
-    [SerializeField] private AK.Wwise.Event MenuAdjust, MenuClick;
+    [SerializeField] private AK.Wwise.Event MenuAdjust, MenuAdjustStop, MenuClick;
 
     void Awake()
     {
@@ -46,7 +47,6 @@ public class SettingsManager : MonoBehaviour
         if (user)
         {
             currentSettings.masterVolume = masterSlider.value;
-            MenuAdjust?.Post(gameObject);
         }
         else
         {
@@ -57,12 +57,23 @@ public class SettingsManager : MonoBehaviour
         masterValue.text = (int)masterSlider.value + "";
     }
 
+    public void StartAdjust()
+    {
+        MenuClick.Post(gameObject);
+        MenuAdjust.Post(gameObject);
+    }
+
+    public void StopAdjust()
+    {
+        MenuAdjustStop.Post(gameObject);
+        MenuClick.Post(gameObject);
+    }
+
     public void UpdateMusicVolume(bool user)
     {
         if (user)
         {
             currentSettings.musicVolume = musicSlider.value;
-            MenuAdjust?.Post(gameObject);
         }
         else
         {
@@ -78,7 +89,6 @@ public class SettingsManager : MonoBehaviour
         if (user)
         {
             currentSettings.soundVolume = soundSlider.value;
-            MenuAdjust?.Post(gameObject);
         }
         else
             soundSlider.value = currentSettings.soundVolume;
@@ -91,7 +101,6 @@ public class SettingsManager : MonoBehaviour
         if (user)
         {
             currentSettings.quality = (int)qualitySlider.value;
-            MenuAdjust?.Post(gameObject);
         }
         else
             qualitySlider.value = currentSettings.quality; 
