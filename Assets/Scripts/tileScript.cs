@@ -13,6 +13,9 @@ public class tileScript : MonoBehaviour
 
     // Add a public field for the prefab to spawn
     private GameObject prefabToSpawn;
+    private TowerData towerToPlace;
+
+    private List<TowerData> placedTowers = new List<TowerData>();
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +26,7 @@ public class tileScript : MonoBehaviour
         camera = GameObject.Find("Main Camera");
         camera.GetComponent<stageManager>().updateTileList(xcord, ycord, gm);
 
-        prefabToSpawn = GameObject.Find("EventSystem").GetComponent<clickToSpawnManager>().meleeTower;
+        //prefabToSpawn = GameObject.Find("EventSystem").GetComponent<clickToSpawnManager>().meleeTower;
     }
     
     void OnMouseDown()
@@ -32,13 +35,37 @@ public class tileScript : MonoBehaviour
         print("name: " + gm.name + " xcord: " + xcord + " ycord: " + ycord);
 
         // Spawn the prefab on this tile
+        towerToPlace.towerType = "melee";
+        towerToPlace.xPos = xcord;
+        towerToPlace.yPos = ycord;  
+        BuildTowerFromData(towerToPlace);
+    }
+
+    public void BuildTowerFromData(TowerData data)
+    {
+        // Spawn the prefab on this tile
         if (prefabToSpawn != null)
         {
             // Calculate the spawn position (tile position + 1 unit up)
             Vector3 spawnPosition = tf.position + Vector3.up;
 
             // Instantiate the prefab at the calculated position
+            if(data.towerType == "melee"){
+                prefabToSpawn = GameObject.Find("EventSystem").GetComponent<clickToSpawnManager>().meleeTower;
+            }
+            else{
+                print("I don't think we have any other tower types other than melee");
+            }
             GameObject spawnedObject = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
+
+            // Add the spawned tower data to the list
+            TowerData newTower = new TowerData
+            {
+                towerType = prefabToSpawn.name, // Assuming the prefab name represents the tower type
+                xPos = xcord,
+                yPos = ycord
+            };
+            placedTowers.Add(newTower);
         }
         else
         {
@@ -63,5 +90,10 @@ public class tileScript : MonoBehaviour
     public void activate() 
     {
         activated = true;
+    }
+    
+    public TowerData[] SerializeTowers()
+    {
+        return placedTowers.ToArray();
     }
 }
