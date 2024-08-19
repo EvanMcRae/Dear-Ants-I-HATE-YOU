@@ -134,19 +134,19 @@ MonoBehaviour:
   PauseMusic:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: f318856f04213104fb5df883b2cfef5d, type: 2}
   ResumeMusic:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: bcf7500c0cf92eb428391f237c3b28b5, type: 2}
   StopMusic:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 240badef13545944091dec591beef6cb, type: 2}
   StartMusic:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c4d7f8eb458182141a28dd999aed0423, type: 2}
   MenuSelect:
     idInternal: 0
     valueGuidInternal: 
@@ -327,6 +327,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &1257348339570688069
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +633,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &6466259887191335501
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +995,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &6882962767090661169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1279,6 +1282,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &7446763316587213346
 GameObject:
   m_ObjectHideFlags: 0

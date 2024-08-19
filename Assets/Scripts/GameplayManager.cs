@@ -93,7 +93,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (!paused && !PopupPanel.open && !won && !lost && !pauseOpen)
         {
-            PauseMusic?.Post(globalWwise);
+            PauseMusic.Post(globalWwise);
             Time.timeScale = 0;
             paused = true;
             StartCoroutine(StartPause());
@@ -111,7 +111,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (!PopupPanel.open) return;
         MenuSelect?.Post(gameObject);
-        ResumeMusic?.Post(globalWwise);
+        ResumeMusic.Post(globalWwise);
         paused = false;
         StartCoroutine(FinishPause());
         PauseMenu.GetComponent<PopupPanel>().Close();
@@ -215,7 +215,7 @@ public class GameplayManager : MonoBehaviour
         if (paused) return;
         won = true;
         // DialogController.main.StopTalk();
-        StopMusic?.Post(globalWwise);
+        StopMusic.Post(globalWwise);
         WinScreen.SetActive(true);
         // WinText.SetText("You made it through without laughing!\n\nFinal Grade: " + meter.calculateGrade());
     }
@@ -247,7 +247,7 @@ public class GameplayManager : MonoBehaviour
         paused = false;
         pauseOpen = false;
         screenWipe.WipeIn();
-        StopMusic?.Post(globalWwise);
+        StopMusic.Post(globalWwise);
         screenWipe.PostWipe += ReloadGame;
     }
 
@@ -266,7 +266,7 @@ public class GameplayManager : MonoBehaviour
         paused = false;
         pauseOpen = false;
         screenWipe.WipeIn();
-        StopMusic?.Post(globalWwise);
+        StopMusic.Post(globalWwise);
         screenWipe.PostWipe += ReloadSave;
     }
 
