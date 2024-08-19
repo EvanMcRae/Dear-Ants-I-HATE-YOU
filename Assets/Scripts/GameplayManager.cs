@@ -279,6 +279,7 @@ public class GameplayManager : MonoBehaviour
         else if(currPlayerHealth > maxPlayerHealth){
             currPlayerHealth = maxPlayerHealth;
         }
+        HUDManager.main.HurtEffect();
         HUDManager.main.UpdateHealth();
     }
 

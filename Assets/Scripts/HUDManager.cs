@@ -51,4 +51,9 @@ public class HUDManager : MonoBehaviour
     {
         EXPValue.text = GameplayManager.main.resourcePoints + "";
     }
+
+    public void HurtEffect()
+    {
+        HurtVignette.SetTrigger("hurt");
+    }
 }
