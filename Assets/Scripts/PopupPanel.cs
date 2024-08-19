@@ -88,7 +88,6 @@ public class PopupPanel : MonoBehaviour
         visible = true;
         PreviousButton = EventSystem.current.currentSelectedGameObject;
         EventSystem.current.SetSelectedGameObject(PrimaryButton);
-        Debug.Log("set prim button");
         MenuButton.pleaseNoSound = true;
         if (darkensScreen)
             ScreenDarkener.raycastTarget = true;

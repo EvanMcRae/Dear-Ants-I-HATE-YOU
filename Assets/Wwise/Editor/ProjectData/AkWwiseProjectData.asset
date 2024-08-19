@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: b5ede5d229edd545942ab9363df88890
     GuidInternal: 
-    m_lastTime: -8584775083320190066
+    m_lastTime: -8584774975049234240
     List:
     - name: Enemy
       guid: 053ad7bc96ffc4448f25fbff862f63e2
@@ -339,6 +339,26 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Menu
+      guid: d5b6d9632456d64d8453720a62b085d5
+      id: 2607556080
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b5ede5d229edd545942ab9363df88890
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: SFX
+        ObjectType: 2
+        guid: 7d60529cc272ca4ea27f2f81cf9d173b
+      - ElementName: Menu
+        ObjectType: 2
+        guid: d5b6d9632456d64d8453720a62b085d5
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX\Menu
     - name: Music
       guid: 2d47340668d76240bb9f883239c9661d
       id: 3991942870
@@ -405,7 +425,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 88242dbeeba24a44a1157017adc900c4
     GuidInternal: 
-    m_lastTime: -8584775045313047991
+    m_lastTime: -8584774958497546937
     List:
     - name: Main
       guid: 49d147b4243b0b499889950aa32b8cfd
@@ -433,8 +453,105 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 9e4891bc502aab45a273595ad7792cd5
     GuidInternal: 
-    m_lastTime: -8584775045313086121
+    m_lastTime: -8584774958497618664
     List:
+    - name: antDeath
+      guid: bf9bca7f083b504f876e838c55f4eaa1
+      id: 130673662
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Enemies
+        ObjectType: 4
+        guid: f0caa235a708b343ba809f8276dc496f
+      - ElementName: antDeath
+        ObjectType: 3
+        guid: bf9bca7f083b504f876e838c55f4eaa1
+      Path: Events\Default Work Unit\Enemies\antDeath
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: antFire
+      guid: 3e96a78af986fd4a887de86cef7583b8
+      id: 4016260516
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Enemies
+        ObjectType: 4
+        guid: f0caa235a708b343ba809f8276dc496f
+      - ElementName: antFire
+        ObjectType: 3
+        guid: 3e96a78af986fd4a887de86cef7583b8
+      Path: Events\Default Work Unit\Enemies\antFire
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: antSpit
+      guid: 6af721e2058dce46bfb1b9b43a11a21b
+      id: 3800970266
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Enemies
+        ObjectType: 4
+        guid: f0caa235a708b343ba809f8276dc496f
+      - ElementName: antSpit
+        ObjectType: 3
+        guid: 6af721e2058dce46bfb1b9b43a11a21b
+      Path: Events\Default Work Unit\Enemies\antSpit
+      maxAttenuation: 0
+      maxDuration: 2.24742
+      minDuration: 2.24742
+    - name: antWalk
+      guid: 673b5d6938e48e4e8b29f8f1b00da985
+      id: 2525767523
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Enemies
+        ObjectType: 4
+        guid: f0caa235a708b343ba809f8276dc496f
+      - ElementName: antWalk
+        ObjectType: 3
+        guid: 673b5d6938e48e4e8b29f8f1b00da985
+      Path: Events\Default Work Unit\Enemies\antWalk
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Enemies
+      guid: f0caa235a708b343ba809f8276dc496f
+      id: 2242381963
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Enemies
+        ObjectType: 4
+        guid: f0caa235a708b343ba809f8276dc496f
+      Path: Events\Default Work Unit\Enemies
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: LevelReset
       guid: ab5af967c194c74e82aab70075fdd849
       id: 1813202170
@@ -574,7 +691,7 @@ MonoBehaviour:
       Path: Events\Default Work Unit\Menu\menuConfirm
       maxAttenuation: 0
       maxDuration: 1.2739375
-      minDuration: 1.1317291
+      minDuration: 0.9638376
     - name: menuSelect
       guid: 1681e47295200c4e94f1d60320fb6f4a
       id: 664555880
@@ -627,8 +744,8 @@ MonoBehaviour:
         guid: c287df4a1877a649999085149c904639
       Path: Events\Default Work Unit\Pause
       maxAttenuation: 0
-      maxDuration: 1.0099816
-      minDuration: 1.0099816
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Music
       guid: ebcf81456cd1f24aa796cb1fd8c86745
       id: 2932040671
@@ -1581,7 +1698,7 @@ MonoBehaviour:
     m_lastTime: -8584775987259415766
     List: []
   ExpandedFileSystemItemIds: 02000000030000000400000005000000060000000700000008000000090000000b0000000c0000000d0000000f00000011000000120000001300000016000000170000001c0000001f000000220000002300000024000000270000002b0000002e000000380000004d0000004e0000004f000000630000008a0000008b000000d5000000
-  ExpandedWaapiItemIds: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f00000011000000120000001300000016000000170000001c0000001f0000002200000023000000240000002700000028000000290000002a0000002b0000002c0000002d0000002e000000380000004d0000004e0000004f000000630000008a0000008b000000d5000000
+  ExpandedWaapiItemIds: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f00000011000000120000001300000016000000170000001c0000001f0000002200000023000000240000002700000028000000290000002a0000002b0000002c0000002d0000002e00000035000000380000004d0000004e0000004f000000630000008a0000008b000000d5000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
