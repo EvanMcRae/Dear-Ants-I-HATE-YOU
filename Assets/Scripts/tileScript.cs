@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class tileScript : MonoBehaviour
 {
-    Transform tf;
-    GameObject gm;
     public int xcord;
     public int ycord;
     public bool activated = false;
@@ -20,10 +18,8 @@ public class tileScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gm = this.gameObject;
-        tf =  gm.GetComponent<Transform>();
         //cords set manually for level 1 will be done programatically later
-        Camera.main.GetComponent<stageManager>().updateTileList(xcord, ycord, gm);
+        Camera.main.GetComponent<stageManager>().updateTileList(xcord, ycord, gameObject);
 
         //prefabToSpawn = GameObject.Find("EventSystem").GetComponent<clickToSpawnManager>().meleeTower;
         if((this.tag == "pathable" || this.tag == "highground") && this.name != "base" && this.name != "enemySpawn"){
@@ -42,17 +38,18 @@ public class tileScript : MonoBehaviour
             return;
 
         //do something with the game object after clicking on it
-        print("name: " + gm.name + " xcord: " + xcord + " ycord: " + ycord);
+        print("name: " + gameObject.name + " xcord: " + xcord + " ycord: " + ycord);
 
         // Spawn the prefab on this tile
         if (hasTower == false && canPlaceTower == true)
         {
-            TowerData towerToPlace = new TowerData();
-            towerToPlace.type = clickToSpawnManager.playerTowerChoice;
-            towerToPlace.xPos = xcord;
-            towerToPlace.yPos = ycord;  
-            BuildTowerFromData(towerToPlace);   
-            hasTower = true;
+            TowerData towerToPlace = new()
+            {
+                type = clickToSpawnManager.playerTowerChoice,
+                xPos = xcord,
+                yPos = ycord
+            };
+            BuildTowerFromData(towerToPlace);
         }
     }
 
@@ -81,22 +78,16 @@ public class tileScript : MonoBehaviour
         if (prefabToSpawn != null)
         {
             // Calculate the spawn position (tile position + 1 unit up)
-            Vector3 spawnPosition = tf.position + Vector3.up;
+            Vector3 spawnPosition = transform.position + Vector3.up;
 
             GameObject spawnedObject = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
 
-            // Add the spawned tower data to the list
-            TowerData newTower = new TowerData
-            {
-                type = prefabToSpawn.name, // Assuming the prefab name represents the tower type
-                xPos = xcord,
-                yPos = ycord
-            };
-            clickToSpawnManager.placedTowers.Add(newTower);
+            clickToSpawnManager.placedTowers.Add(data);
+            hasTower = true;
         }
         else
         {
-            Debug.LogWarning("No prefab assigned to spawn on tile: " + gm.name);
+            Debug.LogWarning("No prefab assigned to spawn on tile: " + gameObject.name);
         }
     }
 

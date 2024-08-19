@@ -19,11 +19,17 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private GameObject globalWwise;
     [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver;
     public clickToSpawnManager spawnManager;
+    public SaveManager saveManager; 
 
     // [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
     // private enum MusicState { CALM, MEDIATE, INTENSE };
     // private MusicState currentState;
     public static bool won = false, lost = false, playingAgain = false, quit = false;
+
+    void Awake()
+    {
+        screenWipe.PostUnwipe += AutoSave;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +40,12 @@ public class GameplayManager : MonoBehaviour
         lost = false;
         playingAgain = false;
         quit = false;
+    }
+
+    public static void AutoSave()
+    {
+        main.screenWipe.PostUnwipe -= AutoSave;
+        main.saveManager.SaveGame(true);
     }
 
     // Update is called once per frame
@@ -154,6 +166,10 @@ public class GameplayManager : MonoBehaviour
         ClosePanels();
         Time.timeScale = 1;
         paused = false;
+        won = false;
+        lost = false;
+        pauseOpen = false;
+        saveManager.SaveGame();
         StopMusic?.Post(globalWwise);
         screenWipe.WipeIn();
         screenWipe.PostWipe += LoadMenu;
@@ -168,7 +184,16 @@ public class GameplayManager : MonoBehaviour
     public void ReloadGame()
     {
         screenWipe.PostWipe -= ReloadGame;
-        SceneManager.LoadScene("SampleScene"); // TODO CHANGE
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void ReloadSave()
+    {
+        screenWipe.PostWipe -= ReloadSave;
+        SaveManager.loadingFromSave = true;
+        SaveManager.loadingFromAutoSave = true;
+        SceneManager.LoadScene("SampleScene");
+        playingAgain = false;
     }
 
     public void Win()
@@ -205,9 +230,29 @@ public class GameplayManager : MonoBehaviour
 
         Time.timeScale = 1;
         paused = false;
+        pauseOpen = false;
         screenWipe.WipeIn();
         StopMusic?.Post(globalWwise);
         screenWipe.PostWipe += ReloadGame;
+    }
+
+    //resets game
+    public void RetryStage()
+    {
+        if (playingAgain) return;
+        playingAgain = true;
+
+        MenuSelect?.Post(gameObject);
+        ClosePanels();
+        won = false;
+        lost = false;
+
+        Time.timeScale = 1;
+        paused = false;
+        pauseOpen = false;
+        screenWipe.WipeIn();
+        StopMusic?.Post(globalWwise);
+        screenWipe.PostWipe += ReloadSave;
     }
 
     // //syncs clocks for start of gameplay

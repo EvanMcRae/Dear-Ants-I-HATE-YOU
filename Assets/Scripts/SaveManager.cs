@@ -32,82 +32,84 @@ public class SaveData
 
 public class SaveManager : MonoBehaviour
 {
-
     public GameObject StageManagerObject;
     
     private stageManager StageManager;
     private SaveData data = new SaveData();
 
+    public static bool loadingFromSave;
+    public static bool loadingFromAutoSave;
 
-    string saveFile;
+    string saveFile, autoSaveFile;
 
     private void Awake()
     {
         saveFile = Application.persistentDataPath + "SaveData.json";
+        autoSaveFile = Application.persistentDataPath + "AutoSave.json";
     }
 
     private void Start()
     {
         StageManager = StageManagerObject.GetComponent<stageManager>();
+        if (loadingFromSave)
+        {
+            LoadFromSave(loadingFromAutoSave);
+        }
     }
 
 
-    public bool SaveExists()
+    public bool SaveExists(bool autosave = false)
     {
-        return (File.Exists(saveFile));
+        return File.Exists(autosave ? autoSaveFile : saveFile);
     }
 
-    public void LoadFromSave()
+    public void LoadFromSave(bool autosave = false)
     {
-        string fileContents = File.ReadAllText(saveFile);
+        loadingFromSave = false;
+        loadingFromAutoSave = false;
+        if (!SaveExists(autosave)) return;
+
+        string fileContents = File.ReadAllText(autosave ? autoSaveFile : saveFile);
 
         data = JsonUtility.FromJson<SaveData>(fileContents);
+        if (data == null)
+        {
+            Debug.LogError("Failed to load save data");
+            return;
+        }
 
         Debug.Log("save loaded!");
-        //Debug.Log("level: " + data.level);
-        //Debug.Log("stage: " + data.stage);
+        Debug.Log("level: " + data.level);
+        Debug.Log("stage: " + data.stage);
 
-        //TODO: implement loading specific level and stage in stageManager class
-        //StageManager.LoadLevel(data.level, data.stage);
+        StageManager.loadLevel(data.level, data.stage);
 
-        //TODO: use data from loaded data to place towers
         if (data.towers != null)
         {
             for (int i = 0; i < data.towers.Length; i++)
             {
-                //TowerManager.BuildTowerFromData(data.towers[i]);
-                Debug.Log(data.towers[i].type);
+                StageManager.getTileFromCords(data.towers[i].xPos, data.towers[i].yPos).GetComponent<tileScript>().BuildTowerFromData(data.towers[i]);
             }
         }
-        
     }
 
-
     //will be called after stage/level to save the current game state
-    public void SaveGame()
+    public void SaveGame(bool autosave = false)
     {
-
         Debug.Log("saving game!");
 
         data.level = stageManager.level;
-        data.stage = StageManager.stage;
+        data.stage = stageManager.stage;
 
-
-
-        //TODO: implement a method on TowerManager to serialize all placed towers
-        //data.towers = TowerManager.SerializeTowers();
-
-        TowerData tower1 = new TowerData();
-        tower1.type = "basic robot";
-
-        TowerData tower2 = new TowerData();
-        tower2.type = "cooler robot";
-
-        TowerData[] towers = { tower1, tower2 };
-        data.towers = towers;
+        data.towers = SerializeTowers();
 
         string jsonString = JsonUtility.ToJson(data);
 
-        File.WriteAllText(saveFile, jsonString);
+        File.WriteAllText(autosave ? autoSaveFile : saveFile, jsonString);
+    }
+
+    public TowerData[] SerializeTowers()
+    {
+        return clickToSpawnManager.placedTowers.ToArray();
     }
 }

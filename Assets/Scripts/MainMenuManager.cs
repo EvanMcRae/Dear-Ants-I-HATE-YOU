@@ -39,7 +39,7 @@ public class MainMenuManager : MonoBehaviour
         // Save file detection
         Navigation playNav = PlayButton.navigation;
         Navigation instNav = InstructionsButton.navigation;
-        if (File.Exists(Application.persistentDataPath + "/SaveData.json") /* TODO check if file also serializes correctly */)
+        if (File.Exists(Application.persistentDataPath + "SaveData.json"))
         {
             LoadButton.interactable = true;
             playNav.selectOnDown = LoadButton;
@@ -90,8 +90,8 @@ public class MainMenuManager : MonoBehaviour
         screenWipe.PostWipe -= LoadRun;
         firstopen = false;
         playing = false;
-        SceneManager.LoadScene("SampleScene"); //TODO change this whenever
-        // TODO load save data
+        SaveManager.loadingFromSave = true;
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void Instructions()
