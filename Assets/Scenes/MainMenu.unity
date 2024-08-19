@@ -1058,7 +1058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 575, y: -55}
+  m_AnchoredPosition: {x: 599, y: -55}
   m_SizeDelta: {x: 1442, y: 538}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622297464
@@ -1500,7 +1500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 560026996816832373, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 985612616138203033, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1549,7 +1549,7 @@ PrefabInstance:
 
         - Jacob Pickholtz
 
-        - Josh Wilkinson
+        - Joshua Wilkinson
 
         -
         Evan McRae
@@ -2530,7 +2530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 574, y: -57}
+  m_AnchoredPosition: {x: 598.00006, y: -52}
   m_SizeDelta: {x: 1442, y: 134.91699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1495471111
