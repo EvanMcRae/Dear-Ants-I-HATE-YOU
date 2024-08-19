@@ -3532,6 +3532,14 @@ MonoBehaviour:
   waveManager: {fileID: 0}
   SpawnLocations: []
   AIPathings: []
+  stageUp:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7bcf773041673324284b25dd7f3b093d, type: 2}
+  levelReset:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9f8719b7ba68bf740a08ab82283249b0, type: 2}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5733,7 +5741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_listeners:
     initialListenerList:
-    - {fileID: 0}
+    - {fileID: 963194230}
     useDefaultListeners: 1
   isEnvironmentAware: 0
   isStaticObject: 0

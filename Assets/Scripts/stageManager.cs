@@ -29,6 +29,8 @@ public class stageManager : MonoBehaviour
 
     public List<PathsData> AIPathings = new List<PathsData>();
 
+    public AK.Wwise.Event stageUp, levelReset;
+
     void Awake()
     {
         main = this;
@@ -42,6 +44,7 @@ public class stageManager : MonoBehaviour
         }
 
         loadLevel(1, 1);
+        levelReset.Post(gameObject);
     }
 
     public void loadLevel(int goToLevel, int goToStage) 
@@ -68,6 +71,7 @@ public class stageManager : MonoBehaviour
     {
         stage++;
         enablePath(stage);
+        // stageUp.Post(gameObject);
         if (stage == stageCount + 1) { endLevel(); }
     }
 
@@ -144,6 +148,8 @@ public class stageManager : MonoBehaviour
             advanceStage();
             GameplayManager.AutoSave(); // TODO THIS IS IMPORTANT!!!!! CALL THIS WHENEVER STAGE ADVANCES!!!
         }
+
+        AkSoundEngine.SetRTPCValue("LevelProgress", stage);
     }
 
     public void updateTileList(int x, int y, GameObject toBeInserted)
