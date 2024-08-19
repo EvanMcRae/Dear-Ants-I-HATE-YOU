@@ -85,6 +85,8 @@ public class stageManager : MonoBehaviour
             GameObject.Find("base").GetComponent<tileScript>().activate();
             GameObject.Find("base").GetComponent<MeshRenderer>().material.color = Color.gray;
         }
+
+        UpdateEnemySpawnLocations();
     }
 
     public void advanceToStage(int goTo)
@@ -118,22 +120,6 @@ public class stageManager : MonoBehaviour
         }
     }
 
-    private void enablePath(int stage) 
-    {
-        foreach (GameObject gm in path[stage-1])
-        {
-            gm.GetComponent<MeshRenderer>().material.color = Color.gray;
-            gm.GetComponent<tileScript>().activate();
-        }
-
-        if (stage == 1) 
-        {
-            GameObject.Find("base").GetComponent<tileScript>().activate();
-            GameObject.Find("base").GetComponent<MeshRenderer>().material.color = Color.gray;
-        }
-
-        UpdateEnemySpawnLocations();
-    }
 
     private void create2DPathList() 
     {
