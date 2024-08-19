@@ -25,6 +25,16 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{6794A141-4C61-4602-BF35-D161630E3B4A}" ShortID="805394557">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Computer hum" ID="{CC90BA88-3B50-4AA7-A314-B19B7C398BC9}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_Music" ID="{4581CFEB-D16C-4AF2-A796-CB1FD8C86745}">
@@ -185,6 +195,9 @@
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{5D05D0AB-CCCE-42F0-B9D3-80A5574F8C8B}" ShortID="398693578">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="VHS click 2" ID="{B7F4E88F-9507-4593-8086-16492BD4B6FF}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
@@ -194,7 +207,7 @@
 						<Action Name="" ID="{D772D02A-327B-4E66-904C-2ADD29CEA772}" ShortID="63771988">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="10"/>
-								<Property Name="Delay" Type="Real64" Value="0.4"/>
+								<Property Name="Delay" Type="Real64" Value="0.2"/>
 							</PropertyList>
 							<ReferenceList/>
 							<ChildrenList>
@@ -259,7 +272,63 @@
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ChildrenList>
-						<Event Name="antSpit" ID="{E221F76A-8D05-46CE-BFB1-B9B43A11A21B}"/>
+						<Event Name="antSpit" ID="{E221F76A-8D05-46CE-BFB1-B9B43A11A21B}">
+							<ChildrenList>
+								<Action Name="" ID="{10814B75-7F56-44B8-AA0A-53E2248BA9D5}" ShortID="641024668">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ant Spit" ID="{9A210114-C3A0-41F2-977D-5A648C7961A8}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="antWalk" ID="{695D3B67-E438-4E8E-8B29-F8F1B00DA985}">
+							<ChildrenList>
+								<Action Name="" ID="{F2A1A22E-D521-4ED1-B1CF-2AFBEEC66880}" ShortID="16594963">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Scuttle" ID="{E0901428-F7A9-4CD1-83E3-9DB3DEBB14BD}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="antFire" ID="{8AA7963E-86F9-4AFD-887D-E86CEF7583B8}">
+							<ChildrenList>
+								<Action Name="" ID="{04E99766-A704-4987-B966-12B813BE623E}" ShortID="1057949041">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Fire" ID="{4C5BE8C0-86D2-40AA-B22D-C081C5ED5701}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="antDeath" ID="{7FCA9BBF-3B08-4F50-876E-838C55F4EAA1}">
+							<ChildrenList>
+								<Action Name="" ID="{B590FD61-DA62-4D75-B0FC-DCE5D9F6DAD6}" ShortID="322650892">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Scuttle" ID="{E0901428-F7A9-4CD1-83E3-9DB3DEBB14BD}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{5D4BE935-18C4-4FA3-9672-E74A42EBFF0A}" ShortID="303565221">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Fire" ID="{4C5BE8C0-86D2-40AA-B22D-C081C5ED5701}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

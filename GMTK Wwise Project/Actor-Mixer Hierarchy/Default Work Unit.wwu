@@ -386,7 +386,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-10</Value>
+												<Value>-5</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -755,11 +755,12 @@
 											<ChildrenList>
 												<AudioFileSource Name="shotgun layer 1" ID="{333C3479-F7F9-4933-A06A-73CF730A2E46}">
 													<PropertyList>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.35701265060241"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.10899376114082"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.143217196056955"/>
 														<Property Name="FadeOutShape" Type="int16" Value="6"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 														<Property Name="TrimBegin" Type="Real64" Value="0.10433"/>
-														<Property Name="TrimEnd" Type="Real64" Value="0.566686746987948"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.378043698859605"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>shotgun layer 1.wav</AudioFile>

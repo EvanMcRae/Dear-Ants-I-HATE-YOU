@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{885CE78F-6BFC-3D1F-CADC-E44D05654CFE}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{5038AD59-490D-94B0-FDE5-CD352A98812D}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -230,7 +230,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{B9B406E8-984E-CE34-55F5-3BFA9C8CCD2E}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{1AC53AC7-DAA8-DC93-659F-3929216EB3CA}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -360,7 +360,7 @@
 				</File>
 				<File Id="652549052" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>shotgun layer 1.wav</ShortName>
-					<CachePath>SFX/shotgun layer 1_6B945F89.wem</CachePath>
+					<CachePath>SFX/shotgun layer 1_2BE6B954.wem</CachePath>
 				</File>
 				<File Id="656682904" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Buy Item Computer Sound 6.wav</ShortName>
@@ -452,6 +452,9 @@
 				</File>
 			</Media>
 			<Plugins>
+				<Custom>
+					<Plugin Id="191600798" Name="Noise_Gate_Fast_Attack (Custom)" LibName="Wwise Expander" LibId="7143427"/>
+				</Custom>
 				<ShareSets>
 					<Plugin Id="3604890626" Name="High_Pass_60Hz" LibName="Wwise Parametric EQ" LibId="6881283"/>
 				</ShareSets>
@@ -470,6 +473,11 @@
 						<MediaRef Id="779530838"/>
 						<MediaRef Id="923573717"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="191600798"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="4016260516" Name="antFire" DurationType="Infinite">
 					<MediaRefs>
@@ -499,6 +507,11 @@
 						<MediaRef Id="696798352"/>
 						<MediaRef Id="765470994"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="191600798"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="1813202170" Name="LevelReset" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1040722926" Name="menuAdjust1" DurationType="OneShot" DurationMin="0.18357174" DurationMax="0.1889508">
@@ -569,30 +582,12 @@
 						<MediaRef Id="954384023"/>
 						<MediaRef Id="995274317"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="191600798"/>
+						</Custom>
+					</PluginRefs>
 					<SwitchContainers>
-						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
-							<MediaRefs>
-								<MediaRef Id="28925695"/>
-								<MediaRef Id="47796842"/>
-								<MediaRef Id="74990297"/>
-								<MediaRef Id="194023441"/>
-								<MediaRef Id="282532151"/>
-								<MediaRef Id="451429337"/>
-								<MediaRef Id="475883887"/>
-								<MediaRef Id="561685502"/>
-								<MediaRef Id="588171366"/>
-								<MediaRef Id="634956250"/>
-								<MediaRef Id="664842732"/>
-								<MediaRef Id="712353983"/>
-								<MediaRef Id="731258502"/>
-								<MediaRef Id="740174606"/>
-								<MediaRef Id="839594064"/>
-								<MediaRef Id="902460037"/>
-								<MediaRef Id="976401125"/>
-								<MediaRef Id="1002972504"/>
-							</MediaRefs>
-						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
 							<MediaRefs>
@@ -643,29 +638,6 @@
 								<MediaRef Id="1002972504"/>
 							</MediaRefs>
 						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
-							<MediaRefs>
-								<MediaRef Id="28925695"/>
-								<MediaRef Id="47796842"/>
-								<MediaRef Id="74990297"/>
-								<MediaRef Id="194023441"/>
-								<MediaRef Id="282532151"/>
-								<MediaRef Id="451429337"/>
-								<MediaRef Id="475883887"/>
-								<MediaRef Id="561685502"/>
-								<MediaRef Id="588171366"/>
-								<MediaRef Id="634956250"/>
-								<MediaRef Id="664842732"/>
-								<MediaRef Id="712353983"/>
-								<MediaRef Id="731258502"/>
-								<MediaRef Id="740174606"/>
-								<MediaRef Id="839594064"/>
-								<MediaRef Id="902460037"/>
-								<MediaRef Id="976401125"/>
-								<MediaRef Id="1002972504"/>
-							</MediaRefs>
-						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 				<Event Id="953277036" Name="Resume" DurationType="OneShot" DurationMin="0.53861177" DurationMax="0.53861177">
@@ -677,30 +649,11 @@
 				</Event>
 				<Event Id="585119210" Name="StageUp" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2837384057" Name="Stop_Music" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="859139999"/>
+						<MediaRef Id="954384023"/>
+					</MediaRefs>
 					<SwitchContainers>
-						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
-							<MediaRefs>
-								<MediaRef Id="28925695"/>
-								<MediaRef Id="47796842"/>
-								<MediaRef Id="74990297"/>
-								<MediaRef Id="194023441"/>
-								<MediaRef Id="282532151"/>
-								<MediaRef Id="451429337"/>
-								<MediaRef Id="475883887"/>
-								<MediaRef Id="561685502"/>
-								<MediaRef Id="588171366"/>
-								<MediaRef Id="634956250"/>
-								<MediaRef Id="664842732"/>
-								<MediaRef Id="712353983"/>
-								<MediaRef Id="731258502"/>
-								<MediaRef Id="740174606"/>
-								<MediaRef Id="839594064"/>
-								<MediaRef Id="902460037"/>
-								<MediaRef Id="976401125"/>
-								<MediaRef Id="1002972504"/>
-							</MediaRefs>
-						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
 							<MediaRefs>
@@ -796,5 +749,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{627AC41A-08A2-F02A-4DD1-A2C38A7C9474}</FileHash>
+	<FileHash>{EA41DD77-EB84-F46B-433C-75164C010CD5}</FileHash>
 </SoundBanksInfo>
