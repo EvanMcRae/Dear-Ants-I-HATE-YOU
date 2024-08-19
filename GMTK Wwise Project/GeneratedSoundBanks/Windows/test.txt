@@ -1,8 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	2837384057	Stop_Music			\Default Work Unit\Stop_Music	
-	2932040671	Play_Music			\Default Work Unit\Play_Music	
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	98502782	Chill Dnb A	C:\Users\evtem\GMTK 2024\GMTK Wwise Project\.cache\Windows\SFX\Chill Dnb A_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level_A\Chill Dnb A		2168628
-	304778770	Chill Dnb B	C:\Users\evtem\GMTK 2024\GMTK Wwise Project\.cache\Windows\SFX\Chill Dnb B_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level_B\Chill Dnb B		2168628
-
