@@ -38,10 +38,8 @@ public class HUDManager : MonoBehaviour
     {
         for (int i = 0; i < GameplayManager.main.maxPlayerHealth; i++)
         {
-            Debug.Log(i);
             if (i <= GameplayManager.main.currPlayerHealth - 1)
             {
-                Debug.Log(Hearts.Count);
                 Hearts[i].sprite = fullHeart;
             }
             else
