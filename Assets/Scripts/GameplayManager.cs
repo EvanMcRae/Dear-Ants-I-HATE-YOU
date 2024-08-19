@@ -271,7 +271,7 @@ public class GameplayManager : MonoBehaviour
     }
 
     //player takes damage from enemy reaching base
-    void takeDamage(){
+    public void takeDamage(){
         currPlayerHealth -= 1;
         if(currPlayerHealth <= 0){
             Lose();
@@ -290,12 +290,12 @@ public class GameplayManager : MonoBehaviour
     }
 
     //add single resource point
-    void addResource(){
+    public void addResource(){
         resourcePoints += 1;
         HUDManager.main.UpdateEXP();
     }
     //adds an amount of resource pounts
-    void addResource(int amount){
+    public void addResource(int amount){
         resourcePoints += amount;
         HUDManager.main.UpdateEXP();
     }
