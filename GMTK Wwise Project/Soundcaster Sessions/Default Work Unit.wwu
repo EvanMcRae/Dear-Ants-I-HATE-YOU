@@ -38,8 +38,20 @@
 							<Position X="2" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="menuAdjust2" ID="{B34145B1-2F87-4ABF-B3D1-1937CC9D052A}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="StageUp" ID="{4031E252-E3B4-42E2-873C-8FA282351A27}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
 							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menuAdjust1" ID="{7F728663-F59D-493C-BD3C-A7C341591FF7}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menuAdjustStop" ID="{681F52C0-95E6-4FCC-A64F-DC44FDD6D4D4}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="3" Y="2"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
