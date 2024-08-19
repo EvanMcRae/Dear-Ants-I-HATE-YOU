@@ -9,6 +9,7 @@ public class tileScript : MonoBehaviour
     public int xcord;
     public int ycord;
     private GameObject camera;
+    public bool activated = false;
 
     // Add a public field for the prefab to spawn
     private GameObject prefabToSpawn;
@@ -57,5 +58,10 @@ public class tileScript : MonoBehaviour
         EnemyAI enteringEnemy = collision.gameObject.GetComponent<EnemyAI>();
         if (enteringEnemy != null)
             enteringEnemy.AcceptChange();
+    }
+
+    public void activate() 
+    {
+        activated = true;
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - highground
   - fake
   - Enemy
+  - pathParent
   layers:
   - Default
   - TransparentFX
