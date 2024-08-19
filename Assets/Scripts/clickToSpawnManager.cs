@@ -21,4 +21,18 @@ public class clickToSpawnManager : MonoBehaviour
     {
         
     }
+
+    //pick different types of towers to place
+    public void pickNothing(){
+        playerTowerChoice = "";
+    }
+    public void pickMelee(){
+        playerTowerChoice = "melee";
+    }
+    public void pickLaser(){
+        playerTowerChoice = "laser";
+    }
+    public void pickBomb(){
+        playerTowerChoice = "bomb";
+    }
 }
