@@ -5,6 +5,11 @@ using UnityEngine;
 public class clickToSpawnManager : MonoBehaviour
 {
     public GameObject meleeTower;
+    public GameObject laserTower;
+    public GameObject bombTower;
+    public static List<TowerData> placedTowers = new List<TowerData>();
+
+    public static string playerTowerChoice = "laser";
     // Start is called before the first frame update
     void Start()
     {

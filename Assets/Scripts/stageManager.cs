@@ -20,6 +20,7 @@ public class stageManager : MonoBehaviour
     public int stage;
     public int stageCount;
     public int level;
+    public List<GameObject> levelAssets;
 
     public static stageManager main;
     public WaveManager waveManager;
@@ -32,23 +33,68 @@ public class stageManager : MonoBehaviour
     void Awake()
     {
         main = this;
-
         Debug.Log("Stage manager: " + gameObject);
 
+        GameObject levels = GameObject.Find("Levels");
+        levelAssets = new List<GameObject>();
+        foreach (Transform level in levels.transform) 
+        {
+            levelAssets.Add(level.gameObject);
+        }
+
+        loadLevel(1,1);
+    }
+
+    public void loadLevel(int level, int goToStage) 
+    {
+        this.level = level;
+        this.stage = 1;
+        stageCount = getStageCount(level);
+        levelAssets[level-1].SetActive(true);
         everyTile.AddRange(GameObject.FindObjectsOfType<GameObject>());
         List<GameObject> temp = new List<GameObject>();
-        foreach (GameObject gm in everyTile) 
+        foreach (GameObject gm in everyTile)
         {
-            if (gm.GetComponent<tileScript>() != null) 
+            if (gm.GetComponent<tileScript>() != null)
             {
                 temp.Add(gm);
             }
         }
         everyTile = temp;
         everyTileOrdered = everyTile;
+        advanceToStage(goToStage);
+    }
 
+    public void advanceStage()
+    {
+        stage++;
+        enablePath(stage);
+        if (stage == stageCount + 1) { endLevel(); }
+    }
+
+    private void enablePath(int stage)
+    {
+        foreach (GameObject gm in path[stage - 1])
+        {
+            gm.GetComponent<MeshRenderer>().material.color = Color.gray;
+            gm.GetComponent<tileScript>().activate();
+        }
+
+        if (stage == 1)
+        {
+            GameObject.Find("base").GetComponent<tileScript>().activate();
+            GameObject.Find("base").GetComponent<MeshRenderer>().material.color = Color.gray;
+        }
+    }
+
+    public void advanceToStage(int goTo)
+    {
         create2DPathList();
         enablePath(1);
+        for (int i = 0; i < goTo - 1; i++)
+        {
+            advanceStage();
+        }
     }
 
     private void Start()
@@ -109,11 +155,11 @@ public class stageManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Backslash))
         {
-            advanvceStage();
+            advanceStage();
         }
     }
 
-    public void updateTileList(int x, int y, GameObject toBeInserted) 
+    public void updateTileList(int x, int y, GameObject toBeInserted)
     {
         int index = (y * getLength(level)) + x - getLength(level) - 1;
         everyTileOrdered[index] = toBeInserted;
@@ -132,6 +178,13 @@ public class stageManager : MonoBehaviour
             return 11;
         }
         return 999999999;
+    }
+
+    public int getStageCount(int level)
+    {
+        if (level == 1) { return 5; }
+        else if (level == 2) { return 5; }
+        return 999999;
     }
 
     private int getTileCount(int level) 
@@ -154,13 +207,6 @@ public class stageManager : MonoBehaviour
         return everyTileOrdered;
     }
 
-    public void advanvceStage() 
-    {
-        stage++;
-        enablePath(stage);
-        if (stage == stageCount + 1) { endLevel(); }
-    }
-
     private void endLevel() 
     {
         Debug.Log("Level Ended");
@@ -168,12 +214,13 @@ public class stageManager : MonoBehaviour
 
     public tileScript GetNextTileInPath(tileScript startTile)
     {
+        /*CHANGED*/
         List<List<GameObject>> paths = new List<List<GameObject>>();
         foreach (List<GameObject> ls in path)
         {
             paths.Add(ls);
         }
-        /*CHANGED*/
+
         foreach (List<GameObject> path in paths)
         {
             for (int i = 0; i < path.Count; i++)
