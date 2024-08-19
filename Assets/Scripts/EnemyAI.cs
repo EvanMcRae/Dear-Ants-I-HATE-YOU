@@ -9,16 +9,13 @@ public class EnemyAI : MonoBehaviour
     public int currPathId = 0;
 
     public float moveSpeed = 1;
-<<<<<<< Updated upstream
-=======
 
     public int health = 10;
 
     public float lastAttack;
-    public float attackCooldown = 1;
+    public float attackCooldown;
     public int attackDamage = 1;
 
->>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +32,18 @@ public class EnemyAI : MonoBehaviour
             return;
         }
 
+        tileScript nextTile = path.path[currPathId].GetComponent<tileScript>();
+
+        if (nextTile.hasTower)
+        {
+            //AttackTower
+            if(lastAttack + attackCooldown < Time.time)
+            {
+                lastAttack = Time.time;
+            }
+            return;
+        }
+
         Vector2 targetPosition = new Vector2(path.path[currPathId].transform.position.x, path.path[currPathId].transform.position.z);
         if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), targetPosition) <= .1f)
         {
@@ -47,6 +56,19 @@ public class EnemyAI : MonoBehaviour
         transform.position += (new Vector3(moveDir.x, 0, moveDir.y));
 
         Debug.DrawLine(transform.position, new Vector3(targetPosition.x, transform.position.y, targetPosition.y));
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+            Die();
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }
     
