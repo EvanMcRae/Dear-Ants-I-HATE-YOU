@@ -9,6 +9,16 @@ public class EnemyAI : MonoBehaviour
     public int currPathId = 0;
 
     public float moveSpeed = 1;
+<<<<<<< Updated upstream
+=======
+
+    public int health = 10;
+
+    public float lastAttack;
+    public float attackCooldown = 1;
+    public int attackDamage = 1;
+
+>>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
