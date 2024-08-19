@@ -160,13 +160,17 @@ public class stageManager : MonoBehaviour
     public int getLength(int level)
     {
         /*UPDATED LATER WITH MORE LEVELS*/
-        if (level == 1) 
+        if (level == 1)
         {
             return 11;
         }
-        if (level == 2) 
+        if (level == 2)
         {
             return 9;
+        }
+        if (level == 3) 
+        {
+            return 10;
         }
         return 999999999;
     }
@@ -175,6 +179,7 @@ public class stageManager : MonoBehaviour
     {
         if (level == 1) { return 5; }
         else if (level == 2) { return 5; }
+        else if (level == 3) { return 3; }
         return 999999;
     }
 
@@ -185,9 +190,13 @@ public class stageManager : MonoBehaviour
         {
             return 77;
         }
-        else if (level == 2) 
+        else if (level == 2)
         {
             return 63;
+        }
+        else if (level == 3) 
+        {
+            return 50;
         }
         return 999999999;
     }
