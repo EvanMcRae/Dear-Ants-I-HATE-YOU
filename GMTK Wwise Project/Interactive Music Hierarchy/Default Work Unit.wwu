@@ -77,15 +77,10 @@
 													<ChildrenList>
 														<MusicPlaylistItem Name="" ID="{C845CE8E-61A4-4A9A-BE9F-872677D4193F}" ShortID="236026537">
 															<PropertyList>
-																<Property Name="LoopCount" Type="int16" Value="2">
+																<Property Name="LoopCount" Type="int16">
 																	<ModifierList>
 																		<ModifierInfo>
-																			<Modifier Name="" ID="{62FB6218-BDFA-4B0E-A9DC-A67D0A44BAEF}">
-																				<PropertyList>
-																					<Property Name="Enabled" Type="bool" Value="True"/>
-																					<Property Name="Max" Type="Real64" Value="1"/>
-																				</PropertyList>
-																			</Modifier>
+																			<Modifier Name="" ID="{62FB6218-BDFA-4B0E-A9DC-A67D0A44BAEF}"/>
 																		</ModifierInfo>
 																	</ModifierList>
 																</Property>
@@ -554,6 +549,27 @@
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
 																					<AudioSourceRef Name="LevelA_Arpeggio_L8M_P1" ID="{5CEA660D-CB2E-40AC-867B-1570325C41B9}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{35DFBCB7-1557-4C09-944A-B62242FCB43A}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>24.5281632653061</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -586,7 +602,7 @@
 												<Property Name="MusicTrackType" Type="int16" Value="3"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-16</Value>
+														<Value>-11</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -810,6 +826,42 @@
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
 																					<AudioSourceRef Name="LevelA_Pulse Synth_L8M_P1" ID="{49DE9761-A8AF-4993-BF84-AD70E4E9C73A}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{E9BB86F8-27BA-4115-85E9-46BE44AF5FB8}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>2.31573926828143</XPos>
+																										<YPos>0</YPos>
+																										<Flags>0</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>11.61326</XPos>
+																										<YPos>99.99991</YPos>
+																										<Flags>0</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>20.97991</XPos>
+																										<YPos>-4.5742</YPos>
+																										<Flags>0</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>21.5560090702948</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -1271,7 +1323,7 @@
 												<Property Name="MusicTrackType" Type="int16" Value="3"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>2</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -1305,11 +1357,11 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Level_HiHat_L8M_P0" ID="{2C246514-039A-4E10-8FC5-E3E4CC6F5A8E}">
+												<AudioFileSource Name="Level_Hi Hat groove_L8M_P1" ID="{2E2F9026-22D0-4A0D-B25B-CB09B4BF1877}">
 													<Language>SFX</Language>
-													<AudioFile>Level_HiHat_L8M_P0.wav</AudioFile>
+													<AudioFile>Level_Hi Hat groove_L8M_P1.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="655939111"/>
+														<MediaID ID="634956250"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -1322,14 +1374,14 @@
 																	<ObjectList Name="Clips">
 																		<Reference>
 																			<Local>
-																				<MusicClip Name="Level_HiHat_L8M_P0" ID="{607C446E-FF8F-4A2D-8F01-FCFF9F1ED83F}">
+																				<MusicClip Name="Level_Hi Hat groove_L8M_P1" ID="{80BC9797-DD5E-4738-B64E-9794072307ED}">
 																					<PropertyList>
-																						<Property Name="EndTrimOffset" Type="Real64" Value="19089.977324263"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="19326.8934240363"/>
 																						<Property Name="FadeInMode" Type="int16" Value="0"/>
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																						<Property Name="PlayAt" Type="Real64" Value="2330.09708737864"/>
 																					</PropertyList>
-																					<AudioSourceRef Name="Level_HiHat_L8M_P0" ID="{2C246514-039A-4E10-8FC5-E3E4CC6F5A8E}"/>
+																					<AudioSourceRef Name="Level_Hi Hat groove_L8M_P1" ID="{2E2F9026-22D0-4A0D-B25B-CB09B4BF1877}"/>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -2124,6 +2176,37 @@
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
 																					<AudioSourceRef Name="LevelA_Pulse Synth_L8M_P1" ID="{71232810-4F83-4592-AB57-88C8F51B8771}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{9C588678-A11D-4A03-BF52-BC65F77251AB}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>2.36088</XPos>
+																										<YPos>38.43312</YPos>
+																										<Flags>0</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>21.00294</XPos>
+																										<YPos>46.12891</YPos>
+																										<Flags>0</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>21.5560090702948</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -2491,11 +2574,11 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Level_HiHat_L8M_P0" ID="{873ADCF9-38EA-4D99-91C0-8334AEA1F08E}">
+												<AudioFileSource Name="Level_Hi Hat groove_L8M_P1" ID="{5F95F939-D4FB-4A4B-833F-59F1CE6C7412}">
 													<Language>SFX</Language>
-													<AudioFile>Level_HiHat_L8M_P0.wav</AudioFile>
+													<AudioFile>Level_Hi Hat groove_L8M_P1.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="655939111"/>
+														<MediaID ID="634956250"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -2508,14 +2591,14 @@
 																	<ObjectList Name="Clips">
 																		<Reference>
 																			<Local>
-																				<MusicClip Name="Level_HiHat_L8M_P0" ID="{4D3083DB-5AAF-4920-80A6-D41A6B6D9183}">
+																				<MusicClip Name="Level_Hi Hat groove_L8M_P1" ID="{A4F8EFD6-B527-492F-9161-285E79FDD291}">
 																					<PropertyList>
-																						<Property Name="EndTrimOffset" Type="Real64" Value="19089.977324263"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="19326.8934240363"/>
 																						<Property Name="FadeInMode" Type="int16" Value="0"/>
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																						<Property Name="PlayAt" Type="Real64" Value="2330.09708737864"/>
 																					</PropertyList>
-																					<AudioSourceRef Name="Level_HiHat_L8M_P0" ID="{873ADCF9-38EA-4D99-91C0-8334AEA1F08E}"/>
+																					<AudioSourceRef Name="Level_Hi Hat groove_L8M_P1" ID="{5F95F939-D4FB-4A4B-833F-59F1CE6C7412}"/>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -2780,7 +2863,7 @@
 												<Property Name="MusicTrackType" Type="int16" Value="3"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-8</Value>
+														<Value>-9</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -2881,13 +2964,6 @@
 											</ObjectLists>
 										</MusicTrack>
 										<MusicTrack Name="LevelBridge_SawSquare Bass_L8M_P1" ID="{3D67E579-3193-4F62-B45A-2E61CF9CFE0D}" ShortID="765525524">
-											<PropertyList>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-1</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}"/>
@@ -3106,6 +3182,37 @@
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
 																					<AudioSourceRef Name="LevelA_Pulse Synth_L8M_P1" ID="{4E1DA49C-91F5-4AE8-981D-C8E602B0B8F4}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{A92394B2-691E-400A-B3B5-1415CA9617D0}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>2.31508</XPos>
+																										<YPos>56.81948</YPos>
+																										<Flags>0</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>21.00885</XPos>
+																										<YPos>38.01511</YPos>
+																										<Flags>0</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>21.5560090702948</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -3473,11 +3580,11 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Level_HiHat_L8M_P0" ID="{0AAA9040-9B35-4934-A18B-90CC53540577}">
+												<AudioFileSource Name="Level_Hi Hat groove_L8M_P1" ID="{C0FA5384-BB9A-4EFF-B30C-F368E5BAAE03}">
 													<Language>SFX</Language>
-													<AudioFile>Level_HiHat_L8M_P0.wav</AudioFile>
+													<AudioFile>Level_Hi Hat groove_L8M_P1.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="655939111"/>
+														<MediaID ID="634956250"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -3490,14 +3597,14 @@
 																	<ObjectList Name="Clips">
 																		<Reference>
 																			<Local>
-																				<MusicClip Name="Level_HiHat_L8M_P0" ID="{3AA1195F-B09A-46A5-AFE2-C309A3F628E1}">
+																				<MusicClip Name="Level_Hi Hat groove_L8M_P1" ID="{1F4C155D-5235-445F-9FF7-F44C1DEB4647}">
 																					<PropertyList>
-																						<Property Name="EndTrimOffset" Type="Real64" Value="19089.977324263"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="19326.8934240363"/>
 																						<Property Name="FadeInMode" Type="int16" Value="0"/>
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																						<Property Name="PlayAt" Type="Real64" Value="2330.09708737864"/>
 																					</PropertyList>
-																					<AudioSourceRef Name="Level_HiHat_L8M_P0" ID="{0AAA9040-9B35-4934-A18B-90CC53540577}"/>
+																					<AudioSourceRef Name="Level_Hi Hat groove_L8M_P1" ID="{C0FA5384-BB9A-4EFF-B30C-F368E5BAAE03}"/>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
