@@ -22,10 +22,10 @@ public class GameplayManager : MonoBehaviour
     public SaveManager saveManager; 
 
     //number of ants that need to get to the goal in order for the player to lose
-    int maxPlayerHealth = 3;
-    int currPlayerHealth;
+    public int maxPlayerHealth = 3;
+    public int currPlayerHealth;
     //points used to buy/maintain towers
-    int resourcePoints;
+    public int resourcePoints;
     int startingResourcePoints = 10;
 
     // [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
@@ -51,6 +51,8 @@ public class GameplayManager : MonoBehaviour
 
         currPlayerHealth = maxPlayerHealth;
         resourcePoints = startingResourcePoints;
+        HUDManager.main.UpdateEXP();
+        HUDManager.main.UpdateHealth();
     }
 
     public static void AutoSave()
@@ -224,7 +226,8 @@ public class GameplayManager : MonoBehaviour
         lost = true;
         // DialogController.main.StopTalk();
         GameOver?.Post(globalWwise);
-        LoseScreen.SetActive(true);
+        if (LoseScreen != null)
+            LoseScreen.SetActive(true);
         // button.stopInputs = true;
         // dialog.reading = false;
     }
@@ -271,31 +274,37 @@ public class GameplayManager : MonoBehaviour
     void takeDamage(){
         currPlayerHealth -= 1;
         if(currPlayerHealth <= 0){
-            lose();
+            Lose();
         }
         else if(currPlayerHealth > maxPlayerHealth){
             currPlayerHealth = maxPlayerHealth;
         }
+        HUDManager.main.UpdateHealth();
     }
 
     //reset player health to maximum, likely at start of stage
     void resetHealth(){
         currPlayerHealth = maxPlayerHealth;
+        HUDManager.main.UpdateHealth();
     }
 
     //add single resource point
     void addResource(){
         resourcePoints += 1;
+        HUDManager.main.UpdateEXP();
     }
-    //adds an ammount of resource pounts
-    void addResource(int ammount){
-        resourcePoints += ammount;
+    //adds an amount of resource pounts
+    void addResource(int amount){
+        resourcePoints += amount;
+        HUDManager.main.UpdateEXP();
     }
-    void spendResource(int ammount){
-        resourcePoints -= ammount;
+    void spendResource(int amount){
+        resourcePoints -= amount;
+        HUDManager.main.UpdateEXP();
     }
     void resetResource(){
         resourcePoints = startingResourcePoints;
+        HUDManager.main.UpdateEXP();
     }
 
     // //syncs clocks for start of gameplay

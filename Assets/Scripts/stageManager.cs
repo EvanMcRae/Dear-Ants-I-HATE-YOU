@@ -41,7 +41,7 @@ public class stageManager : MonoBehaviour
             levelAssets.Add(level.gameObject);
         }
 
-        loadLevel(1, 3);
+        loadLevel(1, 1);
     }
 
     public void loadLevel(int goToLevel, int goToStage) 

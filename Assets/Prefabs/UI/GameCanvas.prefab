@@ -157,6 +157,9 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 0}
   spawnManager: {fileID: 412902649701189703}
   saveManager: {fileID: 0}
+  maxPlayerHealth: 3
+  currPlayerHealth: 0
+  resourcePoints: 0
 --- !u!114 &412902649701189703
 MonoBehaviour:
   m_ObjectHideFlags: 0

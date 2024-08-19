@@ -7927,9 +7927,89 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1314281961934553986, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314281961934553986, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314281961934553986, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314281961934553986, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3836165500297017165, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
       propertyPath: m_Name
       value: HUDCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543106019824413873, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543106019824413873, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543106019824413873, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543106019824413873, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807203362752739397, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807203362752739397, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807203362752739397, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807203362752739397, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076066393735609892, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076066393735609892, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076066393735609892, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076066393735609892, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257649507948215782, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257649507948215782, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257649507948215782, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257649507948215782, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6795411149671851933, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
