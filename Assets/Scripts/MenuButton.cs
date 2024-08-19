@@ -22,13 +22,13 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
             return;
         }
 
-        if (MainMenu ^ PopupPanel.visible)
+        if (MainMenu ^ PopupPanel.numPopups > 0)
             EventSystem.current.SetSelectedGameObject(gameObject);
     }
 
     public void OnPointerMove(PointerEventData eventData)
     {
-        if (eventData.hovered.Contains(gameObject) && EventSystem.current.currentSelectedGameObject != gameObject && !PopupPanel.visible)
+        if (eventData.hovered.Contains(gameObject) && EventSystem.current.currentSelectedGameObject != gameObject && PopupPanel.numPopups == 0)
         {
             EventSystem.current.SetSelectedGameObject(gameObject);
         }

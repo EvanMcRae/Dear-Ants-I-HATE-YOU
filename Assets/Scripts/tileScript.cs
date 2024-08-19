@@ -36,6 +36,11 @@ public class tileScript : MonoBehaviour
     
     void OnMouseDown()
     {
+        // Reject tower placement if game is not playable at the moment
+        // TODO add condition for start cutscene
+        if (GameplayManager.paused || GameplayManager.lost || GameplayManager.won || !ScreenWipe.over)
+            return;
+
         //do something with the game object after clicking on it
         print("name: " + gm.name + " xcord: " + xcord + " ycord: " + ycord);
 
@@ -56,15 +61,15 @@ public class tileScript : MonoBehaviour
         // Instantiate the prefab at the calculated position
         if (data.type == "melee")
         {
-            prefabToSpawn = GameObject.Find("gameManager").GetComponent<clickToSpawnManager>().meleeTower;
+            prefabToSpawn = GameplayManager.main.spawnManager.meleeTower;
         }
         else if (data.type == "laser")
         {
-            prefabToSpawn = GameObject.Find("gameManager").GetComponent<clickToSpawnManager>().laserTower;
+            prefabToSpawn = GameplayManager.main.spawnManager.laserTower;
         }
         else if (data.type == "bomb")
         {
-            prefabToSpawn = GameObject.Find("gameManager").GetComponent<clickToSpawnManager>().bombTower;
+            prefabToSpawn = GameplayManager.main.spawnManager.bombTower;
         }
         else
         {

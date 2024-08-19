@@ -16,6 +16,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI WinText;
     [SerializeField] private GameObject globalWwise;
     [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver;
+    public clickToSpawnManager spawnManager;
 
     // [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
     // private enum MusicState { CALM, MEDIATE, INTENSE };

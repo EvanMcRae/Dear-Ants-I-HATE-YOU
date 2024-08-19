@@ -13,7 +13,9 @@ public class PopupPanel : MonoBehaviour
     [SerializeField] private AK.Wwise.Event MenuBack;
     public float animProgress;
     private GameObject PreviousButton;
-    public static bool open = false, visible = false;
+    public static bool open = false;
+    public static int numPopups = 0;
+    public bool visible = false;
     public static int mouseNeverMoved = 0;
     private Animator anim;
     private GameObject currentSelection;
@@ -77,6 +79,7 @@ public class PopupPanel : MonoBehaviour
         anim.SetFloat("Speed", 1);
         open = true;
         mouseNeverMoved = 2;
+        numPopups++;
         visible = true;
         PreviousButton = EventSystem.current.currentSelectedGameObject;
         EventSystem.current.SetSelectedGameObject(PrimaryButton);
@@ -94,6 +97,7 @@ public class PopupPanel : MonoBehaviour
             anim.SetFloat("Speed", -10);
         if (darkensScreen)
             ScreenDarkener.raycastTarget = false;
+        numPopups--;
         visible = false;
         EventSystem.current.SetSelectedGameObject(PreviousButton);
     }
