@@ -21,6 +21,13 @@ public class GameplayManager : MonoBehaviour
     public clickToSpawnManager spawnManager;
     public SaveManager saveManager; 
 
+    //number of ants that need to get to the goal in order for the player to lose
+    int maxPlayerHealth = 3;
+    int currPlayerHealth;
+    //points used to buy/maintain towers
+    int resourcePoints;
+    int startingResourcePoints = 10;
+
     // [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
     // private enum MusicState { CALM, MEDIATE, INTENSE };
     // private MusicState currentState;
@@ -41,6 +48,9 @@ public class GameplayManager : MonoBehaviour
         lost = false;
         playingAgain = false;
         quit = false;
+
+        currPlayerHealth = maxPlayerHealth;
+        resourcePoints = startingResourcePoints;
     }
 
     public static void AutoSave()
@@ -255,6 +265,37 @@ public class GameplayManager : MonoBehaviour
         screenWipe.WipeIn();
         StopMusic?.Post(globalWwise);
         screenWipe.PostWipe += ReloadSave;
+    }
+
+    //player takes damage from enemy reaching base
+    void takeDamage(){
+        currPlayerHealth -= 1;
+        if(currPlayerHealth <= 0){
+            lose();
+        }
+        else if(currPlayerHealth > maxPlayerHealth){
+            currPlayerHealth = maxPlayerHealth;
+        }
+    }
+
+    //reset player health to maximum, likely at start of stage
+    void resetHealth(){
+        currPlayerHealth = maxPlayerHealth;
+    }
+
+    //add single resource point
+    void addResource(){
+        resourcePoints += 1;
+    }
+    //adds an ammount of resource pounts
+    void addResource(int ammount){
+        resourcePoints += ammount;
+    }
+    void spendResource(int ammount){
+        resourcePoints -= ammount;
+    }
+    void resetResource(){
+        resourcePoints = startingResourcePoints;
     }
 
     // //syncs clocks for start of gameplay
