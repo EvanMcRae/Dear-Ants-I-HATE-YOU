@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class tileScript : MonoBehaviour
@@ -19,6 +20,11 @@ public class tileScript : MonoBehaviour
     void Start()
     {
         //cords set manually for level 1 will be done programatically later
+        if (Camera.main.GetComponent<stageManager>().getLevel() != 1) 
+        {
+            xcord = (int)this.transform.position.x;
+            ycord = (int)this.transform.position.z;
+        }
         Camera.main.GetComponent<stageManager>().updateTileList(xcord, ycord, gameObject);
 
         //prefabToSpawn = GameObject.Find("EventSystem").GetComponent<clickToSpawnManager>().meleeTower;

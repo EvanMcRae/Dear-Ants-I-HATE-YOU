@@ -43,8 +43,7 @@ public class stageManager : MonoBehaviour
             levelAssets.Add(level.gameObject);
         }
 
-        loadLevel(1, 1);
-        levelReset.Post(gameObject);
+        loadLevel(2, 1);
     }
 
     public void loadLevel(int goToLevel, int goToStage) 
@@ -160,7 +159,7 @@ public class stageManager : MonoBehaviour
 
     public int getLevel() 
     {
-        return 1;
+        return level;
     }
 
     public int getLength(int level)
@@ -169,6 +168,10 @@ public class stageManager : MonoBehaviour
         if (level == 1) 
         {
             return 11;
+        }
+        if (level == 2) 
+        {
+            return 9;
         }
         return 999999999;
     }
@@ -186,6 +189,10 @@ public class stageManager : MonoBehaviour
         if (level == 1)
         {
             return 77;
+        }
+        else if (level == 2) 
+        {
+            return 63;
         }
         return 999999999;
     }
