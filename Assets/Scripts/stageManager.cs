@@ -41,6 +41,15 @@ public class stageManager : MonoBehaviour
             levelAssets.Add(level.gameObject);
         }
 
+        loadLevel(1, 2);
+    }
+
+    public void loadLevel(int goToLevel, int goToStage) 
+    {
+        level = goToLevel;
+        stage = 1;
+        stageCount = getStageCount(level);
+        levelAssets[level-1].SetActive(true);
         everyTile.AddRange(FindObjectsOfType<GameObject>());
         List<GameObject> temp = new List<GameObject>();
         foreach (GameObject gm in everyTile)
@@ -52,16 +61,6 @@ public class stageManager : MonoBehaviour
         }
         everyTile = temp;
         everyTileOrdered = everyTile;
-
-        loadLevel(1, 1);
-    }
-
-    public void loadLevel(int goToLevel, int goToStage) 
-    {
-        level = goToLevel;
-        stage = goToStage;
-        stageCount = getStageCount(level);
-        levelAssets[level-1].SetActive(true);
         advanceToStage(goToStage);
     }
 
