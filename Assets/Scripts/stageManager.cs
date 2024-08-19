@@ -21,8 +21,16 @@ public class stageManager : MonoBehaviour
     public int stageCount;
     public int level;
 
+    public static stageManager main;
+    public WaveManager waveManager;
+    public List<Vector3> SpawnLocations = new List<Vector3>();
+
     void Awake()
     {
+        main = this;
+
+        Debug.Log("Stage manager: " + gameObject);
+
         everyTile.AddRange(GameObject.FindObjectsOfType<GameObject>());
         List<GameObject> temp = new List<GameObject>();
         foreach (GameObject gm in everyTile) 
@@ -37,6 +45,34 @@ public class stageManager : MonoBehaviour
 
         create2DPathList();
         enablePath(1);
+    }
+
+    private void Start()
+    {
+        UpdateEnemySpawnLocations();
+    }
+
+    public void UpdateEnemySpawnLocations()
+    {
+        List<List<GameObject>> paths = new List<List<GameObject>>();
+        foreach (List<GameObject> ls in path) 
+        {
+            paths.Add(ls);
+        }
+        //paths.AddRange(new List<GameObject>[]
+        //{
+        //    path1,
+        //    path2,
+        //    path3,
+        //    path4,
+        //    path5
+        //});
+
+        foreach (List<GameObject> path in paths)
+        {
+            if (path.Count > 0)
+                SpawnLocations.Add(path[0].transform.position + Vector3.up * 2);
+        }
     }
 
     private void enablePath(int stage) 
@@ -129,5 +165,31 @@ public class stageManager : MonoBehaviour
     private void endLevel() 
     {
         Debug.Log("Level Ended");
+    }
+
+    public tileScript GetNextTileInPath(tileScript startTile)
+    {
+        List<List<GameObject>> paths = new List<List<GameObject>>();
+        foreach (List<GameObject> ls in path)
+        {
+            paths.Add(ls);
+        }
+
+        foreach (List<GameObject> path in paths)
+        {
+            for (int i = 0; i < path.Count; i++)
+            {
+                if (path[i] == startTile.gameObject)
+                {
+                    if (i + 1 < path.Count)
+                        return path[i + 1].GetComponent<tileScript>();
+                    else
+                        return null;
+                }
+            }
+        }
+
+        return null;
+
     }
 }

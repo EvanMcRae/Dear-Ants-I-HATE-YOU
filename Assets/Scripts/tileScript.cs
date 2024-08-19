@@ -25,7 +25,7 @@ public class tileScript : MonoBehaviour
 
         prefabToSpawn = GameObject.Find("EventSystem").GetComponent<clickToSpawnManager>().meleeTower;
     }
-
+    
     void OnMouseDown()
     {
         //do something with the game object after clicking on it
