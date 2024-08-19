@@ -12,7 +12,7 @@ public class tileScript : MonoBehaviour
     private GameObject prefabToSpawn;
     private TowerData towerToPlace;
 
-    private bool hasTower = false;
+    public bool hasTower = false;
     public bool canPlaceTower = false;
 
     // Start is called before the first frame update
