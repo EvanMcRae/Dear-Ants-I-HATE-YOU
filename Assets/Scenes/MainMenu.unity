@@ -1081,12 +1081,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<size="65">Sound:</size>
+  m_text: '<size="65">Sound/Music:</size>
 
     - Daniel Wangusi (Dangoosey)
 
-    - Daniel''s
-    Friend'
+    -
+    Max Masterson'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c6365a8fa4a96f043a10aca3f9a2d884, type: 2}
   m_sharedMaterial: {fileID: -3792765245098334699, guid: c6365a8fa4a96f043a10aca3f9a2d884, type: 2}
@@ -1500,7 +1500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 560026996816832373, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 985612616138203033, guid: 6f8b92012a7778d4eb1815c49639e8c0, type: 3}
       propertyPath: m_AnchorMax.x
