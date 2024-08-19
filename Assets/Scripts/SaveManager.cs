@@ -23,8 +23,7 @@ public class SaveData
     public int level;
     public int stage;
     public int currency;
-
-
+    public int health;
     public TowerData[] towers;
 }
 
@@ -84,7 +83,11 @@ public class SaveManager : MonoBehaviour
 
         StageManager.loadLevel(data.level, data.stage);
         clickToSpawnManager.placedTowers.Clear();
-        
+        GameplayManager.main.currPlayerHealth = data.health;
+        GameplayManager.main.resourcePoints = data.currency;
+        HUDManager.main.UpdateEXP();
+        HUDManager.main.UpdateHealth();
+
         if (data.towers != null)
         {
             for (int i = 0; i < data.towers.Length; i++)
@@ -101,7 +104,8 @@ public class SaveManager : MonoBehaviour
 
         data.level = stageManager.level;
         data.stage = stageManager.stage;
-
+        data.currency = GameplayManager.main.resourcePoints;
+        data.health = GameplayManager.main.currPlayerHealth;
         data.towers = SerializeTowers();
 
         string jsonString = JsonUtility.ToJson(data);
