@@ -437,7 +437,158 @@
 								</Sound>
 							</ChildrenList>
 						</ActorMixer>
+						<Sound Name="Adjust" ID="{DCB2A4FE-F215-4EA8-A241-D93DF73DB9DA}" ShortID="286652804">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>7</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{E61524B6-DD15-44C0-8F8B-C131C6E9EC0B}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5FFBEC59-0C1C-4AC8-B529-AB83724EBFE8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Buy Item Computer Sound 1" ID="{D7EDC27A-27A9-44D2-B9A4-37176616C8F8}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0925858935742972"/>
+										<Property Name="FadeOutShape" Type="int16" Value="1"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.143602610441767"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.332553413654619"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Buy Item Computer Sound 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1025420711"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{8CA6EAF0-60E0-4B3A-AD93-8B00DF5E2BF5}" ShortID="827483203">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+														<ObjectRef Name="High_Pass_60Hz" ID="{F9627628-0B10-4272-BC30-D4C20423CB38}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="Buy Item Computer Sound 1" ID="{D7EDC27A-27A9-44D2-B9A4-37176616C8F8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="Adjust2" ID="{7BF38F9E-C1AE-43C0-B3C8-E3A802DE82E0}" ShortID="418416723">
+							<PropertyList>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5FFBEC59-0C1C-4AC8-B529-AB83724EBFE8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Adjust2" ID="{C5F68CBD-2F5F-45E9-8FC9-A5CFB3742B5B}" ShortID="275040821">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>7</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>250</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{1B627E1E-2BF8-4A0E-BE62-13E4E9598D95}">
+														<PropertyList>
+															<Property Name="Max" Type="Real64" Value="50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5FFBEC59-0C1C-4AC8-B529-AB83724EBFE8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="LevelA_Pulse Synth_L8M_P1" ID="{3274AEF1-4FE1-4574-97D5-2489DCD0DDA7}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.38934076441822"/>
+												<Property Name="TrimEnd" Type="Real64" Value="21.0885293555173"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>LevelA_Pulse Synth_L8M_P1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="572763555"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="LevelA_Pulse Synth_L8M_P1" ID="{3274AEF1-4FE1-4574-97D5-2489DCD0DDA7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Playlist">
+									<Reference>
+										<ObjectRef Name="Adjust2" ID="{C5F68CBD-2F5F-45E9-8FC9-A5CFB3742B5B}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</RandomSequenceContainer>
 					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Gameplay" ID="{B845AAF8-92E2-4CBE-9211-579256714434}" ShortID="777289640">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5FFBEC59-0C1C-4AC8-B529-AB83724EBFE8}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}"/>
+						</Reference>
+					</ReferenceList>
 				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>

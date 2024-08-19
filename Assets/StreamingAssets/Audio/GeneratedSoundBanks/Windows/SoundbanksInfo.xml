@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{60EF66B0-E265-9B9F-25E9-A30E1C4DAB21}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{13577F01-D32F-EF56-05A2-7E2570793F11}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -229,7 +229,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{9B862077-57F4-A6C2-988B-A51A6C2347D2}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{875B1EE6-83DF-DCD3-B518-FBB9AE2894A3}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -313,6 +313,10 @@
 					<ShortName>Buy Item Computer Sound 4.wav</ShortName>
 					<CachePath>SFX/Buy Item Computer Sound 4_818F3B66.wem</CachePath>
 				</File>
+				<File Id="572763555" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>LevelA_Pulse Synth_L8M_P1.wav</ShortName>
+					<CachePath>SFX/LevelA_Pulse Synth_L8M_P1_C9A90DD3.wem</CachePath>
+				</File>
 				<File Id="588171366" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelBridge_Arpeggio_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelBridge_Arpeggio_L8M_P1_FBC78EF0.wem</CachePath>
@@ -365,9 +369,38 @@
 					<ShortName>LevelB_Big Bass Synth_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelB_Big Bass Synth_L8M_P1_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="1025420711" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Buy Item Computer Sound 1.wav</ShortName>
+					<CachePath>SFX/Buy Item Computer Sound 1_A0B7E799.wem</CachePath>
+				</File>
 			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="3604890626" Name="High_Pass_60Hz" LibName="Wwise Parametric EQ" LibId="6881283"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
 				<Event Id="1813202170" Name="LevelReset" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1040722926" Name="menuAdjust1" DurationType="OneShot" DurationMin="0.18357174" DurationMax="0.1889508">
+					<MediaRefs>
+						<MediaRef Id="1025420711"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3604890626"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+				<Event Id="1040722925" Name="menuAdjust2" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="572763555"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1044721053" Name="menuAdjustStop" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="572763555"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2634859593" Name="menuBack" DurationType="OneShot" DurationMin="0.6488067" DurationMax="0.78414583">
 					<MediaRefs>
 						<MediaRef Id="2358650"/>
@@ -397,9 +430,80 @@
 					<MediaRefs>
 						<MediaRef Id="263506007"/>
 					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
+							<MediaRefs>
+								<MediaRef Id="28925695"/>
+								<MediaRef Id="47796842"/>
+								<MediaRef Id="74990297"/>
+								<MediaRef Id="194023441"/>
+								<MediaRef Id="282532151"/>
+								<MediaRef Id="451429337"/>
+								<MediaRef Id="475883887"/>
+								<MediaRef Id="561685502"/>
+								<MediaRef Id="588171366"/>
+								<MediaRef Id="634956250"/>
+								<MediaRef Id="664842732"/>
+								<MediaRef Id="712353983"/>
+								<MediaRef Id="731258502"/>
+								<MediaRef Id="740174606"/>
+								<MediaRef Id="839594064"/>
+								<MediaRef Id="902460037"/>
+								<MediaRef Id="976401125"/>
+								<MediaRef Id="1002972504"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
+							<MediaRefs>
+								<MediaRef Id="28925695"/>
+								<MediaRef Id="47796842"/>
+								<MediaRef Id="74990297"/>
+								<MediaRef Id="194023441"/>
+								<MediaRef Id="282532151"/>
+								<MediaRef Id="451429337"/>
+								<MediaRef Id="475883887"/>
+								<MediaRef Id="561685502"/>
+								<MediaRef Id="588171366"/>
+								<MediaRef Id="634956250"/>
+								<MediaRef Id="664842732"/>
+								<MediaRef Id="712353983"/>
+								<MediaRef Id="731258502"/>
+								<MediaRef Id="740174606"/>
+								<MediaRef Id="839594064"/>
+								<MediaRef Id="902460037"/>
+								<MediaRef Id="976401125"/>
+								<MediaRef Id="1002972504"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="2932040671" Name="Play_Music" DurationType="Infinite">
 					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
+							<MediaRefs>
+								<MediaRef Id="28925695"/>
+								<MediaRef Id="47796842"/>
+								<MediaRef Id="74990297"/>
+								<MediaRef Id="194023441"/>
+								<MediaRef Id="282532151"/>
+								<MediaRef Id="451429337"/>
+								<MediaRef Id="475883887"/>
+								<MediaRef Id="561685502"/>
+								<MediaRef Id="588171366"/>
+								<MediaRef Id="634956250"/>
+								<MediaRef Id="664842732"/>
+								<MediaRef Id="712353983"/>
+								<MediaRef Id="731258502"/>
+								<MediaRef Id="740174606"/>
+								<MediaRef Id="839594064"/>
+								<MediaRef Id="902460037"/>
+								<MediaRef Id="976401125"/>
+								<MediaRef Id="1002972504"/>
+							</MediaRefs>
+						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
 							<MediaRefs>
@@ -433,6 +537,29 @@
 				<Event Id="585119210" Name="StageUp" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2837384057" Name="Stop_Music" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
+							<MediaRefs>
+								<MediaRef Id="28925695"/>
+								<MediaRef Id="47796842"/>
+								<MediaRef Id="74990297"/>
+								<MediaRef Id="194023441"/>
+								<MediaRef Id="282532151"/>
+								<MediaRef Id="451429337"/>
+								<MediaRef Id="475883887"/>
+								<MediaRef Id="561685502"/>
+								<MediaRef Id="588171366"/>
+								<MediaRef Id="634956250"/>
+								<MediaRef Id="664842732"/>
+								<MediaRef Id="712353983"/>
+								<MediaRef Id="731258502"/>
+								<MediaRef Id="740174606"/>
+								<MediaRef Id="839594064"/>
+								<MediaRef Id="902460037"/>
+								<MediaRef Id="976401125"/>
+								<MediaRef Id="1002972504"/>
+							</MediaRefs>
+						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
 							<MediaRefs>
@@ -527,5 +654,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{241BEB6A-9D6D-4124-5B4B-97843B8BAF6A}</FileHash>
+	<FileHash>{71AEBB08-1608-6DFB-6300-F0EB467447F6}</FileHash>
 </SoundBanksInfo>
