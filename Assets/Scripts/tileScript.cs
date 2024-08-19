@@ -8,7 +8,6 @@ public class tileScript : MonoBehaviour
     GameObject gm;
     public int xcord;
     public int ycord;
-    private GameObject camera;
     public bool activated = false;
 
     // Add a public field for the prefab to spawn
@@ -23,8 +22,7 @@ public class tileScript : MonoBehaviour
         gm = this.gameObject;
         tf =  gm.GetComponent<Transform>();
         //cords set manually for level 1 will be done programatically later
-        camera = GameObject.Find("Main Camera");
-        camera.GetComponent<stageManager>().updateTileList(xcord, ycord, gm);
+        Camera.main.GetComponent<stageManager>().updateTileList(xcord, ycord, gm);
 
         //prefabToSpawn = GameObject.Find("EventSystem").GetComponent<clickToSpawnManager>().meleeTower;
     }
@@ -35,7 +33,8 @@ public class tileScript : MonoBehaviour
         print("name: " + gm.name + " xcord: " + xcord + " ycord: " + ycord);
 
         // Spawn the prefab on this tile
-        towerToPlace.towerType = "melee";
+        TowerData towerToPlace = new TowerData();
+        towerToPlace.type = "melee";
         towerToPlace.xPos = xcord;
         towerToPlace.yPos = ycord;  
         BuildTowerFromData(towerToPlace);
@@ -43,25 +42,28 @@ public class tileScript : MonoBehaviour
 
     public void BuildTowerFromData(TowerData data)
     {
+        // Instantiate the prefab at the calculated position
+        if (data.type == "melee")
+        {
+            prefabToSpawn = GameObject.Find("EventSystem").GetComponent<clickToSpawnManager>().meleeTower;
+        }
+        else
+        {
+            print("I don't think we have any other tower types other than melee");
+        }
+        
         // Spawn the prefab on this tile
         if (prefabToSpawn != null)
         {
             // Calculate the spawn position (tile position + 1 unit up)
             Vector3 spawnPosition = tf.position + Vector3.up;
 
-            // Instantiate the prefab at the calculated position
-            if(data.towerType == "melee"){
-                prefabToSpawn = GameObject.Find("EventSystem").GetComponent<clickToSpawnManager>().meleeTower;
-            }
-            else{
-                print("I don't think we have any other tower types other than melee");
-            }
             GameObject spawnedObject = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
 
             // Add the spawned tower data to the list
             TowerData newTower = new TowerData
             {
-                towerType = prefabToSpawn.name, // Assuming the prefab name represents the tower type
+                type = prefabToSpawn.name, // Assuming the prefab name represents the tower type
                 xPos = xcord,
                 yPos = ycord
             };
