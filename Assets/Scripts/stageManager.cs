@@ -59,14 +59,7 @@ public class stageManager : MonoBehaviour
         {
             paths.Add(ls);
         }
-        //paths.AddRange(new List<GameObject>[]
-        //{
-        //    path1,
-        //    path2,
-        //    path3,
-        //    path4,
-        //    path5
-        //});
+        /*CHANGED*/
 
         foreach (List<GameObject> path in paths)
         {
@@ -174,7 +167,7 @@ public class stageManager : MonoBehaviour
         {
             paths.Add(ls);
         }
-
+        /*CHANGED*/
         foreach (List<GameObject> path in paths)
         {
             for (int i = 0; i < path.Count; i++)
