@@ -16,18 +16,26 @@ public class EnemyAI : MonoBehaviour
     public float attackCooldown;
     public int attackDamage = 1;
 
+    //resource points awarded when killed
+    public int resourceAward = 1;
+    
+    GameplayManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        manager = FindObjectOfType<GameplayManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Hit end of path
         if (currPathId >= path.path.Count)
         {
-            //Hit end of path
+            //deal damage to the player
+            manager.takeDamage();
+            
             Destroy(gameObject);
             return;
         }
@@ -68,6 +76,7 @@ public class EnemyAI : MonoBehaviour
 
     public void Die()
     {
+        manager.addResource(resourceAward);
         Destroy(gameObject);
     }
 }
