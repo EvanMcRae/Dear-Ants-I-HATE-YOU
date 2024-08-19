@@ -39,7 +39,7 @@ public class MainMenuManager : MonoBehaviour
         // Save file detection
         Navigation playNav = PlayButton.navigation;
         Navigation instNav = InstructionsButton.navigation;
-        if (File.Exists(Application.persistentDataPath + "SaveData.json"))
+        if (File.Exists(Application.persistentDataPath + "/SaveData.json"))
         {
             LoadButton.interactable = true;
             playNav.selectOnDown = LoadButton;

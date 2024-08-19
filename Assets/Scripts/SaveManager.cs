@@ -44,8 +44,8 @@ public class SaveManager : MonoBehaviour
 
     private void Awake()
     {
-        saveFile = Application.persistentDataPath + "SaveData.json";
-        autoSaveFile = Application.persistentDataPath + "AutoSave.json";
+        saveFile = Application.persistentDataPath + "/SaveData.json";
+        autoSaveFile = Application.persistentDataPath + "/AutoSave.json";
     }
 
     private void Start()
@@ -68,7 +68,7 @@ public class SaveManager : MonoBehaviour
         loadingFromSave = false;
         loadingFromAutoSave = false;
         if (!SaveExists(autosave)) return;
-
+        
         string fileContents = File.ReadAllText(autosave ? autoSaveFile : saveFile);
 
         data = JsonUtility.FromJson<SaveData>(fileContents);
@@ -83,7 +83,8 @@ public class SaveManager : MonoBehaviour
         Debug.Log("stage: " + data.stage);
 
         StageManager.loadLevel(data.level, data.stage);
-
+        clickToSpawnManager.placedTowers.Clear();
+        
         if (data.towers != null)
         {
             for (int i = 0; i < data.towers.Length; i++)
@@ -96,7 +97,7 @@ public class SaveManager : MonoBehaviour
     //will be called after stage/level to save the current game state
     public void SaveGame(bool autosave = false)
     {
-        Debug.Log("saving game!");
+        Debug.Log("saving game to " + (autosave ? autoSaveFile : saveFile));
 
         data.level = stageManager.level;
         data.stage = stageManager.stage;

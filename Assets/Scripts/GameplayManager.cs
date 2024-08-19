@@ -28,7 +28,8 @@ public class GameplayManager : MonoBehaviour
 
     void Awake()
     {
-        screenWipe.PostUnwipe += AutoSave;
+        if (!SaveManager.loadingFromSave)
+            screenWipe.PostUnwipe += AutoSave;
     }
 
     // Start is called before the first frame update
@@ -170,6 +171,7 @@ public class GameplayManager : MonoBehaviour
         lost = false;
         pauseOpen = false;
         saveManager.SaveGame();
+        clickToSpawnManager.placedTowers.Clear();
         StopMusic?.Post(globalWwise);
         screenWipe.WipeIn();
         screenWipe.PostWipe += LoadMenu;
