@@ -67,6 +67,7 @@ public class Tower : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
+        if (GameplayManager.quit || GameplayManager.won || GameplayManager.lost || GameplayManager.playingAgain) return;
         timeSinceLastAttack += attackSpeed * Time.deltaTime;
         
         //calculate total number of ants seen in everysightbox combined

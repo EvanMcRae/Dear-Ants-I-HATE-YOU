@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class HUDManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI EXPValue, WaveValue, LevelValue;
+    [SerializeField] private TextMeshProUGUI EXPValue, EXPValue2, WaveValue, LevelValue;
     [SerializeField] private GameObject WorkshopPanel = null;
     [SerializeField] private List<Image> Hearts;
     [SerializeField] private Sprite fullHeart, emptyHeart;
@@ -47,6 +47,7 @@ public class HUDManager : MonoBehaviour
     public void UpdateEXP()
     {
         EXPValue.text = GameplayManager.main.resourcePoints + "";
+        EXPValue2.text = EXPValue.text;
     }
 
     public void HurtEffect()

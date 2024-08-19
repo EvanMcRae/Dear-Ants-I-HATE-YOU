@@ -14868,6 +14868,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3648715956480715363, guid: 241d59989e9b1a0428e39e46a2d48f8c, type: 3}
   m_PrefabInstance: {fileID: 1943750018}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1943750020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2776667407028899905, guid: 241d59989e9b1a0428e39e46a2d48f8c, type: 3}
+  m_PrefabInstance: {fileID: 1943750018}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1943750021 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3359636908388023980, guid: 241d59989e9b1a0428e39e46a2d48f8c, type: 3}
@@ -16809,6 +16820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUDCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3862203972905032881, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: EXPValue2
+      value: 
+      objectReference: {fileID: 1943750020}
     - target: {fileID: 3862203972905032881, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
       propertyPath: WorkshopPanel
       value: 

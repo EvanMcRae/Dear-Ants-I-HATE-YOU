@@ -30,6 +30,8 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameplayManager.quit || GameplayManager.won || GameplayManager.lost || GameplayManager.playingAgain) return;
+
         //Hit end of path
         if (currPathId >= path.path.Count)
         {

@@ -405,7 +405,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 88242dbeeba24a44a1157017adc900c4
     GuidInternal: 
-    m_lastTime: -8584775083319434237
+    m_lastTime: -8584775045313047991
     List:
     - name: Main
       guid: 49d147b4243b0b499889950aa32b8cfd
@@ -433,7 +433,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 9e4891bc502aab45a273595ad7792cd5
     GuidInternal: 
-    m_lastTime: -8584775083320281077
+    m_lastTime: -8584775045313086121
     List:
     - name: LevelReset
       guid: ab5af967c194c74e82aab70075fdd849
@@ -472,6 +472,66 @@ MonoBehaviour:
         ObjectType: 4
         guid: b705ff10abf55041a552765e0afd70d0
       Path: Events\Default Work Unit\Menu
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: menuAdjust1
+      guid: 6386727f9df53c49bd3ca7c341591ff7
+      id: 1040722926
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Menu
+        ObjectType: 4
+        guid: b705ff10abf55041a552765e0afd70d0
+      - ElementName: menuAdjust1
+        ObjectType: 3
+        guid: 6386727f9df53c49bd3ca7c341591ff7
+      Path: Events\Default Work Unit\Menu\menuAdjust1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: menuAdjust2
+      guid: b14541b3872fbf4ab3d11937cc9d052a
+      id: 1040722925
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Menu
+        ObjectType: 4
+        guid: b705ff10abf55041a552765e0afd70d0
+      - ElementName: menuAdjust2
+        ObjectType: 3
+        guid: b14541b3872fbf4ab3d11937cc9d052a
+      Path: Events\Default Work Unit\Menu\menuAdjust2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: menuAdjustStop
+      guid: c0521f68e695cc4fa64fdc44fdd6d4d4
+      id: 1044721053
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Menu
+        ObjectType: 4
+        guid: b705ff10abf55041a552765e0afd70d0
+      - ElementName: menuAdjustStop
+        ObjectType: 3
+        guid: c0521f68e695cc4fa64fdc44fdd6d4d4
+      Path: Events\Default Work Unit\Menu\menuAdjustStop
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1521,7 +1581,7 @@ MonoBehaviour:
     m_lastTime: -8584775987259415766
     List: []
   ExpandedFileSystemItemIds: 02000000030000000400000005000000060000000700000008000000090000000b0000000c0000000d0000000f00000011000000120000001300000016000000170000001c0000001f000000220000002300000024000000270000002b0000002e000000380000004d0000004e0000004f000000630000008a0000008b000000d5000000
-  ExpandedWaapiItemIds: 020000000300000004000000050000000600000007000000090000000a0000000b0000000c0000000d0000000e0000000f00000011000000120000001300000016000000170000001c0000001f000000220000002300000024000000270000002a0000002b0000002c0000002d0000002e000000380000004d0000004e0000004f000000630000008a0000008b000000d5000000
+  ExpandedWaapiItemIds: 020000000300000004000000050000000600000007000000090000000a0000000b0000000c0000000d0000000e0000000f00000011000000120000001300000016000000170000001c0000001f0000002200000023000000240000002700000028000000290000002a0000002b0000002c0000002d0000002e000000380000004d0000004e0000004f000000630000008a0000008b000000d5000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

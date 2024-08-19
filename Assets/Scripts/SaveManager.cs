@@ -24,6 +24,7 @@ public class SaveData
     public int stage;
     public int currency;
     public int health;
+    public int wave;
     public TowerData[] towers;
 }
 
@@ -83,6 +84,7 @@ public class SaveManager : MonoBehaviour
 
         StageManager.loadLevel(data.level, data.stage);
         clickToSpawnManager.placedTowers.Clear();
+        WaveManager.CurrentWave = data.wave;
         GameplayManager.main.currPlayerHealth = data.health;
         GameplayManager.main.resourcePoints = data.currency;
         HUDManager.main.UpdateEXP();
@@ -104,6 +106,7 @@ public class SaveManager : MonoBehaviour
 
         data.level = stageManager.level;
         data.stage = stageManager.stage;
+        data.wave = WaveManager.CurrentWave;
         data.currency = GameplayManager.main.resourcePoints;
         data.health = GameplayManager.main.currPlayerHealth;
         data.towers = SerializeTowers();

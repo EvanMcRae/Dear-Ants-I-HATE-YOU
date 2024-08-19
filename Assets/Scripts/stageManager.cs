@@ -146,6 +146,8 @@ public class stageManager : MonoBehaviour
 
     private void Update()
     {
+        if (GameplayManager.quit || GameplayManager.won || GameplayManager.lost || GameplayManager.playingAgain) return;
+        
         if (Input.GetKeyDown(KeyCode.Backslash))
         {
             advanceStage();

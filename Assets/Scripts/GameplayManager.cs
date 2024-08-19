@@ -196,6 +196,7 @@ public class GameplayManager : MonoBehaviour
         pauseOpen = false;
         saveManager.SaveGame();
         clickToSpawnManager.placedTowers.Clear();
+        WaveManager.CurrentWave = 0;
         StopMusic?.Post(globalWwise);
         screenWipe.WipeIn();
         screenWipe.PostWipe += LoadMenu;

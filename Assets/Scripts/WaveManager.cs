@@ -22,7 +22,9 @@ public class WaveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(inWave)
+        if (GameplayManager.quit || GameplayManager.won || GameplayManager.lost || GameplayManager.playingAgain) return;
+        
+        if (inWave)
         {
             waves[CurrentWave].WaveUpdate();
 
