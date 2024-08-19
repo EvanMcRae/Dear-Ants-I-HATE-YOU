@@ -64,6 +64,10 @@
 							<Value>100</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="soundVolume" ID="{C5AABEFE-F792-4A3D-964A-ACD03F89BC80}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="LevelProgress" ID="{315B0E65-AFDE-4D4E-9F9F-F0D274CD61E3}"/>
 							<Value>1</Value>
 						</RTPCValue>

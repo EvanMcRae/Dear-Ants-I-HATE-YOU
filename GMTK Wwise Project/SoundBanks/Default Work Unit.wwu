@@ -10,14 +10,23 @@
 						<ObjectRef Name="Stages" ID="{913B91A4-806D-413E-8AEA-1E23639507AE}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Menu" ID="{10FF05B7-F5AB-4150-A552-765E0AFD70D0}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Pause" ID="{F4586A93-67C5-41C1-BB09-47EC5A65D309}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Interactive Music Hierarchy" ID="{49FED366-B530-42A8-993B-924873AAB707}" WorkUnitID="{49FED366-B530-42A8-993B-924873AAB707}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Level Bridge" ID="{BBF978E3-A431-42AD-BE1C-12C1464D4F88}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item Computer Sound 4" ID="{65A7F08A-8515-42E1-A00F-5023CC5AB8EB}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="StageUp" ID="{4031E252-E3B4-42E2-873C-8FA282351A27}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Level A" ID="{591C6AEA-5726-430E-A07E-619EED2C77ED}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item Computer Sound 3" ID="{9B8866CD-D16E-4325-A4AD-79D0E5D77BD3}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item Computer Sound 5" ID="{2AB87EE8-28D3-433C-B5B8-CA8864FC3E0B}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Adjust2" ID="{7BF38F9E-C1AE-43C0-B3C8-E3A802DE82E0}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Music" ID="{849BF544-A925-43E4-9B80-26FFB57F005F}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Level Intro" ID="{C6AEA7F8-DBE2-43EA-A130-3BB3A596656F}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item Computer Sound 6" ID="{CC738BC3-978C-4442-9007-71684093047B}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item Computer Sound 2" ID="{401EEF1F-099C-4447-972A-5FFE0B687BEB}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Enemy" ID="{BCD73A05-FF96-44C4-8F25-FBFF862F63E2}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menuBack" ID="{DDEA4D9B-1C39-452E-B838-D926612DCA7C}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Level B" ID="{547725F4-9558-4626-9B3E-4993661AA837}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item Computer Sound 1" ID="{3D65C7C3-0102-4651-A6C4-F5243019DF4D}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Default Work Unit" ID="{B3012E2B-D08A-4702-9849-6C43A254A895}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Level" ID="{D83B5377-C090-4862-9085-F9ECC21AB106}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Resume" ID="{661DFE2A-DF31-488A-877F-47B68A432554}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menuAdjust1" ID="{7F728663-F59D-493C-BD3C-A7C341591FF7}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
@@ -27,9 +36,12 @@
 						<ObjectRef Name="menuAdjust2" ID="{B34145B1-2F87-4ABF-B3D1-1937CC9D052A}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Music" ID="{4581CFEB-D16C-4AF2-A796-CB1FD8C86745}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Tower" ID="{3609F8A2-E5CF-4B05-A2DD-CFD879C650D0}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu" ID="{3349ED99-D4EB-4B5A-A751-D348F6B3A181}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Music" ID="{7D320711-017A-4CA3-932E-5269562B018B}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Gameplay" ID="{B845AAF8-92E2-4CBE-9211-579256714434}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Buy Item" ID="{74E80A75-4C53-4D7E-8156-4682C2BD8475}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menuSelect" ID="{72E48116-2095-4E0C-94F1-D60320FB6F4A}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Adjust" ID="{DCB2A4FE-F215-4EA8-A241-D93DF73DB9DA}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="LevelReset" ID="{67F95AAB-94C1-4EC7-82AA-B70075FDD849}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX" ID="{9C52607D-72C2-4ECA-A27F-2F81CF9D173B}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menuConfirm" ID="{BC5AB323-13EC-4F5C-87B3-4B686333AC28}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
