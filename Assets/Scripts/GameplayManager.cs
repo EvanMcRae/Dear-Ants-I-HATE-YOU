@@ -12,7 +12,7 @@ public class GameplayManager : MonoBehaviour
     public bool startedSequence = false;
     public bool suspendSequence = false;
     public static bool paused, pauseOpen;
-    [SerializeField] private GameObject PauseMenu, WinScreen, LoseScreen, SettingsPanel;
+    [SerializeField] private GameObject PauseMenu, WinScreen, LoseScreen, SettingsPanel, DoctorsNote;
     [SerializeField] private GameObject PauseButton;
     [SerializeField] private Sprite PauseClicked, PauseNormal;
     [SerializeField] private TextMeshProUGUI WinText;
@@ -44,7 +44,7 @@ public class GameplayManager : MonoBehaviour
     void Start()
     {
         main = this;
-        // IntroSequence();
+        StartIntroSequence();
         won = false;
         lost = false;
         playingAgain = false;
@@ -84,10 +84,16 @@ public class GameplayManager : MonoBehaviour
         //     StartSequence();
     }
 
-    public void IntroSequence()
+    public void StartIntroSequence()
     {
-        // dialog.setSource(new DialogSource("[ss, .025]Left click to start! [exit]"));
-        // dialog.reading = true;
+        DoctorsNote.SetActive(true);
+        Time.timeScale = 0;
+        paused = true;
+    }
+    public void EndIntroSequence(){
+        DoctorsNote.SetActive(false);
+        Time.timeScale = 1;
+        paused = false;
     }
 
     public void Pause(bool user = false)

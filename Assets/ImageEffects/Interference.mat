@@ -82,7 +82,7 @@ Material:
     - _Speed: 0.25
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UnscaledTime: 1.5410463
+    - _UnscaledTime: 3.9068892
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
