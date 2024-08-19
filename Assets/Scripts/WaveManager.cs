@@ -23,7 +23,7 @@ public class WaveManager : MonoBehaviour
     void Update()
     {
         if (GameplayManager.quit || GameplayManager.won || GameplayManager.lost || GameplayManager.playingAgain) return;
-        
+
         if (inWave)
         {
             waves[CurrentWave].WaveUpdate();
@@ -55,6 +55,7 @@ public class WaveManager : MonoBehaviour
         CurrentWave++;
         inWave = false;
         stageManager.main.advanceStage();
+        GameplayManager.AutoSave();
 
         if (CurrentWave >= waves.Count)
         {

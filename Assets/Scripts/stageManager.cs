@@ -148,12 +148,6 @@ public class stageManager : MonoBehaviour
     {
         if (GameplayManager.quit || GameplayManager.won || GameplayManager.lost || GameplayManager.playingAgain) return;
         
-        if (Input.GetKeyDown(KeyCode.Backslash))
-        {
-            advanceStage();
-            GameplayManager.AutoSave(); // TODO THIS IS IMPORTANT!!!!! CALL THIS WHENEVER STAGE ADVANCES!!!
-        }
-
         AkSoundEngine.SetRTPCValue("LevelProgress", stage);
     }
 
