@@ -7,7 +7,7 @@ public class WaveManager : MonoBehaviour
 {
     public List<Wave> waves = new List<Wave>();
 
-    public int CurrentWave;
+    public static int CurrentWave;
 
     public bool inWave = false;
 
@@ -52,9 +52,16 @@ public class WaveManager : MonoBehaviour
     {
         CurrentWave++;
         inWave = false;
+        stageManager.main.advanceStage();
 
         if (CurrentWave >= waves.Count)
+        {
             WonMap();
+            return;
+        }
+
+        //Starts next wave on prior one finishing
+        StartWave();
     }
 
     public void WonMap()
@@ -100,18 +107,22 @@ public class WaveManager : MonoBehaviour
 
         public void SpawnEnemy(EnemySpawnDetails enemy)
         {
-            //spawnedEnemies.Add() //Add spawned enemy gameObj once spawned
-            if(enemy.spawnLocationID >= stageManager.main.SpawnLocations.Count)
-            {
-                Debug.LogError("spawnLocationID " + enemy.spawnLocationID + " is greater than spawn locations: " + (stageManager.main.SpawnLocations.Count - 1));
-                return;
-            }
-            spawnedEnemies.Add(Instantiate(enemy.enemyToSpawn, stageManager.main.SpawnLocations[enemy.spawnLocationID], Quaternion.identity));
+            Path path = stageManager.main.GetPathByName(enemy.spawnLocationID);
+            spawnedEnemies.Add(Instantiate(enemy.enemyToSpawn, path.path[0].transform.position + Vector3.up * 2, Quaternion.identity));
+            EnemyAI spawnedEnemy = spawnedEnemies[^1].GetComponent<EnemyAI>();
+            spawnedEnemy.path = path;
+
             Debug.Log("Spawned creature at: " + enemy.timeToSpawn);
         }
 
         public bool HasFinished()
         {
+            for(int i = spawnedEnemies.Count - 1; i >= 0; i--)
+            {
+                if (spawnedEnemies[i] == null)
+                    spawnedEnemies.RemoveAt(i);
+            }
+
             return enemiesToSpawn.Count == 0 && spawnedEnemies.Count == 0;
         }
     }
@@ -122,7 +133,7 @@ public class WaveManager : MonoBehaviour
         //Should there be multiple wave managers, one for each spawn point, or should the wave manager handle all, with each spawn details specifying where
         public float timeToSpawn;
         public GameObject enemyToSpawn;
-        public int spawnLocationID;
+        public string spawnLocationID;
 
         public int CompareTo(object obj)
         {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8488D2D2-23ED-4CB1-800E-A57B8CBADB18}" SchemaVersion="119">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{8488D2D2-23ED-4CB1-800E-A57B8CBADB18}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Volume Settings" ID="{3F45B97C-CF21-4EC1-AC82-902364B4B4BA}" ShortID="650951993">
+					<ChildrenList>
+						<GameParameter Name="musicVolume" ID="{A2064303-69AE-43B4-97C1-81CB9FA1501B}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="70"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="soundVolume" ID="{C5AABEFE-F792-4A3D-964A-ACD03F89BC80}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="70"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
+				<GameParameter Name="LevelProgress" ID="{315B0E65-AFDE-4D4E-9F9F-F0D274CD61E3}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="1"/>
+						<Property Name="Max" Type="Real64" Value="6"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

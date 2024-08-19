@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55342f559721e941b648f6bce69d52c, type: 3}
+  m_Name: Interference
+  m_EditorClassIdentifier: 
+  baseMaterial: {fileID: 2100000, guid: 7a55608419485e4449ee38464c8d6d2a, type: 2}
+  interferenceTex: {fileID: 2800000, guid: a5eebdf58553184499140b6b3c3d23c4, type: 3}
+  speed: 0.25
+  fuzzStrength: 1.5

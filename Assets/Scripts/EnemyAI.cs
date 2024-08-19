@@ -5,42 +5,38 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
 
-    public tileScript currentTile;
-    public tileScript incomingTile;
-    public tileScript nextTile;
-
+    public Path path;
+    public int currPathId = 0;
 
     public float moveSpeed = 1;
     // Start is called before the first frame update
     void Start()
     {
-        stageManager.main.getTileFromWorldspace(transform.position);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentTile == null || nextTile == null)
+        if (currPathId >= path.path.Count)
+        {
+            //Hit end of path
+            Destroy(gameObject);
             return;
+        }
 
-        transform.position += (nextTile.transform.position - currentTile.transform.position).normalized * Time.deltaTime;
-    }
+        Vector2 targetPosition = new Vector2(path.path[currPathId].transform.position.x, path.path[currPathId].transform.position.z);
+        if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), targetPosition) <= .1f)
+        {
+            currPathId++;
+        }
 
-    public void ChangeTile(tileScript newTile)
-    {
-        currentTile = newTile;
-        nextTile = stageManager.main.GetNextTileInPath(newTile);
-    }
+        
 
-    public void PrimeTile(tileScript tile)
-    {
-        incomingTile = tile;
-        if (currentTile == null)
-            AcceptChange();
-    }
+        Vector2 moveDir = (targetPosition - new Vector2(transform.position.x, transform.position.z)).normalized * moveSpeed * Time.deltaTime;
+        transform.position += (new Vector3(moveDir.x, 0, moveDir.y));
 
-    public void AcceptChange()
-    {
-        ChangeTile(incomingTile);
+        Debug.DrawLine(transform.position, new Vector3(targetPosition.x, transform.position.y, targetPosition.y));
     }
 }
+    

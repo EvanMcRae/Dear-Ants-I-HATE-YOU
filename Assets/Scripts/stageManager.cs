@@ -7,41 +7,45 @@ public class stageManager : MonoBehaviour
      * first object in list is enemy spawn
      * last object in list is base
      * use for pathfinding if you so desire
-     * objects in path1 are not in path2 and so on exluding base, base is last index in every path
-     * tiles in editor are names p(pathnumber).(index in respective list + 1)
+     * objects in path1 are not in path2 and so on, base is last index in every path
      */
 
     public GameObject home;
-    public List<GameObject> path1;
-    public List<GameObject> path2;
-    public List<GameObject> path3;
-    public List<GameObject> path4;
-    public List<GameObject> path5;
+    public List<List<GameObject>> path = new List<List<GameObject>>();
+    public List<GameObject> allPathsInOne;
 
     public List<GameObject> everyTile;
     public List<GameObject> everyTileOrdered;
 
+    public int stageCount;
+    public static int stage, level;
+    public List<GameObject> levelAssets;
+
     public static stageManager main;
-
     public WaveManager waveManager;
-
     public List<Vector3> SpawnLocations = new List<Vector3>();
 
+    public List<List<GameObject>> EnemyPathings = new List<List<GameObject>>();
 
-    public Transform OriginTile;
-
+    public List<PathsData> AIPathings = new List<PathsData>();
 
     void Awake()
     {
         main = this;
-
         Debug.Log("Stage manager: " + gameObject);
 
-        everyTile.AddRange(GameObject.FindObjectsOfType<GameObject>());
-        List<GameObject> temp = new List<GameObject>();
-        foreach (GameObject gm in everyTile) 
+        GameObject levels = GameObject.Find("Levels");
+        levelAssets = new List<GameObject>();
+        foreach (Transform level in levels.transform) 
         {
-            if (gm.GetComponent<tileScript>() != null) 
+            levelAssets.Add(level.gameObject);
+        }
+
+        everyTile.AddRange(FindObjectsOfType<GameObject>());
+        List<GameObject> temp = new List<GameObject>();
+        foreach (GameObject gm in everyTile)
+        {
+            if (gm.GetComponent<tileScript>() != null)
             {
                 temp.Add(gm);
             }
@@ -49,6 +53,50 @@ public class stageManager : MonoBehaviour
         everyTile = temp;
         everyTileOrdered = everyTile;
 
+        loadLevel(1, 1);
+    }
+
+    public void loadLevel(int goToLevel, int goToStage) 
+    {
+        level = goToLevel;
+        stage = goToStage;
+        stageCount = getStageCount(level);
+        levelAssets[level-1].SetActive(true);
+        advanceToStage(goToStage);
+    }
+
+    public void advanceStage()
+    {
+        stage++;
+        enablePath(stage);
+        if (stage == stageCount + 1) { endLevel(); }
+    }
+
+    private void enablePath(int stage)
+    {
+        foreach (GameObject gm in path[stage - 1])
+        {
+            gm.GetComponent<MeshRenderer>().material.color = Color.gray;
+            gm.GetComponent<tileScript>().activate();
+        }
+
+        if (stage == 1)
+        {
+            GameObject.Find("base").GetComponent<tileScript>().activate();
+            GameObject.Find("base").GetComponent<MeshRenderer>().material.color = Color.gray;
+        }
+
+        UpdateEnemySpawnLocations();
+    }
+
+    public void advanceToStage(int goTo)
+    {
+        create2DPathList();
+        enablePath(1);
+        for (int i = 0; i < goTo - 1; i++)
+        {
+            advanceStage();
+        }
     }
 
     private void Start()
@@ -58,26 +106,49 @@ public class stageManager : MonoBehaviour
 
     public void UpdateEnemySpawnLocations()
     {
-        List<List<GameObject>> paths = new List<List<GameObject>>();
-        paths.AddRange(new List<GameObject>[]
-        {
-            path1,
-            path2,
-            path3,
-            path4,
-            path5
-        });
+        //List<List<GameObject>> paths = new List<List<GameObject>>();
+        //foreach (List<GameObject> ls in path) 
+        //{
+        //    paths.Add(ls);
+        //}
+        /*CHANGED*/
 
-        foreach (List<GameObject> path in paths)
+        foreach (List<GameObject> path in path)
         {
-            if (path.Count > 0)
+            if (path.Count > 0 && path[0].gameObject.activeSelf)
                 SpawnLocations.Add(path[0].transform.position + Vector3.up * 2);
         }
     }
 
-    public void updateTileList(int x, int y, GameObject toBeInserted) 
+
+    private void create2DPathList() 
     {
-        int index = (y * 11) + x - 12;
+        GameObject pathGrandParent = GameObject.Find("pathGrandParent");
+
+        foreach (Transform child in pathGrandParent.transform)
+        {
+            List<GameObject> temp = new List<GameObject>();
+            foreach (Transform grandChild in child.transform)
+            {
+                temp.Add(grandChild.gameObject);
+                allPathsInOne.Add(grandChild.gameObject);
+            }
+            path.Add(temp);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Backslash))
+        {
+            advanceStage();
+            GameplayManager.AutoSave(); // TODO THIS IS IMPORTANT!!!!! CALL THIS WHENEVER STAGE ADVANCES!!!
+        }
+    }
+
+    public void updateTileList(int x, int y, GameObject toBeInserted)
+    {
+        int index = (y * getLength(level)) + x - getLength(level) - 1;
         everyTileOrdered[index] = toBeInserted;
     }
 
@@ -86,21 +157,36 @@ public class stageManager : MonoBehaviour
         return 1;
     }
 
-    public int getLength(int level) 
+    public int getLength(int level)
     {
         /*UPDATED LATER WITH MORE LEVELS*/
-        return 11;
+        if (level == 1) 
+        {
+            return 11;
+        }
+        return 999999999;
+    }
+
+    public int getStageCount(int level)
+    {
+        if (level == 1) { return 5; }
+        else if (level == 2) { return 5; }
+        return 999999;
     }
 
     private int getTileCount(int level) 
     {
         /*UPDATED LATER WITH MORE LEVELS*/
-        return 77;
+        if (level == 1)
+        {
+            return 77;
+        }
+        return 999999999;
     }
 
     public GameObject getTileFromCords(int x, int y) 
     {
-        return everyTileOrdered[(y*11) + x - 12];
+        return everyTileOrdered[(y * getLength(level)) + x - getLength(level) - 1];
     }
 
     public List<GameObject> getTilesOrdered() 
@@ -108,23 +194,25 @@ public class stageManager : MonoBehaviour
         return everyTileOrdered;
     }
 
+    private void endLevel() 
+    {
+        Debug.Log("Level Ended");
+    }
+
     public tileScript GetNextTileInPath(tileScript startTile)
     {
+        /*CHANGED*/
         List<List<GameObject>> paths = new List<List<GameObject>>();
-        paths.AddRange(new List<GameObject>[]
+        foreach (List<GameObject> ls in path)
         {
-            path1,
-            path2,
-            path3,
-            path4,
-            path5
-        });
+            paths.Add(ls);
+        }
 
-        foreach(List<GameObject> path in paths)
+        foreach (List<GameObject> path in paths)
         {
-            for(int i = 0; i < path.Count; i++)
+            for (int i = 0; i < path.Count; i++)
             {
-                if(path[i] == startTile.gameObject)
+                if (path[i] == startTile.gameObject)
                 {
                     if (i + 1 < path.Count)
                         return path[i + 1].GetComponent<tileScript>();
@@ -138,21 +226,69 @@ public class stageManager : MonoBehaviour
 
     }
 
-    public Vector2 worldToTileSpace(Vector3 worldSpace)
+    public Path GetPathByName(string name)
     {
-        Vector3 relSpace = (worldSpace - OriginTile.transform.position);
+        int separatorIndex = name.IndexOf('/');
+        string pathCollectionName = name.Substring(0, separatorIndex);
+        PathsData pathGroup = null;
 
-        return new Vector2((int)relSpace.x + 1, (int)-relSpace.z + 1);
-    }
+        foreach(PathsData group in AIPathings)
+        {
+            if(group.folderName == pathCollectionName)
+            {
+                pathGroup = group;
+                break;
+            }
+        }
 
-    public tileScript getTileFromWorldspace(Vector3 worldSpace)
-    {
-        Vector2 tileSpace = worldToTileSpace(worldSpace);
-        
+        if(pathGroup == null)
+        {
+            Debug.LogError("No path group with name: " + pathCollectionName);
+            return null;
+        }
 
-        tileScript returnTile = getTileFromCords((int)tileSpace.x, (int)tileSpace.y)?.GetComponent<tileScript>();
-        if(returnTile != null)
-            Debug.DrawLine(worldSpace, returnTile.transform.position, Color.magenta, 5);
-        return returnTile;
+        foreach(Path path in pathGroup.paths)
+        {
+            if (path.pathName == name.Substring(separatorIndex + 1))
+            {
+                return path;
+            }
+        }
+
+        Debug.LogError("No path with name " + name.Substring(separatorIndex + 1) + " Full path: " + name);
+        return null;
+
     }
 }
+
+//public class StagePathSave
+//{
+//    int[][] grid;
+
+//    public Vector2[] GetCoordsInOrder()
+//    {
+//        List<Vector2> outList = new List<Vector2>();
+//        List<int> outListOrder = new List<int>();
+
+//        for(int i = 0; i < grid.Length; i++)
+//        {
+//            for(int j = 0; j < grid[i].Length; j++)
+//            {
+//                if(grid[i][j] > 0)
+//                {
+//                    outList.Add(new Vector2(i, j));
+//                    outListOrder.Add(grid[i][j]);
+//                }
+//            }
+//        }
+
+//        Vector2[] returnArray = new Vector2[outList.Count];
+
+//        for(int i = 0; i < outList.Count; i++)
+//        {
+//            returnArray[outListOrder[i]] = outList[i];
+//        }
+
+//        return returnArray;
+//    }
+//}

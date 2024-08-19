@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B916895D-FD1B-405D-B581-1FAE1E64D896}" SchemaVersion="119">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{B916895D-FD1B-405D-B581-1FAE1E64D896}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="tst" ID="{9448C792-C7EF-4AF8-9F77-96C0ACCC393E}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_Music" ID="{4581CFEB-D16C-4AF2-A796-CB1FD8C86745}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="LevelReset" ID="{67F95AAB-94C1-4EC7-82AA-B70075FDD849}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_Music" ID="{7D320711-017A-4CA3-932E-5269562B018B}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="StageUp" ID="{4031E252-E3B4-42E2-873C-8FA282351A27}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="musicVolume" ID="{A2064303-69AE-43B4-97C1-81CB9FA1501B}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="LevelProgress" ID="{315B0E65-AFDE-4D4E-9F9F-F0D274CD61E3}"/>
+							<Value>1</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Gameplay" ID="{F413F467-1ECE-4A1B-BCF4-2B29756B2829}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Off" ID="{8A7A0222-901F-44DB-99A0-4EE4E6179352}"/>
+						<CurrentSwitchRef Name="Off" ID="{3021265D-C2BA-4640-AE71-DE83C3C71B07}"/>
+						<CurrentSwitchRef Name="Off" ID="{0964794C-843B-4047-B05B-17AEB928E4DB}"/>
+						<CurrentSwitchRef Name="Off" ID="{B3C44815-16FA-462D-B168-EE16A80B91F1}"/>
+						<CurrentSwitchRef Name="Off" ID="{55A04E12-0E78-4038-AB0A-12BE19346EB4}"/>
+						<CurrentSwitchRef Name="Off" ID="{8FA9C9D0-C37B-4387-8986-63EF183B95A1}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>
