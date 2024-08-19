@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7819179849478735699}
   m_Layer: 6
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
     path: []
     pathName: 
   currPathId: 0
-  moveSpeed: 15
+  moveSpeed: 1
   health: 10
   lastAttack: 0
   attackCooldown: 0

@@ -9,8 +9,8 @@ public class SettingsManager : MonoBehaviour
 {
     public static Settings currentSettings = null;
     public const string fileName = "Settings.txt";
-    [SerializeField] private Slider musicSlider, soundSlider, qualitySlider;
-    [SerializeField] private TextMeshProUGUI musicValue, soundValue, qualityValue;
+    [SerializeField] private Slider masterSlider, musicSlider, soundSlider, qualitySlider;
+    [SerializeField] private TextMeshProUGUI masterValue, musicValue, soundValue, qualityValue;
     [SerializeField] private Toggle fullScreenToggle, vSyncToggle;
     [SerializeField] private AK.Wwise.Event MenuAdjust;
 
@@ -27,6 +27,7 @@ public class SettingsManager : MonoBehaviour
         UpdateFullScreen(false);
         UpdateVSync(false);
         UpdateQuality(false);
+        UpdateMasterVolume(false);
         UpdateMusicVolume(false);
         UpdateSoundVolume(false);
     }
@@ -38,6 +39,22 @@ public class SettingsManager : MonoBehaviour
 
         File.WriteAllText(path, settingsJSON);
         Debug.Log("Saved settings to: " + path);
+    }
+
+    public void UpdateMasterVolume(bool user)
+    {
+        if (user)
+        {
+            currentSettings.masterVolume = masterSlider.value;
+            MenuAdjust?.Post(gameObject);
+        }
+        else
+        {
+            masterSlider.value = currentSettings.masterVolume;
+        }
+
+        AkSoundEngine.SetRTPCValue("masterVolume", currentSettings.masterVolume);
+        masterValue.text = (int)masterSlider.value + "";
     }
 
     public void UpdateMusicVolume(bool user)

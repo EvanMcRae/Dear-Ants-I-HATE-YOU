@@ -23,8 +23,7 @@ public class SaveData
     public int level;
     public int stage;
     public int currency;
-
-
+    public int health;
     public TowerData[] towers;
 }
 
@@ -44,8 +43,8 @@ public class SaveManager : MonoBehaviour
 
     private void Awake()
     {
-        saveFile = Application.persistentDataPath + "SaveData.json";
-        autoSaveFile = Application.persistentDataPath + "AutoSave.json";
+        saveFile = Application.persistentDataPath + "/SaveData.json";
+        autoSaveFile = Application.persistentDataPath + "/AutoSave.json";
     }
 
     private void Start()
@@ -68,7 +67,7 @@ public class SaveManager : MonoBehaviour
         loadingFromSave = false;
         loadingFromAutoSave = false;
         if (!SaveExists(autosave)) return;
-
+        
         string fileContents = File.ReadAllText(autosave ? autoSaveFile : saveFile);
 
         data = JsonUtility.FromJson<SaveData>(fileContents);
@@ -83,6 +82,11 @@ public class SaveManager : MonoBehaviour
         Debug.Log("stage: " + data.stage);
 
         StageManager.loadLevel(data.level, data.stage);
+        clickToSpawnManager.placedTowers.Clear();
+        GameplayManager.main.currPlayerHealth = data.health;
+        GameplayManager.main.resourcePoints = data.currency;
+        HUDManager.main.UpdateEXP();
+        HUDManager.main.UpdateHealth();
 
         if (data.towers != null)
         {
@@ -96,11 +100,12 @@ public class SaveManager : MonoBehaviour
     //will be called after stage/level to save the current game state
     public void SaveGame(bool autosave = false)
     {
-        Debug.Log("saving game!");
+        Debug.Log("saving game to " + (autosave ? autoSaveFile : saveFile));
 
         data.level = stageManager.level;
         data.stage = stageManager.stage;
-
+        data.currency = GameplayManager.main.resourcePoints;
+        data.health = GameplayManager.main.currPlayerHealth;
         data.towers = SerializeTowers();
 
         string jsonString = JsonUtility.ToJson(data);

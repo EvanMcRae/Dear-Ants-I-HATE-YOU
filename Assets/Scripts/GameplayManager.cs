@@ -17,9 +17,16 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private Sprite PauseClicked, PauseNormal;
     [SerializeField] private TextMeshProUGUI WinText;
     [SerializeField] private GameObject globalWwise;
-    [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver;
+    [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver, TakeDamage;
     public clickToSpawnManager spawnManager;
     public SaveManager saveManager; 
+
+    //number of ants that need to get to the goal in order for the player to lose
+    public int maxPlayerHealth = 3;
+    public int currPlayerHealth;
+    //points used to buy/maintain towers
+    public int resourcePoints;
+    int startingResourcePoints = 10;
 
     // [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
     // private enum MusicState { CALM, MEDIATE, INTENSE };
@@ -28,7 +35,8 @@ public class GameplayManager : MonoBehaviour
 
     void Awake()
     {
-        screenWipe.PostUnwipe += AutoSave;
+        if (!SaveManager.loadingFromSave)
+            screenWipe.PostUnwipe += AutoSave;
     }
 
     // Start is called before the first frame update
@@ -40,6 +48,11 @@ public class GameplayManager : MonoBehaviour
         lost = false;
         playingAgain = false;
         quit = false;
+
+        currPlayerHealth = maxPlayerHealth;
+        resourcePoints = startingResourcePoints;
+        HUDManager.main.UpdateEXP();
+        HUDManager.main.UpdateHealth();
     }
 
     public static void AutoSave()
@@ -80,7 +93,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (!paused && !PopupPanel.open && !won && !lost && !pauseOpen)
         {
-            PauseMusic?.Post(globalWwise);
+            PauseMusic.Post(globalWwise);
             Time.timeScale = 0;
             paused = true;
             StartCoroutine(StartPause());
@@ -98,7 +111,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (!PopupPanel.open) return;
         MenuSelect?.Post(gameObject);
-        ResumeMusic?.Post(globalWwise);
+        ResumeMusic.Post(globalWwise);
         paused = false;
         StartCoroutine(FinishPause());
         PauseMenu.GetComponent<PopupPanel>().Close();
@@ -170,6 +183,7 @@ public class GameplayManager : MonoBehaviour
         lost = false;
         pauseOpen = false;
         saveManager.SaveGame();
+        clickToSpawnManager.placedTowers.Clear();
         StopMusic?.Post(globalWwise);
         screenWipe.WipeIn();
         screenWipe.PostWipe += LoadMenu;
@@ -201,7 +215,7 @@ public class GameplayManager : MonoBehaviour
         if (paused) return;
         won = true;
         // DialogController.main.StopTalk();
-        StopMusic?.Post(globalWwise);
+        StopMusic.Post(globalWwise);
         WinScreen.SetActive(true);
         // WinText.SetText("You made it through without laughing!\n\nFinal Grade: " + meter.calculateGrade());
     }
@@ -212,7 +226,8 @@ public class GameplayManager : MonoBehaviour
         lost = true;
         // DialogController.main.StopTalk();
         GameOver?.Post(globalWwise);
-        LoseScreen.SetActive(true);
+        if (LoseScreen != null)
+            LoseScreen.SetActive(true);
         // button.stopInputs = true;
         // dialog.reading = false;
     }
@@ -232,7 +247,7 @@ public class GameplayManager : MonoBehaviour
         paused = false;
         pauseOpen = false;
         screenWipe.WipeIn();
-        StopMusic?.Post(globalWwise);
+        StopMusic.Post(globalWwise);
         screenWipe.PostWipe += ReloadGame;
     }
 
@@ -251,8 +266,47 @@ public class GameplayManager : MonoBehaviour
         paused = false;
         pauseOpen = false;
         screenWipe.WipeIn();
-        StopMusic?.Post(globalWwise);
+        StopMusic.Post(globalWwise);
         screenWipe.PostWipe += ReloadSave;
+    }
+
+    //player takes damage from enemy reaching base
+    public void takeDamage(){
+        currPlayerHealth -= 1;
+        if(currPlayerHealth <= 0){
+            Lose();
+        }
+        else if(currPlayerHealth > maxPlayerHealth){
+            currPlayerHealth = maxPlayerHealth;
+        }
+        TakeDamage?.Post(globalWwise);
+        HUDManager.main.HurtEffect();
+        HUDManager.main.UpdateHealth();
+    }
+
+    //reset player health to maximum, likely at start of stage
+    void resetHealth(){
+        currPlayerHealth = maxPlayerHealth;
+        HUDManager.main.UpdateHealth();
+    }
+
+    //add single resource point
+    public void addResource(){
+        resourcePoints += 1;
+        HUDManager.main.UpdateEXP();
+    }
+    //adds an amount of resource pounts
+    public void addResource(int amount){
+        resourcePoints += amount;
+        HUDManager.main.UpdateEXP();
+    }
+    void spendResource(int amount){
+        resourcePoints -= amount;
+        HUDManager.main.UpdateEXP();
+    }
+    void resetResource(){
+        resourcePoints = startingResourcePoints;
+        HUDManager.main.UpdateEXP();
     }
 
     // //syncs clocks for start of gameplay

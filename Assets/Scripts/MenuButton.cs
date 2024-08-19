@@ -9,9 +9,12 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
     [SerializeField] private Sprite normal;
     [SerializeField] private bool MainMenu;
     [SerializeField] private AK.Wwise.Event MenuNav;
+    [SerializeField] private Image image;
+    
     public void OnDeselect(BaseEventData eventData)
     {
-        GetComponent<Image>().sprite = normal;
+        if (image == null)
+            GetComponent<Image>().sprite = normal;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -28,7 +31,7 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
 
     public void OnPointerMove(PointerEventData eventData)
     {
-        if (eventData.hovered.Contains(gameObject) && EventSystem.current.currentSelectedGameObject != gameObject && PopupPanel.numPopups == 0)
+        if (eventData.hovered.Contains(gameObject) && EventSystem.current.currentSelectedGameObject != gameObject)
         {
             EventSystem.current.SetSelectedGameObject(gameObject);
         }
