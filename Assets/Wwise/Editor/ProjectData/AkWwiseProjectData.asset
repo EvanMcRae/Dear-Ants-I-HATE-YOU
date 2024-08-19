@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: b5ede5d229edd545942ab9363df88890
     GuidInternal: 
-    m_lastTime: -8584775788873108163
+    m_lastTime: -8584775083320190066
     List:
     - name: Enemy
       guid: 053ad7bc96ffc4448f25fbff862f63e2
@@ -405,7 +405,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 88242dbeeba24a44a1157017adc900c4
     GuidInternal: 
-    m_lastTime: -8584775782720721623
+    m_lastTime: -8584775083319434237
     List:
     - name: Main
       guid: 49d147b4243b0b499889950aa32b8cfd
@@ -433,7 +433,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 9e4891bc502aab45a273595ad7792cd5
     GuidInternal: 
-    m_lastTime: -8584775782720801746
+    m_lastTime: -8584775083320281077
     List:
     - name: LevelReset
       guid: ab5af967c194c74e82aab70075fdd849
@@ -458,6 +458,83 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Menu
+      guid: b705ff10abf55041a552765e0afd70d0
+      id: 2607556080
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Menu
+        ObjectType: 4
+        guid: b705ff10abf55041a552765e0afd70d0
+      Path: Events\Default Work Unit\Menu
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: menuBack
+      guid: 9b4deadd391c2e45b838d926612dca7c
+      id: 2634859593
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Menu
+        ObjectType: 4
+        guid: b705ff10abf55041a552765e0afd70d0
+      - ElementName: menuBack
+        ObjectType: 3
+        guid: 9b4deadd391c2e45b838d926612dca7c
+      Path: Events\Default Work Unit\Menu\menuBack
+      maxAttenuation: 0
+      maxDuration: 0.78414583
+      minDuration: 0.6488067
+    - name: menuConfirm
+      guid: 23b35abcec135c4f87b34b686333ac28
+      id: 711511264
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Menu
+        ObjectType: 4
+        guid: b705ff10abf55041a552765e0afd70d0
+      - ElementName: menuConfirm
+        ObjectType: 3
+        guid: 23b35abcec135c4f87b34b686333ac28
+      Path: Events\Default Work Unit\Menu\menuConfirm
+      maxAttenuation: 0
+      maxDuration: 1.2739375
+      minDuration: 1.1317291
+    - name: menuSelect
+      guid: 1681e47295200c4e94f1d60320fb6f4a
+      id: 664555880
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: Menu
+        ObjectType: 4
+        guid: b705ff10abf55041a552765e0afd70d0
+      - ElementName: menuSelect
+        ObjectType: 3
+        guid: 1681e47295200c4e94f1d60320fb6f4a
+      Path: Events\Default Work Unit\Menu\menuSelect
+      maxAttenuation: 0
+      maxDuration: 1.1492167
+      minDuration: 1.1492167
     - name: Music
       guid: 1dd163ee7cbb904fa1f5d3b1b39cf0cc
       id: 3991942870
@@ -485,16 +562,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 9e4891bc502aab45a273595ad7792cd5
-      - ElementName: Music
-        ObjectType: 4
-        guid: 1dd163ee7cbb904fa1f5d3b1b39cf0cc
       - ElementName: Pause
         ObjectType: 3
         guid: c287df4a1877a649999085149c904639
-      Path: Events\Default Work Unit\Music\Pause
+      Path: Events\Default Work Unit\Pause
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1.0099816
+      minDuration: 1.0099816
     - name: Play_Music
       guid: ebcf81456cd1f24aa796cb1fd8c86745
       id: 2932040671
@@ -513,8 +587,8 @@ MonoBehaviour:
         guid: ebcf81456cd1f24aa796cb1fd8c86745
       Path: Events\Default Work Unit\Music\Play_Music
       maxAttenuation: 0
-      maxDuration: 11.294117
-      minDuration: 11.294117
+      maxDuration: -1
+      minDuration: -1
     - name: Resume
       guid: 2afe1d6631df8a48877f47b68a432554
       id: 953277036
@@ -525,16 +599,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 9e4891bc502aab45a273595ad7792cd5
-      - ElementName: Music
-        ObjectType: 4
-        guid: 1dd163ee7cbb904fa1f5d3b1b39cf0cc
       - ElementName: Resume
         ObjectType: 3
         guid: 2afe1d6631df8a48877f47b68a432554
-      Path: Events\Default Work Unit\Music\Resume
+      Path: Events\Default Work Unit\Resume
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.53861177
+      minDuration: 0.53861177
     - name: Stages
       guid: a4913b916d803e418aea1e23639507ae
       id: 936729656
@@ -610,7 +681,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: d2d28884ed23b14c800ea57b8cbadb18
     GuidInternal: 
-    m_lastTime: -8584775788873163354
+    m_lastTime: -8584775083320245912
     List:
     - name: LevelProgress
       guid: 650e5b31deaf4e4d9f9ff0d274cd61e3
@@ -626,6 +697,23 @@ MonoBehaviour:
         ObjectType: 13
         guid: 650e5b31deaf4e4d9f9ff0d274cd61e3
       Path: Game Parameters\Default Work Unit\LevelProgress
+    - name: masterVolume
+      guid: 4a37117f8b2f4643a811143fd399fa7a
+      id: 2918011349
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d2d28884ed23b14c800ea57b8cbadb18
+      - ElementName: Volume Settings
+        ObjectType: 4
+        guid: 7cb9453f21cfc14eac82902364b4b4ba
+      - ElementName: masterVolume
+        ObjectType: 13
+        guid: 4a37117f8b2f4643a811143fd399fa7a
+      Path: Game Parameters\Default Work Unit\Volume Settings\masterVolume
     - name: musicVolume
       guid: 034306a2ae69b44397c181cb9fa1501b
       id: 2346531308
@@ -969,7 +1057,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: f93b0553a4d7934e9b65656bdc39c4fc
     GuidInternal: 
-    m_lastTime: -8584775788863411955
+    m_lastTime: -8584775083319399142
     List:
     - name: Arpeggio
       guid: cf9b802249ad9a42ba9eca368aa3e589
@@ -1433,7 +1521,7 @@ MonoBehaviour:
     m_lastTime: -8584775987259415766
     List: []
   ExpandedFileSystemItemIds: 02000000030000000400000005000000060000000700000008000000090000000b0000000c0000000d0000000f00000011000000120000001300000016000000170000001c0000001f000000220000002300000024000000270000002b0000002e000000380000004d0000004e0000004f000000630000008a0000008b000000d5000000
-  ExpandedWaapiItemIds: 02000000030000000400000005000000060000000700000008000000090000000b0000000c0000000d0000000e0000000f00000011000000120000001300000016000000170000001c0000001f000000220000002300000024000000270000002b0000002c0000002e000000380000004d0000004e0000004f000000630000008a0000008b000000d5000000
+  ExpandedWaapiItemIds: 020000000300000004000000050000000600000007000000090000000a0000000b0000000c0000000d0000000e0000000f00000011000000120000001300000016000000170000001c0000001f000000220000002300000024000000270000002a0000002b0000002c0000002d0000002e000000380000004d0000004e0000004f000000630000008a0000008b000000d5000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

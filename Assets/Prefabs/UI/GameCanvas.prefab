@@ -150,8 +150,12 @@ MonoBehaviour:
   MenuSelect:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 10ad9804577076243b6c7139cfb0e6c7, type: 2}
   GameOver:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  TakeDamage:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
@@ -326,7 +330,7 @@ MonoBehaviour:
   MenuNav:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c3a768628e06e6e4988fe5d478baf45f, type: 2}
   image: {fileID: 0}
 --- !u!1 &1257348339570688069
 GameObject:
@@ -632,7 +636,7 @@ MonoBehaviour:
   MenuNav:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c3a768628e06e6e4988fe5d478baf45f, type: 2}
   image: {fileID: 0}
 --- !u!1 &6466259887191335501
 GameObject:
@@ -994,7 +998,7 @@ MonoBehaviour:
   MenuNav:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c3a768628e06e6e4988fe5d478baf45f, type: 2}
   image: {fileID: 0}
 --- !u!1 &6882962767090661169
 GameObject:
@@ -1255,14 +1259,14 @@ MonoBehaviour:
       - m_Target: {fileID: 6304178866348300856}
         m_TargetAssemblyTypeName: GameplayManager, Assembly-CSharp
         m_MethodName: UnPause
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &282669696182068692
 MonoBehaviour:
@@ -1281,7 +1285,7 @@ MonoBehaviour:
   MenuNav:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c3a768628e06e6e4988fe5d478baf45f, type: 2}
   image: {fileID: 0}
 --- !u!1 &7446763316587213346
 GameObject:

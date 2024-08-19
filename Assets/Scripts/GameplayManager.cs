@@ -35,6 +35,7 @@ public class GameplayManager : MonoBehaviour
 
     void Awake()
     {
+        MainMenuManager.firstopen = true;
         if (!SaveManager.loadingFromSave)
             screenWipe.PostUnwipe += AutoSave;
     }
@@ -107,15 +108,18 @@ public class GameplayManager : MonoBehaviour
         }
     }
 
-    public void UnPause()
+    public void UnPause(bool user = false)
     {
         if (!PopupPanel.open) return;
-        MenuSelect?.Post(gameObject);
-        ResumeMusic.Post(globalWwise);
         paused = false;
+        if (user)
+            MenuSelect.Post(gameObject);
         StartCoroutine(FinishPause());
         PauseMenu.GetComponent<PopupPanel>().Close();
+        PauseMenu.GetComponentsInChildren<Button>();
         SettingsManager.SaveSettings();
+        MenuButton.pleaseNoSound = true;
+        MenuButton.noSound = true;
     }
 
     IEnumerator StartPause()
@@ -133,6 +137,8 @@ public class GameplayManager : MonoBehaviour
         pauseOpen = false;
         PauseButton.GetComponent<Image>().sprite = PauseNormal;
         PauseButton.GetComponent<Button>().interactable = true;
+        ResumeMusic.Post(globalWwise);
+        MenuButton.pleaseNoSound = false;
     }
 
     public void ScreenEffects(bool enable)

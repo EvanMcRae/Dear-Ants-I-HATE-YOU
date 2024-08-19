@@ -39,6 +39,7 @@ public class PopupPanel : MonoBehaviour
             }
             else
             {
+                MenuButton.noSound = true;
                 EventSystem.current.SetSelectedGameObject(currentSelection);
             }
         }

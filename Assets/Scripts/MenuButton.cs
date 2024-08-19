@@ -10,6 +10,7 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
     [SerializeField] private bool MainMenu;
     [SerializeField] private AK.Wwise.Event MenuNav;
     [SerializeField] private Image image;
+    public static bool noSound = false, pleaseNoSound = false;
     
     public void OnDeselect(BaseEventData eventData)
     {
@@ -39,6 +40,11 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
 
     public void OnSelect(BaseEventData eventData)
     {
+        if (noSound || pleaseNoSound)
+        {
+            noSound = false;
+            return;
+        }
         if (MainMenuManager.firstopen && !MainMenuManager.quitting && !MainMenuManager.playing)
         {
             MenuNav?.Post(gameObject);

@@ -624,7 +624,7 @@ MonoBehaviour:
   MenuNav:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c3a768628e06e6e4988fe5d478baf45f, type: 2}
   image: {fileID: 0}
 --- !u!1 &443137129
 GameObject:
@@ -1785,7 +1785,7 @@ MonoBehaviour:
   MenuNav:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c3a768628e06e6e4988fe5d478baf45f, type: 2}
   image: {fileID: 0}
 --- !u!1 &971445569
 GameObject:
@@ -2345,7 +2345,7 @@ MonoBehaviour:
   MenuNav:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c3a768628e06e6e4988fe5d478baf45f, type: 2}
   image: {fileID: 0}
 --- !u!1 &1493517837
 GameObject:
@@ -2498,7 +2498,7 @@ MonoBehaviour:
   MenuNav:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c3a768628e06e6e4988fe5d478baf45f, type: 2}
   image: {fileID: 0}
 --- !u!1 &1495471109
 GameObject:
@@ -3065,7 +3065,7 @@ MonoBehaviour:
   MenuNav:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c3a768628e06e6e4988fe5d478baf45f, type: 2}
   image: {fileID: 0}
 --- !u!1 &1591129273
 GameObject:
@@ -3308,15 +3308,15 @@ MonoBehaviour:
   MenuBack:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 8995903e2111570448a6ac8b16671de4, type: 2}
   MenuSelect:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 10ad9804577076243b6c7139cfb0e6c7, type: 2}
   MenuNav:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c3a768628e06e6e4988fe5d478baf45f, type: 2}
 --- !u!4 &1700647388
 Transform:
   m_ObjectHideFlags: 0
@@ -3893,7 +3893,7 @@ MonoBehaviour:
   MenuNav:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c3a768628e06e6e4988fe5d478baf45f, type: 2}
   image: {fileID: 0}
 --- !u!1 &2075257737
 GameObject:

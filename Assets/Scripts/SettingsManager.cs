@@ -12,7 +12,7 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private Slider masterSlider, musicSlider, soundSlider, qualitySlider;
     [SerializeField] private TextMeshProUGUI masterValue, musicValue, soundValue, qualityValue;
     [SerializeField] private Toggle fullScreenToggle, vSyncToggle;
-    [SerializeField] private AK.Wwise.Event MenuAdjust;
+    [SerializeField] private AK.Wwise.Event MenuAdjust, MenuClick;
 
     void Awake()
     {
@@ -105,7 +105,7 @@ public class SettingsManager : MonoBehaviour
         if (user)
         {
             currentSettings.fullScreen = fullScreenToggle.isOn;
-            MenuAdjust?.Post(gameObject);
+            MenuClick?.Post(gameObject);
         }
         else
             fullScreenToggle.isOn = currentSettings.fullScreen;
@@ -130,7 +130,7 @@ public class SettingsManager : MonoBehaviour
         if (user)
         {
             currentSettings.vSync = vSyncToggle.isOn;
-            MenuAdjust?.Post(gameObject);
+            MenuClick?.Post(gameObject);
         }
         else
             vSyncToggle.isOn = currentSettings.vSync;

@@ -28,10 +28,7 @@ public class HUDManager : MonoBehaviour
 
     public void OpenWorkshop()
     {
-        // TODO stopgap for now, remove later
-        EventSystem.current.SetSelectedGameObject(null);
-        if (WorkshopPanel != null)
-            WorkshopPanel.SetActive(true);
+        WorkshopPanel.SetActive(true);
     }
 
     public void UpdateHealth()
