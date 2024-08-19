@@ -174,6 +174,16 @@
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ChildrenList>
+						<Action Name="" ID="{1393991E-2F0C-47E5-9D64-A5627EC41CA4}" ShortID="382387090">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Computer hum" ID="{CC90BA88-3B50-4AA7-A314-B19B7C398BC9}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{5D05D0AB-CCCE-42F0-B9D3-80A5574F8C8B}" ShortID="398693578">
 							<ReferenceList>
 								<Reference Name="Target">
@@ -223,7 +233,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Gameplay" ID="{B845AAF8-92E2-4CBE-9211-579256714434}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+									<ObjectRef Name="Gameplay" ID="{F03E1088-CB8F-4CC2-AD92-5A76DC8719BE}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -234,8 +244,24 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{A617D0B2-E8A8-4F19-9210-673F176275B2}" ShortID="147636357">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Computer hum" ID="{CC90BA88-3B50-4AA7-A314-B19B7C398BC9}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Enemies" ID="{35A2CAF0-08A7-43B3-BA80-9F8276DC496F}" ShortID="227650683">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="11"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="antSpit" ID="{E221F76A-8D05-46CE-BFB1-B9B43A11A21B}"/>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

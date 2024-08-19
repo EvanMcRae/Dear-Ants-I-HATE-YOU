@@ -55,6 +55,7 @@
 							<ChildrenList>
 								<Bus Name="Tower" ID="{3609F8A2-E5CF-4B05-A2DD-CFD879C650D0}"/>
 								<Bus Name="Enemy" ID="{BCD73A05-FF96-44C4-8F25-FBFF862F63E2}"/>
+								<Bus Name="Menu" ID="{63D9B6D5-5624-4DD6-8453-720A62B085D5}"/>
 							</ChildrenList>
 							<ObjectLists>
 								<ObjectList Name="RTPC">
