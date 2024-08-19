@@ -80,7 +80,7 @@ public class stageManager : MonoBehaviour
         foreach (GameObject gm in path[stage - 1])
         {
             gm.GetComponent<MeshRenderer>().material.color = Color.gray;
-            gm.GetComponent<tileScript>().activate();
+            gm.GetComponent<tileScript>()?.activate();
         }
 
         if (stage == 1)
@@ -147,7 +147,7 @@ public class stageManager : MonoBehaviour
     private void Update()
     {
         if (GameplayManager.quit || GameplayManager.won || GameplayManager.lost || GameplayManager.playingAgain) return;
-        
+
         AkSoundEngine.SetRTPCValue("LevelProgress", stage);
     }
 
