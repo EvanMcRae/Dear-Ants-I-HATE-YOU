@@ -13,6 +13,8 @@ public class GameplayManager : MonoBehaviour
     public bool suspendSequence = false;
     public static bool paused, pauseOpen;
     [SerializeField] private GameObject PauseMenu, WinScreen, LoseScreen, SettingsPanel;
+    [SerializeField] private GameObject PauseButton;
+    [SerializeField] private Sprite PauseClicked, PauseNormal;
     [SerializeField] private TextMeshProUGUI WinText;
     [SerializeField] private GameObject globalWwise;
     [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver;
@@ -40,7 +42,7 @@ public class GameplayManager : MonoBehaviour
         //pause/unpause the game when pause button pressed, but only if screen wipe is over
         if (Input.GetKeyDown(KeyCode.Escape) && ScreenWipe.over)
         {
-            if (!paused && !PopupPanel.open && !won && !lost)
+            if (!paused && !PopupPanel.open && !won && !lost && !pauseOpen)
                 Pause();
             else if (paused && pauseOpen && !SettingsPanel.activeSelf)
                 UnPause();
@@ -62,14 +64,22 @@ public class GameplayManager : MonoBehaviour
         // dialog.reading = true;
     }
 
-    public void Pause()
+    public void Pause(bool user = false)
     {
-        PauseMusic?.Post(globalWwise);
-        Time.timeScale = 0;
-        paused = true;
-        StartCoroutine(StartPause());
-        InterferenceEffect.time = 0.5f;
-        ScreenEffects(true);
+        if (!paused && !PopupPanel.open && !won && !lost && !pauseOpen)
+        {
+            PauseMusic?.Post(globalWwise);
+            Time.timeScale = 0;
+            paused = true;
+            StartCoroutine(StartPause());
+            InterferenceEffect.time = 0.5f;
+            ScreenEffects(true);
+            if (user)
+            {
+                PauseButton.GetComponent<Image>().sprite = PauseClicked;
+                PauseButton.GetComponent<Button>().interactable = false;
+            }
+        }
     }
 
     public void UnPause()
@@ -96,6 +106,8 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 1;
         ScreenEffects(false);
         pauseOpen = false;
+        PauseButton.GetComponent<Image>().sprite = PauseNormal;
+        PauseButton.GetComponent<Button>().interactable = true;
     }
 
     public void ScreenEffects(bool enable)

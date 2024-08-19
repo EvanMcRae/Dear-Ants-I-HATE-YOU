@@ -126,6 +126,9 @@ MonoBehaviour:
   WinScreen: {fileID: 0}
   LoseScreen: {fileID: 0}
   SettingsPanel: {fileID: 2972110498050907727}
+  PauseButton: {fileID: 0}
+  PauseClicked: {fileID: 21300000, guid: ea4a1581b5c880441b549ce6ea062999, type: 3}
+  PauseNormal: {fileID: 21300000, guid: 5ecd6d92eb5160f43881fb018a331258, type: 3}
   WinText: {fileID: 0}
   globalWwise: {fileID: 0}
   PauseMusic:
@@ -437,6 +440,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   animProgress: 0
+  visible: 0
   ScreenDarkener: {fileID: 4516852739062730835}
   darkensScreen: 1
 --- !u!95 &514892420220273187
