@@ -7570,21 +7570,9 @@ PrefabInstance:
       value: HUDCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 6795411149671851933, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6795411149671851933, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 85378057}
-    - target: {fileID: 6795411149671851933, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Pause
-      objectReference: {fileID: 0}
-    - target: {fileID: 6795411149671851933, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8476625213926269406, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
       propertyPath: m_Camera
       value: 
