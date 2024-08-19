@@ -6,9 +6,7 @@ public class towerHitbox : MonoBehaviour
 {
     public int power;
     void OnCollisionEnter(Collision collision){
-        //if object is an ant
-            //can see it?
-            //call its dealdamage
-        Debug.Log("I see collider");
+        //if object is an enemy
+            //call its takedamage function using power
     }
 }
