@@ -301,6 +301,8 @@ MonoBehaviour:
   maxPlayerHealth: 3
   currPlayerHealth: 0
   resourcePoints: 0
+  DoctorsNoteButton: {fileID: 1910804590128244982}
+  DoctorsNoteImage: {fileID: 989459287930950336}
 --- !u!114 &412902649701189703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,7 +505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 0, y: 1}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2060293749545246911
@@ -1002,7 +1004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -293}
+  m_AnchoredPosition: {x: 0, y: -1293}
   m_SizeDelta: {x: 700, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7704230365221255425

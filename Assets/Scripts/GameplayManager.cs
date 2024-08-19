@@ -32,6 +32,8 @@ public class GameplayManager : MonoBehaviour
     // private enum MusicState { CALM, MEDIATE, INTENSE };
     // private MusicState currentState;
     public static bool won = false, lost = false, playingAgain = false, quit = false;
+    public static int beginning = 0;
+    [SerializeField] private GameObject DoctorsNoteButton, DoctorsNoteImage;
 
     void Awake()
     {
@@ -44,7 +46,11 @@ public class GameplayManager : MonoBehaviour
     void Start()
     {
         main = this;
-        StartIntroSequence();
+        if (!SaveManager.loadingFromAutoSave && !SaveManager.loadingFromSave)
+            StartIntroSequence();
+        else 
+            StartMusic.Post(globalWwise);
+        
         won = false;
         lost = false;
         playingAgain = false;
@@ -74,6 +80,21 @@ public class GameplayManager : MonoBehaviour
                 UnPause();
         }
 
+        if (beginning == 2)
+        {
+            var btnPos = DoctorsNoteButton.transform.localPosition;
+            DoctorsNoteButton.transform.localPosition = new Vector3(btnPos.x, Mathf.Lerp(btnPos.y, -1293, 0.02f), btnPos.z);
+            var imgPos = DoctorsNoteImage.transform.localPosition;
+            DoctorsNoteImage.transform.localPosition = new Vector3(imgPos.x, Mathf.Lerp(imgPos.y, 1100, 0.02f), imgPos.z);
+        }
+        else if (beginning == 1)
+        {
+            var btnPos = DoctorsNoteButton.transform.localPosition;
+            DoctorsNoteButton.transform.localPosition = new Vector3(btnPos.x, Mathf.Lerp(btnPos.y, -293, 0.02f), btnPos.z);
+            var imgPos = DoctorsNoteImage.transform.localPosition;
+            DoctorsNoteImage.transform.localPosition = new Vector3(imgPos.x, Mathf.Lerp(imgPos.y, 100, 0.02f), imgPos.z);
+        }
+
         // if (suspendSequence)
         //     return;
 
@@ -89,11 +110,24 @@ public class GameplayManager : MonoBehaviour
         DoctorsNote.SetActive(true);
         Time.timeScale = 0;
         paused = true;
+        beginning = 1;
     }
-    public void EndIntroSequence(){
-        DoctorsNote.SetActive(false);
-        Time.timeScale = 1;
+    public void EndIntroSequence()
+    {
+        DoctorsNoteButton.GetComponent<Button>().interactable = false;
+        MenuSelect.Post(gameObject);
+        beginning = 2;
+        StartCoroutine(StartGame());
+    }
+
+    IEnumerator StartGame()
+    {
+        yield return new WaitForSecondsRealtime(0.75f);
         paused = false;
+        beginning = 0;
+        Time.timeScale = 1;
+        StartMusic.Post(globalWwise);
+        DoctorsNote.SetActive(false);
     }
 
     public void Pause(bool user = false)
