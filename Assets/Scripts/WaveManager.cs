@@ -100,13 +100,11 @@ public class WaveManager : MonoBehaviour
 
         public void SpawnEnemy(EnemySpawnDetails enemy)
         {
-            //spawnedEnemies.Add() //Add spawned enemy gameObj once spawned
-            if(enemy.spawnLocationID >= stageManager.main.SpawnLocations.Count)
-            {
-                Debug.LogError("spawnLocationID " + enemy.spawnLocationID + " is greater than spawn locations: " + (stageManager.main.SpawnLocations.Count - 1));
-                return;
-            }
-            spawnedEnemies.Add(Instantiate(enemy.enemyToSpawn, stageManager.main.SpawnLocations[enemy.spawnLocationID], Quaternion.identity));
+            Path path = stageManager.main.GetPathByName(enemy.spawnLocationID);
+            spawnedEnemies.Add(Instantiate(enemy.enemyToSpawn, path.path[0].transform.position + Vector3.up * 2, Quaternion.identity));
+            EnemyAI spawnedEnemy = spawnedEnemies[^1].GetComponent<EnemyAI>();
+            spawnedEnemy.path = path;
+
             Debug.Log("Spawned creature at: " + enemy.timeToSpawn);
         }
 
@@ -122,7 +120,7 @@ public class WaveManager : MonoBehaviour
         //Should there be multiple wave managers, one for each spawn point, or should the wave manager handle all, with each spawn details specifying where
         public float timeToSpawn;
         public GameObject enemyToSpawn;
-        public int spawnLocationID;
+        public string spawnLocationID;
 
         public int CompareTo(object obj)
         {

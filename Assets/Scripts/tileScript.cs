@@ -75,20 +75,6 @@ public class tileScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        EnemyAI enteringEnemy = collision.gameObject.GetComponent<EnemyAI>();
-        if (enteringEnemy != null)
-            enteringEnemy.PrimeTile(this);
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        EnemyAI enteringEnemy = collision.gameObject.GetComponent<EnemyAI>();
-        if (enteringEnemy != null)
-            enteringEnemy.AcceptChange();
-    }
-
     public void activate() 
     {
         activated = true;
