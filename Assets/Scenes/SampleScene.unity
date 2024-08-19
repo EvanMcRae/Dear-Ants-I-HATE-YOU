@@ -314,6 +314,10 @@ PrefabInstance:
       propertyPath: ycord
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5500407028220396370, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
+      propertyPath: canPlaceTower
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6837189607772495030, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6
@@ -1495,6 +1499,10 @@ PrefabInstance:
       propertyPath: ycord
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1134090938982721872, guid: 87c73a8d79c68604a803f240659f2bfa, type: 3}
+      propertyPath: canPlaceTower
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2092719202328377012, guid: 87c73a8d79c68604a803f240659f2bfa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1800,6 +1808,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
+--- !u!1 &499769156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 499769158}
+  - component: {fileID: 499769157}
+  m_Layer: 0
+  m_Name: gameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &499769157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499769156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3226be44582ce4983dd27fb65f0b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeTower: {fileID: 602876791807427494, guid: 37213331714068140842f8c67f15c3c4, type: 3}
+  laserTower: {fileID: 8987289490621682191, guid: 136202aa39efc7744835fa7f9c569ff3, type: 3}
+  bombTower: {fileID: 2134956312915654129, guid: 9a43eb0c0f43d5a4cb197225dd2f4f03, type: 3}
+--- !u!4 &499769158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499769156}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5473528, y: -8.095604, z: 1.5646458}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &536139686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6837189607772495030, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
@@ -2923,7 +2978,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2756335085637198574, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
       propertyPath: m_Name
-      value: enemyspawn
+      value: enemySpawn
       objectReference: {fileID: 0}
     - target: {fileID: 2756335085637198574, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
       propertyPath: m_IsActive
@@ -2940,6 +2995,10 @@ PrefabInstance:
     - target: {fileID: 5500407028220396370, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
       propertyPath: ycord
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500407028220396370, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
+      propertyPath: canPlaceTower
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6837189607772495030, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5334,7 +5393,6 @@ GameObject:
   - component: {fileID: 1643638249}
   - component: {fileID: 1643638248}
   - component: {fileID: 1643638247}
-  - component: {fileID: 1643638246}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -5342,19 +5400,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1643638246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1643638245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3226be44582ce4983dd27fb65f0b98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meleeTower: {fileID: 602876791807427494, guid: 37213331714068140842f8c67f15c3c4, type: 3}
 --- !u!114 &1643638247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6172,6 +6217,10 @@ PrefabInstance:
     - target: {fileID: 1417919540371302311, guid: 1d6575732c76e8147abd2ad27582eccb, type: 3}
       propertyPath: ycord
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417919540371302311, guid: 1d6575732c76e8147abd2ad27582eccb, type: 3}
+      propertyPath: canPlaceTower
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8770849796917347867, guid: 1d6575732c76e8147abd2ad27582eccb, type: 3}
       propertyPath: m_Name
@@ -7276,3 +7325,4 @@ SceneRoots:
   - {fileID: 593064328}
   - {fileID: 1643638249}
   - {fileID: 1943750018}
+  - {fileID: 499769158}

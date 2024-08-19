@@ -14,7 +14,8 @@ public class tileScript : MonoBehaviour
     private GameObject prefabToSpawn;
     private TowerData towerToPlace;
 
-    private List<TowerData> placedTowers = new List<TowerData>();
+    private bool hasTower = false;
+    public bool canPlaceTower = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,12 @@ public class tileScript : MonoBehaviour
         Camera.main.GetComponent<stageManager>().updateTileList(xcord, ycord, gm);
 
         //prefabToSpawn = GameObject.Find("EventSystem").GetComponent<clickToSpawnManager>().meleeTower;
+        if((this.tag == "pathable" || this.tag == "highground") && this.name != "base" && this.name != "enemySpawn"){
+            canPlaceTower = true;
+        }
+        else{
+            canPlaceTower = false;
+        }
     }
     
     void OnMouseDown()
@@ -33,11 +40,15 @@ public class tileScript : MonoBehaviour
         print("name: " + gm.name + " xcord: " + xcord + " ycord: " + ycord);
 
         // Spawn the prefab on this tile
-        TowerData towerToPlace = new TowerData();
-        towerToPlace.type = "melee";
-        towerToPlace.xPos = xcord;
-        towerToPlace.yPos = ycord;  
-        BuildTowerFromData(towerToPlace);
+        if (hasTower == false && canPlaceTower == true)
+        {
+            TowerData towerToPlace = new TowerData();
+            towerToPlace.type = clickToSpawnManager.playerTowerChoice;
+            towerToPlace.xPos = xcord;
+            towerToPlace.yPos = ycord;  
+            BuildTowerFromData(towerToPlace);   
+            hasTower = true;
+        }
     }
 
     public void BuildTowerFromData(TowerData data)
@@ -45,11 +56,20 @@ public class tileScript : MonoBehaviour
         // Instantiate the prefab at the calculated position
         if (data.type == "melee")
         {
-            prefabToSpawn = GameObject.Find("EventSystem").GetComponent<clickToSpawnManager>().meleeTower;
+            prefabToSpawn = GameObject.Find("gameManager").GetComponent<clickToSpawnManager>().meleeTower;
+        }
+        else if (data.type == "laser")
+        {
+            prefabToSpawn = GameObject.Find("gameManager").GetComponent<clickToSpawnManager>().laserTower;
+        }
+        else if (data.type == "bomb")
+        {
+            prefabToSpawn = GameObject.Find("gameManager").GetComponent<clickToSpawnManager>().bombTower;
         }
         else
         {
-            print("I don't think we have any other tower types other than melee");
+            print("I don't think we have that type");
+            hasTower = false;
         }
         
         // Spawn the prefab on this tile
@@ -67,7 +87,7 @@ public class tileScript : MonoBehaviour
                 xPos = xcord,
                 yPos = ycord
             };
-            placedTowers.Add(newTower);
+            clickToSpawnManager.placedTowers.Add(newTower);
         }
         else
         {
@@ -96,6 +116,7 @@ public class tileScript : MonoBehaviour
     
     public TowerData[] SerializeTowers()
     {
-        return placedTowers.ToArray();
+        //return placedTowers.ToArray();
+        return clickToSpawnManager.placedTowers.ToArray();
     }
 }
