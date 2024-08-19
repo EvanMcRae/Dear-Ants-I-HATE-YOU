@@ -16,6 +16,9 @@ public class tileScript : MonoBehaviour
     public bool hasTower = false;
     public bool canPlaceTower = false;
 
+    //reference to tower on top of block
+    GameObject spawnedtower;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,7 +89,7 @@ public class tileScript : MonoBehaviour
             // Calculate the spawn position (tile position + 1 unit up)
             Vector3 spawnPosition = transform.position + Vector3.up;
 
-            GameObject spawnedObject = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
+            spawnedtower = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
 
             clickToSpawnManager.placedTowers.Add(data);
             hasTower = true;
