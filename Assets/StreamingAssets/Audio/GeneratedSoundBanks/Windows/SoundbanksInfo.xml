@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
 	<RootPaths>
-		<ProjectRoot>../../../../GMTK Wwise Project</ProjectRoot>
-		<SourceFilesRoot>../../../../GMTK Wwise Project/.cache/Windows</SourceFilesRoot>
+		<ProjectRoot>../../../../../GMTK Wwise Project</ProjectRoot>
+		<SourceFilesRoot>../../../../../GMTK Wwise Project/.cache/Windows</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>../../../../GMTK Wwise Project/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>../../../../../GMTK Wwise Project/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
@@ -432,5 +432,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{40939763-0560-8128-CF90-D78A1403E73F}</FileHash>
+	<FileHash>{CFA4BBD6-6053-EBB2-ECA9-87147363BDE7}</FileHash>
 </SoundBanksInfo>

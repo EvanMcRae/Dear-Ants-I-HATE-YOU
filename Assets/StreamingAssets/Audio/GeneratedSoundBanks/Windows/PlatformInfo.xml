@@ -2,11 +2,11 @@
 <PlatformInfo>
 	<Platform Name="Windows" BasePlatform="Windows" Generator="2023.1.1.8417"/>
 	<RootPaths>
-		<ProjectRoot>../../../../GMTK Wwise Project</ProjectRoot>
-		<SourceFilesRoot>../../../../GMTK Wwise Project/.cache/Windows</SourceFilesRoot>
+		<ProjectRoot>../../../../../GMTK Wwise Project</ProjectRoot>
+		<SourceFilesRoot>../../../../../GMTK Wwise Project/.cache/Windows</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>../../../../GMTK Wwise Project/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>../../../../../GMTK Wwise Project/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DefaultAlign>16</DefaultAlign>
 	<Settings>
@@ -28,5 +28,5 @@
 		<PrintObjectGuid>false</PrintObjectGuid>
 		<PrintObjectPath>false</PrintObjectPath>
 	</Settings>
-	<FileHash>{75C498C6-8863-EEA7-4608-AF7FCB259CEF}</FileHash>
+	<FileHash>{22F7AD9C-3953-1902-239F-4D7C02AE950E}</FileHash>
 </PlatformInfo>
