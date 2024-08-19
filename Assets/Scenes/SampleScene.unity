@@ -452,7 +452,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 673058378}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2756335085637198574, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
       propertyPath: m_Name
@@ -476,11 +476,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6837189607772495030, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6837189607772495030, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 6837189607772495030, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -523,11 +523,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
---- !u!4 &106908999 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6837189607772495030, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
-  m_PrefabInstance: {fileID: 106908998}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &106909000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2756335085637198574, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
@@ -2733,7 +2728,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 106908999}
   - {fileID: 651841860}
   - {fileID: 208908019}
   - {fileID: 119044658}
@@ -3583,6 +3577,7 @@ MonoBehaviour:
   everyTileOrdered: []
   waveManager: {fileID: 295191806}
   SpawnLocations: []
+  OriginTile: {fileID: 691712512}
 --- !u!1001 &972362343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7475,6 +7470,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 106908998}
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1062631574}

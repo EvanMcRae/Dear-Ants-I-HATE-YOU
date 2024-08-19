@@ -28,6 +28,8 @@ public class stageManager : MonoBehaviour
     public List<Vector3> SpawnLocations = new List<Vector3>();
 
 
+    public Transform OriginTile;
+
 
     void Awake()
     {
@@ -134,5 +136,23 @@ public class stageManager : MonoBehaviour
 
         return null;
 
+    }
+
+    public Vector2 worldToTileSpace(Vector3 worldSpace)
+    {
+        Vector3 relSpace = (worldSpace - OriginTile.transform.position);
+
+        return new Vector2((int)relSpace.x + 1, (int)-relSpace.z + 1);
+    }
+
+    public tileScript getTileFromWorldspace(Vector3 worldSpace)
+    {
+        Vector2 tileSpace = worldToTileSpace(worldSpace);
+        
+
+        tileScript returnTile = getTileFromCords((int)tileSpace.x, (int)tileSpace.y)?.GetComponent<tileScript>();
+        if(returnTile != null)
+            Debug.DrawLine(worldSpace, returnTile.transform.position, Color.magenta, 5);
+        return returnTile;
     }
 }
