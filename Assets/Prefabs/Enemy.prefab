@@ -119,10 +119,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64906dbb0e8872a44b5afd36373fbd11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTile: {fileID: 0}
-  incomingTile: {fileID: 0}
-  nextTile: {fileID: 0}
-  moveSpeed: 1
+  path:
+    path: []
+    pathName: 
+  currPathId: 0
+  moveSpeed: 15
+  health: 10
+  lastAttack: 0
+  attackCooldown: 0
+  attackDamage: 1
 --- !u!54 &7819179849478735699
 Rigidbody:
   m_ObjectHideFlags: 0

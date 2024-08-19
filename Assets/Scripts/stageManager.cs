@@ -41,7 +41,7 @@ public class stageManager : MonoBehaviour
             levelAssets.Add(level.gameObject);
         }
 
-        loadLevel(3, 1);
+        loadLevel(2, 1);
     }
 
     public void loadLevel(int goToLevel, int goToStage) 
@@ -50,6 +50,7 @@ public class stageManager : MonoBehaviour
         stage = 1;
         stageCount = getStageCount(level);
         levelAssets[level-1].SetActive(true);
+        waveManager = levelAssets[level - 1].GetComponent<WaveManager>();
         everyTile.AddRange(FindObjectsOfType<GameObject>());
         List<GameObject> temp = new List<GameObject>();
         foreach (GameObject gm in everyTile)
@@ -97,6 +98,9 @@ public class stageManager : MonoBehaviour
         {
             advanceStage();
         }
+
+        //Starts as soon as loaded
+        waveManager.StartWave();
     }
 
     private void Start()
