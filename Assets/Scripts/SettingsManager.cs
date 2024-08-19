@@ -72,13 +72,9 @@ public class SettingsManager : MonoBehaviour
     public void UpdateMusicVolume(bool user)
     {
         if (user)
-        {
             currentSettings.musicVolume = musicSlider.value;
-        }
         else
-        {
             musicSlider.value = currentSettings.musicVolume;
-        }
 
         AkSoundEngine.SetRTPCValue("musicVolume", currentSettings.musicVolume);
         musicValue.text = (int)musicSlider.value + "";
@@ -87,9 +83,7 @@ public class SettingsManager : MonoBehaviour
     public void UpdateSoundVolume(bool user)
     {
         if (user)
-        {
             currentSettings.soundVolume = soundSlider.value;
-        }
         else
             soundSlider.value = currentSettings.soundVolume;
         AkSoundEngine.SetRTPCValue("soundVolume", currentSettings.soundVolume);
@@ -99,9 +93,7 @@ public class SettingsManager : MonoBehaviour
     public void UpdateQuality(bool user)
     {
         if (user)
-        {
             currentSettings.quality = (int)qualitySlider.value;
-        }
         else
             qualitySlider.value = currentSettings.quality; 
 

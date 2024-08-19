@@ -119,8 +119,9 @@ MonoBehaviour:
   MenuBack:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 8995903e2111570448a6ac8b16671de4, type: 2}
   animProgress: 0
+  visible: 0
   ScreenDarkener: {fileID: 0}
   darkensScreen: 1
 --- !u!1 &2383300842046000697
@@ -274,7 +275,8 @@ MonoBehaviour:
   MenuNav:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c3a768628e06e6e4988fe5d478baf45f, type: 2}
+  image: {fileID: 0}
 --- !u!61 &9032153542580351321
 BoxCollider2D:
   m_ObjectHideFlags: 0
