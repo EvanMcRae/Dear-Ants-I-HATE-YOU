@@ -228,7 +228,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{28EEB601-3B75-1E06-8F01-CEDFEF28C065}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{04C79CEB-7CBD-7F51-EC9D-7DDC18BEC48C}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -268,9 +268,9 @@
 					<ShortName>LevelBridge_Arpeggio_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelBridge_Arpeggio_L8M_P1_FBC78EF0.wem</CachePath>
 				</File>
-				<File Id="655939111" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Level_HiHat_L8M_P0.wav</ShortName>
-					<CachePath>SFX/Level_HiHat_L8M_P0_FBC78EF0.wem</CachePath>
+				<File Id="634956250" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Level_Hi Hat groove_L8M_P1.wav</ShortName>
+					<CachePath>SFX/Level_Hi Hat groove_L8M_P1_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="664842732" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelB_SawSquare Bass_L8M_P1.wav</ShortName>
@@ -322,7 +322,7 @@
 								<MediaRef Id="475883887"/>
 								<MediaRef Id="561685502"/>
 								<MediaRef Id="588171366"/>
-								<MediaRef Id="655939111"/>
+								<MediaRef Id="634956250"/>
 								<MediaRef Id="664842732"/>
 								<MediaRef Id="712353983"/>
 								<MediaRef Id="731258502"/>
@@ -351,7 +351,7 @@
 								<MediaRef Id="475883887"/>
 								<MediaRef Id="561685502"/>
 								<MediaRef Id="588171366"/>
-								<MediaRef Id="655939111"/>
+								<MediaRef Id="634956250"/>
 								<MediaRef Id="664842732"/>
 								<MediaRef Id="712353983"/>
 								<MediaRef Id="731258502"/>
@@ -432,5 +432,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4EE522E0-7873-0B80-800C-C7A992AF786B}</FileHash>
+	<FileHash>{DCA72795-DC8D-8A52-4FA2-F6202A52273D}</FileHash>
 </SoundBanksInfo>
