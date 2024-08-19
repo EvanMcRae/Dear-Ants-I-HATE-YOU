@@ -19,7 +19,11 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         if (currPathId >= path.path.Count)
+        {
+            //Hit end of path
+            Destroy(gameObject);
             return;
+        }
 
         Vector2 targetPosition = new Vector2(path.path[currPathId].transform.position.x, path.path[currPathId].transform.position.z);
         if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), targetPosition) <= .1f)

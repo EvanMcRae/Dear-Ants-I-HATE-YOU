@@ -52,9 +52,16 @@ public class WaveManager : MonoBehaviour
     {
         CurrentWave++;
         inWave = false;
+        stageManager.main.advanceStage();
 
         if (CurrentWave >= waves.Count)
+        {
             WonMap();
+            return;
+        }
+
+        //Starts next wave on prior one finishing
+        StartWave();
     }
 
     public void WonMap()
@@ -110,6 +117,12 @@ public class WaveManager : MonoBehaviour
 
         public bool HasFinished()
         {
+            for(int i = spawnedEnemies.Count - 1; i >= 0; i--)
+            {
+                if (spawnedEnemies[i] == null)
+                    spawnedEnemies.RemoveAt(i);
+            }
+
             return enemiesToSpawn.Count == 0 && spawnedEnemies.Count == 0;
         }
     }
