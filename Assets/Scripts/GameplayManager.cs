@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -111,7 +112,16 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 0;
         paused = true;
         beginning = 1;
+        StartCoroutine(StartButtonCooldown());
     }
+
+    IEnumerator StartButtonCooldown()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        MenuButton.noSound = true;
+        EventSystem.current.SetSelectedGameObject(DoctorsNoteButton);
+    }
+
     public void EndIntroSequence()
     {
         DoctorsNoteButton.GetComponent<Button>().interactable = false;
