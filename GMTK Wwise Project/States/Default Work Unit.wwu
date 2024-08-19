@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{6E8D6C1F-A64A-4666-9098-C9D49AB0708D}" SchemaVersion="119">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{6E8D6C1F-A64A-4666-9098-C9D49AB0708D}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{6E8D6C1F-A64A-4666-9098-C9D49AB0708D}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Music" ID="{645D464A-3EA0-4C2B-A748-999C3CE90C16}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{94F241C8-97FF-4EC9-A05E-C994EA364D3B}"/>
+						<State Name="Gameplay" ID="{F413F467-1ECE-4A1B-BCF4-2B29756B2829}"/>
+						<State Name="Menu" ID="{C8600E96-80A8-4917-9075-6632A943EB59}"/>
+					</ChildrenList>
+				</StateGroup>
+				<StateGroup Name="Level" ID="{D3E1C1CF-936E-40A4-8E4C-CADC3DCA2732}">
+					<ChildrenList>
+						<State Name="None" ID="{4A38B33F-79FC-4F70-9967-E7E11C86687E}"/>
+						<State Name="Kitchen" ID="{9A7A8F68-3071-4FCB-B514-44C3FE2175EE}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>
