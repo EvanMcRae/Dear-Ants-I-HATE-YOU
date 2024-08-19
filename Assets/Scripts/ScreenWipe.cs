@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ScreenWipe : MonoBehaviour
 {
     public Action PostWipe;
+    public Action PostUnwipe;
     public static bool over = false;
     [SerializeField] private Image ScreenBlocker;
 
@@ -30,11 +31,13 @@ public class ScreenWipe : MonoBehaviour
 
     public void CallPostWipe()
     {
+        Debug.Log("Hello!! " + PostWipe.GetInvocationList().Length);
         PostWipe?.Invoke();
     }
 
     public void ScreenRevealed()
     {
+        PostUnwipe?.Invoke();
         Invoke("PostCooldown", 0.1f);
     }
 

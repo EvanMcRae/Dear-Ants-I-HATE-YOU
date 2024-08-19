@@ -17,9 +17,8 @@ public class stageManager : MonoBehaviour
     public List<GameObject> everyTile;
     public List<GameObject> everyTileOrdered;
 
-    public int stage;
     public int stageCount;
-    public static int level;
+    public static int stage, level;
     public List<GameObject> levelAssets;
 
     public static stageManager main;
@@ -42,16 +41,7 @@ public class stageManager : MonoBehaviour
             levelAssets.Add(level.gameObject);
         }
 
-        loadLevel(1,1);
-    }
-
-    public void loadLevel(int level, int goToStage) 
-    {
-        stageManager.level = level;
-        this.stage = 1;
-        stageCount = getStageCount(level);
-        levelAssets[level-1].SetActive(true);
-        everyTile.AddRange(GameObject.FindObjectsOfType<GameObject>());
+        everyTile.AddRange(FindObjectsOfType<GameObject>());
         List<GameObject> temp = new List<GameObject>();
         foreach (GameObject gm in everyTile)
         {
@@ -62,6 +52,16 @@ public class stageManager : MonoBehaviour
         }
         everyTile = temp;
         everyTileOrdered = everyTile;
+
+        loadLevel(1, 1);
+    }
+
+    public void loadLevel(int goToLevel, int goToStage) 
+    {
+        level = goToLevel;
+        stage = goToStage;
+        stageCount = getStageCount(level);
+        levelAssets[level-1].SetActive(true);
         advanceToStage(goToStage);
     }
 
@@ -142,6 +142,7 @@ public class stageManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Backslash))
         {
             advanceStage();
+            GameplayManager.AutoSave(); // TODO THIS IS IMPORTANT!!!!! CALL THIS WHENEVER STAGE ADVANCES!!!
         }
     }
 
