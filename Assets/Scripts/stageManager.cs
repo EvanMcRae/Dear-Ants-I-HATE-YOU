@@ -19,7 +19,7 @@ public class stageManager : MonoBehaviour
 
     public int stage;
     public int stageCount;
-    public int level;
+    public static int level;
     public List<GameObject> levelAssets;
 
     public static stageManager main;
@@ -47,7 +47,7 @@ public class stageManager : MonoBehaviour
 
     public void loadLevel(int level, int goToStage) 
     {
-        this.level = level;
+        stageManager.level = level;
         this.stage = 1;
         stageCount = getStageCount(level);
         levelAssets[level-1].SetActive(true);

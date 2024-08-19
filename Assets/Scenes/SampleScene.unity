@@ -2952,7 +2952,6 @@ MonoBehaviour:
       spawnLocationID: Spawner1/Boss
     currentlySpawning: 0
     startTime: 0
-  CurrentWave: 0
   inWave: 0
 --- !u!4 &787136192
 Transform:
@@ -3413,7 +3412,6 @@ MonoBehaviour:
   everyTileOrdered: []
   stage: 0
   stageCount: 0
-  level: 0
   levelAssets: []
   waveManager: {fileID: 0}
   SpawnLocations: []

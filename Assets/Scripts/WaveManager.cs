@@ -7,7 +7,7 @@ public class WaveManager : MonoBehaviour
 {
     public List<Wave> waves = new List<Wave>();
 
-    public int CurrentWave;
+    public static int CurrentWave;
 
     public bool inWave = false;
 

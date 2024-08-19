@@ -89,7 +89,7 @@ public class SaveManager : MonoBehaviour
 
         Debug.Log("saving game!");
 
-        data.level = StageManager.level;
+        data.level = stageManager.level;
         data.stage = StageManager.stage;
 
 
