@@ -625,6 +625,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &443137129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,6 +1786,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &971445569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,6 +2346,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &1493517837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,6 +2499,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &1495471109
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,6 +3066,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &1591129273
 GameObject:
   m_ObjectHideFlags: 0
@@ -3889,6 +3894,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &2075257737
 GameObject:
   m_ObjectHideFlags: 0

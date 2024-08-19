@@ -29,6 +29,8 @@ public class stageManager : MonoBehaviour
 
     public List<PathsData> AIPathings = new List<PathsData>();
 
+    public AK.Wwise.Event stageUp, levelReset;
+
     void Awake()
     {
         main = this;
@@ -41,7 +43,7 @@ public class stageManager : MonoBehaviour
             levelAssets.Add(level.gameObject);
         }
 
-        loadLevel(1, 3);
+        loadLevel(1, 1);
     }
 
     public void loadLevel(int goToLevel, int goToStage) 
@@ -50,6 +52,7 @@ public class stageManager : MonoBehaviour
         stage = 1;
         stageCount = getStageCount(level);
         levelAssets[level-1].SetActive(true);
+        waveManager = levelAssets[level - 1].GetComponent<WaveManager>();
         everyTile.AddRange(FindObjectsOfType<GameObject>());
         List<GameObject> temp = new List<GameObject>();
         foreach (GameObject gm in everyTile)
@@ -68,6 +71,7 @@ public class stageManager : MonoBehaviour
     {
         stage++;
         enablePath(stage);
+        // stageUp.Post(gameObject);
         if (stage == stageCount + 1) { endLevel(); }
     }
 
@@ -97,6 +101,9 @@ public class stageManager : MonoBehaviour
         {
             advanceStage();
         }
+
+        //Starts as soon as loaded
+        waveManager.StartWave();
     }
 
     private void Start()
@@ -144,6 +151,8 @@ public class stageManager : MonoBehaviour
             advanceStage();
             GameplayManager.AutoSave(); // TODO THIS IS IMPORTANT!!!!! CALL THIS WHENEVER STAGE ADVANCES!!!
         }
+
+        AkSoundEngine.SetRTPCValue("LevelProgress", stage);
     }
 
     public void updateTileList(int x, int y, GameObject toBeInserted)
@@ -154,15 +163,23 @@ public class stageManager : MonoBehaviour
 
     public int getLevel() 
     {
-        return 1;
+        return level;
     }
 
     public int getLength(int level)
     {
         /*UPDATED LATER WITH MORE LEVELS*/
-        if (level == 1) 
+        if (level == 1)
         {
             return 11;
+        }
+        if (level == 2)
+        {
+            return 9;
+        }
+        if (level == 3) 
+        {
+            return 10;
         }
         return 999999999;
     }
@@ -171,6 +188,7 @@ public class stageManager : MonoBehaviour
     {
         if (level == 1) { return 5; }
         else if (level == 2) { return 5; }
+        else if (level == 3) { return 3; }
         return 999999;
     }
 
@@ -180,6 +198,14 @@ public class stageManager : MonoBehaviour
         if (level == 1)
         {
             return 77;
+        }
+        else if (level == 2)
+        {
+            return 63;
+        }
+        else if (level == 3) 
+        {
+            return 50;
         }
         return 999999999;
     }
