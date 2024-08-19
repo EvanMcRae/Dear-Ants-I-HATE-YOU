@@ -35,7 +35,7 @@ public class tileScript : MonoBehaviour
         print("name: " + gm.name + " xcord: " + xcord + " ycord: " + ycord);
 
         // Spawn the prefab on this tile
-        towerToPlace.towerType = "melee";
+        towerToPlace.type = "melee";
         towerToPlace.xPos = xcord;
         towerToPlace.yPos = ycord;  
         BuildTowerFromData(towerToPlace);
@@ -50,7 +50,7 @@ public class tileScript : MonoBehaviour
             Vector3 spawnPosition = tf.position + Vector3.up;
 
             // Instantiate the prefab at the calculated position
-            if(data.towerType == "melee"){
+            if(data.type == "melee"){
                 prefabToSpawn = GameObject.Find("EventSystem").GetComponent<clickToSpawnManager>().meleeTower;
             }
             else{
@@ -61,7 +61,7 @@ public class tileScript : MonoBehaviour
             // Add the spawned tower data to the list
             TowerData newTower = new TowerData
             {
-                towerType = prefabToSpawn.name, // Assuming the prefab name represents the tower type
+                type = prefabToSpawn.name, // Assuming the prefab name represents the tower type
                 xPos = xcord,
                 yPos = ycord
             };
