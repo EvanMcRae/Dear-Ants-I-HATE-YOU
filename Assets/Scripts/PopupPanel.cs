@@ -36,6 +36,10 @@ public class PopupPanel : MonoBehaviour
             if (EventSystem.current.currentSelectedGameObject != null)
             {
                 currentSelection = EventSystem.current.currentSelectedGameObject;
+                if (EventSystem.current.currentSelectedGameObject == PreviousButton)
+                {
+                    EventSystem.current.SetSelectedGameObject(PrimaryButton);
+                }
             }
             else
             {
@@ -84,6 +88,8 @@ public class PopupPanel : MonoBehaviour
         visible = true;
         PreviousButton = EventSystem.current.currentSelectedGameObject;
         EventSystem.current.SetSelectedGameObject(PrimaryButton);
+        Debug.Log("set prim button");
+        MenuButton.pleaseNoSound = true;
         if (darkensScreen)
             ScreenDarkener.raycastTarget = true;
     }
@@ -100,6 +106,7 @@ public class PopupPanel : MonoBehaviour
             ScreenDarkener.raycastTarget = false;
         numPopups--;
         visible = false;
+        MenuButton.pleaseNoSound = true;
         EventSystem.current.SetSelectedGameObject(PreviousButton);
     }
 
@@ -108,6 +115,7 @@ public class PopupPanel : MonoBehaviour
         if (anim.GetFloat("Speed") < 0)
         {
             gameObject.SetActive(false);
+            MenuButton.pleaseNoSound = false;
             anim.SetFloat("Speed", 0);
             open = false;
         }
@@ -126,6 +134,7 @@ public class PopupPanel : MonoBehaviour
         if (anim.GetFloat("Speed") > 0)
         {
             anim.SetFloat("Speed", 0);
+            MenuButton.pleaseNoSound = false;
         }
     }
 }
