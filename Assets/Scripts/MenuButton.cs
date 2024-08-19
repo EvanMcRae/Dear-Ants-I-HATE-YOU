@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler, IDeselectHandler, ISelectHandler
+public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerMoveHandler, IDeselectHandler, ISelectHandler
 {
     [SerializeField] private Sprite normal;
     [SerializeField] private bool MainMenu;
@@ -12,6 +12,7 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
     [SerializeField] private Image image;
     public static bool noSound = false, pleaseNoSound = false;
     public int popupID = 0;
+    public bool deselectsOnPointerLeave = false;
     
     public void OnDeselect(BaseEventData eventData)
     {
@@ -36,6 +37,14 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
         if (eventData.hovered.Contains(gameObject) && EventSystem.current.currentSelectedGameObject != gameObject && popupID == PopupPanel.numPopups)
         {
             EventSystem.current.SetSelectedGameObject(gameObject);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (deselectsOnPointerLeave && EventSystem.current.currentSelectedGameObject == gameObject)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
         }
     }
 

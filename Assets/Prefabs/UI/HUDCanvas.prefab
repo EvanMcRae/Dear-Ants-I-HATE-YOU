@@ -1243,6 +1243,7 @@ GameObject:
   - component: {fileID: 911798580985974612}
   - component: {fileID: 9215649053902161934}
   - component: {fileID: 6795411149671851933}
+  - component: {fileID: 7491694139769676344}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -1336,7 +1337,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: ea4a1581b5c880441b549ce6ea062999, type: 3}
+    m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 21300000, guid: cc1a6aa2d7b5954469116b6a88153b10, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: ea4a1581b5c880441b549ce6ea062999, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -1363,6 +1364,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &7491694139769676344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6968606171556423605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1cda254f195d641b0e79b3a229a85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 21300000, guid: 5ecd6d92eb5160f43881fb018a331258, type: 3}
+  MainMenu: 0
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  image: {fileID: 9215649053902161934}
+  popupID: 0
+  deselectsOnPointerLeave: 1
 --- !u!1 &7045879907962694431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,6 +1608,7 @@ GameObject:
   - component: {fileID: 6942482850840758345}
   - component: {fileID: 2717176785555876222}
   - component: {fileID: 4844114702579568646}
+  - component: {fileID: 4781697395484174190}
   m_Layer: 5
   m_Name: WorkshopButton
   m_TagString: Untagged
@@ -1680,9 +1703,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: deea927eca4afba468745658fbda7dfe, type: 3}
+    m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 21300000, guid: deea927eca4afba468745658fbda7dfe, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: deea927eca4afba468745658fbda7dfe, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1707,6 +1730,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4781697395484174190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8184945602487264874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1cda254f195d641b0e79b3a229a85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 21300000, guid: 0f7fc474dd8e27b49a02916d5f280b1d, type: 3}
+  MainMenu: 0
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  image: {fileID: 4974315781990504361}
+  popupID: 0
+  deselectsOnPointerLeave: 1
 --- !u!1 &8400426792920514393
 GameObject:
   m_ObjectHideFlags: 0
