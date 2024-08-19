@@ -17,7 +17,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private Sprite PauseClicked, PauseNormal;
     [SerializeField] private TextMeshProUGUI WinText;
     [SerializeField] private GameObject globalWwise;
-    [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver;
+    [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver, TakeDamage;
     public clickToSpawnManager spawnManager;
     public SaveManager saveManager; 
 
@@ -279,6 +279,7 @@ public class GameplayManager : MonoBehaviour
         else if(currPlayerHealth > maxPlayerHealth){
             currPlayerHealth = maxPlayerHealth;
         }
+        TakeDamage?.Post(globalWwise);
         HUDManager.main.HurtEffect();
         HUDManager.main.UpdateHealth();
     }
