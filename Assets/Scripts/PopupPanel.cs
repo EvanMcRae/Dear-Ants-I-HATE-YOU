@@ -36,10 +36,6 @@ public class PopupPanel : MonoBehaviour
             if (EventSystem.current.currentSelectedGameObject != null)
             {
                 currentSelection = EventSystem.current.currentSelectedGameObject;
-                if (EventSystem.current.currentSelectedGameObject == PreviousButton)
-                {
-                    EventSystem.current.SetSelectedGameObject(PrimaryButton);
-                }
             }
             else
             {
@@ -85,6 +81,10 @@ public class PopupPanel : MonoBehaviour
         open = true;
         mouseNeverMoved = 2;
         numPopups++;
+        foreach (MenuButton c in GetComponentsInChildren<MenuButton>())
+        {
+            c.popupID = numPopups;
+        }
         visible = true;
         PreviousButton = EventSystem.current.currentSelectedGameObject;
         EventSystem.current.SetSelectedGameObject(PrimaryButton);

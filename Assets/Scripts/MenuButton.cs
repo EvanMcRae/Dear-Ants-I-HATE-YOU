@@ -11,6 +11,7 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
     [SerializeField] private AK.Wwise.Event MenuNav;
     [SerializeField] private Image image;
     public static bool noSound = false, pleaseNoSound = false;
+    public int popupID = 0;
     
     public void OnDeselect(BaseEventData eventData)
     {
@@ -26,13 +27,13 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
             return;
         }
 
-        if (MainMenu ^ PopupPanel.numPopups > 0)
+        if (popupID == PopupPanel.numPopups)
             EventSystem.current.SetSelectedGameObject(gameObject);
     }
 
     public void OnPointerMove(PointerEventData eventData)
     {
-        if (eventData.hovered.Contains(gameObject) && EventSystem.current.currentSelectedGameObject != gameObject)
+        if (eventData.hovered.Contains(gameObject) && EventSystem.current.currentSelectedGameObject != gameObject && popupID == PopupPanel.numPopups)
         {
             EventSystem.current.SetSelectedGameObject(gameObject);
         }
