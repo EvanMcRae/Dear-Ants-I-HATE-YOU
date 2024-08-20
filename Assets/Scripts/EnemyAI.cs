@@ -48,7 +48,7 @@ public class EnemyAI : MonoBehaviour
 
         tileScript nextTile = path.path[currPathId].GetComponent<tileScript>();
 
-        if (nextTile.hasTower)
+        if (nextTile.hasTower && !nextTile.spawnedtower.GetComponent<Tower>().dead)
         {
             //AttackTower
             if(lastAttack + attackCooldown < Time.time)

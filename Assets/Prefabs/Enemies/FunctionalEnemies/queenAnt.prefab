@@ -76,9 +76,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1841771124672475302, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      propertyPath: health
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841771124672475302, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
       propertyPath: visuals
       value: 
       objectReference: {fileID: 7004318217599527052}
+    - target: {fileID: 1841771124672475302, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      propertyPath: moveSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841771124672475302, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      propertyPath: resourceAward
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
       propertyPath: m_Name
       value: queenAnt

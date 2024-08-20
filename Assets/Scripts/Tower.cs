@@ -14,7 +14,7 @@ public class Tower : MonoBehaviour
     [SerializeField]
     protected int currHealth;
     //denotes if health has been depleted
-    protected bool dead = false;
+    public bool dead = false;
     //denotes if currenly attacking, used to retract hitboxes if dieing with them out
     protected bool attacking = false;
 

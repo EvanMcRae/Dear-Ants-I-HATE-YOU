@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: visuals
       value: 
       objectReference: {fileID: 4539860343357755315}
+    - target: {fileID: 1841771124672475302, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      propertyPath: resourceAward
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
       propertyPath: m_Name
       value: soldierAnt
