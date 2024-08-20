@@ -187,7 +187,7 @@ public class Tower : MonoBehaviour
         Debug.Log("Upgraded Tower");
         attachUpgrade(clickToSpawnManager.currentUpgradeChoice);
         clickToSpawnManager.PlacingMode = clickToSpawnManager.PlacingBehaviour.none;
-        GameplayManager.main.spendResource(clickToSpawnManager.currentPlacementCost);
+        //GameplayManager.main.spendResource(clickToSpawnManager.currentPlacementCost);
     }
 
 
