@@ -11,7 +11,6 @@ public class LaserTower : Tower
     //2 - left
     //3 - right
 
-
     protected override void Start()
     {
         base.Start();
@@ -66,6 +65,7 @@ public class LaserTower : Tower
             anim.transform.localScale = new Vector3(-1, 1, 1) * originalScale;
         else
             anim.transform.localScale = Vector3.one * originalScale;
+        DirectionFacing = largestDir;
 
         if (timeSinceLastAttack >= timeToAttack && antsInRange > 0 && !dead)
         {
@@ -75,5 +75,31 @@ public class LaserTower : Tower
         {
             stopAttacking();
         }
+    }
+
+    protected override void attack()
+    {
+        //activate colliders for hitboxes
+        attacking = !attacking;
+        anim.Play("Attack");
+        foreach(GameObject box in hitboxes){ 
+            box.SetActive(false);
+        }
+        switch(DirectionFacing)
+        {
+          case 0: //up
+            hitboxes[2].SetActive(attacking);
+            break;
+          case 1: //down
+            hitboxes[3].SetActive(attacking);
+            break;
+          case 2: //left
+            hitboxes[1].SetActive(attacking);
+            break;
+          case 3: //right
+            hitboxes[0].SetActive(attacking);
+            break;
+        }
+        timeSinceLastAttack = 0;
     }
 }

@@ -28,7 +28,7 @@ public class Tower : MonoBehaviour
     protected int power;
 
     [SerializeField]
-    GameObject[] hitboxes;
+    protected GameObject[] hitboxes;
     [SerializeField]
     protected towerSightBox[] sightBoxes;
 
