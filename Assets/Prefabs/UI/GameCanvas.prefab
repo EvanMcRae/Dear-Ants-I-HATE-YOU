@@ -1108,6 +1108,7 @@ MonoBehaviour:
   visible: 0
   ScreenDarkener: {fileID: 4516852739062730835}
   darkensScreen: 1
+  selectsPrevious: 1
 --- !u!95 &514892420220273187
 Animator:
   serializedVersion: 5
@@ -2083,6 +2084,7 @@ MonoBehaviour:
   visible: 0
   ScreenDarkener: {fileID: 4516852739062730835}
   darkensScreen: 1
+  selectsPrevious: 0
 --- !u!95 &8968761452517343807
 Animator:
   serializedVersion: 5
@@ -5096,6 +5098,7 @@ MonoBehaviour:
   visible: 0
   ScreenDarkener: {fileID: 4516852739062730835}
   darkensScreen: 1
+  selectsPrevious: 1
 --- !u!95 &5096942246414093560
 Animator:
   serializedVersion: 5
@@ -5383,6 +5386,7 @@ MonoBehaviour:
   visible: 0
   ScreenDarkener: {fileID: 4516852739062730835}
   darkensScreen: 1
+  selectsPrevious: 1
 --- !u!95 &8682228956351508638
 Animator:
   serializedVersion: 5

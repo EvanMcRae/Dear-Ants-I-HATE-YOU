@@ -24,8 +24,15 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         if (PopupPanel.mouseNeverMoved > 0)
         {
-            PopupPanel.mouseNeverMoved--;
-            return;
+            if (!deselectsOnPointerLeave)
+            {
+                PopupPanel.mouseNeverMoved--;
+                return;
+            }
+            else
+            {
+                PopupPanel.mouseNeverMoved = 0;
+            }
         }
 
         if (popupID == PopupPanel.numPopups)
