@@ -1027,11 +1027,14 @@
 								</BlendContainer>
 								<RandomSequenceContainer Name="Scuttle" ID="{E0901428-F7A9-4CD1-83E3-9DB3DEBB14BD}" ShortID="759917801">
 									<PropertyList>
+										<Property Name="BelowThresholdBehavior" Type="int16" Value="3"/>
 										<Property Name="Highpass" Type="int16">
 											<ValueList>
 												<Value>44</Value>
 											</ValueList>
 										</Property>
+										<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 										<Property Name="Lowpass" Type="int16">
 											<ValueList>
 												<Value>25</Value>
@@ -1040,6 +1043,12 @@
 										<Property Name="MakeUpGain" Type="Real64">
 											<ValueList>
 												<Value>3</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>4</Value>
 											</ValueList>
 										</Property>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
@@ -1053,6 +1062,11 @@
 										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="4"/>
 										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-6</Value>
@@ -1231,16 +1245,17 @@
 										<ObjectList Name="Effects">
 											<Reference>
 												<Local>
-													<EffectSlot Name="" ID="{C582B45D-F5E2-47F9-8425-2EF2C45333B9}" ShortID="145111788">
+													<EffectSlot Name="" ID="{85ED62E2-AFEE-4AB5-81C4-D34113B010D7}" ShortID="881490761">
 														<ReferenceList>
 															<Reference Name="Effect">
-																<Custom>
-																	<Effect Name="iZotope Trash Dynamics Mono (Custom)" ID="{2245AF19-7E30-4F20-AA03-D504D8EEC542}" ShortID="327075960" PluginName="iZotope Trash Dynamics Mono" CompanyID="259" PluginID="5" PluginType="3">
+																<Custom CreatedFrom="{747A6B61-E953-474C-8227-672C884DA616}">
+																	<Effect Name="Noise_Gate_Fast_Attack (Custom)" ID="{31F686F7-E48C-41E7-8F66-2773AD66F479}" ShortID="191600798" PluginName="Wwise Expander" CompanyID="0" PluginID="109" PluginType="3">
 																		<PropertyList>
-																			<Property Name="Gain" Type="Real32" Value="19"/>
-																			<Property Name="GateRatio" Type="Real32" Value="6"/>
-																			<Property Name="GateRelease" Type="Real32" Value="30"/>
-																			<Property Name="GateThreshold" Type="Real32" Value="-53"/>
+																			<Property Name="AttackTime" Type="Real32" Value="0"/>
+																			<Property Name="OutputGain" Type="Real32" Value="4.5"/>
+																			<Property Name="Ratio" Type="Real32" Value="21.6"/>
+																			<Property Name="ReleaseTime" Type="Real32" Value="0.08"/>
+																			<Property Name="Threshold" Type="Real32" Value="-68.7"/>
 																		</PropertyList>
 																	</Effect>
 																</Custom>
@@ -1253,6 +1268,19 @@
 									</ObjectLists>
 								</RandomSequenceContainer>
 								<BlendContainer Name="Fire" ID="{4C5BE8C0-86D2-40AA-B22D-C081C5ED5701}" ShortID="508349719">
+									<PropertyList>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5FFBEC59-0C1C-4AC8-B529-AB83724EBFE8}"/>
