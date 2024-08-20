@@ -163,10 +163,10 @@ public class Tower : MonoBehaviour
             attached = true;
 
             if(upgradeType == 1){
-                attackSpeed *= speedBoost;
+                attackSpeed += speedBoost;
             }
             else if(upgradeType == 2){
-                maxHealth *= healthBoost;
+                maxHealth += healthBoost;
             }
             else if(upgradeType == 3){
                 power += powerBoost;
