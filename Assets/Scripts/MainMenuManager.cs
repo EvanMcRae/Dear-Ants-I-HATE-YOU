@@ -33,7 +33,10 @@ public class MainMenuManager : MonoBehaviour
             if (EventSystem.current.currentSelectedGameObject != null)
                 currentSelection = EventSystem.current.currentSelectedGameObject;
             else
+            {
+                MenuButton.noSound = true;
                 EventSystem.current.SetSelectedGameObject(currentSelection);
+            }
         }
 
         // Save file detection

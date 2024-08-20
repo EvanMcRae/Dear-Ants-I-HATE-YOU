@@ -13,10 +13,10 @@ public class GameplayManager : MonoBehaviour
     public bool startedSequence = false;
     public bool suspendSequence = false;
     public static bool paused, pauseOpen;
-    [SerializeField] private GameObject PauseMenu, WinScreen, LoseScreen, SettingsPanel, DoctorsNote;
+    [SerializeField] private GameObject PauseMenu, WinScreen, LoseScreen, SettingsPanel, DoctorsNote, WorkshopMenu;
     [SerializeField] private GameObject PauseButton;
     [SerializeField] private Sprite PauseClicked, PauseNormal;
-    [SerializeField] private TextMeshProUGUI WinText;
+    //[SerializeField] private TextMeshProUGUI WinText;
     [SerializeField] private GameObject globalWwise;
     [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver, TakeDamage;
     public clickToSpawnManager spawnManager;
@@ -94,6 +94,11 @@ public class GameplayManager : MonoBehaviour
             DoctorsNoteButton.transform.localPosition = new Vector3(btnPos.x, Mathf.Lerp(btnPos.y, -293, 0.02f), btnPos.z);
             var imgPos = DoctorsNoteImage.transform.localPosition;
             DoctorsNoteImage.transform.localPosition = new Vector3(imgPos.x, Mathf.Lerp(imgPos.y, 100, 0.02f), imgPos.z);
+            if (EventSystem.current.currentSelectedGameObject != DoctorsNoteButton)
+            {
+                MenuButton.noSound = true;
+                EventSystem.current.SetSelectedGameObject(DoctorsNoteButton);
+            }
         }
 
         // if (suspendSequence)
@@ -224,6 +229,9 @@ public class GameplayManager : MonoBehaviour
             {
                 LoseScreen.GetComponent<PopupPanel>().Close();
             }
+            if (WorkshopMenu != null && WorkshopMenu.activeSelf == true){
+                WorkshopMenu.GetComponent<PopupPanel>().Close();
+            }
         }
     }
 
@@ -249,6 +257,7 @@ public class GameplayManager : MonoBehaviour
     public void LoadMenu()
     {
         screenWipe.PostWipe -= LoadMenu;
+        PopupPanel.numPopups = 0;
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -270,6 +279,7 @@ public class GameplayManager : MonoBehaviour
     public void Win()
     {
         if (paused) return;
+        ClosePanels();
         won = true;
         // DialogController.main.StopTalk();
         StopMusic.Post(globalWwise);
@@ -280,6 +290,7 @@ public class GameplayManager : MonoBehaviour
     public void Lose()
     {
         if (paused) return;
+        ClosePanels();
         lost = true;
         // DialogController.main.StopTalk();
         GameOver?.Post(globalWwise);

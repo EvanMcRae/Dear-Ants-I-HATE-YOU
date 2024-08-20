@@ -31,7 +31,6 @@ public class ScreenWipe : MonoBehaviour
 
     public void CallPostWipe()
     {
-        Debug.Log("Hello!! " + PostWipe.GetInvocationList().Length);
         PostWipe?.Invoke();
     }
 
