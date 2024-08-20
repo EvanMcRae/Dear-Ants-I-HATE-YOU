@@ -50,7 +50,7 @@ public class tileScript : MonoBehaviour
         print("name: " + gameObject.name + " xcord: " + xcord + " ycord: " + ycord);
 
         // Spawn the prefab on this tile
-        if (hasTower == false && canPlaceTower == true)
+        if (hasTower == false && canPlaceTower == true && clickToSpawnManager.PlacingMode == clickToSpawnManager.PlacingBehaviour.tower)
         {
             TowerData towerToPlace = new()
             {
@@ -59,6 +59,8 @@ public class tileScript : MonoBehaviour
                 yPos = ycord
             };
             BuildTowerFromData(towerToPlace);
+            clickToSpawnManager.PlacingMode = clickToSpawnManager.PlacingBehaviour.none;
+            GameplayManager.main.spendResource(clickToSpawnManager.currentPlacementCost);
         }
     }
 

@@ -357,11 +357,11 @@ public class GameplayManager : MonoBehaviour
         resourcePoints += amount;
         HUDManager.main.UpdateEXP();
     }
-    void spendResource(int amount){
+    public void spendResource(int amount){
         resourcePoints -= amount;
         HUDManager.main.UpdateEXP();
     }
-    void resetResource(){
+    public void resetResource(){
         resourcePoints = startingResourcePoints;
         HUDManager.main.UpdateEXP();
     }
