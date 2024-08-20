@@ -681,16 +681,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4949891009661603282}
-  m_LocalRotation: {x: -0.10040816, y: 0.026740527, z: -0.0066718804, w: 0.99456453}
+  m_LocalRotation: {x: -0.10061734, y: 0.025942327, z: -0.014569655, w: 0.9944802}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2306264037008433273}
-  m_LocalEulerAnglesHint: {x: -11.5, y: 3.19, z: -1.09}
+  m_LocalEulerAnglesHint: {x: -11.5, y: 3.19, z: -2}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 57.81, y: -412}
+  m_AnchoredPosition: {x: 57.81, y: -405}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5901279576385593457
@@ -955,6 +955,7 @@ MonoBehaviour:
   EXPValue2: {fileID: 0}
   WaveValue: {fileID: 811619849833366984}
   LevelValue: {fileID: 8063814894949884488}
+  WorkshopHeader: {fileID: 0}
   WorkshopPanel: {fileID: 0}
   Hearts:
   - {fileID: 8694160517388431427}
@@ -963,6 +964,13 @@ MonoBehaviour:
   fullHeart: {fileID: 21300000, guid: fdabc79185019be46805c5d0c36b8d3d, type: 3}
   emptyHeart: {fileID: 21300000, guid: abebc45bfa3c5f84bab60158ee97ac22, type: 3}
   HurtVignette: {fileID: 8078491034253374784}
+  units: 1
+  MenuConfirm:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  TowersList: {fileID: 0}
+  UpgradesList: {fileID: 0}
 --- !u!1 &6477875118479733191
 GameObject:
   m_ObjectHideFlags: 0
