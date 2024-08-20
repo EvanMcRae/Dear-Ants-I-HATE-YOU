@@ -18159,6 +18159,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1943750022}
     - target: {fileID: 3862203972905032881, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: MenuFail.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a86e9148dde87b42806ea6e7a89584c, type: 2}
+    - target: {fileID: 3862203972905032881, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
       propertyPath: MenuConfirm.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: 10ad9804577076243b6c7139cfb0e6c7, type: 2}

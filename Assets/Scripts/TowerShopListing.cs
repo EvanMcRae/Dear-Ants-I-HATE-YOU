@@ -12,7 +12,11 @@ public class TowerShopListing : ShopListing
     {
         base.OnClick();
         if (GameplayManager.main.resourcePoints < cost)
+        {
+            HUDManager.main.PlayFailSound();
             return;
+        }
+        HUDManager.main.CloseWorkshop();
         clickToSpawnManager.PlacingMode = clickToSpawnManager.PlacingBehaviour.tower;
         clickToSpawnManager.playerTowerChoice = TowerName;
         clickToSpawnManager.currentPlacementCost = cost;
