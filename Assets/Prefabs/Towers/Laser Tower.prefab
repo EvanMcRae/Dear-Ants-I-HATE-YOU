@@ -1141,6 +1141,7 @@ MonoBehaviour:
   speedUps: 0
   healthUps: 0
   powerUps: 0
+  anim: {fileID: 7492749712054782265}
 --- !u!33 &5346667780650370833
 MeshFilter:
   m_ObjectHideFlags: 0

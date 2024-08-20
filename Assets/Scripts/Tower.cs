@@ -53,6 +53,8 @@ public class Tower : MonoBehaviour
     public int healthUps = 0;
     public int powerUps = 0;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,7 +79,7 @@ public class Tower : MonoBehaviour
         //calculate total number of ants seen in everysightbox combined
         int antsInRange = 0;
         foreach(towerSightBox box in sightBoxes){
-            antsInRange += box.antsSeen;
+            antsInRange += box.InDepthCount();
         }
 
         if(timeSinceLastAttack >= timeToAttack && antsInRange > 0 && !dead){
@@ -95,6 +97,7 @@ public class Tower : MonoBehaviour
             currHealth = 0;
 
             dead = true;
+            anim.Play("off");
             //then anything else that needs to happen if dead
             stopAttacking();
         }
@@ -107,11 +110,13 @@ public class Tower : MonoBehaviour
     public void healToFull(){
         currHealth = maxHealth;
         dead = false;
+        anim.Play("Attack");
     }
 
     void attack(){
         //activate colliders for hitboxes
         attacking = !attacking;
+        anim.Play("Attack");
         foreach(GameObject box in hitboxes){ 
             box.SetActive(attacking);
             //might want to change this to set delay/allow cooler visual effects
