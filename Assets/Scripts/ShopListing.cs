@@ -34,7 +34,6 @@ public class ShopListing : MonoBehaviour
 
     public virtual void OnClick()
     {
-        HUDManager.main.CloseWorkshop();
         //Start placement step, if there is sufficient exp
     }
 }

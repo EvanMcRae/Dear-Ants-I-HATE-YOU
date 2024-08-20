@@ -11,8 +11,11 @@ public class UpgradeShopeListing : ShopListing
         base.OnClick();
 
         if (cost > GameplayManager.main.resourcePoints)
+        {
+            HUDManager.main.PlayFailSound();
             return;
-
+        }
+        HUDManager.main.CloseWorkshop();
         clickToSpawnManager.currentUpgradeChoice = upgradeID;
         clickToSpawnManager.PlacingMode = clickToSpawnManager.PlacingBehaviour.upgrade;
         clickToSpawnManager.currentPlacementCost = cost;
