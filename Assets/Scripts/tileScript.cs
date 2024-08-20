@@ -60,7 +60,6 @@ public class tileScript : MonoBehaviour
             };
             BuildTowerFromData(towerToPlace);
             clickToSpawnManager.PlacingMode = clickToSpawnManager.PlacingBehaviour.none;
-            GameplayManager.main.spendResource(clickToSpawnManager.currentPlacementCost);
         }
         else if (clickToSpawnManager.PlacingMode == clickToSpawnManager.PlacingBehaviour.upgrade && hasTower)
         {

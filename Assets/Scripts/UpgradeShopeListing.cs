@@ -17,6 +17,7 @@ public class UpgradeShopeListing : ShopListing
         clickToSpawnManager.PlacingMode = clickToSpawnManager.PlacingBehaviour.upgrade;
         clickToSpawnManager.currentPlacementCost = cost;
         backing.color = Color.white;
+        GameplayManager.main.spendResource(clickToSpawnManager.currentPlacementCost);
         //button.Select();
     }
 
