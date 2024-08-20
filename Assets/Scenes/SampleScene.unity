@@ -791,6 +791,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13dfcd2f67faec54c95c7874f1d744d7, type: 3}
+--- !u!114 &111949455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 811619849833366984, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+  m_PrefabInstance: {fileID: 3655514621103091939}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &114433439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6837189607772495030, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
@@ -4058,6 +4069,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
+--- !u!114 &473619776 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4379646687254466803, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+  m_PrefabInstance: {fileID: 3655514621103091939}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &477236727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5281,6 +5303,8 @@ MonoBehaviour:
     startTime: 0
   inWave: 0
   gameManager: {fileID: 0}
+  WaveLabel: {fileID: 473619776}
+  WaveValue: {fileID: 111949455}
 --- !u!4 &647916908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8281966843489405826, guid: 13dfcd2f67faec54c95c7874f1d744d7, type: 3}
@@ -8313,6 +8337,8 @@ MonoBehaviour:
     startTime: 0
   inWave: 0
   gameManager: {fileID: 0}
+  WaveLabel: {fileID: 473619776}
+  WaveValue: {fileID: 111949455}
 --- !u!4 &1067615246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6837189607772495030, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
@@ -12479,6 +12505,8 @@ MonoBehaviour:
     startTime: 0
   inWave: 0
   gameManager: {fileID: 0}
+  WaveLabel: {fileID: 473619776}
+  WaveValue: {fileID: 111949455}
 --- !u!1 &1624742006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 742424781934278106, guid: 13dfcd2f67faec54c95c7874f1d744d7, type: 3}

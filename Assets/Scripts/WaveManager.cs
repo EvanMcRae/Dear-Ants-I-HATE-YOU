@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEditor.Timeline;
+using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class WaveManager : MonoBehaviour
     public bool inWave = false;
 
     public GameplayManager gameManager;
+    public TextMeshProUGUI WaveLabel, WaveValue;
+    public static bool captureWaveMonitor = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +49,21 @@ public class WaveManager : MonoBehaviour
             Debug.LogError("Attempt starting invalid wave num " + CurrentWave + "!");
             return;
         }
+        StartCoroutine(StartWaveDelayed(10));
+    }
 
+    public IEnumerator StartWaveDelayed(int time)
+    {
+        captureWaveMonitor = true;
+        for (int i = time; i > 0; i--)
+        {
+            WaveLabel.text = "<voffset=0em><size=50%> NEXT WAVE\nSTARTS IN</size></margin>";
+            WaveValue.text = i + "";
+            yield return new WaitForSeconds(1);
+        }
+        WaveLabel.text = "WAVE";
+        WaveValue.text = CurrentWave + 1 + "";
+        captureWaveMonitor = false;
         waves[CurrentWave].StartWave();
         inWave = true;
         Debug.Log("Starting wave " + CurrentWave);
