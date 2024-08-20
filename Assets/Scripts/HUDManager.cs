@@ -27,7 +27,8 @@ public class HUDManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WaveValue.text = WaveManager.CurrentWave + "";
+        if (!WaveManager.captureWaveMonitor)
+            WaveValue.text = WaveManager.CurrentWave + 1 + "";
         LevelValue.text = stageManager.level + "";
     }
 
