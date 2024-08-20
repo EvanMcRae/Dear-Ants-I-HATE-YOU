@@ -145,6 +145,10 @@ public class Tower : MonoBehaviour
             else if(upgradeType == 3){
                 power += powerBoost;
             }
+            else if(upgradeType == 4){
+                healToFull();
+            }
+
             //if other stat boosting type
                 //boost stat
             //else if(upgradeType = activated ability)
