@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{05EA4797-F945-A696-6262-665E4744F943}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{5038AD59-490D-94B0-FDE5-CD352A98812D}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -22,6 +22,7 @@
 				<Bus Id="393239870" Name="SFX"/>
 				<Bus Id="1737926756" Name="Tower"/>
 				<Bus Id="2299321487" Name="Enemy"/>
+				<Bus Id="2607556080" Name="Menu"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
@@ -32,6 +33,7 @@
 				<GameParameter Id="2346531308" Name="musicVolume"/>
 				<GameParameter Id="2549870240" Name="LevelProgress"/>
 				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
+				<GameParameter Id="2918011349" Name="masterVolume"/>
 				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
 				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
 				<GameParameter Id="3203397129" Name="SS_Air_TimeOfDay"/>
@@ -228,13 +230,29 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{04C79CEB-7CBD-7F51-EC9D-7DDC18BEC48C}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{1AC53AC7-DAA8-DC93-659F-3929216EB3CA}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="2358650" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Buy Item Computer Sound 1.wav</ShortName>
+					<CachePath>SFX/Buy Item Computer Sound 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="3883348" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FLY_FIRE_LAYER_5_48Khz_MONO.wav</ShortName>
+					<CachePath>SFX/FLY_FIRE_LAYER_5_48Khz_MONO_818F3B66.wem</CachePath>
+				</File>
 				<File Id="28925695" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Level_Kick_L8M_P0.wav</ShortName>
 					<CachePath>SFX/Level_Kick_L8M_P0_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="35049100" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Buy Item Computer Sound 2.wav</ShortName>
+					<CachePath>SFX/Buy Item Computer Sound 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="39033986" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Exit Synth 6.wav</ShortName>
+					<CachePath>SFX/Exit Synth 6_818F3B66.wem</CachePath>
 				</File>
 				<File Id="47796842" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Level_Snare_L8M_P0.wav</ShortName>
@@ -244,37 +262,121 @@
 					<ShortName>LevelA_Pulse Synth_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelA_Pulse Synth_L8M_P1_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="97270343" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FLY_FIRE_PINK_NOISE_LAYER_48Khz_MONO.wav</ShortName>
+					<CachePath>SFX/FLY_FIRE_PINK_NOISE_LAYER_48Khz_MONO_818F3B66.wem</CachePath>
+				</File>
 				<File Id="194023441" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelB_Big Pad_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelB_Big Pad_L8M_P1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="198060450" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Buy Item Computer Sound 5.wav</ShortName>
+					<CachePath>SFX/Buy Item Computer Sound 5_818F3B66.wem</CachePath>
+				</File>
+				<File Id="227623117" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>TV turn off.wav</ShortName>
+					<CachePath>SFX/TV turn off_818F3B66.wem</CachePath>
+				</File>
+				<File Id="254232582" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Exit Synth 4.wav</ShortName>
+					<CachePath>SFX/Exit Synth 4_818F3B66.wem</CachePath>
+				</File>
+				<File Id="263506007" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>VHS Pause.wav</ShortName>
+					<CachePath>SFX/VHS Pause_818F3B66.wem</CachePath>
 				</File>
 				<File Id="282532151" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelIntro_SawSquare Bass_L4M_P0.wav</ShortName>
 					<CachePath>SFX/LevelIntro_SawSquare Bass_L4M_P0_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="309610189" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scuttle 2.wav</ShortName>
+					<CachePath>SFX/Scuttle 2_A9B6E731.wem</CachePath>
+				</File>
+				<File Id="329314016" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Exit Synth 3.wav</ShortName>
+					<CachePath>SFX/Exit Synth 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="422937512" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Buy Item Computer Sound 3.wav</ShortName>
+					<CachePath>SFX/Buy Item Computer Sound 3_818F3B66.wem</CachePath>
+				</File>
 				<File Id="451429337" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelA_Big Bass Synth_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelA_Big Bass Synth_L8M_P1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="463051599" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Thump synth layer 1.wav</ShortName>
+					<CachePath>SFX/Thump synth layer 1_17C24329.wem</CachePath>
 				</File>
 				<File Id="475883887" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelBridge_SawSquare Bass_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelBridge_SawSquare Bass_L8M_P1_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="494932994" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Exit Synth 1.wav</ShortName>
+					<CachePath>SFX/Exit Synth 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="508596729" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FLY_FIRE_LAYER_1_48Khz_MONO.wav</ShortName>
+					<CachePath>SFX/FLY_FIRE_LAYER_1_48Khz_MONO_818F3B66.wem</CachePath>
+				</File>
+				<File Id="532917067" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sub kick layer 1layer 1.wav</ShortName>
+					<CachePath>SFX/Sub kick layer 1layer 1_167F49B0.wem</CachePath>
+				</File>
+				<File Id="539126596" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Exit Synth 5.wav</ShortName>
+					<CachePath>SFX/Exit Synth 5_818F3B66.wem</CachePath>
+				</File>
 				<File Id="561685502" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelA_Arpeggio_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelA_Arpeggio_L8M_P1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="572366924" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Buy Item Computer Sound 4.wav</ShortName>
+					<CachePath>SFX/Buy Item Computer Sound 4_818F3B66.wem</CachePath>
+				</File>
+				<File Id="572763555" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>LevelA_Pulse Synth_L8M_P1.wav</ShortName>
+					<CachePath>SFX/LevelA_Pulse Synth_L8M_P1_051FB8DE.wem</CachePath>
+				</File>
+				<File Id="581000146" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Squelch less verb.wav</ShortName>
+					<CachePath>SFX/Squelch less verb_8D75E5B8.wem</CachePath>
 				</File>
 				<File Id="588171366" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelBridge_Arpeggio_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelBridge_Arpeggio_L8M_P1_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="607057756" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FLY_FIRE_LAYER_2_48KHZ_MONO.wav</ShortName>
+					<CachePath>SFX/FLY_FIRE_LAYER_2_48KHZ_MONO_818F3B66.wem</CachePath>
+				</File>
 				<File Id="634956250" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Level_Hi Hat groove_L8M_P1.wav</ShortName>
 					<CachePath>SFX/Level_Hi Hat groove_L8M_P1_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="652549052" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>shotgun layer 1.wav</ShortName>
+					<CachePath>SFX/shotgun layer 1_2BE6B954.wem</CachePath>
+				</File>
+				<File Id="656682904" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Buy Item Computer Sound 6.wav</ShortName>
+					<CachePath>SFX/Buy Item Computer Sound 6_818F3B66.wem</CachePath>
+				</File>
 				<File Id="664842732" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelB_SawSquare Bass_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelB_SawSquare Bass_L8M_P1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="690024749" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scuttle 4.wav</ShortName>
+					<CachePath>SFX/Scuttle 4_818F3B66.wem</CachePath>
+				</File>
+				<File Id="696798352" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scuttle 3.wav</ShortName>
+					<CachePath>SFX/Scuttle 3_818F3B66.wem</CachePath>
 				</File>
 				<File Id="712353983" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelA_SawSquare Bass_L8M_P1.wav</ShortName>
@@ -288,26 +390,229 @@
 					<ShortName>LevelBridge_Lead_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelBridge_Lead_L8M_P1_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="763041976" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Inner kick layer 1.wav</ShortName>
+					<CachePath>SFX/Inner kick layer 1_38F9D0E1.wem</CachePath>
+				</File>
+				<File Id="765470994" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scuttle 1.wav</ShortName>
+					<CachePath>SFX/Scuttle 1_C2C3A730.wem</CachePath>
+				</File>
+				<File Id="779530838" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FLY_FIRE_LAYER_4_48Khz_MONO.wav</ShortName>
+					<CachePath>SFX/FLY_FIRE_LAYER_4_48Khz_MONO_818F3B66.wem</CachePath>
+				</File>
 				<File Id="839594064" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelIntro_Arpeggio_L05M_P0.wav</ShortName>
 					<CachePath>SFX/LevelIntro_Arpeggio_L05M_P0_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="859139999" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Computer hum layer 1.wav</ShortName>
+					<CachePath>SFX/Computer hum layer 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="859979183" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Vowel synth layer 1.wav</ShortName>
+					<CachePath>SFX/Vowel synth layer 1_E1D8074A.wem</CachePath>
 				</File>
 				<File Id="902460037" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelA_Big Pad_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelA_Big Pad_L8M_P1_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="923573717" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FLY_FIRE_LAYER_3_48Khz _MONO.wav</ShortName>
+					<CachePath>SFX/FLY_FIRE_LAYER_3_48Khz _MONO_818F3B66.wem</CachePath>
+				</File>
+				<File Id="954384023" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Computer hum layer 2 - PS2.wav</ShortName>
+					<CachePath>SFX/Computer hum layer 2 - PS2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="972150802" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Exit Synth 2.wav</ShortName>
+					<CachePath>SFX/Exit Synth 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="973579278" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>VHS click 2.wav</ShortName>
+					<CachePath>SFX/VHS click 2_786E814D.wem</CachePath>
+				</File>
 				<File Id="976401125" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Level_Snare2_L8M_P0.wav</ShortName>
 					<CachePath>SFX/Level_Snare2_L8M_P0_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="995274317" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>shotgun pitched down layer 1.wav</ShortName>
+					<CachePath>SFX/shotgun pitched down layer 1_1D4597AC.wem</CachePath>
 				</File>
 				<File Id="1002972504" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelB_Big Bass Synth_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelB_Big Bass Synth_L8M_P1_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="1025420711" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Buy Item Computer Sound 1.wav</ShortName>
+					<CachePath>SFX/Buy Item Computer Sound 1_946841F8.wem</CachePath>
+				</File>
 			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="191600798" Name="Noise_Gate_Fast_Attack (Custom)" LibName="Wwise Expander" LibId="7143427"/>
+				</Custom>
+				<ShareSets>
+					<Plugin Id="3604890626" Name="High_Pass_60Hz" LibName="Wwise Parametric EQ" LibId="6881283"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
+				<Event Id="130673662" Name="antDeath" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="3883348"/>
+						<MediaRef Id="97270343"/>
+						<MediaRef Id="309610189"/>
+						<MediaRef Id="508596729"/>
+						<MediaRef Id="607057756"/>
+						<MediaRef Id="690024749"/>
+						<MediaRef Id="696798352"/>
+						<MediaRef Id="765470994"/>
+						<MediaRef Id="779530838"/>
+						<MediaRef Id="923573717"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="191600798"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="4016260516" Name="antFire" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="3883348"/>
+						<MediaRef Id="97270343"/>
+						<MediaRef Id="508596729"/>
+						<MediaRef Id="607057756"/>
+						<MediaRef Id="779530838"/>
+						<MediaRef Id="923573717"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3800970266" Name="antSpit" DurationType="OneShot" DurationMin="2.24742" DurationMax="2.24742">
+					<MediaRefs>
+						<MediaRef Id="463051599"/>
+						<MediaRef Id="532917067"/>
+						<MediaRef Id="581000146"/>
+						<MediaRef Id="652549052"/>
+						<MediaRef Id="763041976"/>
+						<MediaRef Id="859979183"/>
+						<MediaRef Id="995274317"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2525767523" Name="antWalk" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="309610189"/>
+						<MediaRef Id="690024749"/>
+						<MediaRef Id="696798352"/>
+						<MediaRef Id="765470994"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="191600798"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
 				<Event Id="1813202170" Name="LevelReset" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="3092587493" Name="Pause" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1040722926" Name="menuAdjust1" DurationType="OneShot" DurationMin="0.18357174" DurationMax="0.1889508">
+					<MediaRefs>
+						<MediaRef Id="1025420711"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3604890626"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+				<Event Id="1040722925" Name="menuAdjust2" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="572763555"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1044721053" Name="menuAdjustStop" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="572763555"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2634859593" Name="menuBack" DurationType="OneShot" DurationMin="0.6488067" DurationMax="0.78414583">
+					<MediaRefs>
+						<MediaRef Id="2358650"/>
+						<MediaRef Id="35049100"/>
+						<MediaRef Id="198060450"/>
+						<MediaRef Id="422937512"/>
+						<MediaRef Id="572366924"/>
+						<MediaRef Id="656682904"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="711511264" Name="menuConfirm" DurationType="OneShot" DurationMin="0.9638376" DurationMax="1.2739375">
+					<MediaRefs>
+						<MediaRef Id="39033986"/>
+						<MediaRef Id="254232582"/>
+						<MediaRef Id="329314016"/>
+						<MediaRef Id="494932994"/>
+						<MediaRef Id="539126596"/>
+						<MediaRef Id="972150802"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="664555880" Name="menuSelect" DurationType="OneShot" DurationMin="1.1492167" DurationMax="1.1492167">
+					<MediaRefs>
+						<MediaRef Id="227623117"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3092587493" Name="Pause" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="3883348"/>
+						<MediaRef Id="97270343"/>
+						<MediaRef Id="263506007"/>
+						<MediaRef Id="309610189"/>
+						<MediaRef Id="463051599"/>
+						<MediaRef Id="508596729"/>
+						<MediaRef Id="532917067"/>
+						<MediaRef Id="581000146"/>
+						<MediaRef Id="607057756"/>
+						<MediaRef Id="652549052"/>
+						<MediaRef Id="690024749"/>
+						<MediaRef Id="696798352"/>
+						<MediaRef Id="763041976"/>
+						<MediaRef Id="765470994"/>
+						<MediaRef Id="779530838"/>
+						<MediaRef Id="859139999"/>
+						<MediaRef Id="859979183"/>
+						<MediaRef Id="923573717"/>
+						<MediaRef Id="954384023"/>
+						<MediaRef Id="995274317"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="191600798"/>
+						</Custom>
+					</PluginRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
+							<MediaRefs>
+								<MediaRef Id="28925695"/>
+								<MediaRef Id="47796842"/>
+								<MediaRef Id="74990297"/>
+								<MediaRef Id="194023441"/>
+								<MediaRef Id="282532151"/>
+								<MediaRef Id="451429337"/>
+								<MediaRef Id="475883887"/>
+								<MediaRef Id="561685502"/>
+								<MediaRef Id="588171366"/>
+								<MediaRef Id="634956250"/>
+								<MediaRef Id="664842732"/>
+								<MediaRef Id="712353983"/>
+								<MediaRef Id="731258502"/>
+								<MediaRef Id="740174606"/>
+								<MediaRef Id="839594064"/>
+								<MediaRef Id="902460037"/>
+								<MediaRef Id="976401125"/>
+								<MediaRef Id="1002972504"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="2932040671" Name="Play_Music" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -335,9 +640,19 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="953277036" Name="Resume" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="953277036" Name="Resume" DurationType="OneShot" DurationMin="0.53861177" DurationMax="0.53861177">
+					<MediaRefs>
+						<MediaRef Id="859139999"/>
+						<MediaRef Id="954384023"/>
+						<MediaRef Id="973579278"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="585119210" Name="StageUp" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2837384057" Name="Stop_Music" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="859139999"/>
+						<MediaRef Id="954384023"/>
+					</MediaRefs>
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
@@ -369,12 +684,14 @@
 				<Bus Id="393239870" Name="SFX"/>
 				<Bus Id="1737926756" Name="Tower"/>
 				<Bus Id="2299321487" Name="Enemy"/>
+				<Bus Id="2607556080" Name="Menu"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
 			<GameParameters>
 				<GameParameter Id="2346531308" Name="musicVolume"/>
 				<GameParameter Id="2549870240" Name="LevelProgress"/>
+				<GameParameter Id="2918011349" Name="masterVolume"/>
 				<GameParameter Id="3873835272" Name="soundVolume"/>
 			</GameParameters>
 			<StateGroups>
@@ -432,5 +749,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{CFA4BBD6-6053-EBB2-ECA9-87147363BDE7}</FileHash>
+	<FileHash>{EA41DD77-EB84-F46B-433C-75164C010CD5}</FileHash>
 </SoundBanksInfo>

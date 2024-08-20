@@ -10,11 +10,15 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="menuConfirm" ID="{BC5AB323-13EC-4F5C-87B3-4B686333AC28}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Pause" ID="{4ADF87C2-7718-49A6-9990-85149C904639}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
 							<Position X="0" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="LevelReset" ID="{67F95AAB-94C1-4EC7-82AA-B70075FDD849}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<ObjectRef Name="antDeath" ID="{7FCA9BBF-3B08-4F50-876E-838C55F4EAA1}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
 							<Position X="0" Y="3"/>
 						</Module>
 						<Module>
@@ -22,18 +26,62 @@
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="menuBack" ID="{DDEA4D9B-1C39-452E-B838-D926612DCA7C}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Resume" ID="{661DFE2A-DF31-488A-877F-47B68A432554}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
 							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="StageUp" ID="{4031E252-E3B4-42E2-873C-8FA282351A27}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<ObjectRef Name="antFire" ID="{8AA7963E-86F9-4AFD-887D-E86CEF7583B8}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
 							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="LevelReset" ID="{67F95AAB-94C1-4EC7-82AA-B70075FDD849}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menuSelect" ID="{72E48116-2095-4E0C-94F1-D60320FB6F4A}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menuAdjust2" ID="{B34145B1-2F87-4ABF-B3D1-1937CC9D052A}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="antSpit" ID="{E221F76A-8D05-46CE-BFB1-B9B43A11A21B}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="StageUp" ID="{4031E252-E3B4-42E2-873C-8FA282351A27}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menuAdjust1" ID="{7F728663-F59D-493C-BD3C-A7C341591FF7}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menuAdjustStop" ID="{681F52C0-95E6-4FCC-A64F-DC44FDD6D4D4}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="antWalk" ID="{695D3B67-E438-4E8E-8B29-F8F1B00DA985}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="3" Y="3"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
+							<GameParameterRef Name="masterVolume" ID="{7F11374A-2F8B-4346-A811-143FD399FA7A}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="musicVolume" ID="{A2064303-69AE-43B4-97C1-81CB9FA1501B}"/>
 							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="soundVolume" ID="{C5AABEFE-F792-4A3D-964A-ACD03F89BC80}"/>
+							<Value>50</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="LevelProgress" ID="{315B0E65-AFDE-4D4E-9F9F-F0D274CD61E3}"/>
@@ -45,7 +93,7 @@
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Off" ID="{8A7A0222-901F-44DB-99A0-4EE4E6179352}"/>
-						<CurrentSwitchRef Name="On" ID="{E39996F0-9CD8-4465-AAD1-7F7DB2469BE2}"/>
+						<CurrentSwitchRef Name="Off" ID="{3021265D-C2BA-4640-AE71-DE83C3C71B07}"/>
 						<CurrentSwitchRef Name="Off" ID="{0964794C-843B-4047-B05B-17AEB928E4DB}"/>
 						<CurrentSwitchRef Name="Off" ID="{B3C44815-16FA-462D-B168-EE16A80B91F1}"/>
 						<CurrentSwitchRef Name="Off" ID="{55A04E12-0E78-4038-AB0A-12BE19346EB4}"/>

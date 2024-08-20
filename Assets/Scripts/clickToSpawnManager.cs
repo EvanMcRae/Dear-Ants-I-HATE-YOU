@@ -10,6 +10,18 @@ public class clickToSpawnManager : MonoBehaviour
     public static List<TowerData> placedTowers = new List<TowerData>();
 
     public static string playerTowerChoice = "laser";
+
+    public static int currentPlacementCost;
+    public static int currentUpgradeChoice = 0;
+
+    public enum PlacingBehaviour
+    {
+        none,
+        tower,
+        upgrade
+    }
+
+    public static PlacingBehaviour PlacingMode = PlacingBehaviour.none;
     // Start is called before the first frame update
     void Start()
     {

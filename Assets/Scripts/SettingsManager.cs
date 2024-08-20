@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,11 +13,14 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private Slider masterSlider, musicSlider, soundSlider, qualitySlider;
     [SerializeField] private TextMeshProUGUI masterValue, musicValue, soundValue, qualityValue;
     [SerializeField] private Toggle fullScreenToggle, vSyncToggle;
-    [SerializeField] private AK.Wwise.Event MenuAdjust;
+    [SerializeField] private AK.Wwise.Event MenuAdjust, MenuAdjustStop, MenuClick;
 
     void Awake()
     {
+        MenuButton.pleaseNoSound = true;
         LoadSettings();
+        gameObject.SetActive(false);
+        MenuButton.pleaseNoSound = false;
     }
 
     public void LoadSettings()
@@ -44,30 +48,34 @@ public class SettingsManager : MonoBehaviour
     public void UpdateMasterVolume(bool user)
     {
         if (user)
-        {
             currentSettings.masterVolume = masterSlider.value;
-            MenuAdjust?.Post(gameObject);
-        }
         else
-        {
             masterSlider.value = currentSettings.masterVolume;
-        }
 
         AkSoundEngine.SetRTPCValue("masterVolume", currentSettings.masterVolume);
         masterValue.text = (int)masterSlider.value + "";
     }
 
+    public void StartAdjust()
+    {
+        if (MenuButton.pleaseNoSound) return;
+        MenuClick.Post(gameObject);
+        MenuAdjust.Post(gameObject);
+    }
+
+    public void StopAdjust()
+    {
+        if (MenuButton.pleaseNoSound) return;
+        MenuAdjustStop.Post(gameObject);
+        MenuClick.Post(gameObject);
+    }
+
     public void UpdateMusicVolume(bool user)
     {
         if (user)
-        {
             currentSettings.musicVolume = musicSlider.value;
-            MenuAdjust?.Post(gameObject);
-        }
         else
-        {
             musicSlider.value = currentSettings.musicVolume;
-        }
 
         AkSoundEngine.SetRTPCValue("musicVolume", currentSettings.musicVolume);
         musicValue.text = (int)musicSlider.value + "";
@@ -76,10 +84,7 @@ public class SettingsManager : MonoBehaviour
     public void UpdateSoundVolume(bool user)
     {
         if (user)
-        {
             currentSettings.soundVolume = soundSlider.value;
-            MenuAdjust?.Post(gameObject);
-        }
         else
             soundSlider.value = currentSettings.soundVolume;
         AkSoundEngine.SetRTPCValue("soundVolume", currentSettings.soundVolume);
@@ -89,10 +94,7 @@ public class SettingsManager : MonoBehaviour
     public void UpdateQuality(bool user)
     {
         if (user)
-        {
             currentSettings.quality = (int)qualitySlider.value;
-            MenuAdjust?.Post(gameObject);
-        }
         else
             qualitySlider.value = currentSettings.quality; 
 
@@ -105,7 +107,8 @@ public class SettingsManager : MonoBehaviour
         if (user)
         {
             currentSettings.fullScreen = fullScreenToggle.isOn;
-            MenuAdjust?.Post(gameObject);
+            if (!MenuButton.pleaseNoSound)
+                MenuClick?.Post(gameObject);
         }
         else
             fullScreenToggle.isOn = currentSettings.fullScreen;
@@ -130,7 +133,8 @@ public class SettingsManager : MonoBehaviour
         if (user)
         {
             currentSettings.vSync = vSyncToggle.isOn;
-            MenuAdjust?.Post(gameObject);
+            if (!MenuButton.pleaseNoSound)
+                MenuClick?.Post(gameObject);
         }
         else
             vSyncToggle.isOn = currentSettings.vSync;

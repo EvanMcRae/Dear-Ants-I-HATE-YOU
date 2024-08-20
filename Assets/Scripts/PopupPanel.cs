@@ -20,7 +20,7 @@ public class PopupPanel : MonoBehaviour
     private Animator anim;
     private GameObject currentSelection;
     [SerializeField] private Image ScreenDarkener;
-    [SerializeField] private bool darkensScreen = true;
+    [SerializeField] private bool darkensScreen = true, selectsPrevious = true;
 
     private void Awake()
     {
@@ -39,6 +39,7 @@ public class PopupPanel : MonoBehaviour
             }
             else
             {
+                MenuButton.noSound = true;
                 EventSystem.current.SetSelectedGameObject(currentSelection);
             }
         }
@@ -80,9 +81,14 @@ public class PopupPanel : MonoBehaviour
         open = true;
         mouseNeverMoved = 2;
         numPopups++;
+        foreach (MenuButton c in GetComponentsInChildren<MenuButton>())
+        {
+            c.popupID = numPopups;
+        }
         visible = true;
         PreviousButton = EventSystem.current.currentSelectedGameObject;
         EventSystem.current.SetSelectedGameObject(PrimaryButton);
+        MenuButton.pleaseNoSound = true;
         if (darkensScreen)
             ScreenDarkener.raycastTarget = true;
     }
@@ -98,8 +104,11 @@ public class PopupPanel : MonoBehaviour
         if (darkensScreen)
             ScreenDarkener.raycastTarget = false;
         numPopups--;
+        if (numPopups < 0) numPopups = 0;
         visible = false;
-        EventSystem.current.SetSelectedGameObject(PreviousButton);
+        MenuButton.pleaseNoSound = true;
+        if (selectsPrevious)
+            EventSystem.current.SetSelectedGameObject(PreviousButton);
     }
 
     public void Disable()
@@ -107,6 +116,7 @@ public class PopupPanel : MonoBehaviour
         if (anim.GetFloat("Speed") < 0)
         {
             gameObject.SetActive(false);
+            MenuButton.pleaseNoSound = false;
             anim.SetFloat("Speed", 0);
             open = false;
         }
@@ -125,6 +135,7 @@ public class PopupPanel : MonoBehaviour
         if (anim.GetFloat("Speed") > 0)
         {
             anim.SetFloat("Speed", 0);
+            MenuButton.pleaseNoSound = false;
         }
     }
 }

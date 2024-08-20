@@ -4,8 +4,16 @@
 		<WorkUnit Name="Default Work Unit" ID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" PersistMode="Standalone">
 			<ChildrenList>
 				<Folder Name="Music" ID="{EE63D11D-BB7C-4F90-A1F5-D3B1B39CF0CC}" ShortID="734034627">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="23"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
 						<Event Name="Stop_Music" ID="{7D320711-017A-4CA3-932E-5269562B018B}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="23"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{BE823B1F-0062-43C5-A361-34CE01760ED1}" ShortID="194907667">
 									<PropertyList>
@@ -17,9 +25,23 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{6794A141-4C61-4602-BF35-D161630E3B4A}" ShortID="805394557">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Computer hum" ID="{CC90BA88-3B50-4AA7-A314-B19B7C398BC9}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_Music" ID="{4581CFEB-D16C-4AF2-A796-CB1FD8C86745}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="23"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{419FAF79-D229-40AE-B303-8CE45EB2BF25}" ShortID="696015202">
 									<ReferenceList>
@@ -31,8 +53,16 @@
 							</ChildrenList>
 						</Event>
 						<Folder Name="Stages" ID="{913B91A4-806D-413E-8AEA-1E23639507AE}" ShortID="247979264">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="23"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Event Name="StageUp" ID="{4031E252-E3B4-42E2-873C-8FA282351A27}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="23"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{C5665CF3-0256-4733-B5C0-1B786D9956BA}" ShortID="394454038">
 											<PropertyList>
@@ -49,6 +79,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="LevelReset" ID="{67F95AAB-94C1-4EC7-82AA-B70075FDD849}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="23"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{3D2AA135-E337-464B-8669-28EFBB4277DC}" ShortID="8248826">
 											<PropertyList>
@@ -65,23 +99,233 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
-						<Event Name="Pause" ID="{4ADF87C2-7718-49A6-9990-85149C904639}">
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Menu" ID="{10FF05B7-F5AB-4150-A552-765E0AFD70D0}" ShortID="994827960">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="19"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="menuSelect" ID="{72E48116-2095-4E0C-94F1-D60320FB6F4A}">
 							<ChildrenList>
-								<Action Name="" ID="{BE730344-FF38-47AA-9284-3A76E798C35C}" ShortID="611264525">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="8"/>
-									</PropertyList>
-									<ReferenceList/>
+								<Action Name="" ID="{D7E4CACC-DEE8-4277-8C97-C20C1C9302B1}" ShortID="599769448">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="TV turn off" ID="{1828952C-337A-4E1A-BA0C-DFFA8F415784}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Resume" ID="{661DFE2A-DF31-488A-877F-47B68A432554}">
+						<Event Name="menuBack" ID="{DDEA4D9B-1C39-452E-B838-D926612DCA7C}">
 							<ChildrenList>
-								<Action Name="" ID="{D772D02A-327B-4E66-904C-2ADD29CEA772}" ShortID="63771988">
+								<Action Name="" ID="{9C20B39E-2C2D-4708-B60B-02702D42EB9A}" ShortID="57397539">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Buy Item" ID="{74E80A75-4C53-4D7E-8156-4682C2BD8475}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="menuConfirm" ID="{BC5AB323-13EC-4F5C-87B3-4B686333AC28}">
+							<ChildrenList>
+								<Action Name="" ID="{2B5C122F-F989-4D30-9AAF-19D8E1C1AD43}" ShortID="644286911">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Exit Synth" ID="{D5D5BF1B-D1E3-4952-BC5E-D01D8F97869E}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="menuAdjust1" ID="{7F728663-F59D-493C-BD3C-A7C341591FF7}">
+							<ChildrenList>
+								<Action Name="" ID="{886EDDC9-7AC9-4741-AEDE-BA7B94321BDA}" ShortID="211692681">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Adjust" ID="{DCB2A4FE-F215-4EA8-A241-D93DF73DB9DA}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="menuAdjust2" ID="{B34145B1-2F87-4ABF-B3D1-1937CC9D052A}">
+							<ChildrenList>
+								<Action Name="" ID="{3D396E4A-FA1B-4C76-923A-55FFEAFC5AAB}" ShortID="602328190">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Adjust2" ID="{7BF38F9E-C1AE-43C0-B3C8-E3A802DE82E0}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="menuAdjustStop" ID="{681F52C0-95E6-4FCC-A64F-DC44FDD6D4D4}">
+							<ChildrenList>
+								<Action Name="" ID="{7E5DF4AB-A09B-4350-A8CD-FF4624286739}" ShortID="38283387">
 									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="10"/>
+										<Property Name="ActionType" Type="int16" Value="2"/>
 									</PropertyList>
-									<ReferenceList/>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Adjust2" ID="{7BF38F9E-C1AE-43C0-B3C8-E3A802DE82E0}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Event Name="Resume" ID="{661DFE2A-DF31-488A-877F-47B68A432554}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="6"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{1393991E-2F0C-47E5-9D64-A5627EC41CA4}" ShortID="382387090">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Computer hum" ID="{CC90BA88-3B50-4AA7-A314-B19B7C398BC9}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{5D05D0AB-CCCE-42F0-B9D3-80A5574F8C8B}" ShortID="398693578">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="VHS click 2" ID="{B7F4E88F-9507-4593-8086-16492BD4B6FF}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D772D02A-327B-4E66-904C-2ADD29CEA772}" ShortID="63771988">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="10"/>
+								<Property Name="Delay" Type="Real64" Value="0.2"/>
+							</PropertyList>
+							<ReferenceList/>
+							<ChildrenList>
+								<EventActionException Name="" ID="{EBB13055-7D06-48B1-AA07-FF404A4F92A4}">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VHS click 2" ID="{B7F4E88F-9507-4593-8086-16492BD4B6FF}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</EventActionException>
+							</ChildrenList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pause" ID="{4ADF87C2-7718-49A6-9990-85149C904639}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="6"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{37914A5A-109E-4360-A990-63E9D9967E92}" ShortID="435350226">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{849BF544-A925-43E4-9B80-26FFB57F005F}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{FBAF9CFE-FD3B-4BB3-96F8-1B496FB04FAC}" ShortID="750058723">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gameplay" ID="{F03E1088-CB8F-4CC2-AD92-5A76DC8719BE}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1FD35D4C-3FA4-4107-ABDC-2D9A31033CD9}" ShortID="865503111">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="VHS Pause" ID="{8DD96A3A-ECE4-4F63-90B4-146D398AA41A}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A617D0B2-E8A8-4F19-9210-673F176275B2}" ShortID="147636357">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Computer hum" ID="{CC90BA88-3B50-4AA7-A314-B19B7C398BC9}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Folder Name="Enemies" ID="{35A2CAF0-08A7-43B3-BA80-9F8276DC496F}" ShortID="227650683">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="11"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="antSpit" ID="{E221F76A-8D05-46CE-BFB1-B9B43A11A21B}">
+							<ChildrenList>
+								<Action Name="" ID="{10814B75-7F56-44B8-AA0A-53E2248BA9D5}" ShortID="641024668">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ant Spit" ID="{9A210114-C3A0-41F2-977D-5A648C7961A8}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="antWalk" ID="{695D3B67-E438-4E8E-8B29-F8F1B00DA985}">
+							<ChildrenList>
+								<Action Name="" ID="{F2A1A22E-D521-4ED1-B1CF-2AFBEEC66880}" ShortID="16594963">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Scuttle" ID="{E0901428-F7A9-4CD1-83E3-9DB3DEBB14BD}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="antFire" ID="{8AA7963E-86F9-4AFD-887D-E86CEF7583B8}">
+							<ChildrenList>
+								<Action Name="" ID="{04E99766-A704-4987-B966-12B813BE623E}" ShortID="1057949041">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Fire" ID="{4C5BE8C0-86D2-40AA-B22D-C081C5ED5701}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="antDeath" ID="{7FCA9BBF-3B08-4F50-876E-838C55F4EAA1}">
+							<ChildrenList>
+								<Action Name="" ID="{B590FD61-DA62-4D75-B0FC-DCE5D9F6DAD6}" ShortID="322650892">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Scuttle" ID="{E0901428-F7A9-4CD1-83E3-9DB3DEBB14BD}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{5D4BE935-18C4-4FA3-9672-E74A42EBFF0A}" ShortID="303565221">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Fire" ID="{4C5BE8C0-86D2-40AA-B22D-C081C5ED5701}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>

@@ -18,7 +18,7 @@ public class stageManager : MonoBehaviour
     public List<GameObject> everyTileOrdered;
 
     public int stageCount;
-    public static int stage, level;
+    public static int stage, level, levelToLoad = 1;
     public List<GameObject> levelAssets;
 
     public static stageManager main;
@@ -43,7 +43,8 @@ public class stageManager : MonoBehaviour
             levelAssets.Add(level.gameObject);
         }
 
-        loadLevel(1, 1);
+        Debug.Log("level to load = " + levelToLoad);
+        loadLevel(levelToLoad, 1);
     }
 
     public void loadLevel(int goToLevel, int goToStage) 
@@ -51,6 +52,10 @@ public class stageManager : MonoBehaviour
         level = goToLevel;
         stage = 1;
         stageCount = getStageCount(level);
+        foreach (GameObject l in levelAssets)
+        {
+            l.SetActive(false);
+        }
         levelAssets[level-1].SetActive(true);
         waveManager = levelAssets[level - 1].GetComponent<WaveManager>();
         everyTile.AddRange(FindObjectsOfType<GameObject>());
@@ -65,6 +70,7 @@ public class stageManager : MonoBehaviour
         everyTile = temp;
         everyTileOrdered = everyTile;
         advanceToStage(goToStage);
+        Debug.Log("level = " + level + " stage = " + stage);
     }
 
     public void advanceStage()
@@ -80,7 +86,7 @@ public class stageManager : MonoBehaviour
         foreach (GameObject gm in path[stage - 1])
         {
             gm.GetComponent<MeshRenderer>().material.color = Color.gray;
-            gm.GetComponent<tileScript>().activate();
+            gm.GetComponent<tileScript>()?.activate();
         }
 
         if (stage == 1)
@@ -146,11 +152,7 @@ public class stageManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Backslash))
-        {
-            advanceStage();
-            GameplayManager.AutoSave(); // TODO THIS IS IMPORTANT!!!!! CALL THIS WHENEVER STAGE ADVANCES!!!
-        }
+        if (GameplayManager.quit || GameplayManager.won || GameplayManager.lost || GameplayManager.playingAgain) return;
 
         AkSoundEngine.SetRTPCValue("LevelProgress", stage);
     }

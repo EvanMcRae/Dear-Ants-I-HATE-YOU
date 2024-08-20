@@ -33,7 +33,10 @@ public class MainMenuManager : MonoBehaviour
             if (EventSystem.current.currentSelectedGameObject != null)
                 currentSelection = EventSystem.current.currentSelectedGameObject;
             else
+            {
+                MenuButton.noSound = true;
                 EventSystem.current.SetSelectedGameObject(currentSelection);
+            }
         }
 
         // Save file detection
@@ -82,6 +85,7 @@ public class MainMenuManager : MonoBehaviour
         screenWipe.PostWipe -= StartRun;
         firstopen = false;
         playing = false;
+        stageManager.levelToLoad = 1;
         SceneManager.LoadScene("SampleScene"); //TODO change this whenever
     }
     

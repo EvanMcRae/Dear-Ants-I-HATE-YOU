@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -12,14 +13,15 @@ public class GameplayManager : MonoBehaviour
     public bool startedSequence = false;
     public bool suspendSequence = false;
     public static bool paused, pauseOpen;
-    [SerializeField] private GameObject PauseMenu, WinScreen, LoseScreen, SettingsPanel;
+    [SerializeField] private GameObject PauseMenu, WinScreen, WinGameScreen, LoseScreen, SettingsPanel, DoctorsNote, WorkshopMenu;
     [SerializeField] private GameObject PauseButton;
     [SerializeField] private Sprite PauseClicked, PauseNormal;
-    [SerializeField] private TextMeshProUGUI WinText;
+    //[SerializeField] private TextMeshProUGUI WinText;
     [SerializeField] private GameObject globalWwise;
     [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver, TakeDamage;
     public clickToSpawnManager spawnManager;
-    public SaveManager saveManager; 
+    public SaveManager saveManager;
+    private static bool nextLevel = false;
 
     //number of ants that need to get to the goal in order for the player to lose
     public int maxPlayerHealth = 3;
@@ -32,9 +34,12 @@ public class GameplayManager : MonoBehaviour
     // private enum MusicState { CALM, MEDIATE, INTENSE };
     // private MusicState currentState;
     public static bool won = false, lost = false, playingAgain = false, quit = false;
+    public static int beginning = 0;
+    [SerializeField] private GameObject DoctorsNoteButton, DoctorsNoteImage;
 
     void Awake()
     {
+        MainMenuManager.firstopen = true;
         if (!SaveManager.loadingFromSave)
             screenWipe.PostUnwipe += AutoSave;
     }
@@ -43,7 +48,19 @@ public class GameplayManager : MonoBehaviour
     void Start()
     {
         main = this;
-        // IntroSequence();
+
+        if (!nextLevel)
+        {
+            if (!SaveManager.loadingFromAutoSave && !SaveManager.loadingFromSave)
+                StartIntroSequence();
+            else
+                StartMusic.Post(globalWwise);
+        }
+        else
+        {
+            StartMusic.Post(globalWwise);
+        }
+
         won = false;
         lost = false;
         playingAgain = false;
@@ -73,6 +90,26 @@ public class GameplayManager : MonoBehaviour
                 UnPause();
         }
 
+        if (beginning == 2)
+        {
+            var btnPos = DoctorsNoteButton.transform.localPosition;
+            DoctorsNoteButton.transform.localPosition = new Vector3(btnPos.x, Mathf.Lerp(btnPos.y, -1293, 0.02f), btnPos.z);
+            var imgPos = DoctorsNoteImage.transform.localPosition;
+            DoctorsNoteImage.transform.localPosition = new Vector3(imgPos.x, Mathf.Lerp(imgPos.y, 1100, 0.02f), imgPos.z);
+        }
+        else if (beginning == 1)
+        {
+            var btnPos = DoctorsNoteButton.transform.localPosition;
+            DoctorsNoteButton.transform.localPosition = new Vector3(btnPos.x, Mathf.Lerp(btnPos.y, -293, 0.02f), btnPos.z);
+            var imgPos = DoctorsNoteImage.transform.localPosition;
+            DoctorsNoteImage.transform.localPosition = new Vector3(imgPos.x, Mathf.Lerp(imgPos.y, 100, 0.02f), imgPos.z);
+            if (EventSystem.current.currentSelectedGameObject != DoctorsNoteButton)
+            {
+                MenuButton.noSound = true;
+                EventSystem.current.SetSelectedGameObject(DoctorsNoteButton);
+            }
+        }
+
         // if (suspendSequence)
         //     return;
 
@@ -83,10 +120,38 @@ public class GameplayManager : MonoBehaviour
         //     StartSequence();
     }
 
-    public void IntroSequence()
+    public void StartIntroSequence()
     {
-        // dialog.setSource(new DialogSource("[ss, .025]Left click to start! [exit]"));
-        // dialog.reading = true;
+        DoctorsNote.SetActive(true);
+        Time.timeScale = 0;
+        paused = true;
+        beginning = 1;
+        StartCoroutine(StartButtonCooldown());
+    }
+
+    IEnumerator StartButtonCooldown()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        MenuButton.noSound = true;
+        EventSystem.current.SetSelectedGameObject(DoctorsNoteButton);
+    }
+
+    public void EndIntroSequence()
+    {
+        DoctorsNoteButton.GetComponent<Button>().interactable = false;
+        MenuSelect.Post(gameObject);
+        beginning = 2;
+        StartCoroutine(StartGame());
+    }
+
+    IEnumerator StartGame()
+    {
+        yield return new WaitForSecondsRealtime(0.75f);
+        paused = false;
+        beginning = 0;
+        Time.timeScale = 1;
+        StartMusic.Post(globalWwise);
+        DoctorsNote.SetActive(false);
     }
 
     public void Pause(bool user = false)
@@ -107,15 +172,18 @@ public class GameplayManager : MonoBehaviour
         }
     }
 
-    public void UnPause()
+    public void UnPause(bool user = false)
     {
         if (!PopupPanel.open) return;
-        MenuSelect?.Post(gameObject);
-        ResumeMusic.Post(globalWwise);
         paused = false;
+        if (user)
+            MenuSelect.Post(gameObject);
         StartCoroutine(FinishPause());
         PauseMenu.GetComponent<PopupPanel>().Close();
+        PauseMenu.GetComponentsInChildren<Button>();
         SettingsManager.SaveSettings();
+        MenuButton.pleaseNoSound = true;
+        MenuButton.noSound = true;
     }
 
     IEnumerator StartPause()
@@ -133,6 +201,8 @@ public class GameplayManager : MonoBehaviour
         pauseOpen = false;
         PauseButton.GetComponent<Image>().sprite = PauseNormal;
         PauseButton.GetComponent<Button>().interactable = true;
+        ResumeMusic.Post(globalWwise);
+        MenuButton.pleaseNoSound = false;
     }
 
     public void ScreenEffects(bool enable)
@@ -164,9 +234,16 @@ public class GameplayManager : MonoBehaviour
             {
                 WinScreen.GetComponent<PopupPanel>().Close();
             }
+            if (WinGameScreen != null && WinGameScreen.activeSelf == true)
+            {
+                WinGameScreen.GetComponent<PopupPanel>().Close();
+            }
             if (LoseScreen != null && LoseScreen.activeSelf == true)
             {
                 LoseScreen.GetComponent<PopupPanel>().Close();
+            }
+            if (WorkshopMenu != null && WorkshopMenu.activeSelf == true){
+                WorkshopMenu.GetComponent<PopupPanel>().Close();
             }
         }
     }
@@ -184,6 +261,8 @@ public class GameplayManager : MonoBehaviour
         pauseOpen = false;
         saveManager.SaveGame();
         clickToSpawnManager.placedTowers.Clear();
+        WaveManager.CurrentWave = 0;
+        stageManager.levelToLoad = 1;
         StopMusic?.Post(globalWwise);
         screenWipe.WipeIn();
         screenWipe.PostWipe += LoadMenu;
@@ -192,6 +271,7 @@ public class GameplayManager : MonoBehaviour
     public void LoadMenu()
     {
         screenWipe.PostWipe -= LoadMenu;
+        PopupPanel.numPopups = 0;
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -213,6 +293,7 @@ public class GameplayManager : MonoBehaviour
     public void Win()
     {
         if (paused) return;
+        ClosePanels();
         won = true;
         // DialogController.main.StopTalk();
         StopMusic.Post(globalWwise);
@@ -223,6 +304,7 @@ public class GameplayManager : MonoBehaviour
     public void Lose()
     {
         if (paused) return;
+        ClosePanels();
         lost = true;
         // DialogController.main.StopTalk();
         GameOver?.Post(globalWwise);
@@ -237,15 +319,20 @@ public class GameplayManager : MonoBehaviour
     {
         if (playingAgain) return;
         playingAgain = true;
+        Time.timeScale = 1;
 
-        MenuSelect?.Post(gameObject);
         ClosePanels();
+        MenuSelect?.Post(gameObject);
         won = false;
         lost = false;
 
-        Time.timeScale = 1;
         paused = false;
+        won = false;
+        lost = false;
         pauseOpen = false;
+        clickToSpawnManager.placedTowers.Clear();
+        WaveManager.CurrentWave = 0;
+        stageManager.levelToLoad = 1;
         screenWipe.WipeIn();
         StopMusic.Post(globalWwise);
         screenWipe.PostWipe += ReloadGame;
@@ -268,6 +355,33 @@ public class GameplayManager : MonoBehaviour
         screenWipe.WipeIn();
         StopMusic.Post(globalWwise);
         screenWipe.PostWipe += ReloadSave;
+    }
+
+    public void NextLevel()
+    {
+        if (playingAgain) return;
+        playingAgain = true;
+
+        MenuSelect?.Post(gameObject);
+        ClosePanels();
+        won = false;
+        lost = false;
+
+        Time.timeScale = 1;
+        paused = false;
+        pauseOpen = false;
+        screenWipe.WipeIn();
+        StopMusic.Post(globalWwise);
+        nextLevel = true;
+        screenWipe.PostWipe += LoadNextLevel;
+    }
+
+    public void LoadNextLevel()
+    {
+        screenWipe.PostWipe -= LoadNextLevel;
+        stageManager.levelToLoad = stageManager.level + 1;
+        SceneManager.LoadScene("SampleScene");
+        playingAgain = false;
     }
 
     //player takes damage from enemy reaching base
@@ -300,11 +414,11 @@ public class GameplayManager : MonoBehaviour
         resourcePoints += amount;
         HUDManager.main.UpdateEXP();
     }
-    void spendResource(int amount){
+    public void spendResource(int amount){
         resourcePoints -= amount;
         HUDManager.main.UpdateEXP();
     }
-    void resetResource(){
+    public void resetResource(){
         resourcePoints = startingResourcePoints;
         HUDManager.main.UpdateEXP();
     }

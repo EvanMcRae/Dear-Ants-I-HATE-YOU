@@ -57,6 +57,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7721143198dd5624a88d1b6dcf5a541a, type: 3}
+--- !u!95 &4539860343357755315 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1077233372974100144, guid: 7721143198dd5624a88d1b6dcf5a541a, type: 3}
+  m_PrefabInstance: {fileID: 3599441418707919107}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8436979038929993831 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4964624141798809956, guid: 7721143198dd5624a88d1b6dcf5a541a, type: 3}
@@ -74,6 +79,10 @@ PrefabInstance:
       propertyPath: health
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1841771124672475302, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      propertyPath: visuals
+      value: 
+      objectReference: {fileID: 4539860343357755315}
     - target: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
       propertyPath: m_Name
       value: soldierAnt

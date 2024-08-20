@@ -62,6 +62,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 634517541522442639, guid: 40d2bea555ab959489e8f7af8b5bf271, type: 3}
   m_PrefabInstance: {fileID: 243823944441037182}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &6785774264526065921 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6722138288199880831, guid: 40d2bea555ab959489e8f7af8b5bf271, type: 3}
+  m_PrefabInstance: {fileID: 243823944441037182}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7035931278826709295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,6 +75,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1841771124672475302, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      propertyPath: visuals
+      value: 
+      objectReference: {fileID: 6785774264526065921}
     - target: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
       propertyPath: m_Name
       value: spitterAnt

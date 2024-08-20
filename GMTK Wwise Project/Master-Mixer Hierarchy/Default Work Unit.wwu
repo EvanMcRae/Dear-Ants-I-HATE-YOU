@@ -55,6 +55,7 @@
 							<ChildrenList>
 								<Bus Name="Tower" ID="{3609F8A2-E5CF-4B05-A2DD-CFD879C650D0}"/>
 								<Bus Name="Enemy" ID="{BCD73A05-FF96-44C4-8F25-FBFF862F63E2}"/>
+								<Bus Name="Menu" ID="{63D9B6D5-5624-4DD6-8453-720A62B085D5}"/>
 							</ChildrenList>
 							<ObjectLists>
 								<ObjectList Name="RTPC">
@@ -97,6 +98,45 @@
 							</ObjectLists>
 						</Bus>
 					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{5663ADDF-328C-4275-8931-92FBE6062CDF}" ShortID="954744225">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="masterVolume" ID="{7F11374A-2F8B-4346-A811-143FD399FA7A}" WorkUnitID="{8488D2D2-23ED-4CB1-800E-A57B8CBADB18}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{D62385C1-AA0D-4CAB-9028-7362D7F5878F}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

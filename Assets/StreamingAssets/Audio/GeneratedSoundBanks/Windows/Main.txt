@@ -1,10 +1,20 @@
 Event	ID	Name			Wwise Object Path	Notes
+	130673662	antDeath			\Default Work Unit\Enemies\antDeath	
 	585119210	StageUp			\Default Work Unit\Music\Stages\StageUp	
-	953277036	Resume			\Default Work Unit\Music\Resume	
+	664555880	menuSelect			\Default Work Unit\Menu\menuSelect	
+	711511264	menuConfirm			\Default Work Unit\Menu\menuConfirm	
+	953277036	Resume			\Default Work Unit\Resume	
+	1040722925	menuAdjust2			\Default Work Unit\Menu\menuAdjust2	
+	1040722926	menuAdjust1			\Default Work Unit\Menu\menuAdjust1	
+	1044721053	menuAdjustStop			\Default Work Unit\Menu\menuAdjustStop	
 	1813202170	LevelReset			\Default Work Unit\Music\Stages\LevelReset	
+	2525767523	antWalk			\Default Work Unit\Enemies\antWalk	
+	2634859593	menuBack			\Default Work Unit\Menu\menuBack	
 	2837384057	Stop_Music			\Default Work Unit\Music\Stop_Music	
 	2932040671	Play_Music			\Default Work Unit\Music\Play_Music	
-	3092587493	Pause			\Default Work Unit\Music\Pause	
+	3092587493	Pause			\Default Work Unit\Pause	
+	3800970266	antSpit			\Default Work Unit\Enemies\antSpit	
+	4016260516	antFire			\Default Work Unit\Enemies\antFire	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	3991942870	Music			\Default Work Unit\Music	
@@ -17,32 +27,74 @@ State	ID	Name	State Group			Notes
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	2346531308	musicVolume			\Default Work Unit\Volume Settings\musicVolume	
 	2549870240	LevelProgress			\Default Work Unit\LevelProgress	
+	2918011349	masterVolume			\Default Work Unit\Volume Settings\masterVolume	
 	3873835272	soundVolume			\Default Work Unit\Volume Settings\soundVolume	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
 	1737926756	Tower			\Default Work Unit\Master Audio Bus\SFX\Tower	
 	2299321487	Enemy			\Default Work Unit\Master Audio Bus\SFX\Enemy	
+	2607556080	Menu			\Default Work Unit\Master Audio Bus\SFX\Menu	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 
+Effect plug-ins	ID	Name	Type				Notes
+	191600798	Noise_Gate_Fast_Attack (Custom)	Wwise Expander			
+	3604890626	High_Pass_60Hz	Wwise Parametric EQ			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	2358650	Buy Item Computer Sound 1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Buy Item Computer Sound 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Buy Item\Buy Item Computer Sound 1		150716
+	3883348	FLY_FIRE_LAYER_5_48Khz_MONO	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\FLY_FIRE_LAYER_5_48Khz_MONO_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Fire\Fire Crackle\FLY_FIRE_LAYER_5_48Khz_MONO		2496160
 	28925695	Level_Kick_L8M_P0	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Level_Kick_L8M_P0_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level Bridge\Level_Kick_L8M_P0		3288444
+	35049100	Buy Item Computer Sound 2	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Buy Item Computer Sound 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Buy Item\Buy Item Computer Sound 2		150716
+	39033986	Exit Synth 6	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Exit Synth 6_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Exit Synth\Exit Synth 6		244756
 	47796842	Level_Snare_L8M_P0	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Level_Snare_L8M_P0_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level Bridge\Level_Snare_L8M_P0		3367680
 	74990297	Level_Pulse Synth_L8M_P1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelA_Pulse Synth_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level Bridge\Level_Pulse Synth_L8M_P1		3802720
+	97270343	FLY_FIRE_PINK_NOISE_LAYER_48Khz_MONO	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\FLY_FIRE_PINK_NOISE_LAYER_48Khz_MONO_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Fire\Fire Noise\FLY_FIRE_PINK_NOISE_LAYER_48Khz_MONO		1920160
 	194023441	LevelB_Big Pad_L8M_P1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelB_Big Pad_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level B\LevelB_Big Pad_L8M_P1		4589152
+	198060450	Buy Item Computer Sound 5	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Buy Item Computer Sound 5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Buy Item\Buy Item Computer Sound 5		150716
+	227623117	TV turn off	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\TV turn off_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Pause\TV turn off		252160
+	254232582	Exit Synth 4	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Exit Synth 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Exit Synth\Exit Synth 4		244756
+	263506007	VHS Pause	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\VHS Pause_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Pause\VHS Pause		263532
 	282532151	LevelIntro_SawSquare Bass_L4M_P0	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelIntro_SawSquare Bass_L4M_P0_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level Intro\LevelIntro_SawSquare Bass_L4M_P0		1644312
+	309610189	Scuttle 2	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Scuttle 2_A9B6E731.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Scuttle\Scuttle 2		251128
+	329314016	Exit Synth 3	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Exit Synth 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Exit Synth\Exit Synth 3		217452
+	422937512	Buy Item Computer Sound 3	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Buy Item Computer Sound 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Buy Item\Buy Item Computer Sound 3		150716
 	451429337	LevelA_Big Bass Synth_L8M_P1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelA_Big Bass Synth_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level A\LevelA_Big Bass Synth_L8M_P1		4064864
+	463051599	Thump synth layer 1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Thump synth layer 1_17C24329.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Ant Spit\Thump synth layer 1		431600
 	475883887	LevelBridge_SawSquare Bass_L8M_P1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelBridge_SawSquare Bass_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level Bridge\LevelBridge_SawSquare Bass_L8M_P1		3802720
+	494932994	Exit Synth 1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Exit Synth 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Exit Synth\Exit Synth 1		217452
+	508596729	FLY_FIRE_LAYER_1_48Khz_MONO	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\FLY_FIRE_LAYER_1_48Khz_MONO_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Fire\Fire Crackle\FLY_FIRE_LAYER_1_48Khz_MONO		3168160
+	532917067	Sub kick layer 1layer 1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Sub kick layer 1layer 1_167F49B0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Ant Spit\Sub kick layer 1layer 1		431600
+	539126596	Exit Synth 5	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Exit Synth 5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Exit Synth\Exit Synth 5		244756
 	561685502	LevelA_Arpeggio_L8M_P1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelA_Arpeggio_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level A\LevelA_Arpeggio_L8M_P1		4327008
+	572366924	Buy Item Computer Sound 4	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Buy Item Computer Sound 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Buy Item\Buy Item Computer Sound 4		150716
+	572763555	Adjust2	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelA_Pulse Synth_L8M_P1_051FB8DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Adjust2\Adjust2		3298632
+	581000146	Squelch less verb	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Squelch less verb_8D75E5B8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Ant Spit\Squelch less verb		130832
 	588171366	LevelBridge_Arpeggio_L8M_P1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelBridge_Arpeggio_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level Bridge\LevelBridge_Arpeggio_L8M_P1		4327008
+	607057756	FLY_FIRE_LAYER_2_48KHZ_MONO	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\FLY_FIRE_LAYER_2_48KHZ_MONO_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Fire\Fire Crackle\FLY_FIRE_LAYER_2_48KHZ_MONO		3744160
 	634956250	Level_HiHat_L8M_P0	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Level_Hi Hat groove_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level Bridge\Level_HiHat_L8M_P0		3409472
+	652549052	shotgun layer 1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\shotgun layer 1_2BE6B954.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Ant Spit\shotgun layer 1		52648
+	656682904	Buy Item Computer Sound 6	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Buy Item Computer Sound 6_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Buy Item\Buy Item Computer Sound 6		150716
 	664842732	LevelB_SawSquare Bass_L8M_P1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelB_SawSquare Bass_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level B\LevelB_SawSquare Bass_L8M_P1		3802720
+	690024749	Scuttle 4	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Scuttle 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Scuttle\Scuttle 4		1425904
+	696798352	Scuttle 3	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Scuttle 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Scuttle\Scuttle 3		775744
 	712353983	LevelA_SawSquare Bass_L8M_P1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelA_SawSquare Bass_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level A\LevelA_SawSquare Bass_L8M_P1		3802720
 	731258502	LevelB_Arpeggio_L8M_P1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelB_Arpeggio_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level B\LevelB_Arpeggio_L8M_P1		4327008
 	740174606	LevelBridge_Lead_L8M_P1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelBridge_Lead_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level Bridge\LevelBridge_Lead_L8M_P1		5506656
+	763041976	Inner kick layer 1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Inner kick layer 1_38F9D0E1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Ant Spit\Inner kick layer 1		166120
+	765470994	Scuttle 1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Scuttle 1_C2C3A730.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Scuttle\Scuttle 1		294780
+	779530838	FLY_FIRE_LAYER_4_48Khz_MONO	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\FLY_FIRE_LAYER_4_48Khz_MONO_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Fire\Fire Crackle\FLY_FIRE_LAYER_4_48Khz_MONO		3648160
 	839594064	LevelIntro_Arpeggio_L05M_P0	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelIntro_Arpeggio_L05M_P0_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level Intro\LevelIntro_Arpeggio_L05M_P0		411220
+	859139999	Computer hum layer 1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Computer hum layer 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Computer hum\Computer hum layer 1		2348468
+	859979183	Vowel synth layer 1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Vowel synth layer 1_E1D8074A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Ant Spit\Vowel synth layer 1		162216
 	902460037	LevelA_Big Pad_L8M_P1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelA_Big Pad_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level A\LevelA_Big Pad_L8M_P1		4458080
+	923573717	FLY_FIRE_LAYER_3_48Khz _MONO	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\FLY_FIRE_LAYER_3_48Khz _MONO_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Fire\Fire Crackle\FLY_FIRE_LAYER_3_48Khz _MONO		4416160
+	954384023	Computer hum layer 2 - PS2	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Computer hum layer 2 - PS2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Computer hum\Computer hum layer 2 - PS2		1961880
+	972150802	Exit Synth 2	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Exit Synth 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Exit Synth\Exit Synth 2		217452
+	973579278	VHS click 2	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\VHS click 2_786E814D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Pause\VHS click 2		128956
 	976401125	Level_Snare2_L8M_P0	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Level_Snare2_L8M_P0_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level Bridge\Level_Snare2_L8M_P0		3288444
+	995274317	shotgun pitched down layer 1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\shotgun pitched down layer 1_1D4597AC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gameplay\Enemies\Ant Spit\shotgun pitched down layer 1		56228
 	1002972504	LevelB_Big Bass Synth_L8M_P1	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\LevelB_Big Bass Synth_L8M_P1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Level\Level B\LevelB_Big Bass Synth_L8M_P1		4064864
+	1025420711	Adjust	Y:\Desktop\Github\GMTK2024\Untitled\GMTK Wwise Project\.cache\Windows\SFX\Buy Item Computer Sound 1_946841F8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Adjust		36376
 

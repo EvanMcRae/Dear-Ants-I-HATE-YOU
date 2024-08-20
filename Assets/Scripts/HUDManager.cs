@@ -7,12 +7,17 @@ using UnityEngine.EventSystems;
 
 public class HUDManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI EXPValue, WaveValue, LevelValue;
+    [SerializeField] private TextMeshProUGUI EXPValue, EXPValue2, WaveValue, LevelValue, WorkshopHeader;
     [SerializeField] private GameObject WorkshopPanel = null;
     [SerializeField] private List<Image> Hearts;
     [SerializeField] private Sprite fullHeart, emptyHeart;
     [SerializeField] private Animator HurtVignette;
     public static HUDManager main;
+    public bool units = true;
+    [SerializeField] private AK.Wwise.Event MenuConfirm;
+
+    public GameObject TowersList;
+    public GameObject UpgradesList;
 
     void Awake()
     {
@@ -28,10 +33,8 @@ public class HUDManager : MonoBehaviour
 
     public void OpenWorkshop()
     {
-        // TODO stopgap for now, remove later
-        EventSystem.current.SetSelectedGameObject(null);
-        if (WorkshopPanel != null)
-            WorkshopPanel.SetActive(true);
+        WorkshopPanel.SetActive(true);
+        MenuConfirm.Post(gameObject);
     }
 
     public void UpdateHealth()
@@ -50,10 +53,35 @@ public class HUDManager : MonoBehaviour
     public void UpdateEXP()
     {
         EXPValue.text = GameplayManager.main.resourcePoints + "";
+        EXPValue2.text = EXPValue.text;
     }
 
     public void HurtEffect()
     {
         HurtVignette.SetTrigger("hurt");
+    }
+
+    public void LoadUnits()
+    {
+        if (!units)
+        {
+            units = true;
+            WorkshopHeader.text = "UNITS";
+            MenuConfirm.Post(gameObject);
+            UpgradesList.SetActive(false);
+            TowersList.SetActive(true);
+        }
+    }
+
+    public void LoadUpgrades()
+    {
+        if (units)
+        {
+            units = false;
+            WorkshopHeader.text = "UPGRADES";
+            MenuConfirm.Post(gameObject);
+            UpgradesList.SetActive(true);
+            TowersList.SetActive(false);
+        }
     }
 }

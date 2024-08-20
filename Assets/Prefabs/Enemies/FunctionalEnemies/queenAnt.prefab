@@ -57,6 +57,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6d42f053427b964089bb33a45892904, type: 3}
+--- !u!95 &7004318217599527052 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5433739419378820127, guid: d6d42f053427b964089bb33a45892904, type: 3}
+  m_PrefabInstance: {fileID: 3052547162011176083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7096822266096899366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5197199293148322229, guid: d6d42f053427b964089bb33a45892904, type: 3}
@@ -70,6 +75,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1841771124672475302, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      propertyPath: visuals
+      value: 
+      objectReference: {fileID: 7004318217599527052}
     - target: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
       propertyPath: m_Name
       value: queenAnt
