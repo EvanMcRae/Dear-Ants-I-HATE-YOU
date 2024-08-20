@@ -62,6 +62,10 @@ public class tileScript : MonoBehaviour
             clickToSpawnManager.PlacingMode = clickToSpawnManager.PlacingBehaviour.none;
             GameplayManager.main.spendResource(clickToSpawnManager.currentPlacementCost);
         }
+        else if (clickToSpawnManager.PlacingMode == clickToSpawnManager.PlacingBehaviour.upgrade && hasTower)
+        {
+            spawnedtower.GetComponent<Tower>().AttemptUpgrade();
+        }
     }
 
     public void BuildTowerFromData(TowerData data)

@@ -2990,6 +2990,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13dfcd2f67faec54c95c7874f1d744d7, type: 3}
+--- !u!1 &331079157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9031230999691977998, guid: 241d59989e9b1a0428e39e46a2d48f8c, type: 3}
+  m_PrefabInstance: {fileID: 1943750018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &333125130 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8281966843489405826, guid: 13dfcd2f67faec54c95c7874f1d744d7, type: 3}
@@ -5192,6 +5197,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13dfcd2f67faec54c95c7874f1d744d7, type: 3}
+--- !u!1 &645553637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6761585669168902532, guid: 241d59989e9b1a0428e39e46a2d48f8c, type: 3}
+  m_PrefabInstance: {fileID: 1943750018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &646881875
 GameObject:
   m_ObjectHideFlags: 0
@@ -16799,6 +16809,14 @@ PrefabInstance:
       propertyPath: EXPValue2
       value: 
       objectReference: {fileID: 1943750020}
+    - target: {fileID: 3862203972905032881, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: TowersList
+      value: 
+      objectReference: {fileID: 645553637}
+    - target: {fileID: 3862203972905032881, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
+      propertyPath: UpgradesList
+      value: 
+      objectReference: {fileID: 331079157}
     - target: {fileID: 3862203972905032881, guid: 0a4cf16ffa753024b8c5a68a472f76de, type: 3}
       propertyPath: WorkshopPanel
       value: 

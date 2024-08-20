@@ -49,6 +49,10 @@ public class Tower : MonoBehaviour
     //ammount attack power is boosted by with attack upgrade
     int powerBoost = 6;
 
+    public int speedUps = 0;
+    public int healthUps = 0;
+    public int powerUps = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -158,5 +162,29 @@ public class Tower : MonoBehaviour
             //if upgrade is active type
                 //check time and run its function
     }
-    
+
+    void OnMouseDown()
+    {
+        // Reject tower placement if game is not playable at the moment
+        // TODO add condition for start cutscene
+        if (GameplayManager.paused || GameplayManager.lost || GameplayManager.won || !ScreenWipe.over)
+            return;
+
+
+        // Spawn the prefab on this tile
+        if (clickToSpawnManager.PlacingMode == clickToSpawnManager.PlacingBehaviour.upgrade)
+        {
+            AttemptUpgrade();
+        }
+    }
+
+    public void AttemptUpgrade()
+    {
+        Debug.Log("Upgraded Tower");
+        attachUpgrade(clickToSpawnManager.currentUpgradeChoice);
+        clickToSpawnManager.PlacingMode = clickToSpawnManager.PlacingBehaviour.none;
+        GameplayManager.main.spendResource(clickToSpawnManager.currentPlacementCost);
+    }
+
+
 }

@@ -16,6 +16,9 @@ public class HUDManager : MonoBehaviour
     public bool units = true;
     [SerializeField] private AK.Wwise.Event MenuConfirm;
 
+    public GameObject TowersList;
+    public GameObject UpgradesList;
+
     void Awake()
     {
         main = this;
@@ -65,6 +68,8 @@ public class HUDManager : MonoBehaviour
             units = true;
             WorkshopHeader.text = "UNITS";
             MenuConfirm.Post(gameObject);
+            UpgradesList.SetActive(false);
+            TowersList.SetActive(true);
         }
     }
 
@@ -75,6 +80,8 @@ public class HUDManager : MonoBehaviour
             units = false;
             WorkshopHeader.text = "UPGRADES";
             MenuConfirm.Post(gameObject);
+            UpgradesList.SetActive(true);
+            TowersList.SetActive(false);
         }
     }
 }
