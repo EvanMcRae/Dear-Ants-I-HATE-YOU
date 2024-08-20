@@ -292,26 +292,27 @@ public class GameplayManager : MonoBehaviour
 
     public void Win()
     {
-        if (paused) return;
         ClosePanels();
         won = true;
-        // DialogController.main.StopTalk();
+        StopMusic.Post(globalWwise);
+        WinGameScreen.SetActive(true);
+    }
+
+    public void WinGame()
+    {
+        ClosePanels();
+        won = true;
         StopMusic.Post(globalWwise);
         WinScreen.SetActive(true);
-        // WinText.SetText("You made it through without laughing!\n\nFinal Grade: " + meter.calculateGrade());
     }
 
     public void Lose()
     {
-        if (paused) return;
         ClosePanels();
         lost = true;
-        // DialogController.main.StopTalk();
         GameOver?.Post(globalWwise);
         if (LoseScreen != null)
             LoseScreen.SetActive(true);
-        // button.stopInputs = true;
-        // dialog.reading = false;
     }
 
     //resets game
