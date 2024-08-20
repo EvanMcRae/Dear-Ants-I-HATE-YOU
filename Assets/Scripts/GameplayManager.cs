@@ -20,7 +20,8 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private GameObject globalWwise;
     [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver, TakeDamage;
     public clickToSpawnManager spawnManager;
-    public SaveManager saveManager; 
+    public SaveManager saveManager;
+    private static bool nextLevel = false;
 
     //number of ants that need to get to the goal in order for the player to lose
     public int maxPlayerHealth = 3;
@@ -47,11 +48,19 @@ public class GameplayManager : MonoBehaviour
     void Start()
     {
         main = this;
-        if (!SaveManager.loadingFromAutoSave && !SaveManager.loadingFromSave)
-            StartIntroSequence();
-        else 
+
+        if (!nextLevel)
+        {
+            if (!SaveManager.loadingFromAutoSave && !SaveManager.loadingFromSave)
+                StartIntroSequence();
+            else
+                StartMusic.Post(globalWwise);
+        }
+        else
+        {
             StartMusic.Post(globalWwise);
-        
+        }
+
         won = false;
         lost = false;
         playingAgain = false;
@@ -249,6 +258,7 @@ public class GameplayManager : MonoBehaviour
         saveManager.SaveGame();
         clickToSpawnManager.placedTowers.Clear();
         WaveManager.CurrentWave = 0;
+        stageManager.levelToLoad = 1;
         StopMusic?.Post(globalWwise);
         screenWipe.WipeIn();
         screenWipe.PostWipe += LoadMenu;
@@ -314,6 +324,7 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 1;
         paused = false;
         pauseOpen = false;
+        stageManager.levelToLoad = 1;
         screenWipe.WipeIn();
         StopMusic.Post(globalWwise);
         screenWipe.PostWipe += ReloadGame;
@@ -336,6 +347,33 @@ public class GameplayManager : MonoBehaviour
         screenWipe.WipeIn();
         StopMusic.Post(globalWwise);
         screenWipe.PostWipe += ReloadSave;
+    }
+
+    public void NextLevel()
+    {
+        if (playingAgain) return;
+        playingAgain = true;
+
+        MenuSelect?.Post(gameObject);
+        ClosePanels();
+        won = false;
+        lost = false;
+
+        Time.timeScale = 1;
+        paused = false;
+        pauseOpen = false;
+        screenWipe.WipeIn();
+        StopMusic.Post(globalWwise);
+        nextLevel = true;
+        screenWipe.PostWipe += LoadNextLevel;
+    }
+
+    public void LoadNextLevel()
+    {
+        screenWipe.PostWipe -= LoadNextLevel;
+        stageManager.levelToLoad = stageManager.level + 1;
+        SceneManager.LoadScene("SampleScene");
+        playingAgain = false;
     }
 
     //player takes damage from enemy reaching base
