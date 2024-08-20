@@ -21,6 +21,8 @@ public class EnemyAI : MonoBehaviour
     
     GameplayManager manager;
 
+    public Animator visuals;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +68,16 @@ public class EnemyAI : MonoBehaviour
         transform.position += (new Vector3(moveDir.x, 0, moveDir.y));
 
         Debug.DrawLine(transform.position, new Vector3(targetPosition.x, transform.position.y, targetPosition.y));
+
+        if (visuals == null)
+            return;
+
+        if (moveDir.x > 0)
+            visuals.transform.localScale = new Vector3(1, 1, 1);
+        else
+            visuals.transform.localScale = new Vector3(-1, 1, 1);
+
+        
     }
 
     public void TakeDamage(int damage)

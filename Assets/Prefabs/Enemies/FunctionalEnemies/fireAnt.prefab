@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1841771124672475302, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      propertyPath: visuals
+      value: 
+      objectReference: {fileID: 7381129258371643244}
+    - target: {fileID: 1841771124672475302, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}
@@ -129,5 +133,10 @@ PrefabInstance:
 --- !u!4 &1438798184618969415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6326830446187031317, guid: f35acbfd1e4ccff4aa4905c08fdad613, type: 3}
+  m_PrefabInstance: {fileID: 4916463591368581714}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7381129258371643244 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2474095099140740414, guid: f35acbfd1e4ccff4aa4905c08fdad613, type: 3}
   m_PrefabInstance: {fileID: 4916463591368581714}
   m_PrefabAsset: {fileID: 0}
