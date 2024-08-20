@@ -30,6 +30,7 @@ public class stageManager : MonoBehaviour
     public List<PathsData> AIPathings = new List<PathsData>();
 
     public AK.Wwise.Event stageUp, levelReset;
+    public List<GameObject> levelTransforms;
 
     void Awake()
     {
@@ -70,6 +71,7 @@ public class stageManager : MonoBehaviour
         everyTile = temp;
         everyTileOrdered = everyTile;
         advanceToStage(goToStage);
+        transform.SetPositionAndRotation(levelTransforms[level-1].transform.position, levelTransforms[level-1].transform.rotation);
         Debug.Log("level = " + level + " stage = " + stage);
     }
 
