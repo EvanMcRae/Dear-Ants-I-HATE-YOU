@@ -11,12 +11,13 @@ public class WaveManager : MonoBehaviour
 
     public bool inWave = false;
 
-    
+    public GameplayManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         //StartWave();
+        gameManager = FindObjectOfType<GameplayManager>();
     }
 
     // Update is called once per frame
@@ -69,7 +70,7 @@ public class WaveManager : MonoBehaviour
 
     public void WonMap()
     {
-        Debug.Log("Winner");
+        gameManager.Win();
     }
 
     
