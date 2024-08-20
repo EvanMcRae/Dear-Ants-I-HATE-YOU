@@ -22,6 +22,10 @@
 							<Position X="0" Y="3"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Victory" ID="{7DB03B5A-0ADA-4EC1-A354-B2DEC4584ED0}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
+							<Position X="0" Y="4"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Stop_Music" ID="{7D320711-017A-4CA3-932E-5269562B018B}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}"/>
 							<Position X="1" Y="0"/>
 						</Module>
@@ -77,15 +81,15 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="musicVolume" ID="{A2064303-69AE-43B4-97C1-81CB9FA1501B}"/>
-							<Value>100</Value>
+							<Value>45.1783355350066</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="soundVolume" ID="{C5AABEFE-F792-4A3D-964A-ACD03F89BC80}"/>
-							<Value>50</Value>
+							<Value>100</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="LevelProgress" ID="{315B0E65-AFDE-4D4E-9F9F-F0D274CD61E3}"/>
-							<Value>1</Value>
+							<Value>0.0878578479763085</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">

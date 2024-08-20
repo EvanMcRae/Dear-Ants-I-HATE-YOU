@@ -8,6 +8,7 @@
 						<ObjectRef Name="Music" ID="{0634472D-D768-4062-BB9F-883239C9661D}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fire" ID="{4C5BE8C0-86D2-40AA-B22D-C081C5ED5701}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Finish sound" ID="{80A291D1-6766-4191-92CA-10A43592B663}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Pause" ID="{F4586A93-67C5-41C1-BB09-47EC5A65D309}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ant Spit" ID="{9A210114-C3A0-41F2-977D-5A648C7961A8}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Level Bridge" ID="{BBF978E3-A431-42AD-BE1C-12C1464D4F88}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
@@ -18,6 +19,7 @@
 						<ObjectRef Name="Level A" ID="{591C6AEA-5726-430E-A07E-619EED2C77ED}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Buy Item Computer Sound 3" ID="{9B8866CD-D16E-4325-A4AD-79D0E5D77BD3}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Buy Item Computer Sound 5" ID="{2AB87EE8-28D3-433C-B5B8-CA8864FC3E0B}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ant Death" ID="{07292FFF-48F4-4382-A273-2A5BD0919E5E}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Adjust2" ID="{7BF38F9E-C1AE-43C0-B3C8-E3A802DE82E0}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Music" ID="{849BF544-A925-43E4-9B80-26FFB57F005F}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Level Intro" ID="{C6AEA7F8-DBE2-43EA-A130-3BB3A596656F}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
@@ -60,6 +62,7 @@
 						<ObjectRef Name="antWalk" ID="{695D3B67-E438-4E8E-8B29-F8F1B00DA985}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Adjust" ID="{DCB2A4FE-F215-4EA8-A241-D93DF73DB9DA}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fire Crackle" ID="{9D7589EC-AC71-4EBA-B831-CFF94A871C34}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Victory" ID="{7DB03B5A-0ADA-4EC1-A354-B2DEC4584ED0}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="LevelReset" ID="{67F95AAB-94C1-4EC7-82AA-B70075FDD849}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX" ID="{9C52607D-72C2-4ECA-A27F-2F81CF9D173B}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Scuttle 4" ID="{250C0331-2B1F-4F05-9B96-03E977C3EDE9}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
