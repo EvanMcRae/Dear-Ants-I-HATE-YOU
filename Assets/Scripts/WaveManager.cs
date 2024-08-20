@@ -73,7 +73,6 @@ public class WaveManager : MonoBehaviour
     {
         CurrentWave++;
         inWave = false;
-        stageManager.main.advanceStage();
         GameplayManager.AutoSave();
 
         if (CurrentWave >= waves.Count)
@@ -81,6 +80,11 @@ public class WaveManager : MonoBehaviour
             WonMap();
             return;
         }
+
+        stageManager.main.advanceStage();
+        
+
+        
 
         //Starts next wave on prior one finishing
         StartWave();

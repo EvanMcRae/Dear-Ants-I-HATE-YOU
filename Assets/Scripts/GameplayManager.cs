@@ -379,6 +379,11 @@ public class GameplayManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        if (stageManager.level + 1 > 3)
+        {
+            WinGame();
+        }
+
         screenWipe.PostWipe -= LoadNextLevel;
         stageManager.levelToLoad = stageManager.level + 1;
         SceneManager.LoadScene("SampleScene");
