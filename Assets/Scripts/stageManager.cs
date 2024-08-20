@@ -93,8 +93,10 @@ public class stageManager : MonoBehaviour
             gm.GetComponent<MeshRenderer>().material.color = Color.gray;
             Transform tf = gm.GetComponent<Transform>();
             /*CHANGE TO ADD MATERIAL WHEN LUKE IS READY*/
+            /*
             tf.position = new Vector3(tf.position.x, tf.position.y - .5f, tf.position.z);
             gm.GetComponent<tileScript>()?.activate();
+            */
         }
 
         if (stage == 1)
