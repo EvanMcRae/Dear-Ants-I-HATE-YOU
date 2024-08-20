@@ -100,7 +100,6 @@ public class EnemyAI : MonoBehaviour
     public void Die()
     {
         GameplayManager.main.addResource(resourceAward);
-        DeathSound.Post(GameplayManager.main.gameObject);
         GameObject addedExplosion = Instantiate(DeathExplosion, transform.position, Quaternion.Euler(90, 0, 0));
         addedExplosion.transform.localScale = Vector3.one * Random.Range(.2f, .3f);
         DeathSound.Post(gameObject);
