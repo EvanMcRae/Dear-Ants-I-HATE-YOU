@@ -50,6 +50,16 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{7BCC49F3-85ED-4EC0-816A-193515D27717}" ShortID="844795435">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="16"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Level" ID="{D83B5377-C090-4862-9085-F9ECC21AB106}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Folder Name="Stages" ID="{913B91A4-806D-413E-8AEA-1E23639507AE}" ShortID="247979264">
@@ -208,6 +218,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="10"/>
 								<Property Name="Delay" Type="Real64" Value="0.2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList/>
 							<ChildrenList>
@@ -232,6 +243,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="7"/>
 								<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -243,6 +255,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="7"/>
 								<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -324,6 +337,68 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Fire" ID="{4C5BE8C0-86D2-40AA-B22D-C081C5ED5701}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{E8CF498C-7602-49FC-8AED-BCF882F74C0E}" ShortID="154164687">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ant Death" ID="{07292FFF-48F4-4382-A273-2A5BD0919E5E}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="General Game" ID="{83D82F26-7C6A-43A5-A5C0-84458BD20E17}" ShortID="913845528">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="4"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="Victory" ID="{7DB03B5A-0ADA-4EC1-A354-B2DEC4584ED0}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="4"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{BCFF45DD-66F3-4349-8E55-EB3E0B6F4756}" ShortID="67198721">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Enemies" ID="{D0C85FFD-5AED-456D-96DE-6513AC356405}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F87882F0-A95F-4D6C-8577-21D58EDE2AD2}" ShortID="464761328">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Finish sound" ID="{80A291D1-6766-4191-92CA-10A43592B663}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{884D727B-52C7-45E1-B496-ABAEB4284AA7}" ShortID="439579665">
+									<PropertyList>
+										<Property Name="AbsoluteOrRelative" Type="int16" Value="1"/>
+										<Property Name="ActionType" Type="int16" Value="12"/>
+										<Property Name="Volume" Type="Real64" Value="-7"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Level" ID="{D83B5377-C090-4862-9085-F9ECC21AB106}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{50BBB4BA-3D16-40A5-B1D1-CE6072FF15D4}" ShortID="330414407">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="38"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LevelProgress" ID="{315B0E65-AFDE-4D4E-9F9F-F0D274CD61E3}" WorkUnitID="{8488D2D2-23ED-4CB1-800E-A57B8CBADB18}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

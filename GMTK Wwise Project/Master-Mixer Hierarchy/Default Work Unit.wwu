@@ -11,6 +11,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Bus Name="Music" ID="{0634472D-D768-4062-BB9F-883239C9661D}">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ObjectLists>
 								<ObjectList Name="RTPC">
 									<Reference>
@@ -37,7 +44,7 @@
 																	</Point>
 																	<Point>
 																		<XPos>100</XPos>
-																		<YPos>-3.30653</YPos>
+																		<YPos>-6.07072</YPos>
 																		<Flags>37</Flags>
 																	</Point>
 																</PointList>
