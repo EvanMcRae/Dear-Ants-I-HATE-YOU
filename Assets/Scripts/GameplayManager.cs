@@ -94,6 +94,11 @@ public class GameplayManager : MonoBehaviour
             DoctorsNoteButton.transform.localPosition = new Vector3(btnPos.x, Mathf.Lerp(btnPos.y, -293, 0.02f), btnPos.z);
             var imgPos = DoctorsNoteImage.transform.localPosition;
             DoctorsNoteImage.transform.localPosition = new Vector3(imgPos.x, Mathf.Lerp(imgPos.y, 100, 0.02f), imgPos.z);
+            if (EventSystem.current.currentSelectedGameObject != DoctorsNoteButton)
+            {
+                MenuButton.noSound = true;
+                EventSystem.current.SetSelectedGameObject(DoctorsNoteButton);
+            }
         }
 
         // if (suspendSequence)
