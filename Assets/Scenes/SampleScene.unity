@@ -198,7 +198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5500407028220396370, guid: 17ebe5c6d42b54542a46e6b19923badb, type: 3}
       propertyPath: xcord
-      value: 84
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500407028220396370, guid: 17ebe5c6d42b54542a46e6b19923badb, type: 3}
+      propertyPath: ycord
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5500407028220396370, guid: 17ebe5c6d42b54542a46e6b19923badb, type: 3}
       propertyPath: canPlaceTower
@@ -2689,7 +2693,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5500407028220396370, guid: 17ebe5c6d42b54542a46e6b19923badb, type: 3}
       propertyPath: xcord
-      value: 85
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500407028220396370, guid: 17ebe5c6d42b54542a46e6b19923badb, type: 3}
+      propertyPath: ycord
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5500407028220396370, guid: 17ebe5c6d42b54542a46e6b19923badb, type: 3}
       propertyPath: canPlaceTower
@@ -8810,7 +8818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1062631574
 Transform:
   m_ObjectHideFlags: 0

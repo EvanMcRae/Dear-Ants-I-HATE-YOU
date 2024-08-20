@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tower : MonoBehaviour
 {
@@ -54,6 +55,7 @@ public class Tower : MonoBehaviour
     public int powerUps = 0;
 
     public Animator anim;
+    [SerializeField] private Image powerBar;
 
     
 
@@ -90,11 +92,14 @@ public class Tower : MonoBehaviour
         else if(antsInRange <= 0 && attacking){
             stopAttacking();
         }
+
+        powerBar.fillAmount = (float)currHealth / maxHealth;
     }
 
     //take damage from enemies
     public int takeDamage(int damage){
         currHealth -= damage;
+
         if(currHealth <= 0){
             currHealth = 0;
 
