@@ -16654,6 +16654,10 @@ PrefabInstance:
       propertyPath: saveManager
       value: 
       objectReference: {fileID: 1564220550}
+    - target: {fileID: 7780176285458119301, guid: 241d59989e9b1a0428e39e46a2d48f8c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7955661182991056810, guid: 241d59989e9b1a0428e39e46a2d48f8c, type: 3}
       propertyPath: m_Pivot.x
       value: 0

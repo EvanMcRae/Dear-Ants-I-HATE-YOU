@@ -295,7 +295,7 @@ public class GameplayManager : MonoBehaviour
         ClosePanels();
         won = true;
         StopMusic.Post(globalWwise);
-        WinGameScreen.SetActive(true);
+        WinScreen.SetActive(true);
     }
 
     public void WinGame()
@@ -303,7 +303,7 @@ public class GameplayManager : MonoBehaviour
         ClosePanels();
         won = true;
         StopMusic.Post(globalWwise);
-        WinScreen.SetActive(true);
+        WinGameScreen.SetActive(true);
     }
 
     public void Lose()
