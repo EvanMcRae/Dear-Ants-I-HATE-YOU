@@ -24,17 +24,20 @@ public class EnemyAI : MonoBehaviour
     public Animator visuals;
 
     public GameObject DeathExplosion;
+    public AK.Wwise.Event DeathSound, MoveSound, AttackSound;
+    public bool dead = false;
 
     // Start is called before the first frame update
     void Start()
     {
         manager = FindObjectOfType<GameplayManager>();
+        MoveSound.Post(gameObject);
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-        if (GameplayManager.quit || GameplayManager.won || GameplayManager.lost || GameplayManager.playingAgain) return;
+        if (GameplayManager.quit || GameplayManager.won || GameplayManager.lost || GameplayManager.playingAgain || dead) return;
 
         //Hit end of path
         if (currPathId >= path.path.Count)
@@ -42,6 +45,7 @@ public class EnemyAI : MonoBehaviour
             //deal damage to the player
             manager.takeDamage();
             
+            DeathSound.Post(GameplayManager.main.gameObject);
             Destroy(gameObject);
             return;
         }
@@ -55,6 +59,7 @@ public class EnemyAI : MonoBehaviour
             {
                 lastAttack = Time.time;
                 nextTile.spawnedtower.GetComponent<Tower>().takeDamage(attackDamage);
+                AttackSound.Post(gameObject);
             }
             return;
         }
@@ -69,7 +74,7 @@ public class EnemyAI : MonoBehaviour
 
         Vector2 moveDir = (targetPosition - new Vector2(transform.position.x, transform.position.z)).normalized * moveSpeed * Time.deltaTime;
         transform.position += (new Vector3(moveDir.x, 0, moveDir.y));
-
+        
         Debug.DrawLine(transform.position, new Vector3(targetPosition.x, transform.position.y, targetPosition.y));
 
         if (visuals == null)
@@ -94,9 +99,17 @@ public class EnemyAI : MonoBehaviour
     public void Die()
     {
         GameplayManager.main.addResource(resourceAward);
-        
+        DeathSound.Post(GameplayManager.main.gameObject);
         GameObject addedExplosion = Instantiate(DeathExplosion, transform.position, Quaternion.Euler(90, 0, 0));
         addedExplosion.transform.localScale = Vector3.one * Random.Range(.2f, .3f);
+        DeathSound.Post(gameObject);
+        dead = true;
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
+        Invoke("KillAnt", 2f);
+    }
+
+    public void KillAnt()
+    {
         Destroy(gameObject);
     }
 }

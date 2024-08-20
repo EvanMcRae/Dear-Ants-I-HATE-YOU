@@ -7,7 +7,7 @@ public class SpitterAntScript : EnemyAI
     // Start is called before the first frame update
     void Start()
     {
-        
+        MoveSound.Post(gameObject);
     }
 
     protected override void Update()
@@ -33,6 +33,7 @@ public class SpitterAntScript : EnemyAI
             {
                 lastAttack = Time.time;
                 nextTile.spawnedtower.GetComponent<Tower>().takeDamage(attackDamage);
+                AttackSound.Post(gameObject);
             }
             return;
         }
@@ -48,6 +49,7 @@ public class SpitterAntScript : EnemyAI
                 {
                     lastAttack = Time.time;
                     nextNextTile.spawnedtower.GetComponent<Tower>().takeDamage(attackDamage);
+                    AttackSound.Post(gameObject);
                 }
                 return;
             }
@@ -63,7 +65,6 @@ public class SpitterAntScript : EnemyAI
 
         Vector2 moveDir = (targetPosition - new Vector2(transform.position.x, transform.position.z)).normalized * moveSpeed * Time.deltaTime;
         transform.position += (new Vector3(moveDir.x, 0, moveDir.y));
-
         Debug.DrawLine(transform.position, new Vector3(targetPosition.x, transform.position.y, targetPosition.y));
 
         if (visuals == null)

@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: b5ede5d229edd545942ab9363df88890
     GuidInternal: 
-    m_lastTime: -8584774975049234240
+    m_lastTime: -8584774309229204800
     List:
     - name: Enemy
       guid: 053ad7bc96ffc4448f25fbff862f63e2
@@ -425,7 +425,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 88242dbeeba24a44a1157017adc900c4
     GuidInternal: 
-    m_lastTime: -8584774325447359097
+    m_lastTime: -8584774309229176441
     List:
     - name: Main
       guid: 49d147b4243b0b499889950aa32b8cfd
@@ -453,7 +453,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 9e4891bc502aab45a273595ad7792cd5
     GuidInternal: 
-    m_lastTime: -8584774958497618664
+    m_lastTime: -8584774309229260086
     List:
     - name: antDeath
       guid: bf9bca7f083b504f876e838c55f4eaa1
@@ -473,8 +473,8 @@ MonoBehaviour:
         guid: bf9bca7f083b504f876e838c55f4eaa1
       Path: Events\Default Work Unit\Enemies\antDeath
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.18968096
+      minDuration: 0.17023979
     - name: antFire
       guid: 3e96a78af986fd4a887de86cef7583b8
       id: 4016260516
@@ -549,6 +549,23 @@ MonoBehaviour:
         ObjectType: 4
         guid: f0caa235a708b343ba809f8276dc496f
       Path: Events\Default Work Unit\Enemies
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: General Game
+      guid: 262fd8836a7ca543a5c084458bd20e17
+      id: 1488510471
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: General Game
+        ObjectType: 4
+        guid: 262fd8836a7ca543a5c084458bd20e17
+      Path: Events\Default Work Unit\General Game
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -846,6 +863,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Victory
+      guid: 5a3bb07dda0ac14ea354b2dec4584ed0
+      id: 2716678721
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9e4891bc502aab45a273595ad7792cd5
+      - ElementName: General Game
+        ObjectType: 4
+        guid: 262fd8836a7ca543a5c084458bd20e17
+      - ElementName: Victory
+        ObjectType: 3
+        guid: 5a3bb07dda0ac14ea354b2dec4584ed0
+      Path: Events\Default Work Unit\General Game\Victory
+      maxAttenuation: 0
+      maxDuration: 4.9312124
+      minDuration: 4.9312124
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:

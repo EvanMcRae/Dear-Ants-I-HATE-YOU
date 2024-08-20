@@ -181,3 +181,15 @@ MonoBehaviour:
   resourceAward: 2
   visuals: {fileID: 6785774264526065921}
   DeathExplosion: {fileID: 3152978442331484028, guid: c7f5a2d93530aae498ccca180867dfd7, type: 3}
+  DeathSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 25ff4080f50f74741be50a0670096c4a, type: 2}
+  MoveSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 03f0c423ca3dd2d428b8272ae0817a5a, type: 2}
+  AttackSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d0dbdacce2395f24b93fedb5ab9e7109, type: 2}

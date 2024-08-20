@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{22FA939A-D103-2E11-5097-B19E578ED631}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{FDAECF5A-B69E-3D1C-C762-F8469321F700}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -230,7 +230,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F89F94A1-58FE-2C68-D284-F072081920F6}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{A52C8300-17CB-8285-1BA1-B4C53931721F}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -342,6 +342,10 @@
 					<ShortName>LevelA_Pulse Synth_L8M_P1.wav</ShortName>
 					<CachePath>SFX/LevelA_Pulse Synth_L8M_P1_051FB8DE.wem</CachePath>
 				</File>
+				<File Id="577822459" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Finish sound.wav</ShortName>
+					<CachePath>SFX/Finish sound_61E7C192.wem</CachePath>
+				</File>
 				<File Id="581000146" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Squelch less verb.wav</ShortName>
 					<CachePath>SFX/Squelch less verb_8D75E5B8.wem</CachePath>
@@ -402,6 +406,10 @@
 					<ShortName>FLY_FIRE_LAYER_4_48Khz_MONO.wav</ShortName>
 					<CachePath>SFX/FLY_FIRE_LAYER_4_48Khz_MONO_818F3B66.wem</CachePath>
 				</File>
+				<File Id="832604895" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Squelch less verb.wav</ShortName>
+					<CachePath>SFX/Squelch less verb_9DF41A44.wem</CachePath>
+				</File>
 				<File Id="839594064" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevelIntro_Arpeggio_L05M_P0.wav</ShortName>
 					<CachePath>SFX/LevelIntro_Arpeggio_L05M_P0_FBC78EF0.wem</CachePath>
@@ -450,6 +458,10 @@
 					<ShortName>Buy Item Computer Sound 1.wav</ShortName>
 					<CachePath>SFX/Buy Item Computer Sound 1_946841F8.wem</CachePath>
 				</File>
+				<File Id="1054825953" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sub kick layer 1layer 1.wav</ShortName>
+					<CachePath>SFX/Sub kick layer 1layer 1_E4B53A76.wem</CachePath>
+				</File>
 			</Media>
 			<Plugins>
 				<Custom>
@@ -460,7 +472,7 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
-				<Event Id="130673662" Name="antDeath" DurationType="OneShot" DurationMin="0" DurationMax="0">
+				<Event Id="130673662" Name="antDeath" DurationType="OneShot" DurationMin="0.17023979" DurationMax="0.18968096">
 					<MediaRefs>
 						<MediaRef Id="3883348"/>
 						<MediaRef Id="97270343"/>
@@ -471,7 +483,9 @@
 						<MediaRef Id="696798352"/>
 						<MediaRef Id="765470994"/>
 						<MediaRef Id="779530838"/>
+						<MediaRef Id="832604895"/>
 						<MediaRef Id="923573717"/>
+						<MediaRef Id="1054825953"/>
 					</MediaRefs>
 					<PluginRefs>
 						<Custom>
@@ -568,6 +582,7 @@
 						<MediaRef Id="463051599"/>
 						<MediaRef Id="508596729"/>
 						<MediaRef Id="532917067"/>
+						<MediaRef Id="577822459"/>
 						<MediaRef Id="581000146"/>
 						<MediaRef Id="607057756"/>
 						<MediaRef Id="652549052"/>
@@ -576,11 +591,13 @@
 						<MediaRef Id="763041976"/>
 						<MediaRef Id="765470994"/>
 						<MediaRef Id="779530838"/>
+						<MediaRef Id="832604895"/>
 						<MediaRef Id="859139999"/>
 						<MediaRef Id="859979183"/>
 						<MediaRef Id="923573717"/>
 						<MediaRef Id="954384023"/>
 						<MediaRef Id="995274317"/>
+						<MediaRef Id="1054825953"/>
 					</MediaRefs>
 					<PluginRefs>
 						<Custom>
@@ -614,6 +631,26 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="2932040671" Name="Play_Music" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="28925695"/>
+						<MediaRef Id="47796842"/>
+						<MediaRef Id="74990297"/>
+						<MediaRef Id="194023441"/>
+						<MediaRef Id="282532151"/>
+						<MediaRef Id="451429337"/>
+						<MediaRef Id="475883887"/>
+						<MediaRef Id="561685502"/>
+						<MediaRef Id="588171366"/>
+						<MediaRef Id="634956250"/>
+						<MediaRef Id="664842732"/>
+						<MediaRef Id="712353983"/>
+						<MediaRef Id="731258502"/>
+						<MediaRef Id="740174606"/>
+						<MediaRef Id="839594064"/>
+						<MediaRef Id="902460037"/>
+						<MediaRef Id="976401125"/>
+						<MediaRef Id="1002972504"/>
+					</MediaRefs>
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="3991942870" Id="89505537"/>
@@ -678,6 +715,53 @@
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
+				</Event>
+				<Event Id="2716678721" Name="Victory" DurationType="OneShot" DurationMin="4.9312124" DurationMax="4.9312124">
+					<MediaRefs>
+						<MediaRef Id="3883348"/>
+						<MediaRef Id="28925695"/>
+						<MediaRef Id="47796842"/>
+						<MediaRef Id="74990297"/>
+						<MediaRef Id="97270343"/>
+						<MediaRef Id="194023441"/>
+						<MediaRef Id="282532151"/>
+						<MediaRef Id="309610189"/>
+						<MediaRef Id="451429337"/>
+						<MediaRef Id="463051599"/>
+						<MediaRef Id="475883887"/>
+						<MediaRef Id="508596729"/>
+						<MediaRef Id="532917067"/>
+						<MediaRef Id="561685502"/>
+						<MediaRef Id="577822459"/>
+						<MediaRef Id="581000146"/>
+						<MediaRef Id="588171366"/>
+						<MediaRef Id="607057756"/>
+						<MediaRef Id="634956250"/>
+						<MediaRef Id="652549052"/>
+						<MediaRef Id="664842732"/>
+						<MediaRef Id="690024749"/>
+						<MediaRef Id="696798352"/>
+						<MediaRef Id="712353983"/>
+						<MediaRef Id="731258502"/>
+						<MediaRef Id="740174606"/>
+						<MediaRef Id="763041976"/>
+						<MediaRef Id="765470994"/>
+						<MediaRef Id="779530838"/>
+						<MediaRef Id="832604895"/>
+						<MediaRef Id="839594064"/>
+						<MediaRef Id="859979183"/>
+						<MediaRef Id="902460037"/>
+						<MediaRef Id="923573717"/>
+						<MediaRef Id="976401125"/>
+						<MediaRef Id="995274317"/>
+						<MediaRef Id="1002972504"/>
+						<MediaRef Id="1054825953"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="191600798"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 			</Events>
 			<Busses>
@@ -749,5 +833,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{60F2E42D-A240-DB14-64DA-E2E8347B8535}</FileHash>
+	<FileHash>{7286FB17-4ADB-7493-F14B-7698FA0CBA53}</FileHash>
 </SoundBanksInfo>

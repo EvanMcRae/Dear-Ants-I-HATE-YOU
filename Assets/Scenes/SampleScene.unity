@@ -24395,6 +24395,10 @@ PrefabInstance:
       propertyPath: saveManager
       value: 
       objectReference: {fileID: 1564220550}
+    - target: {fileID: 6304178866348300856, guid: 241d59989e9b1a0428e39e46a2d48f8c, type: 3}
+      propertyPath: WinSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a89908879900c94f9df407591b6ada9, type: 2}
     - target: {fileID: 7060685377189602528, guid: 241d59989e9b1a0428e39e46a2d48f8c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

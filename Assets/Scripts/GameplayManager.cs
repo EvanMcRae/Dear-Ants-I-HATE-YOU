@@ -17,8 +17,8 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private GameObject PauseButton;
     [SerializeField] private Sprite PauseClicked, PauseNormal;
     //[SerializeField] private TextMeshProUGUI WinText;
-    [SerializeField] private GameObject globalWwise;
-    [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver, TakeDamage;
+    [SerializeField] public GameObject globalWwise;
+    [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver, WinSound, TakeDamage;
     public clickToSpawnManager spawnManager;
     public SaveManager saveManager;
     private static bool nextLevel = false;
@@ -295,6 +295,7 @@ public class GameplayManager : MonoBehaviour
         ClosePanels();
         won = true;
         StopMusic.Post(globalWwise);
+        WinSound.Post(globalWwise);
         WinScreen.SetActive(true);
     }
 
@@ -303,6 +304,7 @@ public class GameplayManager : MonoBehaviour
         ClosePanels();
         won = true;
         StopMusic.Post(globalWwise);
+        WinSound.Post(globalWwise);
         WinGameScreen.SetActive(true);
     }
 

@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1841771124672475302, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      propertyPath: MoveSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 03f0c423ca3dd2d428b8272ae0817a5a, type: 2}
     - target: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
       propertyPath: m_Name
       value: flyingAnt
