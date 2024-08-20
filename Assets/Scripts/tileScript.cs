@@ -17,7 +17,7 @@ public class tileScript : MonoBehaviour
     public bool canPlaceTower = false;
 
     //reference to tower on top of block
-    GameObject spawnedtower;
+    public GameObject spawnedtower;
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +60,6 @@ public class tileScript : MonoBehaviour
             };
             BuildTowerFromData(towerToPlace);
             clickToSpawnManager.PlacingMode = clickToSpawnManager.PlacingBehaviour.none;
-            GameplayManager.main.spendResource(clickToSpawnManager.currentPlacementCost);
         }
         else if (clickToSpawnManager.PlacingMode == clickToSpawnManager.PlacingBehaviour.upgrade && hasTower)
         {

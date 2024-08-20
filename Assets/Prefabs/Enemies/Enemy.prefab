@@ -74,9 +74,11 @@ MonoBehaviour:
   moveSpeed: 1
   health: 10
   lastAttack: 0
-  attackCooldown: 0
+  attackCooldown: 1
   attackDamage: 1
   resourceAward: 1
+  visuals: {fileID: 0}
+  DeathExplosion: {fileID: 3152978442331484028, guid: c7f5a2d93530aae498ccca180867dfd7, type: 3}
 --- !u!54 &7819179849478735699
 Rigidbody:
   m_ObjectHideFlags: 0
