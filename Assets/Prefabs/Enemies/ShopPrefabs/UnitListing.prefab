@@ -132,6 +132,8 @@ MonoBehaviour:
   name: Ant Zapper
   listingText: {fileID: 1370399449265886833}
   listingCost: {fileID: 5975869346099813057}
+  backing: {fileID: 2395097773512430515}
+  button: {fileID: 6789083268448241093}
   TowerName: laser
 --- !u!114 &6789083268448241093
 MonoBehaviour:
