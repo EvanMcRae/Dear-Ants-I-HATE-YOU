@@ -85,6 +85,7 @@ public class MainMenuManager : MonoBehaviour
         screenWipe.PostWipe -= StartRun;
         firstopen = false;
         playing = false;
+        stageManager.levelToLoad = 1;
         SceneManager.LoadScene("SampleScene"); //TODO change this whenever
     }
     
