@@ -23,6 +23,8 @@ public class EnemyAI : MonoBehaviour
 
     public Animator visuals;
 
+    public GameObject DeathExplosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,7 @@ public class EnemyAI : MonoBehaviour
             if(lastAttack + attackCooldown < Time.time)
             {
                 lastAttack = Time.time;
+                nextTile.spawnedtower.GetComponent<Tower>().takeDamage(attackDamage);
             }
             return;
         }
@@ -91,6 +94,8 @@ public class EnemyAI : MonoBehaviour
     public void Die()
     {
         manager.addResource(resourceAward);
+        GameObject addedExplosion = Instantiate(DeathExplosion, transform.position, Quaternion.Euler(90, 0, 0));
+        addedExplosion.transform.localScale = Vector3.one * Random.Range(.2f, .3f);
         Destroy(gameObject);
     }
 }

@@ -17,6 +17,7 @@ public class TowerShopListing : ShopListing
         clickToSpawnManager.playerTowerChoice = TowerName;
         clickToSpawnManager.currentPlacementCost = cost;
         backing.color = Color.white;
+        GameplayManager.main.spendResource(clickToSpawnManager.currentPlacementCost);
         //button.Select();
 
     }

@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 public class HUDManager : MonoBehaviour
 {
@@ -84,5 +85,10 @@ public class HUDManager : MonoBehaviour
             UpgradesList.SetActive(true);
             TowersList.SetActive(false);
         }
+    }
+
+    public void CloseWorkshop()
+    {
+        WorkshopPanel.GetComponent<PopupPanel>().Close();
     }
 }

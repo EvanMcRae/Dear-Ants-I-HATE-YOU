@@ -7,7 +7,7 @@ public class ShopListing : MonoBehaviour
 {
 
     public int cost = 1;
-    public string name = "undefined";
+    public new string name = "undefined";
 
     public TMPro.TextMeshProUGUI listingText;
     public TMPro.TextMeshProUGUI listingCost;
@@ -34,6 +34,7 @@ public class ShopListing : MonoBehaviour
 
     public virtual void OnClick()
     {
+        HUDManager.main.CloseWorkshop();
         //Start placement step, if there is sufficient exp
     }
 }

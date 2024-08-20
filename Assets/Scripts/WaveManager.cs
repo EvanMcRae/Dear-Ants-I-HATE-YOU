@@ -88,10 +88,13 @@ public class WaveManager : MonoBehaviour
 
     public void WonMap()
     {
+        if (stageManager.level == 3)
+        {
+            gameManager.WinGame();
+            return;
+        }
         gameManager.Win();
     }
-
-    
 
     [System.Serializable]
     public class Wave
