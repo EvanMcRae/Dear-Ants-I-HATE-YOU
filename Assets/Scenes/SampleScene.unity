@@ -1564,6 +1564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lowground (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5426555606428847723, guid: 17ebe5c6d42b54542a46e6b19923badb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5500407028220396370, guid: 17ebe5c6d42b54542a46e6b19923badb, type: 3}
       propertyPath: xcord
       value: 7
@@ -2909,6 +2913,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 982206249470272775, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630728651093279954, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2756335085637198574, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
       propertyPath: m_Name
       value: 60
@@ -2968,6 +2980,10 @@ PrefabInstance:
     - target: {fileID: 6837189607772495030, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702523909336030288, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7702523909336030288, guid: fcc436874e3fe3341b657314732c06fe, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -9337,7 +9353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1062631574
 Transform:
   m_ObjectHideFlags: 0
@@ -10975,6 +10991,10 @@ PrefabInstance:
     - target: {fileID: 2756335085637198574, guid: 17ebe5c6d42b54542a46e6b19923badb, type: 3}
       propertyPath: m_Name
       value: lowground (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756335085637198574, guid: 17ebe5c6d42b54542a46e6b19923badb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5500407028220396370, guid: 17ebe5c6d42b54542a46e6b19923badb, type: 3}
       propertyPath: xcord

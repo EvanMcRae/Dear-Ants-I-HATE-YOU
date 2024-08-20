@@ -370,7 +370,10 @@ public class GameplayManager : MonoBehaviour
 
         Time.timeScale = 1;
         paused = false;
+        won = false;
+        lost = false;
         pauseOpen = false;
+        clickToSpawnManager.placedTowers.Clear();
         screenWipe.WipeIn();
         StopMusic.Post(globalWwise);
         nextLevel = true;

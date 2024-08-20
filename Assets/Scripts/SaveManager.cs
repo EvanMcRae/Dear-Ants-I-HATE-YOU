@@ -11,8 +11,14 @@ public class TowerData
     public string type;
     public int xPos;
     public int yPos;
-
     public string[] upgrades;
+    public int numAttachments;
+    public int health;
+    public int attackSpeed;
+    public int power;
+    public bool dead;
+    public bool attacking;
+    public int level;
 }
 
 
@@ -94,7 +100,7 @@ public class SaveManager : MonoBehaviour
         {
             for (int i = 0; i < data.towers.Length; i++)
             {
-                StageManager.getTileFromCords(data.towers[i].xPos, data.towers[i].yPos).GetComponent<tileScript>().BuildTowerFromData(data.towers[i]);
+                StageManager.getTileFromCords(data.towers[i].xPos, data.towers[i].yPos).GetComponent<tileScript>().BuildTowerFromData(data.towers[i], true);
             }
         }
     }
@@ -109,15 +115,22 @@ public class SaveManager : MonoBehaviour
         data.wave = WaveManager.CurrentWave;
         data.currency = GameplayManager.main.resourcePoints;
         data.health = GameplayManager.main.currPlayerHealth;
-        data.towers = SerializeTowers();
+        data.towers = SerializeTowers(data.level);
 
         string jsonString = JsonUtility.ToJson(data);
 
         File.WriteAllText(autosave ? autoSaveFile : saveFile, jsonString);
     }
 
-    public TowerData[] SerializeTowers()
+    public TowerData[] SerializeTowers(int level)
     {
+        for (int i = 0; i < clickToSpawnManager.placedTowers.Count; i++)
+        {
+            if (clickToSpawnManager.placedTowers[i].level != level)
+            {
+                clickToSpawnManager.placedTowers[i] = null;
+            }
+        }
         return clickToSpawnManager.placedTowers.ToArray();
     }
 }

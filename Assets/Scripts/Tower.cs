@@ -50,13 +50,11 @@ public class Tower : MonoBehaviour
     //ammount attack power is boosted by with attack upgrade
     int powerBoost = 6;
 
-    public int speedUps = 0;
-    public int healthUps = 0;
-    public int powerUps = 0;
-
     public Animator anim;
     [SerializeField] private Image powerBar;
 
+    public int towerIndex;
+    public TowerData towerData;
     
 
     // Start is called before the first frame update
@@ -70,6 +68,15 @@ public class Tower : MonoBehaviour
         //set x and y coordinate
         //get stagemanager
         //set list of coordiantes to check
+    }
+
+    public void UnpackData()
+    {
+        currHealth = towerData.health;
+        power = towerData.power;
+        attackSpeed = towerData.attackSpeed;
+        dead = towerData.dead;
+        attacking = towerData.attacking;
     }
 
     /// <summary>
@@ -94,6 +101,13 @@ public class Tower : MonoBehaviour
         }
 
         powerBar.fillAmount = (float)currHealth / maxHealth;
+
+        towerData.health = currHealth;
+        towerData.power = power;
+        towerData.attackSpeed = attackSpeed;
+        towerData.dead = dead;
+        towerData.attacking = attacking;
+        clickToSpawnManager.placedTowers[towerIndex] = towerData;
     }
 
     //take damage from enemies

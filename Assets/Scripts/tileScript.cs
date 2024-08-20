@@ -18,6 +18,7 @@ public class tileScript : MonoBehaviour
 
     //reference to tower on top of block
     public GameObject spawnedtower;
+    public int towerIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +57,8 @@ public class tileScript : MonoBehaviour
             {
                 type = clickToSpawnManager.playerTowerChoice,
                 xPos = xcord,
-                yPos = ycord
+                yPos = ycord,
+                level = stageManager.level
             };
             BuildTowerFromData(towerToPlace);
             clickToSpawnManager.PlacingMode = clickToSpawnManager.PlacingBehaviour.none;
@@ -67,7 +69,7 @@ public class tileScript : MonoBehaviour
         }
     }
 
-    public void BuildTowerFromData(TowerData data)
+    public void BuildTowerFromData(TowerData data, bool unpack = false)
     {
         // Instantiate the prefab at the calculated position
         if (data.type == "melee")
@@ -98,6 +100,10 @@ public class tileScript : MonoBehaviour
 
             clickToSpawnManager.placedTowers.Add(data);
             hasTower = true;
+            spawnedtower.GetComponent<Tower>().towerIndex = clickToSpawnManager.placedTowers.IndexOf(data);
+            spawnedtower.GetComponent<Tower>().towerData = data;
+            if (unpack)
+                spawnedtower.GetComponent<Tower>().UnpackData();
         }
         else
         {
@@ -108,11 +114,5 @@ public class tileScript : MonoBehaviour
     public void activate() 
     {
         activated = true;
-    }
-    
-    public TowerData[] SerializeTowers()
-    {
-        //return placedTowers.ToArray();
-        return clickToSpawnManager.placedTowers.ToArray();
     }
 }
