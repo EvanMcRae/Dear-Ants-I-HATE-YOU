@@ -11,7 +11,7 @@ public class towerHitbox : MonoBehaviour
 
         EnemyAI hitEnemy = collision.gameObject.GetComponent<EnemyAI>();
 
-        if(hitEnemy != null)
+        if(hitEnemy != null && !hitEnemy.dead)
         {
             hitEnemy.TakeDamage(power);
         }
@@ -21,7 +21,7 @@ public class towerHitbox : MonoBehaviour
     {
         EnemyAI hitEnemy = other.gameObject.GetComponent<EnemyAI>();
 
-        if (hitEnemy != null)
+        if (hitEnemy != null && !hitEnemy.dead)
         {
             hitEnemy.TakeDamage(power);
         }
