@@ -12,6 +12,7 @@ public class clickToSpawnManager : MonoBehaviour
     public static string playerTowerChoice = "laser";
 
     public static int currentPlacementCost;
+    public static int currentUpgradeChoice = 0;
 
     public enum PlacingBehaviour
     {

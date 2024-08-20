@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class UpgradeShopeListing : ShopListing
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int upgradeID;
 
-    // Update is called once per frame
-    void Update()
+    public override void OnClick()
     {
-        
+        base.OnClick();
+
+        if (cost > GameplayManager.main.resourcePoints)
+            return;
+
+        clickToSpawnManager.currentUpgradeChoice = upgradeID;
+        clickToSpawnManager.PlacingMode = clickToSpawnManager.PlacingBehaviour.upgrade;
+        clickToSpawnManager.currentPlacementCost = cost;
     }
 }
