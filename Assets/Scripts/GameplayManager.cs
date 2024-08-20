@@ -252,6 +252,7 @@ public class GameplayManager : MonoBehaviour
     public void LoadMenu()
     {
         screenWipe.PostWipe -= LoadMenu;
+        PopupPanel.numPopups = 0;
         SceneManager.LoadScene("MainMenu");
     }
 

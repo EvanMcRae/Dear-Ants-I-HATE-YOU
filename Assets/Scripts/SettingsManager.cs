@@ -17,8 +17,10 @@ public class SettingsManager : MonoBehaviour
 
     void Awake()
     {
+        MenuButton.pleaseNoSound = true;
         LoadSettings();
         gameObject.SetActive(false);
+        MenuButton.pleaseNoSound = false;
     }
 
     public void LoadSettings()
@@ -46,13 +48,9 @@ public class SettingsManager : MonoBehaviour
     public void UpdateMasterVolume(bool user)
     {
         if (user)
-        {
             currentSettings.masterVolume = masterSlider.value;
-        }
         else
-        {
             masterSlider.value = currentSettings.masterVolume;
-        }
 
         AkSoundEngine.SetRTPCValue("masterVolume", currentSettings.masterVolume);
         masterValue.text = (int)masterSlider.value + "";
@@ -60,12 +58,14 @@ public class SettingsManager : MonoBehaviour
 
     public void StartAdjust()
     {
+        if (MenuButton.pleaseNoSound) return;
         MenuClick.Post(gameObject);
         MenuAdjust.Post(gameObject);
     }
 
     public void StopAdjust()
     {
+        if (MenuButton.pleaseNoSound) return;
         MenuAdjustStop.Post(gameObject);
         MenuClick.Post(gameObject);
     }
@@ -107,7 +107,8 @@ public class SettingsManager : MonoBehaviour
         if (user)
         {
             currentSettings.fullScreen = fullScreenToggle.isOn;
-            MenuClick?.Post(gameObject);
+            if (!MenuButton.pleaseNoSound)
+                MenuClick?.Post(gameObject);
         }
         else
             fullScreenToggle.isOn = currentSettings.fullScreen;
@@ -132,7 +133,8 @@ public class SettingsManager : MonoBehaviour
         if (user)
         {
             currentSettings.vSync = vSyncToggle.isOn;
-            MenuClick?.Post(gameObject);
+            if (!MenuButton.pleaseNoSound)
+                MenuClick?.Post(gameObject);
         }
         else
             vSyncToggle.isOn = currentSettings.vSync;
