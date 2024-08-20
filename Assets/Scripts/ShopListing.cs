@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopListing : MonoBehaviour
 {
@@ -10,14 +11,17 @@ public class ShopListing : MonoBehaviour
 
     public TMPro.TextMeshProUGUI listingText;
     public TMPro.TextMeshProUGUI listingCost;
+    public Image backing;
+
+    public Button button;
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         
     }

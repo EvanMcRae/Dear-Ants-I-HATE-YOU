@@ -16,5 +16,18 @@ public class UpgradeShopeListing : ShopListing
         clickToSpawnManager.currentUpgradeChoice = upgradeID;
         clickToSpawnManager.PlacingMode = clickToSpawnManager.PlacingBehaviour.upgrade;
         clickToSpawnManager.currentPlacementCost = cost;
+        backing.color = Color.white;
+        //button.Select();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+
+        if (clickToSpawnManager.PlacingMode != clickToSpawnManager.PlacingBehaviour.upgrade || (clickToSpawnManager.currentUpgradeChoice != upgradeID))
+        {
+            backing.color = new Color(.8f, .8f, .8f);
+        }
     }
 }

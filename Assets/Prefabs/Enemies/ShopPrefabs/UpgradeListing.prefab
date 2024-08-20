@@ -132,6 +132,9 @@ MonoBehaviour:
   name: Speed up
   listingText: {fileID: 5645781330083367093}
   listingCost: {fileID: 6408729266525616120}
+  backing: {fileID: 8089302145571091118}
+  button: {fileID: 7328554047999673748}
+  upgradeID: 0
 --- !u!114 &7328554047999673748
 MonoBehaviour:
   m_ObjectHideFlags: 0
