@@ -15,7 +15,7 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private Animator HurtVignette;
     public static HUDManager main;
     public bool units = true;
-    [SerializeField] private AK.Wwise.Event MenuConfirm;
+    [SerializeField] private AK.Wwise.Event MenuConfirm, MenuFail;
 
     public GameObject TowersList;
     public GameObject UpgradesList;
@@ -90,5 +90,11 @@ public class HUDManager : MonoBehaviour
     public void CloseWorkshop()
     {
         WorkshopPanel.GetComponent<PopupPanel>().Close();
+        MenuConfirm.Post(gameObject);
+    }
+
+    public void PlayFailSound()
+    {
+        MenuFail.Post(gameObject);
     }
 }
