@@ -104,6 +104,7 @@ public class PopupPanel : MonoBehaviour
         if (darkensScreen)
             ScreenDarkener.raycastTarget = false;
         numPopups--;
+        if (numPopups < 0) numPopups = 0;
         visible = false;
         MenuButton.pleaseNoSound = true;
         EventSystem.current.SetSelectedGameObject(PreviousButton);
