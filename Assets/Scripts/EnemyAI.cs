@@ -90,6 +90,7 @@ public class EnemyAI : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (dead) return;
         health -= damage;
 
         if (health <= 0)
