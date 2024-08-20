@@ -13,10 +13,10 @@ public class GameplayManager : MonoBehaviour
     public bool startedSequence = false;
     public bool suspendSequence = false;
     public static bool paused, pauseOpen;
-    [SerializeField] private GameObject PauseMenu, WinScreen, LoseScreen, SettingsPanel, DoctorsNote;
+    [SerializeField] private GameObject PauseMenu, WinScreen, LoseScreen, SettingsPanel, DoctorsNote, WorkshopMenu;
     [SerializeField] private GameObject PauseButton;
     [SerializeField] private Sprite PauseClicked, PauseNormal;
-    [SerializeField] private TextMeshProUGUI WinText;
+    //[SerializeField] private TextMeshProUGUI WinText;
     [SerializeField] private GameObject globalWwise;
     [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect, GameOver, TakeDamage;
     public clickToSpawnManager spawnManager;
@@ -224,6 +224,9 @@ public class GameplayManager : MonoBehaviour
             {
                 LoseScreen.GetComponent<PopupPanel>().Close();
             }
+            if (WorkshopMenu != null && WorkshopMenu.activeSelf == true){
+                WorkshopMenu.GetComponent<PopupPanel>().Close();
+            }
         }
     }
 
@@ -270,6 +273,7 @@ public class GameplayManager : MonoBehaviour
     public void Win()
     {
         if (paused) return;
+        ClosePanels();
         won = true;
         // DialogController.main.StopTalk();
         StopMusic.Post(globalWwise);
@@ -280,6 +284,7 @@ public class GameplayManager : MonoBehaviour
     public void Lose()
     {
         if (paused) return;
+        ClosePanels();
         lost = true;
         // DialogController.main.StopTalk();
         GameOver?.Post(globalWwise);
