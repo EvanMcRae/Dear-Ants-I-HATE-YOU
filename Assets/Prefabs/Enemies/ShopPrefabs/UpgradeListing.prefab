@@ -128,10 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269fdc210e65415479ab2847fe3eb819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 1
-  name: undefined
-  listingText: {fileID: 0}
-  listingCost: {fileID: 0}
+  cost: 7
+  name: Speed up
+  listingText: {fileID: 5645781330083367093}
+  listingCost: {fileID: 6408729266525616120}
 --- !u!114 &7328554047999673748
 MonoBehaviour:
   m_ObjectHideFlags: 0
