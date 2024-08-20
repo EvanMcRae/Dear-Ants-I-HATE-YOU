@@ -78,6 +78,9 @@ public class stageManager : MonoBehaviour
     public void advanceStage()
     {
         stage++;
+        if (stage > stageCount)
+            endLevel();
+
         enablePath(stage);
         // stageUp.Post(gameObject);
         if (stage == stageCount + 1) { endLevel(); }

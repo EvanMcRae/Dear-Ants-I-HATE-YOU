@@ -5901,32 +5901,95 @@ MonoBehaviour:
   waves:
   - enemiesToSpawn:
     - timeToSpawn: 0
-      enemyToSpawn: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 0.5
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 1.5
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner1/Direct
+    currentlySpawning: 0
+    startTime: 0
+  - enemiesToSpawn:
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner2/Direct
+    - timeToSpawn: 0
+      enemyToSpawn: {fileID: 4937721378453305778, guid: f77d80c649d4c0a408db539177933826, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 0.5
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 1.5
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
       spawnLocationID: Spawner1/Direct
     currentlySpawning: 0
     startTime: 0
   - enemiesToSpawn:
     - timeToSpawn: 0
-      enemyToSpawn: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
       spawnLocationID: Spawner2/Direct
-    currentlySpawning: 0
-    startTime: 0
-  - enemiesToSpawn:
+    - timeToSpawn: 0.5
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner2/Direct
     - timeToSpawn: 0
-      enemyToSpawn: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      enemyToSpawn: {fileID: 5793837711991341036, guid: 77f7d540db096804cae9fd2926e60db8, type: 3}
+      spawnLocationID: Spawner3/Direct
+    - timeToSpawn: 0.5
+      enemyToSpawn: {fileID: 5793837711991341036, guid: 77f7d540db096804cae9fd2926e60db8, type: 3}
       spawnLocationID: Spawner3/Direct
     currentlySpawning: 0
     startTime: 0
   - enemiesToSpawn:
     - timeToSpawn: 0
-      enemyToSpawn: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
       spawnLocationID: Spawner4/Direct
+    - timeToSpawn: 0.5
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner4/Direct
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner4/Direct
+    - timeToSpawn: 1.5
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner4/Direct
+    - timeToSpawn: 2
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner4/Direct
+    - timeToSpawn: 0
+      enemyToSpawn: {fileID: 3242350263993133596, guid: 09a0116be664cf14da3712fc2336e5d0, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 0.5
+      enemyToSpawn: {fileID: 3242350263993133596, guid: 09a0116be664cf14da3712fc2336e5d0, type: 3}
+      spawnLocationID: Spawner2/Direct
+    - timeToSpawn: 0.5
+      enemyToSpawn: {fileID: 3242350263993133596, guid: 09a0116be664cf14da3712fc2336e5d0, type: 3}
+      spawnLocationID: Spawner3/Direct
     currentlySpawning: 0
     startTime: 0
   - enemiesToSpawn:
     - timeToSpawn: 0
-      enemyToSpawn: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      enemyToSpawn: {fileID: 8733612287399878345, guid: 58da03759ec9e714e8db02766e7b78a8, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
       spawnLocationID: Spawner5/Direct
+    - timeToSpawn: 2
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner4/Direct
+    - timeToSpawn: 3
+      enemyToSpawn: {fileID: 6530648119801991904, guid: e30b0ff7ad4968c40ba82ad784cba55b, type: 3}
+      spawnLocationID: Spawner3/Direct
+    - timeToSpawn: 4
+      enemyToSpawn: {fileID: 6530648119801991904, guid: e30b0ff7ad4968c40ba82ad784cba55b, type: 3}
+      spawnLocationID: Spawner2/Direct
     currentlySpawning: 0
     startTime: 0
   inWave: 0
@@ -13991,19 +14054,70 @@ MonoBehaviour:
   waves:
   - enemiesToSpawn:
     - timeToSpawn: 0
-      enemyToSpawn: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 0.5
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 1.5
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 2
+      enemyToSpawn: {fileID: 5793837711991341036, guid: 77f7d540db096804cae9fd2926e60db8, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 2.5
+      enemyToSpawn: {fileID: 5793837711991341036, guid: 77f7d540db096804cae9fd2926e60db8, type: 3}
       spawnLocationID: Spawner1/Direct
     currentlySpawning: 0
     startTime: 0
   - enemiesToSpawn:
     - timeToSpawn: 0
-      enemyToSpawn: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner2/Direct
+    - timeToSpawn: 0
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 0.5
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 0.5
+      enemyToSpawn: {fileID: 6724473912800253109, guid: 36257b6c3c4e8fd44a3a2eca12fcc70e, type: 3}
+      spawnLocationID: Spawner2/Direct
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 3242350263993133596, guid: 09a0116be664cf14da3712fc2336e5d0, type: 3}
+      spawnLocationID: Spawner2/Direct
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 3242350263993133596, guid: 09a0116be664cf14da3712fc2336e5d0, type: 3}
+      spawnLocationID: Spawner2/Direct
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 4937721378453305778, guid: f77d80c649d4c0a408db539177933826, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 1.5
+      enemyToSpawn: {fileID: 4937721378453305778, guid: f77d80c649d4c0a408db539177933826, type: 3}
       spawnLocationID: Spawner2/Direct
     currentlySpawning: 0
     startTime: 0
   - enemiesToSpawn:
     - timeToSpawn: 0
-      enemyToSpawn: {fileID: 2675957687946647709, guid: b7d3a0cb8cf6bba40a015f1235fd32a5, type: 3}
+      enemyToSpawn: {fileID: 8733612287399878345, guid: 58da03759ec9e714e8db02766e7b78a8, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 0
+      enemyToSpawn: {fileID: 5793837711991341036, guid: 77f7d540db096804cae9fd2926e60db8, type: 3}
+      spawnLocationID: Spawner2/Direct
+    - timeToSpawn: 0
+      enemyToSpawn: {fileID: 5793837711991341036, guid: 77f7d540db096804cae9fd2926e60db8, type: 3}
+      spawnLocationID: Spawner3/Direct
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 4937721378453305778, guid: f77d80c649d4c0a408db539177933826, type: 3}
+      spawnLocationID: Spawner1/Direct
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 6530648119801991904, guid: e30b0ff7ad4968c40ba82ad784cba55b, type: 3}
+      spawnLocationID: Spawner2/Direct
+    - timeToSpawn: 1
+      enemyToSpawn: {fileID: 6530648119801991904, guid: e30b0ff7ad4968c40ba82ad784cba55b, type: 3}
       spawnLocationID: Spawner3/Direct
     currentlySpawning: 0
     startTime: 0

@@ -421,6 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currHealth: 10
+  dead: 0
   power: 8
   hitboxes:
   - {fileID: 8902038470645526442}
@@ -434,7 +435,7 @@ MonoBehaviour:
   healthUps: 0
   powerUps: 0
   anim: {fileID: 1315771926428189765}
-  powerBar: {fileID: 0}
+  powerBar: {fileID: 7471413842374886362}
 --- !u!33 &3091973454866630020
 MeshFilter:
   m_ObjectHideFlags: 0
