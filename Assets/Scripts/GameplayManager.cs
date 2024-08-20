@@ -13,7 +13,7 @@ public class GameplayManager : MonoBehaviour
     public bool startedSequence = false;
     public bool suspendSequence = false;
     public static bool paused, pauseOpen;
-    [SerializeField] private GameObject PauseMenu, WinScreen, LoseScreen, SettingsPanel, DoctorsNote, WorkshopMenu;
+    [SerializeField] private GameObject PauseMenu, WinScreen, WinGameScreen, LoseScreen, SettingsPanel, DoctorsNote, WorkshopMenu;
     [SerializeField] private GameObject PauseButton;
     [SerializeField] private Sprite PauseClicked, PauseNormal;
     //[SerializeField] private TextMeshProUGUI WinText;
@@ -234,6 +234,10 @@ public class GameplayManager : MonoBehaviour
             {
                 WinScreen.GetComponent<PopupPanel>().Close();
             }
+            if (WinGameScreen != null && WinGameScreen.activeSelf == true)
+            {
+                WinGameScreen.GetComponent<PopupPanel>().Close();
+            }
             if (LoseScreen != null && LoseScreen.activeSelf == true)
             {
                 LoseScreen.GetComponent<PopupPanel>().Close();
@@ -315,15 +319,19 @@ public class GameplayManager : MonoBehaviour
     {
         if (playingAgain) return;
         playingAgain = true;
+        Time.timeScale = 1;
 
-        MenuSelect?.Post(gameObject);
         ClosePanels();
+        MenuSelect?.Post(gameObject);
         won = false;
         lost = false;
 
-        Time.timeScale = 1;
         paused = false;
+        won = false;
+        lost = false;
         pauseOpen = false;
+        clickToSpawnManager.placedTowers.Clear();
+        WaveManager.CurrentWave = 0;
         stageManager.levelToLoad = 1;
         screenWipe.WipeIn();
         StopMusic.Post(globalWwise);
