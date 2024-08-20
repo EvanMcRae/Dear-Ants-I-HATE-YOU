@@ -5,7 +5,7 @@ using UnityEngine;
 public class towerSightBox : MonoBehaviour
 {
     public int antsSeen = 0;
-    List<GameObject> seenAnts = new List<GameObject>();
+    public List<GameObject> seenAnts = new List<GameObject>();
 
     void OnCollisionEnter(Collision collision){
         if(collision.gameObject.tag == "Enemy"){

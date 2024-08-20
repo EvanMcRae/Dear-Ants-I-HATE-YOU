@@ -9,30 +9,30 @@ public class Tower : MonoBehaviour
     //public int ycord;
 
     [SerializeField]
-    int maxHealth;
+    protected int maxHealth;
     [SerializeField]
-    int currHealth;
+    protected int currHealth;
     //denotes if health has been depleted
-    bool dead = false;
+    protected bool dead = false;
     //denotes if currenly attacking, used to retract hitboxes if dieing with them out
-    bool attacking = false;
+    protected bool attacking = false;
 
     //timeToAttack/attackSpeed = how long (in seconds) it takes for tower to fire
-    int attackSpeed = 4;
-    int timeToAttack = 2;
-    float timeSinceLastAttack;
-    float[] timeSinceActivated;
+    protected int attackSpeed = 4;
+    protected int timeToAttack = 2;
+    protected float timeSinceLastAttack;
+    protected float[] timeSinceActivated;
     //attackpower for individual hits
     [SerializeField]
-    int power;
+    protected int power;
 
     [SerializeField]
     GameObject[] hitboxes;
     [SerializeField]
-    towerSightBox[] sightBoxes;
+    protected towerSightBox[] sightBoxes;
 
-    int numAttachments = 0;
-    int maxAttachments = 3;
+    protected int numAttachments = 0;
+    protected int maxAttachments = 3;
 
     //[SerializeField]
     //stageManager stageManager;
@@ -55,8 +55,10 @@ public class Tower : MonoBehaviour
 
     public Animator anim;
 
+    
+
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         timeSinceLastAttack = 0;
         timeSinceActivated = new float[3];
@@ -71,7 +73,7 @@ public class Tower : MonoBehaviour
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
     /// </summary>
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (GameplayManager.quit || GameplayManager.won || GameplayManager.lost || GameplayManager.playingAgain) return;
         timeSinceLastAttack += attackSpeed * Time.deltaTime;
@@ -113,7 +115,7 @@ public class Tower : MonoBehaviour
         anim.Play("Attack");
     }
 
-    void attack(){
+    protected virtual void attack(){
         //activate colliders for hitboxes
         attacking = !attacking;
         anim.Play("Attack");
@@ -126,7 +128,7 @@ public class Tower : MonoBehaviour
     }
 
     //used to stop attacking when dead or enemies out of range
-    void stopAttacking(){
+    protected virtual void stopAttacking(){
         attacking = false;
         foreach(GameObject box in hitboxes){ 
             box.SetActive(attacking);
