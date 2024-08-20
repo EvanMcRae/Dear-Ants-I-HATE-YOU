@@ -18,6 +18,7 @@ public class SettingsManager : MonoBehaviour
     void Awake()
     {
         LoadSettings();
+        gameObject.SetActive(false);
     }
 
     public void LoadSettings()
