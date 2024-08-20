@@ -160,8 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03129547c1ef13848bc2b94e22491ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  currHealth: 0
+  maxHealth: 10
+  currHealth: 10
   power: 4
   hitboxes:
   - {fileID: 1673050782179274346}
@@ -170,6 +170,9 @@ MonoBehaviour:
   - {fileID: 9082402174975715831}
   sightBoxes:
   - {fileID: 4870085359332600864}
+  speedUps: 0
+  healthUps: 0
+  powerUps: 0
 --- !u!33 &9058039311564079301
 MeshFilter:
   m_ObjectHideFlags: 0

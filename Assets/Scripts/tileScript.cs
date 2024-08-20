@@ -17,7 +17,7 @@ public class tileScript : MonoBehaviour
     public bool canPlaceTower = false;
 
     //reference to tower on top of block
-    GameObject spawnedtower;
+    public GameObject spawnedtower;
 
     // Start is called before the first frame update
     void Start()

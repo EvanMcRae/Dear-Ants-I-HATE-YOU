@@ -1127,8 +1127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03129547c1ef13848bc2b94e22491ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  currHealth: 0
+  maxHealth: 10
+  currHealth: 10
   power: 4
   hitboxes:
   - {fileID: 964671943161131943}
@@ -1138,6 +1138,9 @@ MonoBehaviour:
   sightBoxes:
   - {fileID: 767887541157172420}
   - {fileID: 3654548709405979568}
+  speedUps: 0
+  healthUps: 0
+  powerUps: 0
 --- !u!33 &5346667780650370833
 MeshFilter:
   m_ObjectHideFlags: 0
