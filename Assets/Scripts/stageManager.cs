@@ -86,6 +86,9 @@ public class stageManager : MonoBehaviour
         foreach (GameObject gm in path[stage - 1])
         {
             gm.GetComponent<MeshRenderer>().material.color = Color.gray;
+            Transform tf = gm.GetComponent<Transform>();
+            /*CHANGE TO ADD MATERIAL WHEN LUKE IS READY*/
+            tf.position = new Vector3(tf.position.x, tf.position.y - .5f, tf.position.z);
             gm.GetComponent<tileScript>()?.activate();
         }
 
@@ -133,6 +136,15 @@ public class stageManager : MonoBehaviour
         }
     }
 
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Backslash))
+        {
+            /*doesnt really work but kinda if you really spam that mfer*/
+            advanceStage();
+        }
+    }
 
     private void create2DPathList() 
     {
