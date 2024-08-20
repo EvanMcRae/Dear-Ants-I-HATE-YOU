@@ -5,19 +5,64 @@
 			<ChildrenList>
 				<SoundBank Name="Main" ID="{B447D149-3B24-490B-9889-950AA32B8CFD}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Music" ID="{0634472D-D768-4062-BB9F-883239C9661D}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Fire" ID="{4C5BE8C0-86D2-40AA-B22D-C081C5ED5701}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Pause" ID="{F4586A93-67C5-41C1-BB09-47EC5A65D309}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ant Spit" ID="{9A210114-C3A0-41F2-977D-5A648C7961A8}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Level Bridge" ID="{BBF978E3-A431-42AD-BE1C-12C1464D4F88}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Fire Noise" ID="{C6774FB9-CECB-42D8-9DE3-331AA945C364}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item Computer Sound 4" ID="{65A7F08A-8515-42E1-A00F-5023CC5AB8EB}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="StageUp" ID="{4031E252-E3B4-42E2-873C-8FA282351A27}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Thump synth layer 1" ID="{DD582ED4-CB86-42FD-A9A8-221327D26968}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Level A" ID="{591C6AEA-5726-430E-A07E-619EED2C77ED}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item Computer Sound 3" ID="{9B8866CD-D16E-4325-A4AD-79D0E5D77BD3}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item Computer Sound 5" ID="{2AB87EE8-28D3-433C-B5B8-CA8864FC3E0B}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Adjust2" ID="{7BF38F9E-C1AE-43C0-B3C8-E3A802DE82E0}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Music" ID="{849BF544-A925-43E4-9B80-26FFB57F005F}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Level Intro" ID="{C6AEA7F8-DBE2-43EA-A130-3BB3A596656F}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Vowel synth layer 1" ID="{6CACBE52-CEF6-43F3-8CEC-BB3AAF1774EF}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item Computer Sound 6" ID="{CC738BC3-978C-4442-9007-71684093047B}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item Computer Sound 2" ID="{401EEF1F-099C-4447-972A-5FFE0B687BEB}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Enemy" ID="{BCD73A05-FF96-44C4-8F25-FBFF862F63E2}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menuBack" ID="{DDEA4D9B-1C39-452E-B838-D926612DCA7C}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Enemies" ID="{D0C85FFD-5AED-456D-96DE-6513AC356405}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Sub kick layer 1layer 1" ID="{20989C1A-F480-45D2-9BC5-0EF8C247A0FB}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="shotgun pitched down layer 1" ID="{CFF452EA-4B07-4625-BFD7-08686E253D91}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Level B" ID="{547725F4-9558-4626-9B3E-4993661AA837}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item Computer Sound 1" ID="{3D65C7C3-0102-4651-A6C4-F5243019DF4D}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="antSpit" ID="{E221F76A-8D05-46CE-BFB1-B9B43A11A21B}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Level" ID="{D83B5377-C090-4862-9085-F9ECC21AB106}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Resume" ID="{661DFE2A-DF31-488A-877F-47B68A432554}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menuAdjust1" ID="{7F728663-F59D-493C-BD3C-A7C341591FF7}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Exit Synth" ID="{D5D5BF1B-D1E3-4952-BC5E-D01D8F97869E}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Scuttle 2" ID="{D13DAC3D-46A7-4985-ADCE-74127F045574}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Pause" ID="{4ADF87C2-7718-49A6-9990-85149C904639}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu" ID="{BC4BC65E-918C-49CA-AB91-15FEAEFA875F}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Scuttle 3" ID="{754E0028-A8AB-4AA2-ABB8-F5A4082844B2}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Computer hum" ID="{CC90BA88-3B50-4AA7-A314-B19B7C398BC9}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menuAdjust2" ID="{B34145B1-2F87-4ABF-B3D1-1937CC9D052A}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Music" ID="{4581CFEB-D16C-4AF2-A796-CB1FD8C86745}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="antFire" ID="{8AA7963E-86F9-4AFD-887D-E86CEF7583B8}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Tower" ID="{3609F8A2-E5CF-4B05-A2DD-CFD879C650D0}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="squelch layer 1" ID="{D43AAF53-0EE1-4B39-B70E-AEBF19C8EEFC}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu" ID="{3349ED99-D4EB-4B5A-A751-D348F6B3A181}" WorkUnitID="{B3012E2B-D08A-4702-9849-6C43A254A895}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Squelch less verb" ID="{03D3A7B3-CC63-4B64-B149-5781AAD77B09}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Inner kick layer 1" ID="{B7C11E16-7CEB-4C06-BB61-2C0DB5C9AC89}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Music" ID="{7D320711-017A-4CA3-932E-5269562B018B}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Gameplay" ID="{F03E1088-CB8F-4CC2-AD92-5A76DC8719BE}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Scuttle" ID="{E0901428-F7A9-4CD1-83E3-9DB3DEBB14BD}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Buy Item" ID="{74E80A75-4C53-4D7E-8156-4682C2BD8475}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Scuttle 1" ID="{3263E452-3125-4DB9-8DB0-A242FD295E48}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu" ID="{63D9B6D5-5624-4DD6-8453-720A62B085D5}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="shotgun layer 1" ID="{6C6A5A2C-3529-4DF1-96BB-AF6B1EEBAF90}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menuSelect" ID="{72E48116-2095-4E0C-94F1-D60320FB6F4A}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="antWalk" ID="{695D3B67-E438-4E8E-8B29-F8F1B00DA985}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Adjust" ID="{DCB2A4FE-F215-4EA8-A241-D93DF73DB9DA}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Fire Crackle" ID="{9D7589EC-AC71-4EBA-B831-CFF94A871C34}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="LevelReset" ID="{67F95AAB-94C1-4EC7-82AA-B70075FDD849}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SFX" ID="{9C52607D-72C2-4ECA-A27F-2F81CF9D173B}" WorkUnitID="{D2E5EDB5-ED29-45D5-942A-B9363DF88890}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Scuttle 4" ID="{250C0331-2B1F-4F05-9B96-03E977C3EDE9}" WorkUnitID="{369FAF3F-6297-4160-8C19-D8B91AAB6EAA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="antDeath" ID="{7FCA9BBF-3B08-4F50-876E-838C55F4EAA1}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menuConfirm" ID="{BC5AB323-13EC-4F5C-87B3-4B686333AC28}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="menuAdjustStop" ID="{681F52C0-95E6-4FCC-A64F-DC44FDD6D4D4}" WorkUnitID="{BC91489E-2A50-45AB-A273-595AD7792CD5}" Origin="Manual" Filter="7"/>
