@@ -216,7 +216,7 @@ Transform:
   m_GameObject: {fileID: 1116600555838807995}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -515,11 +515,21 @@ MonoBehaviour:
   sightBoxes:
   - {fileID: 3406157253265902318}
   - {fileID: 1010540442376777960}
-  speedUps: 0
-  healthUps: 0
-  powerUps: 0
   anim: {fileID: 1315771926428189765}
   powerBar: {fileID: 7471413842374886362}
+  towerIndex: 0
+  towerData:
+    type: 
+    xPos: 0
+    yPos: 0
+    upgrades: []
+    numAttachments: 0
+    health: 0
+    attackSpeed: 0
+    power: 0
+    dead: 0
+    attacking: 0
+    level: 0
 --- !u!33 &3091973454866630020
 MeshFilter:
   m_ObjectHideFlags: 0
