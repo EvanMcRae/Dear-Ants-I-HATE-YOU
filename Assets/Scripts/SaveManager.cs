@@ -122,6 +122,11 @@ public class SaveManager : MonoBehaviour
         File.WriteAllText(autosave ? autoSaveFile : saveFile, jsonString);
     }
 
+    public void DeleteSave()
+    {
+        File.Delete(saveFile);
+    }
+
     public TowerData[] SerializeTowers(int level)
     {
         for (int i = 0; i < clickToSpawnManager.placedTowers.Count; i++)

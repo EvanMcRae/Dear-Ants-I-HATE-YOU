@@ -33,7 +33,7 @@ public class GameplayManager : MonoBehaviour
     // [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
     // private enum MusicState { CALM, MEDIATE, INTENSE };
     // private MusicState currentState;
-    public static bool won = false, lost = false, playingAgain = false, quit = false;
+    public static bool won = false, wonGame = false, lost = false, playingAgain = false, quit = false;
     public static int beginning = 0;
     [SerializeField] private GameObject DoctorsNoteButton, DoctorsNoteImage;
 
@@ -59,6 +59,7 @@ public class GameplayManager : MonoBehaviour
         else
         {
             StartMusic.Post(globalWwise);
+            nextLevel = false;
         }
 
         won = false;
@@ -257,9 +258,15 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 1;
         paused = false;
         won = false;
+        if (wonGame)
+        {
+            wonGame = false;
+            saveManager.DeleteSave();
+        }
+        else
+            saveManager.SaveGame();
         lost = false;
         pauseOpen = false;
-        saveManager.SaveGame();
         clickToSpawnManager.placedTowers.Clear();
         WaveManager.CurrentWave = 0;
         stageManager.levelToLoad = 1;
@@ -281,11 +288,11 @@ public class GameplayManager : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
-    public void ReloadSave()
+    public void ReloadLevel()
     {
-        screenWipe.PostWipe -= ReloadSave;
-        SaveManager.loadingFromSave = true;
-        SaveManager.loadingFromAutoSave = true;
+        screenWipe.PostWipe -= ReloadLevel;
+        stageManager.levelToLoad = stageManager.level;
+        nextLevel = true;
         SceneManager.LoadScene("SampleScene");
         playingAgain = false;
     }
@@ -303,6 +310,7 @@ public class GameplayManager : MonoBehaviour
     {
         ClosePanels();
         won = true;
+        wonGame = true;
         StopMusic.Post(globalWwise);
         WinSound.Post(globalWwise);
         WinGameScreen.SetActive(true);
@@ -357,7 +365,7 @@ public class GameplayManager : MonoBehaviour
         pauseOpen = false;
         screenWipe.WipeIn();
         StopMusic.Post(globalWwise);
-        screenWipe.PostWipe += ReloadSave;
+        screenWipe.PostWipe += ReloadLevel;
     }
 
     public void NextLevel()
